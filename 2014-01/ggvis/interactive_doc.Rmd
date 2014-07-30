@@ -1,0 +1,41 @@
+---
+title: "ggvis in an interactive document"
+output: html_document
+runtime: shiny
+---
+
+```{r echo=FALSE, message=FALSE}
+# We used echo = FALSE and message = FALSE to suppress output of this code block
+
+# Load some needed packages
+library(knitr)
+library(ggvis)
+library(shiny)
+
+set.seed(1233)
+cocaine <- cocaine[sample(1:nrow(cocaine), 500), ]
+```
+
+A scatter plot with tooltips
+
+```{r, message = FALSE, fig.width = 5, fig.height = 4}
+# Given data item, return tooltip text
+all_values <- function(x) {
+  if(is.null(x)) return(NULL)
+  paste0(names(x), ": ", format(x), collapse = "<br />")
+}
+
+cocaine %>%
+  ggvis(x = ~weight, y = ~price) %>%
+  layer_points(size = ~potency, opacity := 0.2) %>%
+  add_tooltip(all_values, "hover")
+```
+
+
+An interactive plot:
+
+```{r, message = FALSE, fig.width = 6, fig.height = 4}
+faithful %>%
+  ggvis(x = ~waiting) %>%
+  layer_histograms(fill := "#999999", binwidth = input_slider(min=1, max=20, value=11))
+```

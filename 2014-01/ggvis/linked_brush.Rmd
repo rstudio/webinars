@@ -1,0 +1,85 @@
+---
+title: "Linked brushing"
+output: html_document
+runtime: shiny
+---
+
+```{r, message = FALSE, echo = FALSE}
+# Note: This may use some features from the development version of ggvis, which
+# can be installed using the devtools package:
+# devtools::install_github("rstudio/ggvis")
+
+library(nycflights13)
+library(dplyr)
+library(ggvis)
+library(lubridate)
+
+# Process the flight and weather data
+daily <- flights %>%
+  filter(origin == "EWR") %>%
+  group_by(year, month, day) %>%
+  summarise(
+    delay = mean(dep_delay, na.rm = TRUE),
+    cancelled = mean(is.na(dep_delay)),
+    n = n()
+  )
+daily_weather <- weather %>%
+  filter(origin == "EWR") %>%
+  group_by(year, month, day) %>%
+  summarise(
+    temp = mean(temp, na.rm = TRUE),
+    wind = mean(wind_speed, na.rm = TRUE),
+    precip = sum(precip, na.rm = TRUE)
+  )
+both <- daily %>%
+  inner_join(daily_weather) %>%
+  ungroup() %>%
+  mutate(date = as.Date(ISOdate(year, month, day)))
+```
+
+This page shows data about flights from New York airports in 2013. In these scatter plots, each point represents one day.
+
+```{r fig.width = 4, fig.height = 3, echo = FALSE, results = "hold"}
+# Add an ID column for linking
+both$id <- seq_len(nrow(both))
+
+lb <- linked_brush(keys = both$id, "red")
+
+# Scatter plot of delay and cancelled
+both %>%
+  ggvis(~delay, ~cancelled, key := ~id) %>%
+  layer_points(fill := "black", fill.brush := "red", opacity := 0.3) %>%
+  lb$input()
+
+# A subset, of only the selected points
+selected <- lb$selected
+both_selected <- reactive({
+  both[selected(), ]
+})
+
+# Scatter plot of temp and precipitation
+both %>%
+  ggvis(~temp, ~precip, key := ~id) %>%
+  layer_points(opacity := 0.3) %>%
+  add_data(both_selected) %>%       # Overlay selected points
+  layer_points(fill := "red", opacity := 0.7)
+```
+
+We can also view each day as a bar, where the height is proportional to the number of scheduled flights, and the horizontal position corresponds to the date:
+
+```{r fig.width = 8, fig.height = 3, echo = FALSE}
+# A bar graph of selected days
+both %>%
+  ggvis(x = ~date, y = 0, x2 = ~date+1, y2 = ~n, 
+        fill := lb$fill, stroke := NA) %>%
+  layer_rects()
+```
+
+Detailed information about the selected points:
+
+```{r, echo = FALSE}
+renderTable(
+  both_selected()
+)
+```
+
