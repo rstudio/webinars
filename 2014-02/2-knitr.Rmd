@@ -1,0 +1,102 @@
+---
+title: "Knitr Ninja"
+author: "Yihui Xie, RStudio"
+date: "08/13/2014"
+output:
+  ioslides_presentation:
+    logo: logo.png
+    css: tweak.css
+---
+
+# Ninja??
+
+like this...
+
+---
+
+![](https://octodex.github.com/images/dojocat.jpg)
+
+---
+
+![](https://octodex.github.com/images/kimonotocat.png)
+
+## The original Knitr Ninja talk
+
+- tailored for the useR! 2014 conference
+- https://github.com/yihui/knitr-talks/tree/master/useR2014
+- assumes you know the basics of **knitr**
+- this talk does not assume familiarity with **knitr**
+
+# Not that level of ninja
+
+but this one...
+
+---
+
+![](https://octodex.github.com/images/minion.png)
+
+## I know you click, click, copy and paste {.flexbox .vcenter}
+
+![](http://i.imgur.com/tYxVO4w.jpg)
+
+## But imagine you hear these words after you finished a project {.build .flexbox .vcenter}
+
+**Please do that again!** (sorry we made a mistake in the data, want to change a parameter, and yada yada)
+
+![](http://i.imgur.com/9g5M6Hq.gif)
+
+## Automation! Automation! Automation! {.flexbox .vcenter}
+
+<img src="http://i.imgur.com/GosK7Oe.gif" width="300" />
+
+## Dynamic documents
+
+- code + narratives = report
+- i.e. computing languages + authoring languages
+
+        We built a linear regression model.
+
+        `r ''````{r}
+        fit <- lm(dist ~ speed, data = cars)
+        b   <- coef(fit)
+        plot(fit)
+        ```
+
+        The slope of the regression is `r '\x60r b[1]\x60'`.
+
+## Installation
+
+```r
+# install R, and
+install.packages('knitr')
+# and optionally install RStudio (http://www.rstudio.com)
+```
+
+## Some demos
+
+- [a homework assignment](https://dl.dropboxusercontent.com/u/15335397/slides/2014-STAT416-homework.Rmd) (dataset: [hwk5_q1.txt](https://dl.dropboxusercontent.com/u/15335397/slides/hwk5_q1.txt))
+- text output
+- graphics output
+- cache
+- language engines (C, C++, Python, Fortran, Julia, ...)
+    - 023 and 029 at https://github.com/yihui/knitr-examples
+
+## A few applications
+
+- websites/blogs
+    - http://gallery.rcpp.org
+    - http://rpubs.com
+- package vignettes
+    - http://yihui.name/knitr/demo/vignette/
+    - https://github.com/yihui/knitr/tree/master/vignettes
+    - http://cran.rstudio.com/web/packages/knitr/vignettes/docco-classic.html
+
+## The knitr book {.flexbox .vcenter}
+
+<img src="http://i.imgur.com/R6DSHDE.jpg" width=250 />
+
+You probably do not need it -- take a look at http://yihui.name/knitr
+
+## Be patient, and long live reproducible research! {.flexbox .vcenter}
+
+<img src="http://i.imgur.com/0uZU9HR.jpg" width="320" />
