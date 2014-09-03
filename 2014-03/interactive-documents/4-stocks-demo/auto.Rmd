@@ -1,0 +1,56 @@
+---
+title: "Example: Automated report"
+runtime: shiny
+output: html_document
+---
+
+Use this report to get a high level overview of whatever data set you like.
+
+```{r echo=FALSE, message=FALSE}
+library(shiny)
+library(stringr)
+library(xts)
+library(quantmod)
+
+fileInput("file", "Please upload a data set to examine")
+
+data <- reactive({
+  validate(
+    need(input$file, "Please upload a file")
+  )
+  readRDS(input$file$datapath)
+})
+
+symbol <- reactive({
+  str_split(names(data())[1], "\\.")[[1]][1]
+})
+
+future <- reactive({
+  if (Cl(last(data())) - Op(last(data())) < 0) {
+    "increase"
+  } else {
+    "decline"
+  }
+})
+```
+
+```{r echo=FALSE}
+renderUI({
+  if (future() == "increase") {
+    h1("BUY", style="color: green")
+  } else {
+    h1("SELL", style="color: red")
+  }
+})
+```
+
+According to my proprietary algorithm, `r renderText(symbol())` will `r renderText(future())` in price during the next trading period.
+
+```{r echo=FALSE}
+renderPlot({
+  chartSeries(data())
+})
+renderPrint(summary(data()))
+renderDataTable(data())
+```
+

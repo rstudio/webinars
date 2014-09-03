@@ -1,0 +1,25 @@
+---
+title: What's in a name?
+runtime: shiny
+output: html_document
+---
+
+Please select a name to explore.
+
+```{r echo=FALSE}
+library(babynames)
+textInput("name", "Name:", value = "Garrett")
+names <- reactive(subset(babynames, name == input$name))
+```
+
+Here is a graph of the number of people named `r renderText(input$name)`.
+
+```{r echo=FALSE, fig.height=3, fig.width=5}
+library(ggplot2)
+renderPlot({
+  qplot(year, n, data = names(), geom ="line", 
+        color = sex) + theme_bw()
+})
+```
+
+`r renderText(input$name)` was more popular than ever in `r renderText(names()$year[which.max(names()$n)])`. So far, `r renderText(sum(names()$n))` people have been named `r renderText(input$name)`.

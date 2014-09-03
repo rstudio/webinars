@@ -1,0 +1,6 @@
+---
+title: "Hurricanes"
+output: html_document
+---
+
+Between 1995 and 2000, 79 "named" storms developed in the Atlantic Ocean. These are storms that reached Tropical Depression status or greater. However, the strength of each storm fluctuated throughout its lifetime.
