@@ -54,8 +54,10 @@ shinyServer(function(input, output, session) {
     # If no zipcodes are in view, don't plot
     if (nrow(zipsInBounds()) == 0)
       return(NULL)
-    
-    print(xyplot(income ~ college, data = zipsInBounds(), xlim = range(allzips$college), ylim = range(allzips$income)))
+
+    print(xyplot(income ~ college, data = zipsInBounds(),
+      xlim = range(allzips$college), ylim = range(allzips$income),
+      pch = 19, alpha = 0.25))
   })
   
   # session$onFlushed is necessary to work around a bug in the Shiny/Leaflet
