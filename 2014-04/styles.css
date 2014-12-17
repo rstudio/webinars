@@ -1,0 +1,26 @@
+pre.prettyprint {
+  width: inherit;
+  left: 0px !important;
+  padding: 10px !important;
+  box-shadow: 1px 1px 5px #9c9c9c !important;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #ADADAD;
+}
+
+pre.prettyprint + pre {
+  width: inherit;
+  left: 0px !important;
+  padding: 10px !important;
+  box-shadow: 1px 1px 5px #9c9c9c !important;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #ADADAD;
+  background-color: #F3F3F3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #b55 !important;
+}
