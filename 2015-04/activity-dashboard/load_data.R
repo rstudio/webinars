@@ -2,23 +2,30 @@ library(pilr.api.r)
 library(httr)
 library(jsonlite)
 
-## NOTE: You would need a valid access code to access the PiLR API. ##
+## NOTE: You would need a valid access code to access the PiLR API.
+## They can be placed in a file called keys.R. This file should define the
+## loc_info and calorimeter_info variables like those below, except with valid
+## keys.
 
-# Information for location data
-loc_info <- list(
-  pt = "999",   # Participant ID
-  server = "http://liitah.pilrhealth.com",
-  project = "liitah_testing_2",
-  access_code = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-)
+if (file.exists("keys.R")) {
+  source("keys.R")
+} else {
+  # Information for location data
+  loc_info <- list(
+    pt = "999",   # Participant ID
+    server = "http://liitah.pilrhealth.com",
+    project = "liitah_testing_2",
+    access_code = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+  )
 
-# For calorimeter data
-calorimeter_info <- list(
-  pt = "999",   # Participant ID
-  server = "http://beta.pilrhealth.com",
-  project = "shiny_demo_project",
-  access_code = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-)
+  # For calorimeter data
+  calorimeter_info <- list(
+    pt = "999",   # Participant ID
+    server = "http://beta.pilrhealth.com",
+    project = "shiny_demo_project",
+    access_code = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+  )
+}
 
 
 fetch_location_data <- function() {
