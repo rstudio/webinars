@@ -14,10 +14,8 @@ ui <- dashboardPage(
   ),
   dashboardSidebar(
     sidebarMenu(
-      menuItem("Current location", tabName = "current", icon = icon("crosshairs")),
-      # Current nearest venue, map, current temperature
-      # Refresh button; otherwise refresh each minute
       menuItem("Location history", tabName = "history", icon = icon("database")),
+      menuItem("Current location", tabName = "current", icon = icon("crosshairs")),
       menuItem("Calories", tabName = "calories", icon = icon("fire"))
     ),
     div(style = "padding-left: 30px; padding-top: 20px;",
@@ -43,6 +41,9 @@ ui <- dashboardPage(
       ),
       p(class = "small", "Data courtesy of ",
         a("PiLR Health", href="http://www.pilrhealth.com/")
+      ),
+      p(class = "small",
+        a("Source code", href = "https://github.com/rstudio/webinars/tree/master/2015-04")
       )
     )
   ),
