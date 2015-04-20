@@ -59,7 +59,6 @@ ui <- dashboardPage(
           box(width = 12, title = "Travel today",
             leafletOutput("current_map", height = 500)
           )
-
         )
       ),
       # Location history ------------------------------------------------------
@@ -69,13 +68,8 @@ ui <- dashboardPage(
             leafletOutput("history_map")
           ),
           box(width = 4, title = "Filter data", status = "warning", solidHeader = TRUE,
-            selectInput("venue", "Venue",
-              choices = c("CoCo", "Home", "Brets", "Lifetime", "Toms"),
-              selected = "Home"
-            ),
-            sliderInput("max_dist", "Max. distance from venue (km)",
-              min = 1, max = 40, value = 40
-            )
+            uiOutput("venue_select"),
+            uiOutput("venue_dist_slider")
           )
         ),
         fluidRow(box(width = 12,
@@ -120,7 +114,7 @@ server <- function(input, output) {
       addCircles(venue$trig_info.lon, venue$trig_info.lat,
                  venue$trig_info.radius,
                  popup = venue$name, color = '#ff0000') %>%
-      addCircles(now$args.lon, now$args.lat, popup = "Jared", radius = 20) %>%
+      addCircles(now$args.lon, now$args.lat, popup = "User", radius = 20) %>%
       fitBounds(min(today$args.lon), min(today$args.lat),
                 max(today$args.lon), max(today$args.lat))
   })
@@ -187,8 +181,11 @@ server <- function(input, output) {
 
   # Historical location -------------------------------------------------------
   output$history_map <- renderLeaflet({
-    data <- log()
+    data <- log_dist()
     venue <- venues()
+
+    if (is.null(data))
+      return(NULL)
 
     # Filter by time range, if present
     tr <- timerange()
@@ -213,7 +210,10 @@ server <- function(input, output) {
 
   # Line graph showing distance from known venues
   output$distance <- renderPlot({
-    data <- log()
+    data <- log_dist()
+    if (is.null(data))
+      return(NULL)
+
     ggplot(data, aes(local_time, venue_dist)) + geom_line() + theme_bw() +
       geom_hline(yintercept = input$max_dist, colour = "orange",
                  linetype = "dashed") +
@@ -221,6 +221,29 @@ server <- function(input, output) {
       ggtitle(paste("Distance from", input$venue))
   })
 
+  # Select input to choose which venue
+  output$venue_select <- renderUI({
+    v <- venues()
+
+    selectInput("venue", "Venue",
+      choices = v$name,
+      selected = v$name[1]
+    )
+  })
+
+  # Slider to set threshold for distance from venue
+  output$venue_dist_slider <- renderUI({
+    data <- log_dist()
+    if (is.null(data))
+      return(NULL)
+
+    # Round up to 10 km
+    max_dist <- ceiling(max(data$venue_dist)/10) * 10
+
+    sliderInput("max_dist", "Max. distance from venue (km)",
+      min = 1, max = max_dist, value = max_dist
+    )
+  })
 
   # Calorimeter data ----------------------------------------------------------
   output$vco2 <- renderPlot({
@@ -272,19 +295,25 @@ server <- function(input, output) {
     # Get data from the PiLR API
     data <- fetch_location_data()
 
-    venue <- venues()
-
     # Keep only select columns
     data <- data[, c("args.lat", "args.lon", "local_time", "args.nearest_venue")]
     # Drop any rows wth NA
-    data <- data[complete.cases(data), ]
+    data[complete.cases(data), ]
+  })
+
+  # Location data with additional columns with distance from selected venue.
+  log_dist <- reactive({
+    data <- log()
+    venue <- venues()
+
+    if (is.null(input$venue))
+      return(NULL)
 
     venue_lon <- venue$trig_info.lon[venue$name == input$venue]
     venue_lat <- venue$trig_info.lat[venue$name == input$venue]
 
     # Calculate distance to venue
     data$venue_dist <- earthdist(venue_lon, venue_lat, data$args.lon, data$args.lat)
-
     data
   })
 
