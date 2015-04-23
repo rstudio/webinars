@@ -11,8 +11,7 @@ A live version of the activity dashboard is at: https://winston.shinyapps.io/act
 This is a very basic dashboard made with Shiny and shinydashboard. To setup and run it:
 
 ```R
-# Install shinydashboard
-devtools::install_github("rstudio/shinydashboard")
+install.packages("shinydashboard")
 
 library(shiny)
 runApp("activity-dashboard/")
@@ -38,10 +37,10 @@ ensure_version <- function(pkg, ver = "0.0") {
 
 ensure_version("devtools", "1.7.0")
 ensure_version("jsonlite", "0.9.16")
+ensure_version("shinydashboard", "0.4.0")
 
 # Need latest devel versions of various packages
 devtools::install_github("rstudio/shiny@interact-ggplot") # For ggplot2 interaction
-devtools::install_github("rstudio/shinydashboard")
 devtools::install_github("rstudio/leaflet")
 
 # PiLR API package
