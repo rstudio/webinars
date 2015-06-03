@@ -1,0 +1,30 @@
+<head>
+  <link type="text/css" rel="stylesheet" href="bootswatch-cerulean.css"/>
+  <style>
+    li {
+      color:purple;
+    }
+    
+    .blue-item {
+      color:blue;
+    }
+    
+    #dark {
+      color:navy;
+    }
+  </style>
+</head>
+
+<div class="container-fluid">
+  <h1>CSS examples</h1>
+  <p>
+    This webpage uses five methods to style the text with CSS. The entire documentis styled with CSS from an external file, bootswatch-cerulean.css, which has been linked to in the document's header section.
+  </p>
+  <ol>
+    <li>The list items are styled with global CSS that is written in the style section of the document's header.</li>
+    <li class="blue-item">This individual item contains additional styling written in the document's header that applies to the item's class. Note that it overrides the global styling.</li>
+    <li id="dark" class="blue-item">This individual item contains additional styling written in the document's header that applies to the item's id. Note that it overrides the global and class styling.</li>
+    <li id="dark" class="blue-item" style="color:green">This individual item contains additional styling written in the document's tag. Note that it overrides the global, class, and id specific styling.</li>
+  </ol>
+  <p>If you would like to learn more about how to write and use CSS, I recommend the <a href="http://www.codecademy.com/tracks/web">Codecademy tutorial</a></p>
+</div> 
