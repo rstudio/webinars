@@ -1,0 +1,32 @@
+# GOOG
+
+## Recommendation: ?
+
+GOOG will ? in price during the next trading period. 
+
+
+## Price History
+
+The chart below is made with the `quantmod` R package, a widely used package for collecting and visualizing financial data in R. You can learn more about `quantmod` at the website [www.quantmod.com](rstudio.github.io/DT/).  
+
+***
+
+## Method
+
+This forecast was predicted with the *recency algorithm*, a simple---probably useless---method for determining stock prices. The recency algorithm predicts that the next price movement, $M_{j}$, will be in the same direction as the most recent price movement. $M_{i}$.
+
+$$M_{i}= Close_{i} - Open_{i}$$
+
+$$
+    M_{j}= 
+\begin{cases}
+    > 0,              & \text{if } M_{i} > 0\\
+    \leq 0,              & \text{if } M_{i}\leq 0
+\end{cases}
+$$
+
+## Raw Data
+
+The table below displays the daily price data for the stock. In the next section, we will learn how to make a concise, interactive table with the `DT` package, a new package for making searchable data tables. You can learn more about the `DT` package at the website [rstudio.github.io/DT/](rstudio.github.io/DT/).  
+
+***
