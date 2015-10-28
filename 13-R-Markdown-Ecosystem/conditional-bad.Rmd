@@ -1,0 +1,7 @@
+Darn it, the regression coefficient was not significant! Looks like I will have to go home by 2am tonight...
+
+```{r echo=FALSE}
+knitr::kable(b)
+```
+
+![](http://yihui.name/slides/images/sleepy.png)

@@ -1,0 +1,7 @@
+Oh yeah, the regression coefficient was significant! Time to go to Hawaii!!
+
+```{r echo=FALSE}
+knitr::kable(b)
+```
+
+![](http://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Lanikai_Strand_auf_Oahu.jpg/1920px-Lanikai_Strand_auf_Oahu.jpg)

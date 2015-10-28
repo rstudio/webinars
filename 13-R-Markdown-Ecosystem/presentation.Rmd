@@ -1,0 +1,101 @@
+---
+title: "An R Markdown Document"
+author:
+- Li Lei
+- Han Meimei
+date: "2015/10/28"
+output:
+  ioslides_presentation: default
+  beamer_presentation:
+    theme: AnnArbor
+  slidy_presentation: default
+bibliography: references.bib
+---
+
+## Start with a cool section
+
+You can use traditional **Markdown** syntax, such as [links](http://yihui.name/knitr) and `code`. Here is a quote:
+
+> A girl phoned me the other day and said "Come on over, there's nobody home." I went over. Nobody was home. -- Rodney Dangerfield
+
+## Followed by another section
+
+Of course you can write lists:
+
+- apple
+- pear
+- banana
+
+Or ordered lists:
+
+1. items
+1. will
+1. be
+1. ordered
+    - nested
+    - items
+
+## Okay, some R code
+
+```{r linear-model}
+fit = lm(dist ~ speed, data = cars)
+b = coef(fit)  # coefficients
+summary(fit)
+```
+
+The code will be highlighted in all output formats.
+
+## And some pictures
+
+```{r lm-vis, fig.cap='Regression diagnostics'}
+par(mfrow = c(2, 2), pch = 20, mar = c(4, 4, 2, .1), bg = 'white')
+plot(fit)
+```
+
+## A little bit math
+
+Our regression equation is $Y=`r b[1]`+`r b[2]`x$, and the model is:
+
+$$ Y = \beta_0 + \beta_1 x + \epsilon$$
+
+## Pandoc extension: definition lists
+
+Programmer
+:   A programmer is the one who turns coffee into code.
+LaTeX
+:   A simple tool that is nothing but a couple of backslashes.
+
+## Pandoc extension: examples
+
+We have some examples.
+
+(@) Think what is `0.3 + 0.4 - 0.7`. Zero. Easy.
+(@weird) Now think what is `0.3 - 0.7 + 0.4`. Still zero?
+
+People are often surprised by (@weird).
+
+## Pandoc extension: tables
+
+A table here.
+
+Table:  Demonstration of simple table syntax.
+
+  Right     Left     Center     Default
+-------     ------ ----------   -------
+     12     12        12            12
+    123     123       123          123
+      1     1          1             1
+
+## Pandoc extension: footnotes
+
+We can also write footnotes[^1].
+
+[^1]: hi, I'm a footnote
+
+Or write some inline footnotes^[as you can see here].
+
+## Pandoc extension: citations
+
+We compile the R Markdown file to Markdown through **knitr** [@xie2013] in R [@R-base]. For more about @xie2013, see <http://yihui.name/knitr>.
+
+## References

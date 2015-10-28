@@ -1,0 +1,81 @@
+---
+title: "HTML Widgets"
+author: "Yihui Xie"
+date: "March 12, 2015"
+output: html_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# DataTables
+
+```{r}
+library(DT)
+datatable(iris)
+```
+
+# Leaflet Maps
+
+```{r}
+library(leaflet)
+m = leaflet() %>% addTiles()
+m  # a map with the default OSM tile layer
+
+m = m %>% setView(-93.65, 42.0285, zoom = 17)
+# popup
+m %>% addPopups(-93.65, 42.0285, 'Here is the <b>Department of Statistics</b>, ISU')
+rand_lng = function(n = 10) rnorm(n, -93.65, .01)
+rand_lat = function(n = 10) rnorm(n, 42.0285, .01)
+
+# use automatic bounds derived from lng/lat data
+m = m %>% clearBounds()
+# marker
+m %>% addMarkers(rand_lng(), rand_lat())
+```
+
+# Dygraphs
+
+```{r}
+library(dygraphs)
+dygraph(sunspots) %>% dyRangeSelector()
+lungDeaths <- cbind(mdeaths, fdeaths)
+dygraph(lungDeaths)
+```
+
+# Network graphs
+
+```{r}
+library(networkD3)
+data(MisLinks, MisNodes)
+str(MisLinks)
+str(MisNodes)
+forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
+             Target = "target", Value = "value", NodeID = "name",
+             Group = "group", opacity = 0.4)
+```
+
+# Three.js
+
+```{r}
+library(threejs)
+data(world.cities, package="maps")
+cities <- world.cities[order(world.cities$pop,decreasing=TRUE)[1:1000],]
+value  <- 100 * cities$pop / max(cities$pop)
+
+earth <- texture(system.file("images/world.jpg",package="threejs"))
+globejs(img=earth, lat=cities$lat, long=cities$long, value=value)
+```
