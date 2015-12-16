@@ -1,0 +1,16 @@
+Package: citySelector
+Type: Package
+Title: Compare Small Towns in Central Florida
+Version: 0.1.0
+Author: Garrett Grolemund
+Maintainer: Garrett Grolemund <garrett@rstudio.com>
+Description: citySelector provides a Shiny app to compare and score 50 small towns in Central Florida.
+License: CC0
+LazyData: TRUE
+Imports:
+    leaflet,
+    shiny,
+    shinydashboard,
+    dplyr,
+    htmltools
+Suggests: testthat
