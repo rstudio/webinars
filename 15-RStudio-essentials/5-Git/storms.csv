@@ -1,0 +1,2748 @@
+"name","year","month","day","hour","lat","long","pressure","wind","type","seasday"
+"Allison",1995,6,3,0,17.4,-84.3,1005,30,"Tropical Depression",3
+"Allison",1995,6,3,6,18.3,-84.9,1004,30,"Tropical Depression",3
+"Allison",1995,6,3,12,19.3,-85.7,1003,35,"Tropical Storm",3
+"Allison",1995,6,3,18,20.6,-85.8,1001,40,"Tropical Storm",3
+"Allison",1995,6,4,0,22,-86,997,50,"Tropical Storm",4
+"Allison",1995,6,4,6,23.3,-86.3,995,60,"Tropical Storm",4
+"Allison",1995,6,4,12,24.7,-86.2,987,65,"Hurricane",4
+"Allison",1995,6,4,18,26.2,-86.2,988,65,"Hurricane",4
+"Allison",1995,6,5,0,27.6,-86.1,988,65,"Hurricane",5
+"Allison",1995,6,5,6,28.5,-85.6,990,60,"Tropical Storm",5
+"Allison",1995,6,5,12,29.6,-84.7,990,60,"Tropical Storm",5
+"Allison",1995,6,5,18,30.7,-83.8,993,45,"Tropical Storm",5
+"Allison",1995,6,6,0,31.8,-82.8,993,30,"Tropical Depression",6
+"Allison",1995,6,6,6,32.7,-81.5,994,35,"Extratropical",6
+"Allison",1995,6,6,12,33.6,-80,995,35,"Extratropical",6
+"Allison",1995,6,6,18,34.5,-78.1,995,40,"Extratropical",6
+"Allison",1995,6,7,0,35.6,-75.9,992,40,"Extratropical",7
+"Allison",1995,6,7,6,37.1,-73.6,990,45,"Extratropical",7
+"Allison",1995,6,7,12,38.5,-71,988,45,"Extratropical",7
+"Allison",1995,6,7,18,39.8,-69.2,984,45,"Extratropical",7
+"Allison",1995,6,8,0,41,-67.7,982,50,"Extratropical",8
+"Allison",1995,6,8,6,42.4,-66,984,50,"Extratropical",8
+"Allison",1995,6,8,12,43.8,-63.7,989,50,"Extratropical",8
+"Allison",1995,6,8,18,45.2,-61.2,993,45,"Extratropical",8
+"Allison",1995,6,9,0,46.5,-58.5,995,40,"Extratropical",9
+"Allison",1995,6,9,6,48.1,-55.9,996,40,"Extratropical",9
+"Allison",1995,6,9,12,50,-53,997,40,"Extratropical",9
+"Allison",1995,6,9,18,53,-52,1000,40,"Extratropical",9
+"Allison",1995,6,10,0,57,-52,997,40,"Extratropical",10
+"Allison",1995,6,10,6,60,-52,990,40,"Extratropical",10
+"Allison",1995,6,10,12,62,-53,992,40,"Extratropical",10
+"Allison",1995,6,10,18,64,-55,992,35,"Extratropical",10
+"Allison",1995,6,11,0,65,-56,993,35,"Extratropical",11
+"Barry",1995,7,5,6,32,-72,1019,20,"Extratropical",35
+"Barry",1995,7,5,12,32,-72,1019,20,"Extratropical",35
+"Barry",1995,7,5,18,31.9,-72,1018,20,"Extratropical",35
+"Barry",1995,7,6,0,31.8,-72,1017,25,"Extratropical",36
+"Barry",1995,7,6,6,31.7,-71.9,1016,25,"Extratropical",36
+"Barry",1995,7,6,12,31.5,-71.7,1013,30,"Extratropical",36
+"Barry",1995,7,6,18,31.3,-71.6,1011,30,"Tropical Depression",36
+"Barry",1995,7,7,0,31.3,-71.3,1009,30,"Tropical Depression",37
+"Barry",1995,7,7,6,31.6,-71,1007,35,"Tropical Storm",37
+"Barry",1995,7,7,12,32.2,-70.6,1004,40,"Tropical Storm",37
+"Barry",1995,7,7,18,33.2,-70.2,1001,60,"Tropical Storm",37
+"Barry",1995,7,8,0,34,-69.6,997,60,"Tropical Storm",38
+"Barry",1995,7,8,6,34.9,-68.9,997,55,"Tropical Storm",38
+"Barry",1995,7,8,12,35.9,-68.2,997,50,"Tropical Storm",38
+"Barry",1995,7,8,18,37.2,-67.2,997,50,"Tropical Storm",38
+"Barry",1995,7,9,0,38.7,-66,996,50,"Tropical Storm",39
+"Barry",1995,7,9,6,40.5,-64.6,995,50,"Tropical Storm",39
+"Barry",1995,7,9,12,42.3,-63.1,993,50,"Tropical Storm",39
+"Barry",1995,7,9,18,44.3,-61.7,991,50,"Tropical Storm",39
+"Barry",1995,7,10,0,46.4,-60.5,990,45,"Tropical Storm",40
+"Barry",1995,7,10,6,48.5,-59.2,989,40,"Extratropical",40
+"Chantal",1995,7,12,0,17.1,-54.9,1012,25,"Tropical Depression",42
+"Chantal",1995,7,12,6,17.5,-56.5,1012,25,"Tropical Depression",42
+"Chantal",1995,7,12,12,18.1,-58.3,1012,25,"Tropical Depression",42
+"Chantal",1995,7,12,18,18.7,-59.9,1011,30,"Tropical Depression",42
+"Chantal",1995,7,13,0,19.2,-61,1011,30,"Tropical Depression",43
+"Chantal",1995,7,13,6,19.6,-61.9,1011,30,"Tropical Depression",43
+"Chantal",1995,7,13,12,20.1,-62.7,1010,30,"Tropical Depression",43
+"Chantal",1995,7,13,18,20.6,-63.6,1010,30,"Tropical Depression",43
+"Chantal",1995,7,14,0,21.1,-64.4,1006,35,"Tropical Storm",44
+"Chantal",1995,7,14,6,21.1,-64.9,1008,35,"Tropical Storm",44
+"Chantal",1995,7,14,12,21.1,-65.2,1009,35,"Tropical Storm",44
+"Chantal",1995,7,14,18,21.3,-65.5,1010,40,"Tropical Storm",44
+"Chantal",1995,7,15,0,21.8,-66,1009,40,"Tropical Storm",45
+"Chantal",1995,7,15,6,22.3,-66.7,1006,45,"Tropical Storm",45
+"Chantal",1995,7,15,12,22.7,-67.5,1006,45,"Tropical Storm",45
+"Chantal",1995,7,15,18,23.2,-67.9,1005,45,"Tropical Storm",45
+"Chantal",1995,7,16,0,23.7,-68.2,1004,45,"Tropical Storm",46
+"Chantal",1995,7,16,6,24.5,-68.4,999,50,"Tropical Storm",46
+"Chantal",1995,7,16,12,25.3,-68.8,999,50,"Tropical Storm",46
+"Chantal",1995,7,16,18,26.2,-69.1,997,55,"Tropical Storm",46
+"Chantal",1995,7,17,0,27.2,-69.4,991,60,"Tropical Storm",47
+"Chantal",1995,7,17,6,28.2,-69.6,995,60,"Tropical Storm",47
+"Chantal",1995,7,17,12,29.3,-69.8,997,60,"Tropical Storm",47
+"Chantal",1995,7,17,18,30.5,-69.8,995,55,"Tropical Storm",47
+"Chantal",1995,7,18,0,31.6,-69.7,994,55,"Tropical Storm",48
+"Chantal",1995,7,18,6,32.6,-69,994,55,"Tropical Storm",48
+"Chantal",1995,7,18,12,33.6,-68.1,995,50,"Tropical Storm",48
+"Chantal",1995,7,18,18,34.6,-67.3,996,50,"Tropical Storm",48
+"Chantal",1995,7,19,0,35.4,-65.8,997,50,"Tropical Storm",49
+"Chantal",1995,7,19,6,36.2,-64.1,997,50,"Tropical Storm",49
+"Chantal",1995,7,19,12,37.1,-62.4,998,50,"Tropical Storm",49
+"Chantal",1995,7,19,18,38.2,-60.2,998,50,"Tropical Storm",49
+"Chantal",1995,7,20,0,39.5,-57.6,999,50,"Tropical Storm",50
+"Chantal",1995,7,20,6,41.1,-54.7,999,50,"Tropical Storm",50
+"Chantal",1995,7,20,12,43,-51.7,1000,50,"Tropical Storm",50
+"Chantal",1995,7,20,18,45.4,-48.8,1000,50,"Extratropical",50
+"Chantal",1995,7,21,0,47.7,-45.2,1001,50,"Extratropical",51
+"Chantal",1995,7,21,6,49.7,-41.6,1002,50,"Extratropical",51
+"Chantal",1995,7,21,12,51.4,-37,1003,50,"Extratropical",51
+"Chantal",1995,7,21,18,53,-31,1005,50,"Extratropical",51
+"Chantal",1995,7,22,0,55,-20,1005,50,"Extratropical",52
+"Dean",1995,7,28,18,26.2,-86.6,1009,25,"Tropical Depression",58
+"Dean",1995,7,29,0,26.1,-87.3,1008,30,"Tropical Depression",59
+"Dean",1995,7,29,6,26.2,-87.9,1008,30,"Tropical Depression",59
+"Dean",1995,7,29,12,26.3,-88.3,1008,30,"Tropical Depression",59
+"Dean",1995,7,29,18,26.5,-89.4,1007,30,"Tropical Depression",59
+"Dean",1995,7,30,0,26.9,-90.6,1007,30,"Tropical Depression",60
+"Dean",1995,7,30,6,27.6,-91.7,1006,30,"Tropical Depression",60
+"Dean",1995,7,30,12,28.1,-93,1005,30,"Tropical Depression",60
+"Dean",1995,7,30,18,28.6,-94,1003,35,"Tropical Storm",60
+"Dean",1995,7,31,0,29,-95,999,40,"Tropical Storm",61
+"Dean",1995,7,31,6,29.5,-95.5,1002,30,"Tropical Depression",61
+"Dean",1995,7,31,12,30,-96,1003,25,"Tropical Depression",61
+"Dean",1995,7,31,18,30.5,-96.5,1003,20,"Tropical Depression",61
+"Dean",1995,8,1,0,31.5,-97,1004,20,"Tropical Depression",62
+"Dean",1995,8,1,6,32,-97.5,1004,20,"Tropical Depression",62
+"Dean",1995,8,1,12,33,-98.5,1004,20,"Tropical Depression",62
+"Dean",1995,8,1,18,33,-98.5,1004,20,"Tropical Depression",62
+"Dean",1995,8,2,0,33,-98.5,1004,20,"Tropical Depression",63
+"Dean",1995,8,2,6,33,-98.5,1004,20,"Tropical Depression",63
+"Dean",1995,8,2,12,33,-98.5,1004,20,"Tropical Depression",63
+"Dean",1995,8,2,18,33,-98.5,1004,20,"Tropical Depression",63
+"Erin",1995,7,31,0,22.3,-73.2,1004,45,"Tropical Storm",61
+"Erin",1995,7,31,6,22.6,-73.6,1003,50,"Tropical Storm",61
+"Erin",1995,7,31,12,22.8,-73.9,999,55,"Tropical Storm",61
+"Erin",1995,7,31,18,23.2,-74.3,997,60,"Tropical Storm",61
+"Erin",1995,8,1,0,23.6,-74.9,992,70,"Hurricane",62
+"Erin",1995,8,1,6,24.3,-75.7,988,75,"Hurricane",62
+"Erin",1995,8,1,12,25.5,-76.3,985,75,"Hurricane",62
+"Erin",1995,8,1,18,26.3,-77.7,980,75,"Hurricane",62
+"Erin",1995,8,2,0,26.9,-79,982,75,"Hurricane",63
+"Erin",1995,8,2,6,27.7,-80.4,985,75,"Hurricane",63
+"Erin",1995,8,2,12,28.2,-81.9,990,50,"Tropical Storm",63
+"Erin",1995,8,2,18,28.6,-83.4,988,60,"Tropical Storm",63
+"Erin",1995,8,3,0,28.8,-84.7,985,65,"Hurricane",64
+"Erin",1995,8,3,6,29.3,-85.7,979,70,"Hurricane",64
+"Erin",1995,8,3,12,29.8,-86.6,974,80,"Hurricane",64
+"Erin",1995,8,3,18,30.6,-87.5,985,65,"Hurricane",64
+"Erin",1995,8,4,0,31.4,-88.5,997,45,"Tropical Storm",65
+"Erin",1995,8,4,6,32.3,-89.1,1001,35,"Tropical Storm",65
+"Erin",1995,8,4,12,33.2,-89.7,1003,20,"Tropical Depression",65
+"Erin",1995,8,4,18,34.1,-90.2,1003,20,"Tropical Depression",65
+"Erin",1995,8,5,0,34.8,-90.2,1003,20,"Tropical Depression",66
+"Erin",1995,8,5,6,35.4,-90.1,1003,20,"Tropical Depression",66
+"Erin",1995,8,5,12,36.3,-89.8,1003,20,"Tropical Depression",66
+"Erin",1995,8,5,18,37.5,-88.8,1003,20,"Tropical Depression",66
+"Erin",1995,8,6,0,38.4,-86.8,1003,20,"Tropical Depression",67
+"Erin",1995,8,6,6,38.7,-84.9,1005,20,"Tropical Depression",67
+"Erin",1995,8,6,12,38.8,-82,1008,20,"Extratropical",67
+"Felix",1995,8,8,0,14.3,-30.8,1010,30,"Tropical Depression",69
+"Felix",1995,8,8,6,14.7,-32.5,1008,30,"Tropical Depression",69
+"Felix",1995,8,8,12,15,-34.4,1007,30,"Tropical Depression",69
+"Felix",1995,8,8,18,15.5,-36.4,1005,35,"Tropical Storm",69
+"Felix",1995,8,9,0,15.7,-38.3,1004,40,"Tropical Storm",70
+"Felix",1995,8,9,6,16,-40.2,1003,45,"Tropical Storm",70
+"Felix",1995,8,9,12,16.2,-41.9,1001,45,"Tropical Storm",70
+"Felix",1995,8,9,18,16.6,-43.7,1000,45,"Tropical Storm",70
+"Felix",1995,8,10,0,17,-45.6,998,50,"Tropical Storm",71
+"Felix",1995,8,10,6,17.5,-47.4,996,55,"Tropical Storm",71
+"Felix",1995,8,10,12,18,-49.1,993,60,"Tropical Storm",71
+"Felix",1995,8,10,18,18.4,-50.8,991,60,"Tropical Storm",71
+"Felix",1995,8,11,0,18.9,-52.4,987,65,"Hurricane",72
+"Felix",1995,8,11,6,19.6,-53.9,980,70,"Hurricane",72
+"Felix",1995,8,11,12,20.4,-55.4,972,80,"Hurricane",72
+"Felix",1995,8,11,18,21.3,-56.5,965,90,"Hurricane",72
+"Felix",1995,8,12,0,22.1,-57.8,955,100,"Hurricane",73
+"Felix",1995,8,12,6,22.9,-59,943,110,"Hurricane",73
+"Felix",1995,8,12,12,23.6,-60.2,932,115,"Hurricane",73
+"Felix",1995,8,12,18,24.3,-61,929,120,"Hurricane",73
+"Felix",1995,8,13,0,25.1,-61.6,930,115,"Hurricane",74
+"Felix",1995,8,13,6,25.9,-61.9,937,105,"Hurricane",74
+"Felix",1995,8,13,12,26.6,-62.3,942,100,"Hurricane",74
+"Felix",1995,8,13,18,27.4,-62.3,947,95,"Hurricane",74
+"Felix",1995,8,14,0,28.2,-62.5,948,90,"Hurricane",75
+"Felix",1995,8,14,6,29,-62.9,954,80,"Hurricane",75
+"Felix",1995,8,14,12,29.9,-63.4,962,80,"Hurricane",75
+"Felix",1995,8,14,18,30.7,-64.1,962,75,"Hurricane",75
+"Felix",1995,8,15,0,31.3,-65.1,962,75,"Hurricane",76
+"Felix",1995,8,15,6,31.9,-66.2,964,75,"Hurricane",76
+"Felix",1995,8,15,12,32.5,-67.4,968,70,"Hurricane",76
+"Felix",1995,8,15,18,33.1,-68.8,965,70,"Hurricane",76
+"Felix",1995,8,16,0,33.5,-70.1,963,70,"Hurricane",77
+"Felix",1995,8,16,6,34,-71.3,966,70,"Hurricane",77
+"Felix",1995,8,16,12,34.6,-72.4,968,70,"Hurricane",77
+"Felix",1995,8,16,18,34.8,-72.7,970,70,"Hurricane",77
+"Felix",1995,8,17,0,35.3,-72.9,968,65,"Hurricane",78
+"Felix",1995,8,17,6,35.6,-72.9,971,65,"Hurricane",78
+"Felix",1995,8,17,12,36.1,-72.7,972,65,"Hurricane",78
+"Felix",1995,8,17,18,36.5,-72.2,973,65,"Hurricane",78
+"Felix",1995,8,18,0,36.8,-71.5,973,65,"Hurricane",79
+"Felix",1995,8,18,6,37.1,-70.7,971,65,"Hurricane",79
+"Felix",1995,8,18,12,37.1,-69.9,970,65,"Hurricane",79
+"Felix",1995,8,18,18,36.9,-68.9,971,70,"Hurricane",79
+"Felix",1995,8,19,0,36.6,-68.1,970,70,"Hurricane",80
+"Felix",1995,8,19,6,36.1,-67.8,970,70,"Hurricane",80
+"Felix",1995,8,19,12,35.7,-67.5,971,70,"Hurricane",80
+"Felix",1995,8,19,18,35.4,-67.4,973,70,"Hurricane",80
+"Felix",1995,8,20,0,35.1,-67.5,976,65,"Hurricane",81
+"Felix",1995,8,20,6,35,-67.9,979,60,"Tropical Storm",81
+"Felix",1995,8,20,12,35.4,-68.2,982,60,"Tropical Storm",81
+"Felix",1995,8,20,18,35.9,-68.3,985,60,"Tropical Storm",81
+"Felix",1995,8,21,0,36.6,-67.8,986,60,"Tropical Storm",82
+"Felix",1995,8,21,6,37.7,-67,988,55,"Tropical Storm",82
+"Felix",1995,8,21,12,39,-66.1,989,50,"Tropical Storm",82
+"Felix",1995,8,21,18,40.6,-63.3,988,50,"Tropical Storm",82
+"Felix",1995,8,22,0,42.5,-59.8,987,50,"Tropical Storm",83
+"Felix",1995,8,22,6,44.5,-55.8,986,50,"Tropical Storm",83
+"Felix",1995,8,22,12,46.8,-50.8,985,50,"Tropical Storm",83
+"Felix",1995,8,22,18,49,-46,985,50,"Extratropical",83
+"Felix",1995,8,23,0,50.8,-40.5,985,50,"Extratropical",84
+"Felix",1995,8,23,6,53.5,-35.5,985,50,"Extratropical",84
+"Felix",1995,8,23,12,56,-34,986,50,"Extratropical",84
+"Felix",1995,8,23,18,58,-31,987,50,"Extratropical",84
+"Felix",1995,8,24,0,59.5,-26,988,50,"Extratropical",85
+"Felix",1995,8,24,6,60,-20,988,45,"Extratropical",85
+"Felix",1995,8,24,12,60,-14,989,40,"Extratropical",85
+"Felix",1995,8,24,18,60,-7.5,990,35,"Extratropical",85
+"Felix",1995,8,25,0,61.5,-1,992,35,"Extratropical",86
+"Gabrielle",1995,8,9,18,23.7,-94.8,1007,30,"Tropical Depression",70
+"Gabrielle",1995,8,10,0,23.7,-95.4,1004,30,"Tropical Depression",71
+"Gabrielle",1995,8,10,6,23.7,-96.2,1002,30,"Tropical Depression",71
+"Gabrielle",1995,8,10,12,23.5,-96.5,999,35,"Tropical Storm",71
+"Gabrielle",1995,8,10,18,23.1,-96.7,997,40,"Tropical Storm",71
+"Gabrielle",1995,8,11,0,23,-96.7,995,45,"Tropical Storm",72
+"Gabrielle",1995,8,11,6,23.1,-97,993,50,"Tropical Storm",72
+"Gabrielle",1995,8,11,12,23.3,-97.2,991,55,"Tropical Storm",72
+"Gabrielle",1995,8,11,18,23.6,-97.5,990,60,"Tropical Storm",72
+"Gabrielle",1995,8,12,0,23.9,-98.2,999,30,"Tropical Depression",73
+"Humberto",1995,8,22,0,13.2,-33,1009,30,"Tropical Depression",83
+"Humberto",1995,8,22,6,13.7,-34.3,1005,35,"Tropical Storm",83
+"Humberto",1995,8,22,12,14.2,-35.2,1002,45,"Tropical Storm",83
+"Humberto",1995,8,22,18,14.6,-36.2,998,50,"Tropical Storm",83
+"Humberto",1995,8,23,0,14.8,-37.3,995,60,"Tropical Storm",84
+"Humberto",1995,8,23,6,14.9,-38.3,987,65,"Hurricane",84
+"Humberto",1995,8,23,12,15,-39.2,985,70,"Hurricane",84
+"Humberto",1995,8,23,18,15.1,-40.3,982,75,"Hurricane",84
+"Humberto",1995,8,24,0,15.2,-41,975,80,"Hurricane",85
+"Humberto",1995,8,24,6,15.3,-41.9,973,85,"Hurricane",85
+"Humberto",1995,8,24,12,15.4,-42.6,971,90,"Hurricane",85
+"Humberto",1995,8,24,18,15.7,-43.2,968,95,"Hurricane",85
+"Humberto",1995,8,25,0,16.1,-43.8,970,90,"Hurricane",86
+"Humberto",1995,8,25,6,16.7,-44.4,970,90,"Hurricane",86
+"Humberto",1995,8,25,12,17.6,-45.1,970,90,"Hurricane",86
+"Humberto",1995,8,25,18,18.5,-45.9,970,90,"Hurricane",86
+"Humberto",1995,8,26,0,19.4,-46.6,970,90,"Hurricane",87
+"Humberto",1995,8,26,6,20,-47.2,970,90,"Hurricane",87
+"Humberto",1995,8,26,12,20.6,-47.6,972,85,"Hurricane",87
+"Humberto",1995,8,26,18,21.4,-48,975,80,"Hurricane",87
+"Humberto",1995,8,27,0,22.2,-48.2,980,80,"Hurricane",88
+"Humberto",1995,8,27,6,22.9,-48,982,75,"Hurricane",88
+"Humberto",1995,8,27,12,24.1,-48.2,984,70,"Hurricane",88
+"Humberto",1995,8,27,18,25.4,-48.4,986,70,"Hurricane",88
+"Humberto",1995,8,28,0,26.4,-48.6,992,65,"Hurricane",89
+"Humberto",1995,8,28,6,27.1,-48.8,994,65,"Hurricane",89
+"Humberto",1995,8,28,12,27.7,-49.1,991,65,"Hurricane",89
+"Humberto",1995,8,28,18,28.4,-49.3,987,65,"Hurricane",89
+"Humberto",1995,8,29,0,29,-49.4,985,65,"Hurricane",90
+"Humberto",1995,8,29,6,29.5,-49.4,983,70,"Hurricane",90
+"Humberto",1995,8,29,12,30,-49.2,981,75,"Hurricane",90
+"Humberto",1995,8,29,18,30.6,-48.9,979,75,"Hurricane",90
+"Humberto",1995,8,30,0,31.3,-48.3,978,80,"Hurricane",91
+"Humberto",1995,8,30,6,32.8,-47.1,976,80,"Hurricane",91
+"Humberto",1995,8,30,12,34,-45.7,974,80,"Hurricane",91
+"Humberto",1995,8,30,18,35.2,-44,971,80,"Hurricane",91
+"Humberto",1995,8,31,0,36,-41.9,970,80,"Hurricane",92
+"Humberto",1995,8,31,6,37.1,-40,971,80,"Hurricane",92
+"Humberto",1995,8,31,12,38.3,-39,985,70,"Hurricane",92
+"Humberto",1995,8,31,18,39.1,-38.2,995,60,"Tropical Storm",92
+"Humberto",1995,9,1,0,40,-37,1000,45,"Tropical Storm",93
+"Iris",1995,8,22,12,13.2,-49.3,1008,30,"Tropical Depression",83
+"Iris",1995,8,22,18,13.3,-50.6,1007,35,"Tropical Storm",83
+"Iris",1995,8,23,0,13.7,-51.8,1006,35,"Tropical Storm",84
+"Iris",1995,8,23,6,14,-52.5,1004,40,"Tropical Storm",84
+"Iris",1995,8,23,12,14.5,-53,998,55,"Tropical Storm",84
+"Iris",1995,8,23,18,15,-53.4,991,75,"Hurricane",84
+"Iris",1995,8,24,0,15.2,-53.8,992,70,"Hurricane",85
+"Iris",1995,8,24,6,15,-54.3,992,70,"Hurricane",85
+"Iris",1995,8,24,12,14.8,-55.1,992,65,"Hurricane",85
+"Iris",1995,8,24,18,14.6,-56,992,60,"Tropical Storm",85
+"Iris",1995,8,25,0,14.5,-56.8,995,55,"Tropical Storm",86
+"Iris",1995,8,25,6,14.3,-57.8,996,55,"Tropical Storm",86
+"Iris",1995,8,25,12,14.2,-58.8,999,55,"Tropical Storm",86
+"Iris",1995,8,25,18,14.2,-59.8,998,50,"Tropical Storm",86
+"Iris",1995,8,26,0,14,-60.3,1000,50,"Tropical Storm",87
+"Iris",1995,8,26,6,14.2,-60.2,999,45,"Tropical Storm",87
+"Iris",1995,8,26,12,14.6,-60.5,1000,45,"Tropical Storm",87
+"Iris",1995,8,26,18,14.9,-61,1003,40,"Tropical Storm",87
+"Iris",1995,8,27,0,15,-61.2,1006,35,"Tropical Storm",88
+"Iris",1995,8,27,6,15.6,-61.2,1005,40,"Tropical Storm",88
+"Iris",1995,8,27,12,16.2,-61.2,1002,45,"Tropical Storm",88
+"Iris",1995,8,27,18,17,-61.9,995,50,"Tropical Storm",88
+"Iris",1995,8,28,0,17.8,-62,993,55,"Tropical Storm",89
+"Iris",1995,8,28,6,18.6,-62,989,55,"Tropical Storm",89
+"Iris",1995,8,28,12,19.4,-62.1,985,60,"Tropical Storm",89
+"Iris",1995,8,28,18,20.4,-62.4,983,65,"Hurricane",89
+"Iris",1995,8,29,0,21.3,-62.5,981,70,"Hurricane",90
+"Iris",1995,8,29,6,22,-62.5,974,80,"Hurricane",90
+"Iris",1995,8,29,12,22.6,-62.5,973,75,"Hurricane",90
+"Iris",1995,8,29,18,23.1,-62.3,975,70,"Hurricane",90
+"Iris",1995,8,30,0,23.6,-62.1,976,70,"Hurricane",91
+"Iris",1995,8,30,6,23.8,-61.8,977,70,"Hurricane",91
+"Iris",1995,8,30,12,24,-61.4,972,75,"Hurricane",91
+"Iris",1995,8,30,18,24.2,-60.8,971,75,"Hurricane",91
+"Iris",1995,8,31,0,24.5,-60.1,971,75,"Hurricane",92
+"Iris",1995,8,31,6,24.7,-59.6,971,75,"Hurricane",92
+"Iris",1995,8,31,12,24.9,-59.1,971,75,"Hurricane",92
+"Iris",1995,8,31,18,25,-58.9,968,85,"Hurricane",92
+"Iris",1995,9,1,0,25.2,-58.8,967,90,"Hurricane",93
+"Iris",1995,9,1,6,25.5,-58.8,965,95,"Hurricane",93
+"Iris",1995,9,1,12,25.6,-59,967,90,"Hurricane",93
+"Iris",1995,9,1,18,25.7,-59.7,969,85,"Hurricane",93
+"Iris",1995,9,2,0,26,-60.2,971,85,"Hurricane",94
+"Iris",1995,9,2,6,26.6,-60.2,973,85,"Hurricane",94
+"Iris",1995,9,2,12,27.8,-59.9,978,80,"Hurricane",94
+"Iris",1995,9,2,18,29.1,-59.7,983,75,"Hurricane",94
+"Iris",1995,9,3,0,31.3,-59,982,75,"Hurricane",95
+"Iris",1995,9,3,6,34.2,-58.6,982,75,"Hurricane",95
+"Iris",1995,9,3,12,36.9,-57.5,982,75,"Hurricane",95
+"Iris",1995,9,3,18,39.2,-55.5,985,70,"Hurricane",95
+"Iris",1995,9,4,0,41,-52.3,987,65,"Hurricane",96
+"Iris",1995,9,4,6,43.1,-49.4,990,60,"Tropical Storm",96
+"Iris",1995,9,4,12,45,-46,995,60,"Extratropical",96
+"Iris",1995,9,4,18,47.1,-42,997,55,"Extratropical",96
+"Iris",1995,9,5,0,48.7,-35.7,999,50,"Extratropical",97
+"Iris",1995,9,5,6,48.9,-28.1,998,50,"Extratropical",97
+"Iris",1995,9,5,12,48.6,-25,987,50,"Extratropical",97
+"Iris",1995,9,5,18,48.5,-21.5,979,55,"Extratropical",97
+"Iris",1995,9,6,0,48.3,-18,972,55,"Extratropical",98
+"Iris",1995,9,6,6,48,-14.2,967,60,"Extratropical",98
+"Iris",1995,9,6,12,48,-12.6,963,60,"Extratropical",98
+"Iris",1995,9,6,18,48.2,-11.1,960,65,"Extratropical",98
+"Iris",1995,9,7,0,48.4,-8.7,957,65,"Extratropical",99
+"Iris",1995,9,7,6,48.9,-6.9,962,65,"Extratropical",99
+"Iris",1995,9,7,12,49.3,-4.4,968,60,"Extratropical",99
+"Jerry",1995,8,22,18,23.7,-78.7,1010,20,"Tropical Depression",83
+"Jerry",1995,8,23,0,24.2,-78.9,1009,25,"Tropical Depression",84
+"Jerry",1995,8,23,6,25.2,-79.2,1008,30,"Tropical Depression",84
+"Jerry",1995,8,23,12,26.4,-79.7,1008,35,"Tropical Storm",84
+"Jerry",1995,8,23,18,27,-80.2,1006,35,"Tropical Storm",84
+"Jerry",1995,8,24,0,27.3,-80.5,1005,35,"Tropical Storm",85
+"Jerry",1995,8,24,6,27.7,-81.1,1005,35,"Tropical Storm",85
+"Jerry",1995,8,24,12,28.4,-81.8,1004,35,"Tropical Storm",85
+"Jerry",1995,8,24,18,28.8,-82.6,1002,30,"Tropical Depression",85
+"Jerry",1995,8,25,0,29,-82.9,1002,30,"Tropical Depression",86
+"Jerry",1995,8,25,6,29.2,-83.3,1002,30,"Tropical Depression",86
+"Jerry",1995,8,25,12,29.8,-83.3,1004,25,"Tropical Depression",86
+"Jerry",1995,8,25,18,30.4,-83.2,1005,25,"Tropical Depression",86
+"Jerry",1995,8,26,0,30.7,-83.4,1005,25,"Tropical Depression",87
+"Jerry",1995,8,26,6,31.3,-83.7,1005,20,"Tropical Depression",87
+"Jerry",1995,8,26,12,31.8,-83.9,1005,20,"Tropical Depression",87
+"Jerry",1995,8,26,18,32.4,-84,1006,20,"Tropical Depression",87
+"Jerry",1995,8,27,0,33,-84,1006,20,"Tropical Depression",88
+"Jerry",1995,8,27,6,33.5,-83.9,1006,20,"Tropical Depression",88
+"Jerry",1995,8,27,12,33.8,-83.6,1006,20,"Tropical Depression",88
+"Jerry",1995,8,27,18,33.9,-83,1006,20,"Tropical Depression",88
+"Jerry",1995,8,28,0,33.8,-82.4,1006,20,"Tropical Depression",89
+"Karen",1995,8,26,12,15.4,-32.7,1009,30,"Tropical Depression",87
+"Karen",1995,8,26,18,15.5,-34,1008,30,"Tropical Depression",87
+"Karen",1995,8,27,0,15.6,-35.4,1008,30,"Tropical Depression",88
+"Karen",1995,8,27,6,15.8,-36.7,1007,30,"Tropical Depression",88
+"Karen",1995,8,27,12,16.1,-38,1007,30,"Tropical Depression",88
+"Karen",1995,8,27,18,16.3,-39.3,1006,30,"Tropical Depression",88
+"Karen",1995,8,28,0,16.5,-40.4,1006,30,"Tropical Depression",89
+"Karen",1995,8,28,6,16.6,-41.5,1005,35,"Tropical Storm",89
+"Karen",1995,8,28,12,16.9,-42.6,1003,40,"Tropical Storm",89
+"Karen",1995,8,28,18,17.4,-43.6,1001,45,"Tropical Storm",89
+"Karen",1995,8,29,0,17.7,-44.6,1000,45,"Tropical Storm",90
+"Karen",1995,8,29,6,17.8,-45.5,1000,45,"Tropical Storm",90
+"Karen",1995,8,29,12,18.1,-46.4,1000,45,"Tropical Storm",90
+"Karen",1995,8,29,18,18.5,-47.3,1001,45,"Tropical Storm",90
+"Karen",1995,8,30,0,19,-48.2,1002,45,"Tropical Storm",91
+"Karen",1995,8,30,6,19.2,-49.1,1003,40,"Tropical Storm",91
+"Karen",1995,8,30,12,19.4,-49.9,1003,40,"Tropical Storm",91
+"Karen",1995,8,30,18,19.6,-50.6,1004,40,"Tropical Storm",91
+"Karen",1995,8,31,0,20,-51.1,1004,40,"Tropical Storm",92
+"Karen",1995,8,31,6,20.3,-51.6,1003,40,"Tropical Storm",92
+"Karen",1995,8,31,12,20.4,-51.9,1002,40,"Tropical Storm",92
+"Karen",1995,8,31,18,20.8,-52.1,1001,40,"Tropical Storm",92
+"Karen",1995,9,1,0,21.6,-52.3,1001,40,"Tropical Storm",93
+"Karen",1995,9,1,6,22.9,-52.7,1001,40,"Tropical Storm",93
+"Karen",1995,9,1,12,24.6,-53.3,1001,35,"Tropical Storm",93
+"Karen",1995,9,1,18,26.6,-54.3,1001,35,"Tropical Storm",93
+"Karen",1995,9,2,0,28.4,-55.6,1001,35,"Tropical Storm",94
+"Karen",1995,9,2,6,29.9,-57.1,1001,35,"Tropical Storm",94
+"Karen",1995,9,2,12,31.2,-59.2,1001,30,"Tropical Depression",94
+"Karen",1995,9,2,18,32.4,-61.9,1001,30,"Tropical Depression",94
+"Karen",1995,9,3,0,33,-61.5,1002,30,"Tropical Depression",95
+"Luis",1995,8,27,12,11.3,-22.7,1010,25,"Tropical Depression",88
+"Luis",1995,8,27,18,11.1,-23.8,1010,25,"Tropical Depression",88
+"Luis",1995,8,28,0,11,-24.3,1009,25,"Tropical Depression",89
+"Luis",1995,8,28,6,10.9,-24.9,1009,25,"Tropical Depression",89
+"Luis",1995,8,28,12,11.1,-26,1008,30,"Tropical Depression",89
+"Luis",1995,8,28,18,11.4,-27.5,1008,30,"Tropical Depression",89
+"Luis",1995,8,29,0,11.6,-29,1005,35,"Tropical Storm",90
+"Luis",1995,8,29,6,11.8,-30.5,1000,40,"Tropical Storm",90
+"Luis",1995,8,29,12,12.2,-31.9,1000,40,"Tropical Storm",90
+"Luis",1995,8,29,18,12.7,-33.1,1003,40,"Tropical Storm",90
+"Luis",1995,8,30,0,13,-34.2,1005,40,"Tropical Storm",91
+"Luis",1995,8,30,6,13.2,-35.3,1005,45,"Tropical Storm",91
+"Luis",1995,8,30,12,13.4,-36.2,1005,55,"Tropical Storm",91
+"Luis",1995,8,30,18,13.7,-37,1002,65,"Hurricane",91
+"Luis",1995,8,31,0,14,-37.9,998,70,"Hurricane",92
+"Luis",1995,8,31,6,14.3,-38.8,992,80,"Hurricane",92
+"Luis",1995,8,31,12,14.6,-39.7,979,85,"Hurricane",92
+"Luis",1995,8,31,18,15,-40.7,971,95,"Hurricane",92
+"Luis",1995,9,1,0,15.4,-41.7,965,100,"Hurricane",93
+"Luis",1995,9,1,6,15.8,-42.6,958,105,"Hurricane",93
+"Luis",1995,9,1,12,16.2,-43.6,950,115,"Hurricane",93
+"Luis",1995,9,1,18,16.5,-44.7,948,115,"Hurricane",93
+"Luis",1995,9,2,0,16.8,-45.8,948,115,"Hurricane",94
+"Luis",1995,9,2,6,17,-46.9,948,115,"Hurricane",94
+"Luis",1995,9,2,12,17.2,-48,948,115,"Hurricane",94
+"Luis",1995,9,2,18,17.3,-49.2,948,115,"Hurricane",94
+"Luis",1995,9,3,0,17.3,-50.5,948,115,"Hurricane",95
+"Luis",1995,9,3,6,17.4,-51.8,948,120,"Hurricane",95
+"Luis",1995,9,3,12,17.3,-53.1,948,120,"Hurricane",95
+"Luis",1995,9,3,18,17.3,-54.3,945,120,"Hurricane",95
+"Luis",1995,9,4,0,17.1,-55.6,942,120,"Hurricane",96
+"Luis",1995,9,4,6,17,-56.8,940,120,"Hurricane",96
+"Luis",1995,9,4,12,17,-58,945,120,"Hurricane",96
+"Luis",1995,9,4,18,17,-59.1,943,120,"Hurricane",96
+"Luis",1995,9,5,0,17.1,-60.1,940,120,"Hurricane",97
+"Luis",1995,9,5,6,17.3,-61,939,120,"Hurricane",97
+"Luis",1995,9,5,12,17.5,-61.7,945,115,"Hurricane",97
+"Luis",1995,9,5,18,18,-62.4,944,115,"Hurricane",97
+"Luis",1995,9,6,0,18.4,-63,942,115,"Hurricane",98
+"Luis",1995,9,6,6,18.9,-63.6,939,115,"Hurricane",98
+"Luis",1995,9,6,12,19.4,-64.2,943,115,"Hurricane",98
+"Luis",1995,9,6,18,20.1,-64.9,940,115,"Hurricane",98
+"Luis",1995,9,7,0,20.7,-65.4,938,115,"Hurricane",99
+"Luis",1995,9,7,6,21.3,-66,936,115,"Hurricane",99
+"Luis",1995,9,7,12,22,-66.6,941,110,"Hurricane",99
+"Luis",1995,9,7,18,22.8,-67.2,938,110,"Hurricane",99
+"Luis",1995,9,8,0,24.3,-68,935,110,"Hurricane",100
+"Luis",1995,9,8,6,25.8,-68.8,939,110,"Hurricane",100
+"Luis",1995,9,8,12,26.4,-69.3,941,105,"Hurricane",100
+"Luis",1995,9,8,18,26.5,-69.5,944,100,"Hurricane",100
+"Luis",1995,9,9,0,27.1,-69.8,945,95,"Hurricane",101
+"Luis",1995,9,9,6,29.1,-69.5,949,90,"Hurricane",101
+"Luis",1995,9,9,12,31,-69.1,952,85,"Hurricane",101
+"Luis",1995,9,9,18,32.7,-68.6,955,85,"Hurricane",101
+"Luis",1995,9,10,0,34.5,-67.2,959,85,"Hurricane",102
+"Luis",1995,9,10,6,36.5,-65.4,963,85,"Hurricane",102
+"Luis",1995,9,10,12,38.4,-63.7,961,80,"Hurricane",102
+"Luis",1995,9,10,18,40.9,-60.9,966,80,"Hurricane",102
+"Luis",1995,9,11,0,43.9,-57.7,965,80,"Hurricane",103
+"Luis",1995,9,11,6,47.1,-54.2,963,80,"Hurricane",103
+"Luis",1995,9,11,12,51.5,-48.5,960,70,"Extratropical",103
+"Luis",1995,9,11,18,55,-46,958,60,"Extratropical",103
+"Luis",1995,9,12,0,57,-45,955,60,"Extratropical",104
+"Luis",1995,9,12,6,58,-44,950,60,"Extratropical",104
+"Luis",1995,9,12,12,59,-42,955,60,"Extratropical",104
+"Luis",1995,9,12,18,60,-40,960,50,"Extratropical",104
+"Marilyn",1995,9,12,18,11.7,-50.9,1006,30,"Tropical Depression",104
+"Marilyn",1995,9,13,0,11.8,-52.7,1004,35,"Tropical Storm",105
+"Marilyn",1995,9,13,6,11.9,-54.3,999,45,"Tropical Storm",105
+"Marilyn",1995,9,13,12,12.1,-55.4,995,55,"Tropical Storm",105
+"Marilyn",1995,9,13,18,12.5,-56.5,990,60,"Tropical Storm",105
+"Marilyn",1995,9,14,0,13,-57.7,988,65,"Hurricane",106
+"Marilyn",1995,9,14,6,13.5,-58.8,987,70,"Hurricane",106
+"Marilyn",1995,9,14,12,14.2,-59.8,986,70,"Hurricane",106
+"Marilyn",1995,9,14,18,15,-60.8,983,70,"Hurricane",106
+"Marilyn",1995,9,15,0,15.8,-61.7,985,75,"Hurricane",107
+"Marilyn",1995,9,15,6,16.5,-62.8,977,80,"Hurricane",107
+"Marilyn",1995,9,15,12,16.8,-63.5,974,80,"Hurricane",107
+"Marilyn",1995,9,15,18,17.4,-64.2,969,85,"Hurricane",107
+"Marilyn",1995,9,16,0,17.9,-64.7,962,90,"Hurricane",108
+"Marilyn",1995,9,16,6,18.5,-65.2,952,95,"Hurricane",108
+"Marilyn",1995,9,16,12,19,-65.8,951,95,"Hurricane",108
+"Marilyn",1995,9,16,18,19.7,-66.4,950,100,"Hurricane",108
+"Marilyn",1995,9,17,0,20.4,-67,950,100,"Hurricane",109
+"Marilyn",1995,9,17,6,21.2,-67.5,953,95,"Hurricane",109
+"Marilyn",1995,9,17,12,22,-68.2,965,80,"Hurricane",109
+"Marilyn",1995,9,17,18,22.9,-68.8,968,80,"Hurricane",109
+"Marilyn",1995,9,18,0,24,-69.1,963,85,"Hurricane",110
+"Marilyn",1995,9,18,6,25,-69.4,965,85,"Hurricane",110
+"Marilyn",1995,9,18,12,26.1,-69.5,966,85,"Hurricane",110
+"Marilyn",1995,9,18,18,27.2,-69.3,966,80,"Hurricane",110
+"Marilyn",1995,9,19,0,28.4,-69,969,80,"Hurricane",111
+"Marilyn",1995,9,19,6,29.6,-68.6,970,75,"Hurricane",111
+"Marilyn",1995,9,19,12,31,-68.2,976,75,"Hurricane",111
+"Marilyn",1995,9,19,18,32.6,-67.7,974,80,"Hurricane",111
+"Marilyn",1995,9,20,0,34.2,-66.8,974,80,"Hurricane",112
+"Marilyn",1995,9,20,6,35.8,-66.1,976,75,"Hurricane",112
+"Marilyn",1995,9,20,12,37.3,-65.2,978,70,"Hurricane",112
+"Marilyn",1995,9,20,18,38.3,-64.3,980,70,"Hurricane",112
+"Marilyn",1995,9,21,0,39,-63.3,982,65,"Hurricane",113
+"Marilyn",1995,9,21,6,39.3,-61.9,984,65,"Hurricane",113
+"Marilyn",1995,9,21,12,39.4,-60.6,987,65,"Hurricane",113
+"Marilyn",1995,9,21,18,39.6,-59.3,990,60,"Tropical Storm",113
+"Marilyn",1995,9,22,0,39.8,-58.3,992,55,"Tropical Storm",114
+"Marilyn",1995,9,22,6,39.7,-57.6,994,55,"Extratropical",114
+"Marilyn",1995,9,22,12,39.4,-57.1,996,55,"Extratropical",114
+"Marilyn",1995,9,22,18,39,-56.8,998,55,"Extratropical",114
+"Marilyn",1995,9,23,0,38.4,-56.7,1000,50,"Extratropical",115
+"Marilyn",1995,9,23,6,37.8,-56.7,1001,45,"Extratropical",115
+"Marilyn",1995,9,23,12,37.1,-56.7,1002,35,"Extratropical",115
+"Marilyn",1995,9,23,18,36.6,-56.8,1003,30,"Extratropical",115
+"Marilyn",1995,9,24,0,35.9,-57.2,1004,30,"Extratropical",116
+"Marilyn",1995,9,24,6,35,-58.1,1004,30,"Extratropical",116
+"Marilyn",1995,9,24,12,33.8,-57.7,1005,30,"Extratropical",116
+"Marilyn",1995,9,24,18,33,-57,1005,30,"Extratropical",116
+"Marilyn",1995,9,25,0,32.6,-56.6,1005,30,"Extratropical",117
+"Marilyn",1995,9,25,6,32,-56.3,1005,30,"Extratropical",117
+"Marilyn",1995,9,25,12,31.1,-56,1005,30,"Extratropical",117
+"Marilyn",1995,9,25,18,30.9,-55.1,1005,30,"Extratropical",117
+"Marilyn",1995,9,26,0,31,-54.7,1006,25,"Extratropical",118
+"Marilyn",1995,9,26,6,31.1,-54.2,1006,25,"Extratropical",118
+"Marilyn",1995,9,26,12,31.3,-53.8,1007,25,"Extratropical",118
+"Marilyn",1995,9,26,18,31.5,-53.4,1008,25,"Extratropical",118
+"Marilyn",1995,9,27,0,31.7,-53.1,1009,20,"Extratropical",119
+"Marilyn",1995,9,27,6,31.8,-52.6,1010,20,"Extratropical",119
+"Marilyn",1995,9,27,12,32.2,-52.1,1011,20,"Extratropical",119
+"Marilyn",1995,9,27,18,32.6,-51.7,1012,20,"Extratropical",119
+"Marilyn",1995,9,28,0,32.9,-51.4,1013,20,"Extratropical",120
+"Marilyn",1995,9,28,6,33.2,-51.1,1014,20,"Extratropical",120
+"Marilyn",1995,9,28,12,33.6,-50.9,1014,20,"Extratropical",120
+"Marilyn",1995,9,28,18,34,-50.6,1013,20,"Extratropical",120
+"Marilyn",1995,9,29,0,34.3,-49.9,1013,20,"Extratropical",121
+"Marilyn",1995,9,29,6,34.8,-49.1,1014,20,"Extratropical",121
+"Marilyn",1995,9,29,12,35.3,-48.2,1014,20,"Extratropical",121
+"Marilyn",1995,9,29,18,35.3,-47.2,1014,20,"Extratropical",121
+"Marilyn",1995,9,30,0,34.9,-47.7,1015,20,"Extratropical",122
+"Marilyn",1995,9,30,6,34.6,-48.5,1015,20,"Extratropical",122
+"Marilyn",1995,9,30,12,34.6,-49.3,1016,20,"Extratropical",122
+"Marilyn",1995,9,30,18,34.7,-50,1016,20,"Extratropical",122
+"Marilyn",1995,10,1,0,34.8,-50.5,1016,20,"Extratropical",123
+"Marilyn",1995,10,1,6,35,-51,1016,20,"Extratropical",123
+"Marilyn",1995,10,1,12,35.2,-51.5,1016,20,"Extratropical",123
+"Marilyn",1995,10,1,18,35.3,-51.9,1016,20,"Extratropical",123
+"Noel",1995,9,26,18,10.4,-37.7,1007,25,"Tropical Depression",118
+"Noel",1995,9,27,0,10.9,-39,1006,30,"Tropical Depression",119
+"Noel",1995,9,27,6,11.4,-40,1005,30,"Tropical Depression",119
+"Noel",1995,9,27,12,12.1,-40.6,1005,35,"Tropical Storm",119
+"Noel",1995,9,27,18,12.8,-41,1002,40,"Tropical Storm",119
+"Noel",1995,9,28,0,13.5,-41.5,1000,45,"Tropical Storm",120
+"Noel",1995,9,28,6,14,-42,998,50,"Tropical Storm",120
+"Noel",1995,9,28,12,14.5,-42.4,995,60,"Tropical Storm",120
+"Noel",1995,9,28,18,15.2,-42.6,987,65,"Hurricane",120
+"Noel",1995,9,29,0,15.9,-42.6,987,65,"Hurricane",121
+"Noel",1995,9,29,6,16.5,-42.2,987,65,"Hurricane",121
+"Noel",1995,9,29,12,17.4,-41.9,987,65,"Hurricane",121
+"Noel",1995,9,29,18,18.2,-41.2,987,65,"Hurricane",121
+"Noel",1995,9,30,0,18.9,-40.6,987,65,"Hurricane",122
+"Noel",1995,9,30,6,19.4,-40.3,987,65,"Hurricane",122
+"Noel",1995,9,30,12,19.7,-40.2,990,60,"Tropical Storm",122
+"Noel",1995,9,30,18,19.8,-40.1,993,55,"Tropical Storm",122
+"Noel",1995,10,1,0,19.9,-40.2,994,50,"Tropical Storm",123
+"Noel",1995,10,1,6,20,-40.3,995,50,"Tropical Storm",123
+"Noel",1995,10,1,12,20.1,-40.4,1000,45,"Tropical Storm",123
+"Noel",1995,10,1,18,20.5,-40.4,1000,45,"Tropical Storm",123
+"Noel",1995,10,2,0,20.9,-40.2,1000,45,"Tropical Storm",124
+"Noel",1995,10,2,6,21.5,-40.1,1000,45,"Tropical Storm",124
+"Noel",1995,10,2,12,22.4,-40,1000,45,"Tropical Storm",124
+"Noel",1995,10,2,18,23.5,-40.1,1000,45,"Tropical Storm",124
+"Noel",1995,10,3,0,24.7,-40.3,1000,45,"Tropical Storm",125
+"Noel",1995,10,3,6,25.7,-41,1000,40,"Tropical Storm",125
+"Noel",1995,10,3,12,26.7,-41.8,1000,45,"Tropical Storm",125
+"Noel",1995,10,3,18,27.6,-42.4,1000,45,"Tropical Storm",125
+"Noel",1995,10,4,0,28.5,-42.8,999,45,"Tropical Storm",126
+"Noel",1995,10,4,6,29.5,-43.1,998,50,"Tropical Storm",126
+"Noel",1995,10,4,12,30.4,-43.1,997,50,"Tropical Storm",126
+"Noel",1995,10,4,18,31.3,-43,994,55,"Tropical Storm",126
+"Noel",1995,10,5,0,31.9,-42.7,987,65,"Hurricane",127
+"Noel",1995,10,5,6,32.2,-42.3,987,65,"Hurricane",127
+"Noel",1995,10,5,12,32.4,-41.5,987,65,"Hurricane",127
+"Noel",1995,10,5,18,32.4,-40.5,987,65,"Hurricane",127
+"Noel",1995,10,6,0,32.5,-39.4,990,60,"Tropical Storm",128
+"Noel",1995,10,6,6,32.5,-38.2,994,55,"Tropical Storm",128
+"Noel",1995,10,6,12,32.5,-36.9,997,50,"Tropical Storm",128
+"Noel",1995,10,6,18,32.7,-35.3,1001,40,"Tropical Storm",128
+"Noel",1995,10,7,0,33.2,-33.5,1004,35,"Tropical Storm",129
+"Noel",1995,10,7,6,34,-31,1000,30,"Extratropical",129
+"Noel",1995,10,7,12,35,-29.5,997,30,"Extratropical",129
+"Noel",1995,10,7,18,36,-28,995,30,"Extratropical",129
+"Opal",1995,9,27,18,19.1,-87.3,1004,25,"Tropical Depression",119
+"Opal",1995,9,28,0,19.4,-87.5,1004,25,"Tropical Depression",120
+"Opal",1995,9,28,6,19.4,-87.9,1004,25,"Tropical Depression",120
+"Opal",1995,9,28,12,19.3,-88.2,1003,25,"Tropical Depression",120
+"Opal",1995,9,28,18,19.3,-88.4,1003,25,"Tropical Depression",120
+"Opal",1995,9,29,0,19.4,-88.4,1003,25,"Tropical Depression",121
+"Opal",1995,9,29,6,19.5,-88.4,1003,25,"Tropical Depression",121
+"Opal",1995,9,29,12,19.6,-88.3,1003,25,"Tropical Depression",121
+"Opal",1995,9,29,18,19.8,-88.2,1003,30,"Tropical Depression",121
+"Opal",1995,9,30,0,20.1,-88.2,1002,30,"Tropical Depression",122
+"Opal",1995,9,30,6,20.6,-88.3,1002,30,"Tropical Depression",122
+"Opal",1995,9,30,12,21.1,-88.5,1001,35,"Tropical Storm",122
+"Opal",1995,9,30,18,21.4,-89.1,1000,40,"Tropical Storm",122
+"Opal",1995,10,1,0,21.3,-89.9,994,45,"Tropical Storm",123
+"Opal",1995,10,1,6,21.1,-90.7,987,45,"Tropical Storm",123
+"Opal",1995,10,1,12,20.9,-91.2,986,45,"Tropical Storm",123
+"Opal",1995,10,1,18,20.8,-91.6,985,50,"Tropical Storm",123
+"Opal",1995,10,2,0,20.7,-91.9,984,55,"Tropical Storm",124
+"Opal",1995,10,2,6,20.8,-92.1,980,60,"Tropical Storm",124
+"Opal",1995,10,2,12,21,-92.3,973,65,"Hurricane",124
+"Opal",1995,10,2,18,21.2,-92.3,972,65,"Hurricane",124
+"Opal",1995,10,3,0,21.7,-92.2,970,70,"Hurricane",125
+"Opal",1995,10,3,6,22.2,-92,969,75,"Hurricane",125
+"Opal",1995,10,3,12,22.8,-91.6,968,80,"Hurricane",125
+"Opal",1995,10,3,18,23.5,-91,965,85,"Hurricane",125
+"Opal",1995,10,4,0,24.5,-90.1,953,100,"Hurricane",126
+"Opal",1995,10,4,6,25.9,-89.4,935,110,"Hurricane",126
+"Opal",1995,10,4,12,27.3,-88.5,919,130,"Hurricane",126
+"Opal",1995,10,4,18,29,-87.7,938,110,"Hurricane",126
+"Opal",1995,10,5,0,31,-86.8,950,80,"Hurricane",127
+"Opal",1995,10,5,6,33.2,-86.2,974,50,"Tropical Storm",127
+"Opal",1995,10,5,12,35.4,-85.7,982,30,"Tropical Depression",127
+"Opal",1995,10,5,18,38.5,-83.5,986,40,"Extratropical",127
+"Opal",1995,10,6,0,40.5,-82.3,989,40,"Extratropical",128
+"Opal",1995,10,6,6,42,-80.5,991,40,"Extratropical",128
+"Opal",1995,10,6,12,43.3,-78.4,997,35,"Extratropical",128
+"Opal",1995,10,6,18,44.5,-76.5,1002,30,"Extratropical",128
+"Pablo",1995,10,4,18,8.3,-31.4,1009,30,"Tropical Depression",126
+"Pablo",1995,10,5,0,8.4,-32.8,1009,30,"Tropical Depression",127
+"Pablo",1995,10,5,6,9.3,-35.1,1008,30,"Tropical Depression",127
+"Pablo",1995,10,5,12,10.2,-37.5,1006,35,"Tropical Storm",127
+"Pablo",1995,10,5,18,11.1,-40.1,1003,40,"Tropical Storm",127
+"Pablo",1995,10,6,0,11.5,-41.9,997,50,"Tropical Storm",128
+"Pablo",1995,10,6,6,12,-44,994,50,"Tropical Storm",128
+"Pablo",1995,10,6,12,12.2,-45.8,995,50,"Tropical Storm",128
+"Pablo",1995,10,6,18,12.4,-47.5,998,45,"Tropical Storm",128
+"Pablo",1995,10,7,0,12.5,-48.8,1000,45,"Tropical Storm",129
+"Pablo",1995,10,7,6,12.7,-50,1000,45,"Tropical Storm",129
+"Pablo",1995,10,7,12,12.8,-51.1,1000,45,"Tropical Storm",129
+"Pablo",1995,10,7,18,12.6,-52.3,1000,45,"Tropical Storm",129
+"Pablo",1995,10,8,0,12.5,-53.9,1001,45,"Tropical Storm",130
+"Pablo",1995,10,8,6,12.3,-55.7,1007,45,"Tropical Storm",130
+"Pablo",1995,10,8,12,12.1,-57.5,1009,30,"Tropical Depression",130
+"Roxanne",1995,10,7,18,14,-82.1,1005,25,"Tropical Depression",129
+"Roxanne",1995,10,8,0,14.2,-82.7,1005,25,"Tropical Depression",130
+"Roxanne",1995,10,8,6,14.8,-83,1005,25,"Tropical Depression",130
+"Roxanne",1995,10,8,12,15,-83.2,1005,25,"Tropical Depression",130
+"Roxanne",1995,10,8,18,15.7,-83.2,1004,30,"Tropical Depression",130
+"Roxanne",1995,10,9,0,16.5,-83.1,1002,35,"Tropical Storm",131
+"Roxanne",1995,10,9,6,17.2,-83,1001,40,"Tropical Storm",131
+"Roxanne",1995,10,9,12,17.9,-82.9,999,45,"Tropical Storm",131
+"Roxanne",1995,10,9,18,18.4,-82.9,995,50,"Tropical Storm",131
+"Roxanne",1995,10,10,0,18.9,-83.7,989,60,"Tropical Storm",132
+"Roxanne",1995,10,10,6,19.2,-84.3,985,70,"Hurricane",132
+"Roxanne",1995,10,10,12,19.4,-85,972,80,"Hurricane",132
+"Roxanne",1995,10,10,18,19.9,-86,966,95,"Hurricane",132
+"Roxanne",1995,10,11,0,20,-87,958,100,"Hurricane",133
+"Roxanne",1995,10,11,6,20,-88.1,970,90,"Hurricane",133
+"Roxanne",1995,10,11,12,19.9,-89.1,983,75,"Hurricane",133
+"Roxanne",1995,10,11,18,19.7,-90,987,70,"Hurricane",133
+"Roxanne",1995,10,12,0,19.5,-90.8,990,65,"Hurricane",134
+"Roxanne",1995,10,12,6,19.5,-91.5,992,65,"Hurricane",134
+"Roxanne",1995,10,12,12,19.5,-92.2,994,55,"Tropical Storm",134
+"Roxanne",1995,10,12,18,19.7,-92.6,995,55,"Tropical Storm",134
+"Roxanne",1995,10,13,0,20.1,-92.8,993,55,"Tropical Storm",135
+"Roxanne",1995,10,13,6,20.5,-93.1,993,55,"Tropical Storm",135
+"Roxanne",1995,10,13,12,21,-93.6,992,55,"Tropical Storm",135
+"Roxanne",1995,10,13,18,21.4,-93.9,988,55,"Tropical Storm",135
+"Roxanne",1995,10,14,0,21.8,-93.9,982,55,"Tropical Storm",136
+"Roxanne",1995,10,14,6,22.2,-93.9,981,60,"Tropical Storm",136
+"Roxanne",1995,10,14,12,22.3,-93.8,980,65,"Hurricane",136
+"Roxanne",1995,10,14,18,22.3,-93.3,980,70,"Hurricane",136
+"Roxanne",1995,10,15,0,21.8,-92.9,979,70,"Hurricane",137
+"Roxanne",1995,10,15,6,21.4,-92.4,979,75,"Hurricane",137
+"Roxanne",1995,10,15,12,21,-91.9,980,75,"Hurricane",137
+"Roxanne",1995,10,15,18,20.6,-91.6,980,75,"Hurricane",137
+"Roxanne",1995,10,16,0,20.4,-91.5,981,75,"Hurricane",138
+"Roxanne",1995,10,16,6,20.3,-91.7,984,70,"Hurricane",138
+"Roxanne",1995,10,16,12,20.3,-92,985,65,"Hurricane",138
+"Roxanne",1995,10,16,18,20.4,-92.2,987,65,"Hurricane",138
+"Roxanne",1995,10,17,0,20.6,-92.4,991,65,"Hurricane",139
+"Roxanne",1995,10,17,6,20.9,-92.6,995,60,"Tropical Storm",139
+"Roxanne",1995,10,17,12,21.2,-92.9,998,55,"Tropical Storm",139
+"Roxanne",1995,10,17,18,21.3,-93.1,1000,50,"Tropical Storm",139
+"Roxanne",1995,10,18,0,21.5,-93.3,1003,45,"Tropical Storm",140
+"Roxanne",1995,10,18,6,21.8,-93.6,1004,40,"Tropical Storm",140
+"Roxanne",1995,10,18,12,22.2,-94.2,1005,35,"Tropical Storm",140
+"Roxanne",1995,10,18,18,22.3,-94.7,1008,35,"Tropical Storm",140
+"Roxanne",1995,10,19,0,22.3,-95.1,1009,30,"Tropical Depression",141
+"Roxanne",1995,10,19,6,22.4,-95.4,1009,30,"Tropical Depression",141
+"Roxanne",1995,10,19,12,22.3,-95.5,1009,30,"Tropical Depression",141
+"Roxanne",1995,10,19,18,22.3,-95.6,1009,30,"Tropical Depression",141
+"Roxanne",1995,10,20,0,22.4,-95.6,1009,30,"Tropical Depression",142
+"Roxanne",1995,10,20,6,22,-95.5,1009,30,"Tropical Depression",142
+"Roxanne",1995,10,20,12,21.5,-95.5,1009,25,"Tropical Depression",142
+"Roxanne",1995,10,20,18,20.5,-95.5,1010,25,"Tropical Depression",142
+"Roxanne",1995,10,21,0,19.5,-96,1011,25,"Extratropical",143
+"Sebastien",1995,10,20,12,13.8,-53.8,1006,25,"Tropical Depression",142
+"Sebastien",1995,10,20,18,14.8,-54.5,1005,30,"Tropical Depression",142
+"Sebastien",1995,10,21,0,16,-55.1,1004,35,"Tropical Storm",143
+"Sebastien",1995,10,21,6,17.6,-55.9,1004,35,"Tropical Storm",143
+"Sebastien",1995,10,21,12,19,-56.3,1005,40,"Tropical Storm",143
+"Sebastien",1995,10,21,18,20.1,-56.6,1007,40,"Tropical Storm",143
+"Sebastien",1995,10,22,0,21.2,-56.7,1007,40,"Tropical Storm",144
+"Sebastien",1995,10,22,6,21.8,-56.8,1006,40,"Tropical Storm",144
+"Sebastien",1995,10,22,12,22,-57.7,1004,45,"Tropical Storm",144
+"Sebastien",1995,10,22,18,21.5,-58.5,1001,55,"Tropical Storm",144
+"Sebastien",1995,10,23,0,20.9,-59.5,1001,50,"Tropical Storm",145
+"Sebastien",1995,10,23,6,20.1,-60.4,1002,45,"Tropical Storm",145
+"Sebastien",1995,10,23,12,19.4,-61,1003,40,"Tropical Storm",145
+"Sebastien",1995,10,23,18,19,-61.7,1004,35,"Tropical Storm",145
+"Sebastien",1995,10,24,0,18.6,-62.3,1005,30,"Tropical Depression",146
+"Sebastien",1995,10,24,6,18.3,-63,1007,30,"Tropical Depression",146
+"Sebastien",1995,10,24,12,18,-63.7,1007,30,"Tropical Depression",146
+"Sebastien",1995,10,24,18,17.7,-64.3,1007,25,"Tropical Depression",146
+"Sebastien",1995,10,25,0,17.5,-64.5,1008,20,"Extratropical",147
+"Tanya",1995,10,27,0,24.6,-59.2,1004,30,"Tropical Depression",149
+"Tanya",1995,10,27,6,25.3,-58.6,1002,30,"Tropical Depression",149
+"Tanya",1995,10,27,12,26.2,-57.9,1001,35,"Tropical Storm",149
+"Tanya",1995,10,27,18,27.1,-57.1,998,40,"Tropical Storm",149
+"Tanya",1995,10,28,0,27.2,-56.6,997,45,"Tropical Storm",150
+"Tanya",1995,10,28,6,27.3,-56.2,996,45,"Tropical Storm",150
+"Tanya",1995,10,28,12,27.2,-55.7,995,50,"Tropical Storm",150
+"Tanya",1995,10,28,18,27.5,-54.7,992,55,"Tropical Storm",150
+"Tanya",1995,10,29,0,28.4,-54.2,990,60,"Tropical Storm",151
+"Tanya",1995,10,29,6,29.6,-54.2,987,60,"Tropical Storm",151
+"Tanya",1995,10,29,12,30.5,-54.9,983,65,"Hurricane",151
+"Tanya",1995,10,29,18,31.2,-55.3,982,70,"Hurricane",151
+"Tanya",1995,10,30,0,31.8,-54.8,980,70,"Hurricane",152
+"Tanya",1995,10,30,6,32.6,-54.2,980,70,"Hurricane",152
+"Tanya",1995,10,30,12,33.1,-53.4,979,70,"Hurricane",152
+"Tanya",1995,10,30,18,33.8,-51.8,977,75,"Hurricane",152
+"Tanya",1995,10,31,0,34.6,-50.1,975,75,"Hurricane",153
+"Tanya",1995,10,31,6,35.4,-48.3,972,75,"Hurricane",153
+"Tanya",1995,10,31,12,36.2,-45.8,973,75,"Hurricane",153
+"Tanya",1995,10,31,18,37.1,-43.2,973,75,"Hurricane",153
+"Tanya",1995,11,1,0,37.8,-40.4,974,70,"Hurricane",154
+"Tanya",1995,11,1,6,37.7,-37.9,974,65,"Hurricane",154
+"Tanya",1995,11,1,12,37.4,-35.4,974,60,"Tropical Storm",154
+"Tanya",1995,11,1,18,37.7,-31.8,972,55,"Tropical Storm",154
+"Tanya",1995,11,2,0,39.2,-28.2,970,55,"Extratropical",155
+"Tanya",1995,11,2,6,41.8,-25.7,971,55,"Extratropical",155
+"Tanya",1995,11,2,12,44.5,-24,974,50,"Extratropical",155
+"Tanya",1995,11,2,18,47.5,-23,976,45,"Extratropical",155
+"Tanya",1995,11,3,0,50.5,-24,977,40,"Extratropical",156
+"Arthur",1996,6,17,18,26.8,-77.8,1010,25,"Tropical Depression",17
+"Arthur",1996,6,18,0,27.7,-78.3,1010,25,"Tropical Depression",18
+"Arthur",1996,6,18,6,28.6,-78.8,1009,25,"Tropical Depression",18
+"Arthur",1996,6,18,12,29.7,-78.8,1008,25,"Tropical Depression",18
+"Arthur",1996,6,18,18,30.6,-78.7,1008,30,"Tropical Depression",18
+"Arthur",1996,6,19,0,31.5,-78.7,1004,35,"Tropical Storm",19
+"Arthur",1996,6,19,6,32.3,-78.6,1006,35,"Tropical Storm",19
+"Arthur",1996,6,19,12,33.2,-78.1,1005,40,"Tropical Storm",19
+"Arthur",1996,6,19,18,33.9,-77.3,1005,40,"Tropical Storm",19
+"Arthur",1996,6,20,0,34.7,-76.4,1005,35,"Tropical Storm",20
+"Arthur",1996,6,20,6,35.5,-75.4,1005,35,"Tropical Storm",20
+"Arthur",1996,6,20,12,36.4,-74.1,1005,30,"Tropical Depression",20
+"Arthur",1996,6,20,18,36.9,-72.5,1004,30,"Tropical Depression",20
+"Arthur",1996,6,21,0,37.3,-70.3,1003,30,"Tropical Depression",21
+"Arthur",1996,6,21,6,37.3,-66.5,1002,30,"Tropical Depression",21
+"Arthur",1996,6,21,12,37.5,-62,1001,35,"Extratropical",21
+"Arthur",1996,6,21,18,37.8,-56.2,1000,45,"Extratropical",21
+"Arthur",1996,6,22,0,38.5,-50.5,998,45,"Extratropical",22
+"Arthur",1996,6,22,6,40,-47,995,45,"Extratropical",22
+"Arthur",1996,6,22,12,41,-43,993,45,"Extratropical",22
+"Arthur",1996,6,22,18,42.5,-40,992,45,"Extratropical",22
+"Arthur",1996,6,23,0,44,-37,996,45,"Extratropical",23
+"Bertha",1996,7,5,0,9.8,-34,1009,30,"Tropical Depression",35
+"Bertha",1996,7,5,6,10.2,-36.3,1008,30,"Tropical Depression",35
+"Bertha",1996,7,5,12,11,-39,1007,35,"Tropical Storm",35
+"Bertha",1996,7,5,18,12,-41.2,1006,35,"Tropical Storm",35
+"Bertha",1996,7,6,0,12.7,-43.9,1005,35,"Tropical Storm",36
+"Bertha",1996,7,6,6,13.1,-46.6,1004,35,"Tropical Storm",36
+"Bertha",1996,7,6,12,13.7,-48.7,1002,40,"Tropical Storm",36
+"Bertha",1996,7,6,18,14.2,-51,1000,45,"Tropical Storm",36
+"Bertha",1996,7,7,0,14.9,-52.9,999,50,"Tropical Storm",37
+"Bertha",1996,7,7,6,15.6,-54.8,997,55,"Tropical Storm",37
+"Bertha",1996,7,7,12,16.4,-56.9,995,60,"Tropical Storm",37
+"Bertha",1996,7,7,18,16.5,-58.4,992,70,"Hurricane",37
+"Bertha",1996,7,8,0,17,-60.1,988,75,"Hurricane",38
+"Bertha",1996,7,8,6,17.5,-61.8,985,75,"Hurricane",38
+"Bertha",1996,7,8,12,18,-63.5,983,70,"Hurricane",38
+"Bertha",1996,7,8,18,18.6,-64.9,978,75,"Hurricane",38
+"Bertha",1996,7,9,0,19.4,-66.1,970,80,"Hurricane",39
+"Bertha",1996,7,9,6,20.3,-67.7,960,100,"Hurricane",39
+"Bertha",1996,7,9,12,21.4,-69.4,965,100,"Hurricane",39
+"Bertha",1996,7,9,18,22.5,-71.1,967,90,"Hurricane",39
+"Bertha",1996,7,10,0,23.6,-72.6,969,85,"Hurricane",40
+"Bertha",1996,7,10,6,24.5,-74,971,80,"Hurricane",40
+"Bertha",1996,7,10,12,25.4,-75.3,968,80,"Hurricane",40
+"Bertha",1996,7,10,18,26.4,-75.8,966,80,"Hurricane",40
+"Bertha",1996,7,11,0,27.5,-76.4,968,75,"Hurricane",41
+"Bertha",1996,7,11,6,28.3,-76.8,972,75,"Hurricane",41
+"Bertha",1996,7,11,12,29.2,-77.5,977,75,"Hurricane",41
+"Bertha",1996,7,11,18,30,-78,980,70,"Hurricane",41
+"Bertha",1996,7,12,0,30.7,-78.3,982,70,"Hurricane",42
+"Bertha",1996,7,12,6,31.2,-78.6,984,70,"Hurricane",42
+"Bertha",1996,7,12,12,32.2,-78.4,975,85,"Hurricane",42
+"Bertha",1996,7,12,18,33.6,-78.1,974,90,"Hurricane",42
+"Bertha",1996,7,13,0,35,-77.6,993,65,"Hurricane",43
+"Bertha",1996,7,13,6,36.7,-77,993,60,"Tropical Storm",43
+"Bertha",1996,7,13,12,38.3,-76.1,994,60,"Tropical Storm",43
+"Bertha",1996,7,13,18,40.2,-74.5,994,60,"Tropical Storm",43
+"Bertha",1996,7,14,0,42.1,-71.9,994,60,"Tropical Storm",44
+"Bertha",1996,7,14,6,44.1,-69,995,55,"Tropical Storm",44
+"Bertha",1996,7,14,12,46,-66,995,50,"Extratropical",44
+"Bertha",1996,7,14,18,47,-62,995,50,"Extratropical",44
+"Bertha",1996,7,15,0,48,-57,995,50,"Extratropical",45
+"Bertha",1996,7,15,6,49,-52,996,45,"Extratropical",45
+"Bertha",1996,7,15,12,51,-47,996,40,"Extratropical",45
+"Bertha",1996,7,15,18,54,-44,996,40,"Extratropical",45
+"Bertha",1996,7,16,0,57.5,-42.5,991,40,"Extratropical",46
+"Bertha",1996,7,16,6,58.5,-42.5,988,40,"Extratropical",46
+"Bertha",1996,7,16,12,59.5,-42,988,45,"Extratropical",46
+"Bertha",1996,7,16,18,59.8,-41,985,45,"Extratropical",46
+"Bertha",1996,7,17,0,60,-40,993,40,"Extratropical",47
+"Bertha",1996,7,17,6,60.5,-39,1001,35,"Extratropical",47
+"Cesar",1996,7,24,18,11.8,-62.6,1009,25,"Tropical Depression",54
+"Cesar",1996,7,25,0,11.9,-64.7,1009,25,"Tropical Depression",55
+"Cesar",1996,7,25,6,11.9,-66.5,1007,30,"Tropical Depression",55
+"Cesar",1996,7,25,12,12.1,-68.1,1004,40,"Tropical Storm",55
+"Cesar",1996,7,25,18,12.3,-69.6,1002,40,"Tropical Storm",55
+"Cesar",1996,7,26,0,12.4,-71,1002,40,"Tropical Storm",56
+"Cesar",1996,7,26,6,12.4,-72.7,1002,40,"Tropical Storm",56
+"Cesar",1996,7,26,12,12.3,-74.5,1002,45,"Tropical Storm",56
+"Cesar",1996,7,26,18,11.9,-76.1,1002,50,"Tropical Storm",56
+"Cesar",1996,7,27,0,11.7,-77.2,1000,50,"Tropical Storm",57
+"Cesar",1996,7,27,6,11.6,-78.1,992,60,"Tropical Storm",57
+"Cesar",1996,7,27,12,11.6,-79.5,992,70,"Tropical Storm",57
+"Cesar",1996,7,27,18,11.8,-81,994,65,"Tropical Storm",57
+"Cesar",1996,7,28,0,12,-82.6,992,70,"Tropical Storm",58
+"Cesar",1996,7,28,6,12.3,-84.2,990,70,"Tropical Storm",58
+"Cesar",1996,7,28,12,12.7,-86.2,995,50,"Tropical Storm",58
+"Cesar",1996,7,28,18,13.1,-87.9,1004,35,"Tropical Storm",58
+"Dolly",1996,8,19,6,17.3,-80.2,1009,25,"Tropical Depression",80
+"Dolly",1996,8,19,12,17.8,-81.7,1008,30,"Tropical Depression",80
+"Dolly",1996,8,19,18,18.2,-83,1006,45,"Tropical Storm",80
+"Dolly",1996,8,20,0,18.6,-84.4,1006,45,"Tropical Storm",81
+"Dolly",1996,8,20,6,18.8,-85.7,1005,55,"Tropical Storm",81
+"Dolly",1996,8,20,12,19,-86.9,1002,60,"Tropical Storm",81
+"Dolly",1996,8,20,18,19.2,-87.8,999,65,"Hurricane",81
+"Dolly",1996,8,21,0,19.2,-88.7,1001,40,"Tropical Storm",82
+"Dolly",1996,8,21,6,19.3,-89.5,1002,35,"Tropical Storm",82
+"Dolly",1996,8,21,12,19.4,-90.1,1002,30,"Tropical Depression",82
+"Dolly",1996,8,21,18,19.5,-90.7,1002,30,"Tropical Depression",82
+"Dolly",1996,8,22,0,19.7,-91.4,1002,35,"Tropical Storm",83
+"Dolly",1996,8,22,6,20.1,-92.6,1002,45,"Tropical Storm",83
+"Dolly",1996,8,22,12,20.4,-93.7,999,45,"Tropical Storm",83
+"Dolly",1996,8,22,18,20.6,-94.2,993,50,"Tropical Storm",83
+"Dolly",1996,8,23,0,20.9,-94.9,990,55,"Tropical Storm",84
+"Dolly",1996,8,23,6,21.3,-96.1,991,60,"Tropical Storm",84
+"Dolly",1996,8,23,12,21.6,-97.7,989,70,"Hurricane",84
+"Dolly",1996,8,23,18,21.6,-99.3,997,45,"Tropical Storm",84
+"Dolly",1996,8,24,0,21.6,-100.9,1002,30,"Tropical Depression",85
+"Dolly",1996,8,24,6,21.6,-102.5,1004,25,"Tropical Depression",85
+"Dolly",1996,8,24,12,21.7,-104,1005,20,"Tropical Depression",85
+"Dolly",1996,8,24,18,21.7,-105.7,1005,20,"Tropical Depression",85
+"Dolly",1996,8,25,0,21.8,-107.3,1005,20,"Tropical Depression",86
+"Edouard",1996,8,19,18,12.4,-19.9,1007,25,"Tropical Depression",80
+"Edouard",1996,8,20,0,12.4,-20.7,1007,25,"Tropical Depression",81
+"Edouard",1996,8,20,6,12.4,-21.6,1007,25,"Tropical Depression",81
+"Edouard",1996,8,20,12,12.5,-22.6,1007,25,"Tropical Depression",81
+"Edouard",1996,8,20,18,12.6,-23.8,1007,25,"Tropical Depression",81
+"Edouard",1996,8,21,0,12.6,-25.3,1007,25,"Tropical Depression",82
+"Edouard",1996,8,21,6,12.8,-26.7,1007,25,"Tropical Depression",82
+"Edouard",1996,8,21,12,12.9,-27.9,1007,25,"Tropical Depression",82
+"Edouard",1996,8,21,18,13,-29.2,1006,25,"Tropical Depression",82
+"Edouard",1996,8,22,0,13.1,-30.3,1006,30,"Tropical Depression",83
+"Edouard",1996,8,22,6,13.2,-31.6,1005,35,"Tropical Storm",83
+"Edouard",1996,8,22,12,13.4,-32.9,1003,40,"Tropical Storm",83
+"Edouard",1996,8,22,18,13.5,-34.4,1002,40,"Tropical Storm",83
+"Edouard",1996,8,23,0,13.7,-35.8,1000,45,"Tropical Storm",84
+"Edouard",1996,8,23,6,13.8,-37,996,50,"Tropical Storm",84
+"Edouard",1996,8,23,12,13.9,-38.3,988,65,"Hurricane",84
+"Edouard",1996,8,23,18,14,-39.8,986,65,"Hurricane",84
+"Edouard",1996,8,24,0,14.1,-41.1,983,70,"Hurricane",85
+"Edouard",1996,8,24,6,14.1,-42.4,980,75,"Hurricane",85
+"Edouard",1996,8,24,12,14.4,-43.6,970,90,"Hurricane",85
+"Edouard",1996,8,24,18,14.6,-44.7,960,100,"Hurricane",85
+"Edouard",1996,8,25,0,15,-45.8,942,120,"Hurricane",86
+"Edouard",1996,8,25,6,15.4,-47,933,125,"Hurricane",86
+"Edouard",1996,8,25,12,15.9,-48.3,934,125,"Hurricane",86
+"Edouard",1996,8,25,18,16.5,-49.6,935,125,"Hurricane",86
+"Edouard",1996,8,26,0,17,-50.9,936,125,"Hurricane",87
+"Edouard",1996,8,26,6,17.5,-52,936,125,"Hurricane",87
+"Edouard",1996,8,26,12,17.9,-53.2,937,125,"Hurricane",87
+"Edouard",1996,8,26,18,18.4,-54.5,938,125,"Hurricane",87
+"Edouard",1996,8,27,0,18.9,-55.6,942,125,"Hurricane",88
+"Edouard",1996,8,27,6,19.5,-56.9,948,120,"Hurricane",88
+"Edouard",1996,8,27,12,20,-58.1,952,115,"Hurricane",88
+"Edouard",1996,8,27,18,20.4,-59.3,951,115,"Hurricane",88
+"Edouard",1996,8,28,0,20.9,-60.4,944,125,"Hurricane",89
+"Edouard",1996,8,28,6,21.3,-61.7,952,115,"Hurricane",89
+"Edouard",1996,8,28,12,21.9,-63.2,960,110,"Hurricane",89
+"Edouard",1996,8,28,18,22.3,-64.6,956,110,"Hurricane",89
+"Edouard",1996,8,29,0,22.9,-65.9,957,110,"Hurricane",90
+"Edouard",1996,8,29,6,23.4,-67.1,961,110,"Hurricane",90
+"Edouard",1996,8,29,12,24,-68.1,950,115,"Hurricane",90
+"Edouard",1996,8,29,18,24.7,-69,948,120,"Hurricane",90
+"Edouard",1996,8,30,0,25.5,-69.5,941,120,"Hurricane",91
+"Edouard",1996,8,30,6,26.4,-69.9,939,120,"Hurricane",91
+"Edouard",1996,8,30,12,27.4,-70.2,938,120,"Hurricane",91
+"Edouard",1996,8,30,18,28.5,-70.5,934,120,"Hurricane",91
+"Edouard",1996,8,31,0,29.5,-70.5,944,110,"Hurricane",92
+"Edouard",1996,8,31,6,30.4,-70.6,950,105,"Hurricane",92
+"Edouard",1996,8,31,12,31.6,-70.3,952,105,"Hurricane",92
+"Edouard",1996,8,31,18,32.7,-70.1,953,100,"Hurricane",92
+"Edouard",1996,9,1,0,34,-70.1,959,100,"Hurricane",93
+"Edouard",1996,9,1,6,35.2,-70.1,958,100,"Hurricane",93
+"Edouard",1996,9,1,12,36.5,-70.2,958,95,"Hurricane",93
+"Edouard",1996,9,1,18,37.5,-70,960,85,"Hurricane",93
+"Edouard",1996,9,2,0,38.7,-69.5,964,80,"Hurricane",94
+"Edouard",1996,9,2,6,39.8,-69.4,961,70,"Hurricane",94
+"Edouard",1996,9,2,12,40.5,-68.3,962,70,"Hurricane",94
+"Edouard",1996,9,2,18,41.3,-67.3,972,65,"Hurricane",94
+"Edouard",1996,9,3,0,42,-66.8,978,60,"Tropical Storm",95
+"Edouard",1996,9,3,6,42.2,-66,985,55,"Extratropical",95
+"Edouard",1996,9,3,12,42.5,-65,992,50,"Extratropical",95
+"Edouard",1996,9,3,18,42.7,-63,995,50,"Extratropical",95
+"Edouard",1996,9,4,0,43.2,-59.8,997,50,"Extratropical",96
+"Edouard",1996,9,4,6,43.3,-57.5,994,50,"Extratropical",96
+"Edouard",1996,9,4,12,43.4,-55.5,994,50,"Extratropical",96
+"Edouard",1996,9,4,18,43.5,-53.5,995,50,"Extratropical",96
+"Edouard",1996,9,5,0,43.5,-51.5,995,50,"Extratropical",97
+"Edouard",1996,9,5,6,43.5,-50,994,45,"Extratropical",97
+"Edouard",1996,9,5,12,43.5,-48.5,994,45,"Extratropical",97
+"Edouard",1996,9,5,18,43.7,-47.5,995,45,"Extratropical",97
+"Edouard",1996,9,6,0,44.5,-46,995,40,"Extratropical",98
+"Edouard",1996,9,6,6,46,-44,994,40,"Extratropical",98
+"Edouard",1996,9,6,12,48,-43,992,40,"Extratropical",98
+"Edouard",1996,9,6,18,50,-41,990,40,"Extratropical",98
+"Fran",1996,8,23,12,14,-21,1012,25,"Tropical Depression",84
+"Fran",1996,8,23,18,14.1,-22.8,1011,25,"Tropical Depression",84
+"Fran",1996,8,24,0,14.2,-24.8,1010,25,"Tropical Depression",85
+"Fran",1996,8,24,6,14.2,-26.6,1009,30,"Tropical Depression",85
+"Fran",1996,8,24,12,14.1,-28.2,1009,30,"Tropical Depression",85
+"Fran",1996,8,24,18,14.1,-29.6,1009,30,"Tropical Depression",85
+"Fran",1996,8,25,0,14.1,-30.8,1009,25,"Tropical Depression",86
+"Fran",1996,8,25,6,14.3,-32,1009,25,"Tropical Depression",86
+"Fran",1996,8,25,12,14.6,-33.4,1009,25,"Tropical Depression",86
+"Fran",1996,8,25,18,14.7,-35.1,1009,25,"Tropical Depression",86
+"Fran",1996,8,26,0,14.9,-37,1009,25,"Tropical Depression",87
+"Fran",1996,8,26,6,15.1,-38.6,1009,25,"Tropical Depression",87
+"Fran",1996,8,26,12,15.3,-40,1009,30,"Tropical Depression",87
+"Fran",1996,8,26,18,15.2,-41.4,1008,30,"Tropical Depression",87
+"Fran",1996,8,27,0,14.9,-42.7,1007,30,"Tropical Depression",88
+"Fran",1996,8,27,6,14.7,-43.8,1006,30,"Tropical Depression",88
+"Fran",1996,8,27,12,14.6,-44.9,1005,35,"Tropical Storm",88
+"Fran",1996,8,27,18,14.6,-46.1,1004,40,"Tropical Storm",88
+"Fran",1996,8,28,0,14.6,-47.5,1002,45,"Tropical Storm",89
+"Fran",1996,8,28,6,15,-49.1,1000,50,"Tropical Storm",89
+"Fran",1996,8,28,12,15.5,-50.7,995,55,"Tropical Storm",89
+"Fran",1996,8,28,18,15.9,-52.3,990,60,"Tropical Storm",89
+"Fran",1996,8,29,0,16.4,-53.7,987,65,"Hurricane",90
+"Fran",1996,8,29,6,17,-55,987,65,"Hurricane",90
+"Fran",1996,8,29,12,17.8,-56.3,988,65,"Hurricane",90
+"Fran",1996,8,29,18,18.6,-57.5,988,65,"Hurricane",90
+"Fran",1996,8,30,0,19.1,-58.5,991,65,"Hurricane",91
+"Fran",1996,8,30,6,19.4,-59.4,991,65,"Hurricane",91
+"Fran",1996,8,30,12,19.8,-60.1,989,65,"Hurricane",91
+"Fran",1996,8,30,18,20.2,-60.6,990,60,"Tropical Storm",91
+"Fran",1996,8,31,0,20.5,-60.9,988,60,"Tropical Storm",92
+"Fran",1996,8,31,6,20.8,-61.2,987,60,"Tropical Storm",92
+"Fran",1996,8,31,12,21.1,-61.4,984,65,"Hurricane",92
+"Fran",1996,8,31,18,21.5,-61.7,983,65,"Hurricane",92
+"Fran",1996,9,1,0,21.7,-62.1,978,65,"Hurricane",93
+"Fran",1996,9,1,6,21.9,-62.6,982,65,"Hurricane",93
+"Fran",1996,9,1,12,22.2,-63.2,982,70,"Hurricane",93
+"Fran",1996,9,1,18,22.5,-63.9,981,75,"Hurricane",93
+"Fran",1996,9,2,0,22.9,-64.7,978,75,"Hurricane",94
+"Fran",1996,9,2,6,23.3,-65.7,976,75,"Hurricane",94
+"Fran",1996,9,2,12,23.6,-66.7,976,75,"Hurricane",94
+"Fran",1996,9,2,18,23.9,-67.9,976,75,"Hurricane",94
+"Fran",1996,9,3,0,24.2,-69,977,75,"Hurricane",95
+"Fran",1996,9,3,6,24.4,-70.1,975,80,"Hurricane",95
+"Fran",1996,9,3,12,24.7,-71.2,973,80,"Hurricane",95
+"Fran",1996,9,3,18,25.2,-72.2,968,85,"Hurricane",95
+"Fran",1996,9,4,0,25.7,-73.1,961,95,"Hurricane",96
+"Fran",1996,9,4,6,26.4,-73.9,953,100,"Hurricane",96
+"Fran",1996,9,4,12,27,-74.7,956,105,"Hurricane",96
+"Fran",1996,9,4,18,27.7,-75.5,952,105,"Hurricane",96
+"Fran",1996,9,5,0,28.6,-76.1,946,105,"Hurricane",97
+"Fran",1996,9,5,6,29.8,-76.7,952,105,"Hurricane",97
+"Fran",1996,9,5,12,31,-77.2,954,100,"Hurricane",97
+"Fran",1996,9,5,18,32.3,-77.8,952,100,"Hurricane",97
+"Fran",1996,9,6,0,33.7,-78,954,100,"Hurricane",98
+"Fran",1996,9,6,6,35.2,-78.7,970,65,"Hurricane",98
+"Fran",1996,9,6,12,36.7,-79,985,40,"Tropical Storm",98
+"Fran",1996,9,6,18,38,-79.4,995,30,"Tropical Depression",98
+"Fran",1996,9,7,0,39.2,-79.9,1000,30,"Tropical Depression",99
+"Fran",1996,9,7,6,40.4,-80.4,1001,30,"Tropical Depression",99
+"Fran",1996,9,7,12,41.2,-80.5,1001,30,"Tropical Depression",99
+"Fran",1996,9,7,18,42,-80.4,1000,30,"Tropical Depression",99
+"Fran",1996,9,8,0,42.8,-80.1,999,30,"Tropical Depression",100
+"Fran",1996,9,8,6,43.4,-79.9,999,30,"Tropical Depression",100
+"Fran",1996,9,8,12,44,-79,1000,25,"Tropical Depression",100
+"Fran",1996,9,8,18,44.5,-77.6,1001,25,"Tropical Depression",100
+"Fran",1996,9,9,0,44.9,-75.9,1002,25,"Extratropical",101
+"Fran",1996,9,9,6,45.4,-74,1004,20,"Extratropical",101
+"Fran",1996,9,9,12,45.7,-72.3,1006,15,"Extratropical",101
+"Fran",1996,9,9,18,46,-71.1,1008,15,"Extratropical",101
+"Fran",1996,9,10,0,46.7,-70,1010,15,"Extratropical",102
+"Gustav",1996,8,26,0,12.7,-23,1008,30,"Tropical Depression",87
+"Gustav",1996,8,26,6,12.7,-24.1,1008,30,"Tropical Depression",87
+"Gustav",1996,8,26,12,12.5,-25.3,1008,30,"Tropical Depression",87
+"Gustav",1996,8,26,18,12.3,-26.6,1008,30,"Tropical Depression",87
+"Gustav",1996,8,27,0,12.1,-27.8,1008,30,"Tropical Depression",88
+"Gustav",1996,8,27,6,11.7,-28.8,1008,30,"Tropical Depression",88
+"Gustav",1996,8,27,12,11.1,-30,1007,30,"Tropical Depression",88
+"Gustav",1996,8,27,18,10.6,-31,1007,30,"Tropical Depression",88
+"Gustav",1996,8,28,0,10.4,-31.8,1006,30,"Tropical Depression",89
+"Gustav",1996,8,28,6,10.6,-32.7,1006,35,"Tropical Storm",89
+"Gustav",1996,8,28,12,11,-33.6,1005,35,"Tropical Storm",89
+"Gustav",1996,8,28,18,11.8,-34.4,1005,35,"Tropical Storm",89
+"Gustav",1996,8,29,0,12.5,-35.2,1005,40,"Tropical Storm",90
+"Gustav",1996,8,29,6,13.1,-36.2,1005,40,"Tropical Storm",90
+"Gustav",1996,8,29,12,13.7,-37.2,1005,40,"Tropical Storm",90
+"Gustav",1996,8,29,18,14.4,-38,1005,40,"Tropical Storm",90
+"Gustav",1996,8,30,0,15.2,-38.4,1005,35,"Tropical Storm",91
+"Gustav",1996,8,30,6,15.8,-38.9,1005,35,"Tropical Storm",91
+"Gustav",1996,8,30,12,16.2,-39.5,1006,35,"Tropical Storm",91
+"Gustav",1996,8,30,18,16.6,-40.4,1006,35,"Tropical Storm",91
+"Gustav",1996,8,31,0,17.1,-41.1,1007,35,"Tropical Storm",92
+"Gustav",1996,8,31,6,17.7,-41.8,1008,35,"Tropical Storm",92
+"Gustav",1996,8,31,12,18.3,-42.5,1008,35,"Tropical Storm",92
+"Gustav",1996,8,31,18,18.7,-43.2,1008,35,"Tropical Storm",92
+"Gustav",1996,9,1,0,19.3,-43.8,1008,35,"Tropical Storm",93
+"Gustav",1996,9,1,6,19.9,-44.5,1008,35,"Tropical Storm",93
+"Gustav",1996,9,1,12,20.5,-45.4,1008,35,"Tropical Storm",93
+"Gustav",1996,9,1,18,20,-46.5,1008,30,"Tropical Depression",93
+"Gustav",1996,9,2,0,21.3,-47.7,1008,30,"Tropical Depression",94
+"Hortense",1996,9,3,12,14.9,-41,1006,25,"Tropical Depression",95
+"Hortense",1996,9,3,18,14.9,-42.7,1006,30,"Tropical Depression",95
+"Hortense",1996,9,4,0,14.8,-44.1,1006,30,"Tropical Depression",96
+"Hortense",1996,9,4,6,14.7,-45.4,1006,30,"Tropical Depression",96
+"Hortense",1996,9,4,12,14.6,-46.6,1006,30,"Tropical Depression",96
+"Hortense",1996,9,4,18,14.7,-47.5,1006,30,"Tropical Depression",96
+"Hortense",1996,9,5,0,14.9,-48.4,1006,30,"Tropical Depression",97
+"Hortense",1996,9,5,6,14.8,-49.5,1006,30,"Tropical Depression",97
+"Hortense",1996,9,5,12,14.5,-51.1,1006,30,"Tropical Depression",97
+"Hortense",1996,9,5,18,14.3,-52.6,1006,30,"Tropical Depression",97
+"Hortense",1996,9,6,0,14.4,-53.6,1006,30,"Tropical Depression",98
+"Hortense",1996,9,6,6,14.6,-54.3,1006,30,"Tropical Depression",98
+"Hortense",1996,9,6,12,14.7,-55.1,1006,30,"Tropical Depression",98
+"Hortense",1996,9,6,18,14.9,-55.7,1006,30,"Tropical Depression",98
+"Hortense",1996,9,7,0,15.2,-57,1006,30,"Tropical Depression",99
+"Hortense",1996,9,7,6,15.4,-58.3,1005,35,"Tropical Storm",99
+"Hortense",1996,9,7,12,15.6,-59.6,1004,40,"Tropical Storm",99
+"Hortense",1996,9,7,18,15.8,-60.4,1000,40,"Tropical Storm",99
+"Hortense",1996,9,8,0,16.1,-61.2,996,50,"Tropical Storm",100
+"Hortense",1996,9,8,6,16.1,-62,996,55,"Tropical Storm",100
+"Hortense",1996,9,8,12,16.1,-62.8,996,60,"Tropical Storm",100
+"Hortense",1996,9,8,18,16.1,-63.6,991,60,"Tropical Storm",100
+"Hortense",1996,9,9,0,16.1,-64.1,990,60,"Tropical Storm",101
+"Hortense",1996,9,9,6,16.1,-64.5,987,70,"Tropical Storm",101
+"Hortense",1996,9,9,12,16.3,-65,985,70,"Tropical Storm",101
+"Hortense",1996,9,9,18,16.6,-65.6,990,70,"Tropical Storm",101
+"Hortense",1996,9,10,0,17.1,-66.1,989,70,"Tropical Storm",102
+"Hortense",1996,9,10,6,18,-66.9,989,70,"Tropical Storm",102
+"Hortense",1996,9,10,12,18.3,-67.8,989,65,"Tropical Storm",102
+"Hortense",1996,9,10,18,18.9,-68.4,990,65,"Tropical Storm",102
+"Hortense",1996,9,11,0,19.5,-68.9,982,70,"Tropical Storm",103
+"Hortense",1996,9,11,6,20.1,-69.5,975,75,"Tropical Storm",103
+"Hortense",1996,9,11,12,20.9,-70.1,971,90,"Tropical Storm",103
+"Hortense",1996,9,11,18,21.6,-70.6,970,95,"Tropical Storm",103
+"Hortense",1996,9,12,0,22.3,-71.1,967,100,"Tropical Storm",104
+"Hortense",1996,9,12,6,23,-71.4,962,105,"Tropical Storm",104
+"Hortense",1996,9,12,12,23.9,-71.8,959,115,"Tropical Storm",104
+"Hortense",1996,9,12,18,24.7,-71.8,946,115,"Tropical Storm",104
+"Hortense",1996,9,13,0,25.9,-71.5,935,120,"Tropical Storm",105
+"Hortense",1996,9,13,6,27.2,-71.4,942,115,"Tropical Storm",105
+"Hortense",1996,9,13,12,29,-70.9,948,100,"Tropical Storm",105
+"Hortense",1996,9,13,18,31,-70.3,948,100,"Tropical Storm",105
+"Hortense",1996,9,14,0,33.3,-69.5,948,90,"Tropical Storm",106
+"Hortense",1996,9,14,6,35.9,-68.4,955,90,"Tropical Storm",106
+"Hortense",1996,9,14,12,38.5,-67.1,960,85,"Tropical Storm",106
+"Hortense",1996,9,14,18,42,-65.2,960,75,"Tropical Storm",106
+"Hortense",1996,9,15,0,44.3,-63.3,970,70,"Tropical Storm",107
+"Hortense",1996,9,15,6,45.5,-61.5,980,65,"Tropical Storm",107
+"Hortense",1996,9,15,12,46.3,-59.1,982,60,"Tropical Storm",107
+"Hortense",1996,9,15,18,46,-55,996,40,"Tropical Storm",107
+"Hortense",1996,9,16,0,46,-54,998,40,"Tropical Storm",108
+"Hortense",1996,9,16,6,45,-50,999,35,"Tropical Storm",108
+"Isidore",1996,9,24,12,8.6,-23.3,1008,25,"Tropical Depression",116
+"Isidore",1996,9,24,18,9.2,-25.2,1008,30,"Tropical Depression",116
+"Isidore",1996,9,25,0,9.9,-26.9,1006,30,"Tropical Depression",117
+"Isidore",1996,9,25,6,10.3,-28.5,1004,35,"Tropical Storm",117
+"Isidore",1996,9,25,12,10.7,-30,1000,45,"Tropical Storm",117
+"Isidore",1996,9,25,18,11,-31.7,994,50,"Tropical Storm",117
+"Isidore",1996,9,26,0,11.2,-32.8,988,60,"Tropical Storm",118
+"Isidore",1996,9,26,6,11.7,-34.2,984,70,"Hurricane",118
+"Isidore",1996,9,26,12,12.4,-35.8,980,70,"Hurricane",118
+"Isidore",1996,9,26,18,12.8,-37.1,977,75,"Hurricane",118
+"Isidore",1996,9,27,0,13.1,-38.6,974,80,"Hurricane",119
+"Isidore",1996,9,27,6,13.7,-39.8,972,85,"Hurricane",119
+"Isidore",1996,9,27,12,14.1,-41.1,968,90,"Hurricane",119
+"Isidore",1996,9,27,18,14.9,-42.2,963,95,"Hurricane",119
+"Isidore",1996,9,28,0,15.8,-42.9,960,100,"Hurricane",120
+"Isidore",1996,9,28,6,16.7,-43.1,961,100,"Hurricane",120
+"Isidore",1996,9,28,12,17.8,-43.2,965,95,"Hurricane",120
+"Isidore",1996,9,28,18,19,-43.2,968,90,"Hurricane",120
+"Isidore",1996,9,29,0,20,-42.9,973,85,"Hurricane",121
+"Isidore",1996,9,29,6,20.8,-42.2,979,75,"Hurricane",121
+"Isidore",1996,9,29,12,21.8,-41.3,982,70,"Hurricane",121
+"Isidore",1996,9,29,18,22.6,-40.9,986,65,"Hurricane",121
+"Isidore",1996,9,30,0,23.8,-40.4,989,60,"Tropical Storm",122
+"Isidore",1996,9,30,6,25.3,-40.1,992,60,"Tropical Storm",122
+"Isidore",1996,9,30,12,26.7,-40,995,50,"Tropical Storm",122
+"Isidore",1996,9,30,18,28.2,-40.1,997,45,"Tropical Storm",122
+"Isidore",1996,10,1,0,29.9,-40.3,1000,35,"Tropical Storm",123
+"Isidore",1996,10,1,6,31.6,-40.4,1002,35,"Tropical Storm",123
+"Isidore",1996,10,1,12,33.6,-40.4,1005,30,"Tropical Depression",123
+"Isidore",1996,10,1,18,35.8,-40.3,1008,30,"Tropical Depression",123
+"Isidore",1996,10,2,0,38.1,-40.2,1010,25,"Extratropical",124
+"Isidore",1996,10,2,6,40.3,-39.6,1013,20,"Extratropical",124
+"Isidore",1996,10,2,12,43,-36,1015,20,"Extratropical",124
+"Josephine",1996,10,4,18,22.7,-96.2,1003,25,"Tropical Depression",126
+"Josephine",1996,10,5,0,23,-96.1,1003,30,"Tropical Depression",127
+"Josephine",1996,10,5,6,23.3,-96,1003,30,"Tropical Depression",127
+"Josephine",1996,10,5,12,23.6,-95.8,1003,30,"Tropical Depression",127
+"Josephine",1996,10,5,18,24.3,-95.5,1003,30,"Tropical Depression",127
+"Josephine",1996,10,6,0,24.8,-95,1002,30,"Tropical Depression",128
+"Josephine",1996,10,6,6,25,-94.5,1002,30,"Tropical Depression",128
+"Josephine",1996,10,6,12,25.1,-93.5,1003,30,"Tropical Depression",128
+"Josephine",1996,10,6,18,25.1,-91.8,1001,35,"Tropical Storm",128
+"Josephine",1996,10,7,0,25.5,-90.4,996,40,"Tropical Storm",129
+"Josephine",1996,10,7,6,25.9,-88.9,992,50,"Tropical Storm",129
+"Josephine",1996,10,7,12,26.9,-87.3,981,60,"Tropical Storm",129
+"Josephine",1996,10,7,18,28.2,-86,983,60,"Tropical Storm",129
+"Josephine",1996,10,8,0,29.3,-84.5,983,60,"Tropical Storm",130
+"Josephine",1996,10,8,6,30.9,-82.3,990,45,"Extratropical",130
+"Josephine",1996,10,8,12,34,-79,988,45,"Extratropical",130
+"Josephine",1996,10,8,18,36,-76,986,45,"Extratropical",130
+"Josephine",1996,10,9,0,38,-73.5,983,45,"Extratropical",131
+"Josephine",1996,10,9,6,41,-71,980,45,"Extratropical",131
+"Josephine",1996,10,9,12,42.5,-68,980,45,"Extratropical",131
+"Josephine",1996,10,9,18,44.5,-65.5,984,45,"Extratropical",131
+"Josephine",1996,10,10,0,46.5,-62.5,985,45,"Extratropical",132
+"Josephine",1996,10,10,6,48.5,-58,985,45,"Extratropical",132
+"Josephine",1996,10,10,12,49.5,-55,983,45,"Extratropical",132
+"Josephine",1996,10,10,18,50.5,-50,984,45,"Extratropical",132
+"Josephine",1996,10,11,0,51,-44,984,45,"Extratropical",133
+"Josephine",1996,10,11,6,51,-38,986,45,"Extratropical",133
+"Josephine",1996,10,11,12,51,-32,988,45,"Extratropical",133
+"Josephine",1996,10,11,18,51,-26,989,45,"Extratropical",133
+"Josephine",1996,10,12,0,51,-21,985,45,"Extratropical",134
+"Josephine",1996,10,12,6,51,-18,980,45,"Extratropical",134
+"Josephine",1996,10,12,12,51.5,-16.5,982,45,"Extratropical",134
+"Josephine",1996,10,12,18,52.5,-15.5,977,50,"Extratropical",134
+"Josephine",1996,10,13,0,53,-15.5,973,55,"Extratropical",135
+"Josephine",1996,10,13,6,53.5,-15.5,971,60,"Extratropical",135
+"Josephine",1996,10,13,12,54,-15.5,972,55,"Extratropical",135
+"Josephine",1996,10,13,18,55.5,-15.5,977,50,"Extratropical",135
+"Josephine",1996,10,14,0,57.5,-16,982,45,"Extratropical",136
+"Josephine",1996,10,14,6,60,-18,977,45,"Extratropical",136
+"Josephine",1996,10,14,12,61,-20,972,45,"Extratropical",136
+"Josephine",1996,10,14,18,62,-22,970,45,"Extratropical",136
+"Josephine",1996,10,15,0,62.5,-24,972,45,"Extratropical",137
+"Josephine",1996,10,15,6,63,-26,978,45,"Extratropical",137
+"Josephine",1996,10,15,12,63,-28,983,40,"Extratropical",137
+"Josephine",1996,10,15,18,63,-29.5,988,35,"Extratropical",137
+"Josephine",1996,10,16,0,63,-30.5,992,30,"Extratropical",138
+"Kyle",1996,10,11,12,17.3,-86.5,1006,30,"Tropical Depression",133
+"Kyle",1996,10,11,18,16.9,-87.1,1002,45,"Tropical Storm",133
+"Kyle",1996,10,12,0,16.6,-87.5,1001,45,"Tropical Storm",134
+"Kyle",1996,10,12,6,16.3,-87.8,1004,35,"Tropical Storm",134
+"Kyle",1996,10,12,12,16,-88.1,1008,30,"Tropical Depression",134
+"Kyle",1996,10,12,18,15.7,-88.4,1012,25,"Tropical Depression",134
+"Lili",1996,10,14,12,12.8,-80.4,1006,25,"Tropical Depression",136
+"Lili",1996,10,14,18,13.4,-80.9,1005,25,"Tropical Depression",136
+"Lili",1996,10,15,0,14.1,-81.4,1005,25,"Tropical Depression",137
+"Lili",1996,10,15,6,14.8,-81.9,1005,25,"Tropical Depression",137
+"Lili",1996,10,15,12,15.4,-82.5,1004,30,"Tropical Depression",137
+"Lili",1996,10,15,18,16.1,-83.1,1003,30,"Tropical Depression",137
+"Lili",1996,10,16,0,16.8,-83.5,999,30,"Tropical Depression",138
+"Lili",1996,10,16,6,17.5,-83.8,998,35,"Tropical Storm",138
+"Lili",1996,10,16,12,18.2,-83.8,998,45,"Tropical Storm",138
+"Lili",1996,10,16,18,18.3,-84.5,996,50,"Tropical Storm",138
+"Lili",1996,10,17,0,18.2,-84.2,992,55,"Tropical Storm",139
+"Lili",1996,10,17,6,18.8,-83.7,990,60,"Tropical Storm",139
+"Lili",1996,10,17,12,19.6,-83.5,987,65,"Hurricane",139
+"Lili",1996,10,17,18,20.5,-83.1,984,70,"Hurricane",139
+"Lili",1996,10,18,0,21.3,-82.8,982,70,"Hurricane",140
+"Lili",1996,10,18,6,21.8,-82.2,980,75,"Hurricane",140
+"Lili",1996,10,18,12,22.4,-81.5,975,85,"Hurricane",140
+"Lili",1996,10,18,18,22.5,-80,975,80,"Hurricane",140
+"Lili",1996,10,19,0,23,-78.2,975,85,"Hurricane",141
+"Lili",1996,10,19,6,23.5,-76.2,970,90,"Hurricane",141
+"Lili",1996,10,19,12,24.4,-74,960,100,"Hurricane",141
+"Lili",1996,10,19,18,25.5,-71.5,962,90,"Hurricane",141
+"Lili",1996,10,20,0,26.9,-69,964,80,"Hurricane",142
+"Lili",1996,10,20,6,28.3,-67,968,80,"Hurricane",142
+"Lili",1996,10,20,12,29.6,-65,960,85,"Hurricane",142
+"Lili",1996,10,20,18,30.7,-62.9,970,75,"Hurricane",142
+"Lili",1996,10,21,0,31.9,-60.8,980,75,"Hurricane",143
+"Lili",1996,10,21,6,33,-59.1,985,70,"Hurricane",143
+"Lili",1996,10,21,12,33.7,-57.9,986,65,"Hurricane",143
+"Lili",1996,10,21,18,34,-57,987,65,"Hurricane",143
+"Lili",1996,10,22,0,34,-55.9,987,65,"Hurricane",144
+"Lili",1996,10,22,6,33.8,-55.2,987,65,"Hurricane",144
+"Lili",1996,10,22,12,33.7,-54.6,987,65,"Hurricane",144
+"Lili",1996,10,22,18,33.5,-54,987,65,"Hurricane",144
+"Lili",1996,10,23,0,33.4,-53.9,987,65,"Hurricane",145
+"Lili",1996,10,23,6,33.2,-53.8,985,65,"Hurricane",145
+"Lili",1996,10,23,12,33.1,-53.7,981,65,"Hurricane",145
+"Lili",1996,10,23,18,33.3,-53.2,979,70,"Hurricane",145
+"Lili",1996,10,24,0,33.7,-52.8,979,70,"Hurricane",146
+"Lili",1996,10,24,6,34,-52.5,979,70,"Hurricane",146
+"Lili",1996,10,24,12,34,-51.9,979,70,"Hurricane",146
+"Lili",1996,10,24,18,34.1,-51.2,979,75,"Hurricane",146
+"Lili",1996,10,25,0,34.3,-49.9,977,80,"Hurricane",147
+"Lili",1996,10,25,6,35,-47.8,973,80,"Hurricane",147
+"Lili",1996,10,25,12,35.8,-45.4,970,85,"Hurricane",147
+"Lili",1996,10,25,18,37.2,-43.3,971,80,"Hurricane",147
+"Lili",1996,10,26,0,38.1,-41,975,75,"Hurricane",148
+"Lili",1996,10,26,6,39.2,-38.8,978,70,"Hurricane",148
+"Lili",1996,10,26,12,40.5,-35.8,979,65,"Hurricane",148
+"Lili",1996,10,26,18,42.3,-33.2,980,60,"Tropical Storm",148
+"Lili",1996,10,27,0,44.3,-30.5,978,55,"Tropical Storm",149
+"Lili",1996,10,27,6,46.3,-27.2,980,55,"Extratropical",149
+"Lili",1996,10,27,12,48.2,-23.1,978,55,"Extratropical",149
+"Lili",1996,10,27,18,50.3,-19,973,55,"Extratropical",149
+"Lili",1996,10,28,0,52.5,-15.5,973,55,"Extratropical",150
+"Lili",1996,10,28,6,53.8,-12,973,55,"Extratropical",150
+"Lili",1996,10,28,12,54,-7.5,970,55,"Extratropical",150
+"Lili",1996,10,28,18,54.5,-3.5,970,55,"Extratropical",150
+"Lili",1996,10,29,0,54,1,976,55,"Extratropical",151
+"Marco",1996,11,13,12,10.5,-77.5,1009,20,"Extratropical",166
+"Marco",1996,11,13,18,11.3,-78,1009,20,"Extratropical",166
+"Marco",1996,11,14,0,12,-78.5,1009,20,"Extratropical",167
+"Marco",1996,11,14,6,12.8,-78.9,1009,20,"Extratropical",167
+"Marco",1996,11,14,12,13.5,-79,1008,20,"Extratropical",167
+"Marco",1996,11,14,18,14,-79,1008,20,"Extratropical",167
+"Marco",1996,11,15,0,14.3,-79,1008,20,"Extratropical",168
+"Marco",1996,11,15,6,14.7,-79,1008,20,"Extratropical",168
+"Marco",1996,11,15,12,15,-79,1008,20,"Extratropical",168
+"Marco",1996,11,15,18,15.5,-79,1008,20,"Extratropical",168
+"Marco",1996,11,16,0,15.8,-79,1008,20,"Extratropical",169
+"Marco",1996,11,16,6,16.2,-79,1008,20,"Extratropical",169
+"Marco",1996,11,16,12,16.5,-79,1007,25,"Extratropical",169
+"Marco",1996,11,16,18,17,-79,1007,30,"Tropical Depression",169
+"Marco",1996,11,17,0,16.8,-79.8,1007,30,"Tropical Depression",170
+"Marco",1996,11,17,6,16.3,-80.5,1007,30,"Tropical Depression",170
+"Marco",1996,11,17,12,15.8,-80.8,1007,30,"Tropical Depression",170
+"Marco",1996,11,17,18,15,-81,1006,30,"Tropical Depression",170
+"Marco",1996,11,18,0,14.9,-81,1006,30,"Tropical Depression",171
+"Marco",1996,11,18,6,14.7,-81,1005,30,"Tropical Depression",171
+"Marco",1996,11,18,12,14.6,-81,1004,30,"Tropical Depression",171
+"Marco",1996,11,18,18,14.5,-81,1003,30,"Tropical Depression",171
+"Marco",1996,11,19,0,14.2,-81,1001,30,"Tropical Depression",172
+"Marco",1996,11,19,6,13.8,-80.9,998,35,"Tropical Storm",172
+"Marco",1996,11,19,12,13.5,-80.7,997,45,"Tropical Storm",172
+"Marco",1996,11,19,18,13.5,-80.2,995,55,"Tropical Storm",172
+"Marco",1996,11,20,0,13.8,-79.5,990,60,"Tropical Storm",173
+"Marco",1996,11,20,6,13.8,-78.5,983,65,"Tropical Storm",173
+"Marco",1996,11,20,12,14.2,-77.8,989,65,"Tropical Storm",173
+"Marco",1996,11,20,18,14.6,-77.4,1000,45,"Tropical Storm",173
+"Marco",1996,11,21,0,14.9,-77.1,1000,45,"Tropical Storm",174
+"Marco",1996,11,21,6,15.1,-76.8,995,45,"Tropical Storm",174
+"Marco",1996,11,21,12,15.3,-76.6,993,50,"Tropical Storm",174
+"Marco",1996,11,21,18,15.6,-76.5,995,50,"Tropical Storm",174
+"Marco",1996,11,22,0,15.8,-76.3,992,55,"Tropical Storm",175
+"Marco",1996,11,22,6,15.9,-76,985,55,"Tropical Storm",175
+"Marco",1996,11,22,12,15.9,-75.4,987,60,"Tropical Storm",175
+"Marco",1996,11,22,18,15.9,-75,995,50,"Tropical Storm",175
+"Marco",1996,11,23,0,16,-74.7,995,45,"Tropical Storm",176
+"Marco",1996,11,23,6,15.9,-74.5,995,35,"Tropical Storm",176
+"Marco",1996,11,23,12,15.7,-74.5,995,35,"Tropical Storm",176
+"Marco",1996,11,23,18,15.6,-74.8,1000,30,"Tropical Depression",176
+"Marco",1996,11,24,0,15.8,-76,1002,30,"Tropical Depression",177
+"Marco",1996,11,24,6,15.9,-77,1003,30,"Tropical Depression",177
+"Marco",1996,11,24,12,16,-78,1003,35,"Tropical Storm",177
+"Marco",1996,11,24,18,16,-78.9,1003,35,"Tropical Storm",177
+"Marco",1996,11,25,0,16.7,-80.2,1002,45,"Tropical Storm",178
+"Marco",1996,11,25,6,17.5,-81.5,1002,50,"Tropical Storm",178
+"Marco",1996,11,25,12,18.3,-82.6,1001,55,"Tropical Storm",178
+"Marco",1996,11,25,18,19.2,-83.5,1009,45,"Tropical Storm",178
+"Marco",1996,11,26,0,19.7,-84,1009,40,"Tropical Storm",179
+"Marco",1996,11,26,6,20.1,-84.4,1010,35,"Tropical Storm",179
+"Marco",1996,11,26,12,20.1,-84.3,1010,30,"Tropical Depression",179
+"Marco",1996,11,26,18,19.6,-84.8,1010,25,"Tropical Depression",179
+"Ana",1997,6,30,12,32,-77.2,1013,30,"Tropical Depression",30
+"Ana",1997,6,30,18,32,-76.6,1011,30,"Tropical Depression",30
+"Ana",1997,7,1,0,31.9,-76,1009,30,"Tropical Depression",31
+"Ana",1997,7,1,6,31.8,-75.4,1006,35,"Tropical Storm",31
+"Ana",1997,7,1,12,31.7,-74.6,1004,40,"Tropical Storm",31
+"Ana",1997,7,1,18,31.4,-73.8,1002,40,"Tropical Storm",31
+"Ana",1997,7,2,0,31.4,-72.9,1000,40,"Tropical Storm",32
+"Ana",1997,7,2,6,31.7,-72,1000,35,"Tropical Storm",32
+"Ana",1997,7,2,12,32.1,-71.2,1000,35,"Tropical Storm",32
+"Ana",1997,7,2,18,32.7,-70.5,1000,35,"Tropical Storm",32
+"Ana",1997,7,3,0,33.5,-69.8,1001,35,"Tropical Storm",33
+"Ana",1997,7,3,6,34.4,-69.2,1001,35,"Tropical Storm",33
+"Ana",1997,7,3,12,35.2,-68.4,1002,35,"Tropical Storm",33
+"Ana",1997,7,3,18,36.1,-67.5,1002,30,"Tropical Depression",33
+"Ana",1997,7,4,0,36.9,-66.2,1003,25,"Tropical Depression",34
+"Ana",1997,7,4,6,37.7,-64.5,1003,25,"Extratropical",34
+"Ana",1997,7,4,12,38.4,-62.4,1004,25,"Extratropical",34
+"Ana",1997,7,4,18,39.5,-59.5,1004,25,"Extratropical",34
+"Ana",1997,7,5,0,41,-58,1005,25,"Extratropical",35
+"Bill",1997,7,11,6,30.4,-69.9,1014,30,"Tropical Depression",41
+"Bill",1997,7,11,12,31.8,-68.9,1013,40,"Tropical Storm",41
+"Bill",1997,7,11,18,33.1,-67.6,1010,45,"Tropical Storm",41
+"Bill",1997,7,12,0,34.7,-65.8,1005,50,"Tropical Storm",42
+"Bill",1997,7,12,6,36.3,-63.6,995,60,"Tropical Storm",42
+"Bill",1997,7,12,12,37.9,-61.1,987,65,"Hurricane",42
+"Bill",1997,7,12,18,39.6,-58.4,987,65,"Hurricane",42
+"Bill",1997,7,13,0,41.6,-55.4,990,60,"Tropical Storm",43
+"Bill",1997,7,13,6,44,-53,990,40,"Extratropical",43
+"Claudette",1997,7,13,0,31.3,-73.6,1012,25,"Extratropical",43
+"Claudette",1997,7,13,6,31.3,-73.3,1011,25,"Tropical Depression",43
+"Claudette",1997,7,13,12,31.6,-73.1,1008,30,"Tropical Depression",43
+"Claudette",1997,7,13,18,31.9,-73,1004,40,"Tropical Storm",43
+"Claudette",1997,7,14,0,32.3,-73,1003,40,"Tropical Storm",44
+"Claudette",1997,7,14,6,32.7,-72.9,1003,40,"Tropical Storm",44
+"Claudette",1997,7,14,12,33.4,-72.7,1004,40,"Tropical Storm",44
+"Claudette",1997,7,14,18,34,-72.6,1005,40,"Tropical Storm",44
+"Claudette",1997,7,15,0,34.9,-71.8,1005,35,"Tropical Storm",45
+"Claudette",1997,7,15,6,35.6,-70.9,1006,35,"Tropical Storm",45
+"Claudette",1997,7,15,12,36.2,-69.3,1009,40,"Tropical Storm",45
+"Claudette",1997,7,15,18,36.6,-67.2,1009,35,"Tropical Storm",45
+"Claudette",1997,7,16,0,36.7,-64.9,1009,30,"Tropical Depression",46
+"Claudette",1997,7,16,6,36.6,-62.7,1006,35,"Tropical Storm",46
+"Claudette",1997,7,16,12,36.3,-60.5,1007,35,"Tropical Storm",46
+"Claudette",1997,7,16,18,35.9,-57.9,1009,30,"Extratropical",46
+"Danny",1997,7,16,12,27.4,-92.6,1013,25,"Tropical Depression",46
+"Danny",1997,7,16,18,27.5,-92.5,1013,30,"Tropical Depression",46
+"Danny",1997,7,17,0,27.7,-92.3,1011,30,"Tropical Depression",47
+"Danny",1997,7,17,6,27.9,-92,1007,30,"Tropical Depression",47
+"Danny",1997,7,17,12,28.3,-91.4,1003,40,"Tropical Storm",47
+"Danny",1997,7,17,18,28.6,-91,1002,50,"Tropical Storm",47
+"Danny",1997,7,18,0,28.9,-90.2,997,55,"Tropical Storm",48
+"Danny",1997,7,18,6,29.2,-89.9,992,65,"Hurricane",48
+"Danny",1997,7,18,12,29.5,-89.4,990,70,"Hurricane",48
+"Danny",1997,7,18,18,29.7,-89,988,70,"Hurricane",48
+"Danny",1997,7,19,0,29.8,-88.4,984,70,"Hurricane",49
+"Danny",1997,7,19,6,30.1,-88.1,987,65,"Hurricane",49
+"Danny",1997,7,19,12,30.3,-88,984,70,"Hurricane",49
+"Danny",1997,7,19,18,30.4,-87.9,986,65,"Hurricane",49
+"Danny",1997,7,20,0,30.3,-87.6,991,60,"Tropical Storm",50
+"Danny",1997,7,20,6,30.4,-87.5,998,45,"Tropical Storm",50
+"Danny",1997,7,20,12,30.6,-87.4,1001,35,"Tropical Storm",50
+"Danny",1997,7,20,18,30.8,-87.4,1004,30,"Tropical Depression",50
+"Danny",1997,7,21,0,31,-87.5,1006,25,"Tropical Depression",51
+"Danny",1997,7,21,6,31.3,-87.6,1009,20,"Tropical Depression",51
+"Danny",1997,7,21,12,31.7,-87.6,1010,20,"Tropical Depression",51
+"Danny",1997,7,21,18,32.1,-87.2,1011,20,"Tropical Depression",51
+"Danny",1997,7,22,0,32.9,-87.1,1011,20,"Tropical Depression",52
+"Danny",1997,7,22,6,33.2,-86.8,1012,20,"Tropical Depression",52
+"Danny",1997,7,22,12,33.4,-86.6,1013,20,"Tropical Depression",52
+"Danny",1997,7,22,18,33.7,-86.3,1013,20,"Tropical Depression",52
+"Danny",1997,7,23,0,34,-86,1012,20,"Tropical Depression",53
+"Danny",1997,7,23,6,34.1,-85.2,1012,20,"Tropical Depression",53
+"Danny",1997,7,23,12,34.2,-84.5,1012,20,"Tropical Depression",53
+"Danny",1997,7,23,18,34.3,-83.7,1012,20,"Tropical Depression",53
+"Danny",1997,7,24,0,34.4,-82.4,1012,20,"Tropical Depression",54
+"Danny",1997,7,24,6,34.6,-80.7,1010,20,"Tropical Depression",54
+"Danny",1997,7,24,12,35.2,-79.2,1004,30,"Tropical Depression",54
+"Danny",1997,7,24,18,36.4,-76.7,1000,40,"Tropical Storm",54
+"Danny",1997,7,25,0,37.5,-73.5,996,50,"Tropical Storm",55
+"Danny",1997,7,25,6,38.6,-71.6,995,50,"Tropical Storm",55
+"Danny",1997,7,25,12,40,-70.4,995,50,"Tropical Storm",55
+"Danny",1997,7,25,18,40.7,-69.9,994,50,"Tropical Storm",55
+"Danny",1997,7,26,0,40.7,-69.6,995,45,"Tropical Storm",56
+"Danny",1997,7,26,6,40.4,-68,998,45,"Extratropical",56
+"Danny",1997,7,26,12,40.6,-65.6,1003,40,"Extratropical",56
+"Danny",1997,7,26,18,41,-63,1004,40,"Extratropical",56
+"Danny",1997,7,27,0,41.7,-60.4,1004,40,"Extratropical",57
+"Danny",1997,7,27,6,42.8,-56,1004,40,"Extratropical",57
+"Danny",1997,7,27,12,44,-48,1005,30,"Extratropical",57
+"Erika",1997,9,3,6,10.9,-44.1,1006,30,"Tropical Depression",95
+"Erika",1997,9,3,12,11.5,-45.5,1005,30,"Tropical Depression",95
+"Erika",1997,9,3,18,12.3,-47.1,1004,35,"Tropical Storm",95
+"Erika",1997,9,4,0,13.1,-48.5,1002,40,"Tropical Storm",96
+"Erika",1997,9,4,6,13.9,-49.9,1001,50,"Tropical Storm",96
+"Erika",1997,9,4,12,14.6,-51.7,1000,55,"Tropical Storm",96
+"Erika",1997,9,4,18,15.2,-53.7,999,65,"Hurricane",96
+"Erika",1997,9,5,0,15.6,-55.3,998,65,"Hurricane",97
+"Erika",1997,9,5,6,16,-56.4,997,65,"Hurricane",97
+"Erika",1997,9,5,12,16.4,-57.4,996,65,"Hurricane",97
+"Erika",1997,9,5,18,17,-58.3,990,65,"Hurricane",97
+"Erika",1997,9,6,0,17.5,-59.2,988,65,"Hurricane",98
+"Erika",1997,9,6,6,18.1,-60,986,70,"Hurricane",98
+"Erika",1997,9,6,12,18.6,-60.9,982,70,"Hurricane",98
+"Erika",1997,9,6,18,19,-61.7,980,75,"Hurricane",98
+"Erika",1997,9,7,0,19.4,-62.4,979,75,"Hurricane",99
+"Erika",1997,9,7,6,19.7,-62.8,978,75,"Hurricane",99
+"Erika",1997,9,7,12,20.2,-63.1,975,75,"Hurricane",99
+"Erika",1997,9,7,18,20.6,-63.2,970,90,"Hurricane",99
+"Erika",1997,9,8,0,21.2,-63.2,966,95,"Hurricane",100
+"Erika",1997,9,8,6,21.8,-63.2,961,100,"Hurricane",100
+"Erika",1997,9,8,12,22.5,-62.9,957,105,"Hurricane",100
+"Erika",1997,9,8,18,23.2,-62.5,952,110,"Hurricane",100
+"Erika",1997,9,9,0,24.1,-62,948,110,"Hurricane",101
+"Erika",1997,9,9,6,25.2,-61.4,946,110,"Hurricane",101
+"Erika",1997,9,9,12,26.5,-60.8,947,110,"Hurricane",101
+"Erika",1997,9,9,18,27.9,-60.2,951,110,"Hurricane",101
+"Erika",1997,9,10,0,29.3,-59.6,955,105,"Hurricane",102
+"Erika",1997,9,10,6,30.8,-58.9,960,100,"Hurricane",102
+"Erika",1997,9,10,12,32.2,-58.3,965,95,"Hurricane",102
+"Erika",1997,9,10,18,33.6,-57.5,970,90,"Hurricane",102
+"Erika",1997,9,11,0,34.8,-56.4,973,80,"Hurricane",103
+"Erika",1997,9,11,6,35.7,-55.1,977,75,"Hurricane",103
+"Erika",1997,9,11,12,36.4,-53.6,984,70,"Hurricane",103
+"Erika",1997,9,11,18,37.1,-51.9,988,65,"Hurricane",103
+"Erika",1997,9,12,0,37.6,-49.9,990,60,"Tropical Storm",104
+"Erika",1997,9,12,6,38,-48,994,55,"Tropical Storm",104
+"Erika",1997,9,12,12,38.5,-46.2,995,55,"Tropical Storm",104
+"Erika",1997,9,12,18,38.9,-44.9,995,50,"Tropical Storm",104
+"Erika",1997,9,13,0,39,-44,995,45,"Tropical Storm",105
+"Erika",1997,9,13,6,38.9,-43.2,995,45,"Tropical Storm",105
+"Erika",1997,9,13,12,38.5,-42.3,995,45,"Tropical Storm",105
+"Erika",1997,9,13,18,38.1,-41.3,995,45,"Tropical Storm",105
+"Erika",1997,9,14,0,37.8,-40.2,995,45,"Tropical Storm",106
+"Erika",1997,9,14,6,37.6,-39.1,992,50,"Tropical Storm",106
+"Erika",1997,9,14,12,37.6,-37.9,989,55,"Tropical Storm",106
+"Erika",1997,9,14,18,37.8,-36.5,987,55,"Tropical Storm",106
+"Erika",1997,9,15,0,38.2,-35,984,60,"Tropical Storm",107
+"Erika",1997,9,15,6,38.9,-33.4,984,55,"Tropical Storm",107
+"Erika",1997,9,15,12,39.7,-31.7,983,50,"Tropical Storm",107
+"Erika",1997,9,15,18,40.9,-29.9,984,50,"Tropical Storm",107
+"Erika",1997,9,16,0,42.2,-28.2,985,50,"Extratropical",108
+"Erika",1997,9,16,6,43.5,-26.5,987,50,"Extratropical",108
+"Erika",1997,9,16,12,45,-24.5,989,50,"Extratropical",108
+"Erika",1997,9,16,18,46,-22.5,991,55,"Extratropical",108
+"Erika",1997,9,17,0,46.8,-21,993,60,"Extratropical",109
+"Erika",1997,9,17,6,47,-20,994,60,"Extratropical",109
+"Erika",1997,9,17,12,46.5,-19,992,60,"Extratropical",109
+"Erika",1997,9,17,18,46,-20,994,55,"Extratropical",109
+"Erika",1997,9,18,0,47.2,-19.8,996,50,"Extratropical",110
+"Erika",1997,9,18,6,48,-19,998,45,"Extratropical",110
+"Erika",1997,9,18,12,48.5,-18,1000,40,"Extratropical",110
+"Erika",1997,9,18,18,48.8,-17.5,1000,40,"Extratropical",110
+"Erika",1997,9,19,0,48.9,-17,1000,35,"Extratropical",111
+"Erika",1997,9,19,6,48.9,-16.2,1000,30,"Extratropical",111
+"Erika",1997,9,19,12,49,-15.3,1005,30,"Extratropical",111
+"Erika",1997,9,19,18,49,-14,1009,25,"Extratropical",111
+"Fabian",1997,10,4,18,24.2,-64.5,1009,25,"Tropical Depression",126
+"Fabian",1997,10,5,0,24.7,-64.3,1009,25,"Tropical Depression",127
+"Fabian",1997,10,5,6,25.2,-64,1009,25,"Tropical Depression",127
+"Fabian",1997,10,5,12,25.7,-63.5,1007,30,"Tropical Depression",127
+"Fabian",1997,10,5,18,26.3,-63.1,1005,35,"Tropical Storm",127
+"Fabian",1997,10,6,0,26.8,-62.6,1005,35,"Tropical Storm",128
+"Fabian",1997,10,6,6,27.2,-61.9,1005,35,"Tropical Storm",128
+"Fabian",1997,10,6,12,27.7,-61.3,1005,35,"Tropical Storm",128
+"Fabian",1997,10,6,18,28.2,-60.2,1005,35,"Tropical Storm",128
+"Fabian",1997,10,7,0,28.8,-59.1,1005,35,"Tropical Storm",129
+"Fabian",1997,10,7,6,29.2,-57.9,1005,35,"Tropical Storm",129
+"Fabian",1997,10,7,12,29.5,-56.8,1004,35,"Tropical Storm",129
+"Fabian",1997,10,7,18,29.1,-56,1005,35,"Tropical Storm",129
+"Fabian",1997,10,8,0,28.6,-55,1005,35,"Tropical Storm",130
+"Fabian",1997,10,8,6,28.4,-53.4,1005,35,"Tropical Storm",130
+"Fabian",1997,10,8,12,28.7,-51.4,1005,35,"Extratropical",130
+"Fabian",1997,10,8,18,29.2,-48.8,1005,40,"Extratropical",130
+"Grace",1997,10,14,12,20,-68.7,1002,30,"Extratropical",136
+"Grace",1997,10,14,18,20.3,-69.8,1001,30,"Extratropical",136
+"Grace",1997,10,15,0,20.3,-69.6,999,35,"Extratropical",137
+"Grace",1997,10,15,6,20.3,-68.9,999,35,"Extratropical",137
+"Grace",1997,10,15,12,20.6,-68,999,40,"Extratropical",137
+"Grace",1997,10,15,18,20.8,-66.5,999,40,"Extratropical",137
+"Grace",1997,10,16,0,21.2,-64.4,999,40,"Tropical Storm",138
+"Grace",1997,10,16,6,21.6,-61.6,1000,35,"Tropical Storm",138
+"Grace",1997,10,16,12,22.4,-58.8,1000,35,"Tropical Storm",138
+"Grace",1997,10,16,18,23.6,-56.2,1001,35,"Tropical Storm",138
+"Grace",1997,10,17,0,24,-53.6,1002,35,"Tropical Storm",139
+"Grace",1997,10,17,6,24.3,-50.5,1003,35,"Tropical Storm",139
+"Grace",1997,10,17,12,24.5,-47.3,1004,30,"Extratropical",139
+"Alex",1998,7,27,12,11.3,-25.4,1009,25,"Tropical Depression",57
+"Alex",1998,7,27,18,11.7,-27.2,1009,25,"Tropical Depression",57
+"Alex",1998,7,28,0,12.2,-29.2,1009,25,"Tropical Depression",58
+"Alex",1998,7,28,6,12.6,-31.3,1008,25,"Tropical Depression",58
+"Alex",1998,7,28,12,12.9,-33.3,1007,30,"Tropical Depression",58
+"Alex",1998,7,28,18,13.1,-35.1,1006,30,"Tropical Depression",58
+"Alex",1998,7,29,0,13.3,-36.8,1005,35,"Tropical Storm",59
+"Alex",1998,7,29,6,13.5,-38.5,1005,35,"Tropical Storm",59
+"Alex",1998,7,29,12,13.7,-40,1005,35,"Tropical Storm",59
+"Alex",1998,7,29,18,13.9,-41.3,1005,35,"Tropical Storm",59
+"Alex",1998,7,30,0,14.2,-42.6,1005,35,"Tropical Storm",60
+"Alex",1998,7,30,6,14.4,-43.9,1003,40,"Tropical Storm",60
+"Alex",1998,7,30,12,14.7,-45,1003,40,"Tropical Storm",60
+"Alex",1998,7,30,18,15.1,-46.1,1003,45,"Tropical Storm",60
+"Alex",1998,7,31,0,15.4,-47.1,1002,45,"Tropical Storm",61
+"Alex",1998,7,31,6,15.6,-48.1,1003,45,"Tropical Storm",61
+"Alex",1998,7,31,12,15.7,-49.2,1003,45,"Tropical Storm",61
+"Alex",1998,7,31,18,15.8,-50.4,1005,40,"Tropical Storm",61
+"Alex",1998,8,1,0,15.9,-51.7,1007,35,"Tropical Storm",62
+"Alex",1998,8,1,6,16.3,-53.1,1009,35,"Tropical Storm",62
+"Alex",1998,8,1,12,16.9,-54.3,1009,40,"Tropical Storm",62
+"Alex",1998,8,1,18,17.7,-55.4,1012,40,"Tropical Storm",62
+"Alex",1998,8,2,0,18.4,-56.5,1012,35,"Tropical Storm",63
+"Alex",1998,8,2,6,19,-57.7,1012,35,"Tropical Storm",63
+"Alex",1998,8,2,12,19.9,-58.6,1012,35,"Tropical Storm",63
+"Alex",1998,8,2,18,21,-59.3,1014,30,"Tropical Depression",63
+"Bonnie",1998,8,19,12,14.7,-48.1,1009,25,"Tropical Depression",80
+"Bonnie",1998,8,19,18,15.4,-50.1,1009,30,"Tropical Depression",80
+"Bonnie",1998,8,20,0,16.2,-52.2,1009,30,"Tropical Depression",81
+"Bonnie",1998,8,20,6,16.9,-54.7,1008,30,"Tropical Depression",81
+"Bonnie",1998,8,20,12,17.3,-57.3,1007,35,"Tropical Storm",81
+"Bonnie",1998,8,20,18,18.2,-59.6,1006,35,"Tropical Storm",81
+"Bonnie",1998,8,21,0,18.7,-61.3,1005,40,"Tropical Storm",82
+"Bonnie",1998,8,21,6,19.1,-62.9,1002,45,"Tropical Storm",82
+"Bonnie",1998,8,21,12,19.5,-64.5,1000,50,"Tropical Storm",82
+"Bonnie",1998,8,21,18,20.3,-65.9,999,55,"Tropical Storm",82
+"Bonnie",1998,8,22,0,21.1,-67.3,991,65,"Hurricane",83
+"Bonnie",1998,8,22,6,21.8,-68.7,989,70,"Hurricane",83
+"Bonnie",1998,8,22,12,22.3,-69.8,980,75,"Hurricane",83
+"Bonnie",1998,8,22,18,23,-70.5,970,85,"Hurricane",83
+"Bonnie",1998,8,23,0,23.4,-71,962,90,"Hurricane",84
+"Bonnie",1998,8,23,6,23.8,-71.3,960,95,"Hurricane",84
+"Bonnie",1998,8,23,12,24.1,-71.5,958,100,"Hurricane",84
+"Bonnie",1998,8,23,18,24.4,-71.7,955,100,"Hurricane",84
+"Bonnie",1998,8,24,0,24.8,-71.8,954,100,"Hurricane",85
+"Bonnie",1998,8,24,6,25.2,-72.1,960,100,"Hurricane",85
+"Bonnie",1998,8,24,12,25.6,-72.4,962,100,"Hurricane",85
+"Bonnie",1998,8,24,18,26.1,-72.8,963,100,"Hurricane",85
+"Bonnie",1998,8,25,0,26.9,-73.2,963,100,"Hurricane",86
+"Bonnie",1998,8,25,6,27.8,-73.8,962,100,"Hurricane",86
+"Bonnie",1998,8,25,12,28.8,-74.7,963,100,"Hurricane",86
+"Bonnie",1998,8,25,18,29.8,-75.6,963,100,"Hurricane",86
+"Bonnie",1998,8,26,0,30.8,-76.4,958,100,"Hurricane",87
+"Bonnie",1998,8,26,6,31.7,-77.3,964,100,"Hurricane",87
+"Bonnie",1998,8,26,12,32.7,-77.8,965,100,"Hurricane",87
+"Bonnie",1998,8,26,18,33.4,-77.8,962,100,"Hurricane",87
+"Bonnie",1998,8,27,0,34,-77.7,963,95,"Hurricane",88
+"Bonnie",1998,8,27,6,34.5,-77.5,965,85,"Hurricane",88
+"Bonnie",1998,8,27,12,34.9,-77.1,974,75,"Hurricane",88
+"Bonnie",1998,8,27,18,35.4,-76.6,980,60,"Tropical Storm",88
+"Bonnie",1998,8,28,0,35.8,-75.9,983,65,"Hurricane",89
+"Bonnie",1998,8,28,6,36.2,-75.1,985,75,"Hurricane",89
+"Bonnie",1998,8,28,12,36.7,-74.3,990,65,"Hurricane",89
+"Bonnie",1998,8,28,18,37.3,-73.2,991,60,"Tropical Storm",89
+"Bonnie",1998,8,29,0,38.3,-71.4,993,45,"Tropical Storm",90
+"Bonnie",1998,8,29,6,39.2,-69.6,999,45,"Tropical Storm",90
+"Bonnie",1998,8,29,12,40.2,-67.8,999,45,"Tropical Storm",90
+"Bonnie",1998,8,29,18,41.6,-64.8,1000,45,"Tropical Storm",90
+"Bonnie",1998,8,30,0,42.9,-61.5,1000,45,"Tropical Storm",91
+"Bonnie",1998,8,30,6,44.3,-57,1000,45,"Tropical Storm",91
+"Bonnie",1998,8,30,12,44.5,-53.5,1000,45,"Tropical Storm",91
+"Bonnie",1998,8,30,18,44,-50,998,45,"Extratropical",91
+"Bonnie",1998,8,31,0,44,-45,996,45,"Extratropical",92
+"Charley",1998,8,21,6,25.3,-92.3,1008,25,"Tropical Depression",82
+"Charley",1998,8,21,12,25.4,-93.8,1008,30,"Tropical Depression",82
+"Charley",1998,8,21,18,26,-94.5,1008,40,"Tropical Storm",82
+"Charley",1998,8,22,0,26.8,-95.4,1006,45,"Tropical Storm",83
+"Charley",1998,8,22,6,27.5,-96.5,1002,60,"Tropical Storm",83
+"Charley",1998,8,22,12,27.9,-97.4,1001,35,"Tropical Storm",83
+"Charley",1998,8,22,18,28.3,-98.1,1003,30,"Tropical Depression",83
+"Charley",1998,8,23,0,28.5,-98.7,1005,25,"Tropical Depression",84
+"Charley",1998,8,23,6,28.7,-99.3,1006,20,"Tropical Depression",84
+"Charley",1998,8,23,12,28.8,-99.9,1007,20,"Tropical Depression",84
+"Charley",1998,8,23,18,29.1,-100.6,1008,20,"Tropical Depression",84
+"Charley",1998,8,24,0,29.4,-101.2,1008,20,"Extratropical",85
+"Danielle",1998,8,24,6,13.4,-34.3,1007,25,"Tropical Depression",85
+"Danielle",1998,8,24,12,13.8,-36.1,1006,30,"Tropical Depression",85
+"Danielle",1998,8,24,18,14.2,-37.9,1005,35,"Tropical Storm",85
+"Danielle",1998,8,25,0,14.8,-39.8,1003,40,"Tropical Storm",86
+"Danielle",1998,8,25,6,15.3,-41.6,997,50,"Tropical Storm",86
+"Danielle",1998,8,25,12,16.2,-43.3,990,65,"Hurricane",86
+"Danielle",1998,8,25,18,16.9,-45.3,982,75,"Hurricane",86
+"Danielle",1998,8,26,0,17.6,-47.3,980,80,"Hurricane",87
+"Danielle",1998,8,26,6,18.4,-49.1,975,90,"Hurricane",87
+"Danielle",1998,8,26,12,19.1,-51.1,980,85,"Hurricane",87
+"Danielle",1998,8,26,18,19.7,-52.8,985,80,"Hurricane",87
+"Danielle",1998,8,27,0,20.1,-54.9,993,80,"Hurricane",88
+"Danielle",1998,8,27,6,20.6,-56.7,994,85,"Hurricane",88
+"Danielle",1998,8,27,12,21.2,-58.5,994,90,"Hurricane",88
+"Danielle",1998,8,27,18,21.8,-60.1,994,85,"Hurricane",88
+"Danielle",1998,8,28,0,22.4,-61.7,992,80,"Hurricane",89
+"Danielle",1998,8,28,6,22.7,-63.2,992,80,"Hurricane",89
+"Danielle",1998,8,28,12,23,-64.4,989,80,"Hurricane",89
+"Earl",1998,8,31,12,21.6,-93.5,1005,30,"Tropical Depression",92
+"Earl",1998,8,31,18,22.4,-93.8,1002,35,"Tropical Storm",92
+"Earl",1998,9,1,0,23.2,-93.7,1002,35,"Tropical Storm",93
+"Earl",1998,9,1,6,24.1,-93.4,1001,40,"Tropical Storm",93
+"Earl",1998,9,1,12,25,-93.1,999,45,"Tropical Storm",93
+"Earl",1998,9,1,18,25.8,-92.5,998,50,"Tropical Storm",93
+"Earl",1998,9,2,0,26.8,-91.5,998,50,"Tropical Storm",94
+"Earl",1998,9,2,6,27.6,-90.4,996,50,"Tropical Storm",94
+"Earl",1998,9,2,12,28.2,-89,994,70,"Hurricane",94
+"Earl",1998,9,2,18,28.7,-87.9,988,85,"Hurricane",94
+"Earl",1998,9,3,0,29.4,-86.8,985,80,"Hurricane",95
+"Earl",1998,9,3,6,30.1,-85.7,987,70,"Hurricane",95
+"Earl",1998,9,3,12,31.3,-84,990,45,"Tropical Storm",95
+"Earl",1998,9,3,18,32.4,-82.4,994,40,"Extratropical",95
+"Earl",1998,9,4,0,33.2,-80.5,994,40,"Extratropical",96
+"Earl",1998,9,4,6,34.5,-79,995,50,"Extratropical",96
+"Earl",1998,9,4,12,35.9,-77.2,998,50,"Extratropical",96
+"Earl",1998,9,4,18,36.5,-75,1000,50,"Extratropical",96
+"Earl",1998,9,5,0,38,-71,1000,50,"Extratropical",97
+"Earl",1998,9,5,6,40,-65.5,998,50,"Extratropical",97
+"Earl",1998,9,5,12,42.5,-61,990,50,"Extratropical",97
+"Earl",1998,9,5,18,45,-56,986,50,"Extratropical",97
+"Earl",1998,9,6,0,47,-54,979,50,"Extratropical",98
+"Earl",1998,9,6,6,48,-53,968,50,"Extratropical",98
+"Earl",1998,9,6,12,49,-52,964,55,"Extratropical",98
+"Earl",1998,9,6,18,49.5,-50,966,55,"Extratropical",98
+"Earl",1998,9,7,0,50,-48,968,55,"Extratropical",99
+"Earl",1998,9,7,6,50.5,-45,970,50,"Extratropical",99
+"Earl",1998,9,7,12,51,-41,978,45,"Extratropical",99
+"Earl",1998,9,7,18,51,-37,978,45,"Extratropical",99
+"Earl",1998,9,8,0,51,-32,982,40,"Extratropical",100
+"Earl",1998,9,8,6,51.5,-28.5,982,40,"Extratropical",100
+"Earl",1998,9,8,12,52,-25,983,35,"Extratropical",100
+"Frances",1998,9,8,18,25.5,-94.5,1000,30,"Tropical Depression",100
+"Frances",1998,9,9,0,25.3,-94.4,1000,30,"Tropical Depression",101
+"Frances",1998,9,9,6,25,-94.5,999,30,"Tropical Depression",101
+"Frances",1998,9,9,12,24.6,-94.7,998,30,"Tropical Depression",101
+"Frances",1998,9,9,18,24.2,-95.5,997,35,"Tropical Storm",101
+"Frances",1998,9,10,0,23.5,-95.6,995,40,"Tropical Storm",102
+"Frances",1998,9,10,6,24.2,-95,995,40,"Tropical Storm",102
+"Frances",1998,9,10,12,25.3,-95.2,996,45,"Tropical Storm",102
+"Frances",1998,9,10,18,26.6,-95.2,996,45,"Tropical Storm",102
+"Frances",1998,9,11,0,27.2,-95.9,994,55,"Tropical Storm",103
+"Frances",1998,9,11,6,28.2,-96.9,990,45,"Tropical Storm",103
+"Frances",1998,9,11,12,28.4,-97.6,992,40,"Tropical Storm",103
+"Frances",1998,9,11,18,28.5,-97,994,35,"Tropical Storm",103
+"Frances",1998,9,12,0,29.3,-96.9,996,30,"Tropical Depression",104
+"Frances",1998,9,12,6,30.2,-96.8,998,30,"Tropical Depression",104
+"Frances",1998,9,12,12,31,-96.8,1000,30,"Tropical Depression",104
+"Frances",1998,9,12,18,31.3,-96.8,1001,30,"Tropical Depression",104
+"Frances",1998,9,13,0,31.5,-96.8,1002,25,"Tropical Depression",105
+"Frances",1998,9,13,6,31.7,-96.9,1002,20,"Tropical Depression",105
+"Frances",1998,9,13,12,32,-96.9,1003,20,"Tropical Depression",105
+"Frances",1998,9,13,18,33,-97,1003,20,"Tropical Depression",105
+"Georges",1998,9,9,15,9.7,-25.1,1009,30,"Tropical Depression",101
+"Georges",1998,9,9,18,9.8,-26.5,1009,30,"Tropical Depression",101
+"Georges",1998,9,16,0,10,-28.1,1009,30,"Tropical Depression",108
+"Georges",1998,9,16,6,10.3,-29.7,1009,30,"Tropical Depression",108
+"Georges",1998,9,16,12,10.6,-31.3,1005,35,"Tropical Storm",108
+"Georges",1998,9,16,18,11,-32.9,1003,35,"Tropical Storm",108
+"Georges",1998,9,17,0,11.3,-34.6,1000,45,"Tropical Storm",109
+"Georges",1998,9,17,6,11.7,-36.3,997,50,"Tropical Storm",109
+"Georges",1998,9,17,12,12,-38.1,994,55,"Tropical Storm",109
+"Georges",1998,9,17,18,12.3,-40,987,65,"Hurricane",109
+"Georges",1998,9,18,0,12.5,-42,984,70,"Hurricane",110
+"Georges",1998,9,18,6,12.8,-43.9,977,80,"Hurricane",110
+"Georges",1998,9,18,12,13.1,-45.7,973,85,"Hurricane",110
+"Georges",1998,9,18,18,13.5,-47.4,970,90,"Hurricane",110
+"Georges",1998,9,19,0,13.9,-49,970,90,"Hurricane",111
+"Georges",1998,9,19,6,14.4,-50.6,965,95,"Hurricane",111
+"Georges",1998,9,19,12,14.9,-52,954,110,"Hurricane",111
+"Georges",1998,9,19,18,15.4,-53.5,949,125,"Hurricane",111
+"Georges",1998,9,20,0,15.7,-54.9,939,130,"Hurricane",112
+"Georges",1998,9,20,6,16,-56.3,937,135,"Hurricane",112
+"Georges",1998,9,20,12,16.2,-57.7,939,130,"Hurricane",112
+"Georges",1998,9,20,18,16.4,-59.2,956,115,"Hurricane",112
+"Georges",1998,9,21,0,16.7,-60.6,963,100,"Hurricane",113
+"Georges",1998,9,21,6,17.1,-62.1,966,100,"Hurricane",113
+"Georges",1998,9,21,12,17.4,-63.6,966,95,"Hurricane",113
+"Georges",1998,9,21,18,17.8,-65,972,90,"Hurricane",113
+"Georges",1998,9,22,0,18.2,-66.3,970,90,"Hurricane",114
+"Georges",1998,9,22,6,18,-67.4,972,95,"Hurricane",114
+"Georges",1998,9,22,12,18.2,-68.5,964,105,"Hurricane",114
+"Georges",1998,9,22,18,18.6,-69.7,970,95,"Hurricane",114
+"Georges",1998,9,23,0,18.8,-70.8,980,70,"Hurricane",115
+"Georges",1998,9,23,6,19,-72.1,990,65,"Hurricane",115
+"Georges",1998,9,23,12,19.3,-73.3,996,65,"Hurricane",115
+"Georges",1998,9,23,18,19.8,-74.3,994,65,"Hurricane",115
+"Georges",1998,9,24,0,20.5,-74.9,992,65,"Hurricane",116
+"Georges",1998,9,24,6,20.8,-76,991,65,"Hurricane",116
+"Georges",1998,9,24,12,21.3,-77.2,990,70,"Hurricane",116
+"Georges",1998,9,24,18,21.9,-78,989,75,"Hurricane",116
+"Georges",1998,9,25,0,22.7,-79,987,80,"Hurricane",117
+"Georges",1998,9,25,6,23.4,-80.2,986,85,"Hurricane",117
+"Georges",1998,9,25,12,23.9,-81.3,982,90,"Hurricane",117
+"Georges",1998,9,25,18,24.6,-82.4,975,90,"Hurricane",117
+"Georges",1998,9,26,0,24.8,-83.3,974,90,"Hurricane",118
+"Georges",1998,9,26,6,25.2,-84.2,975,90,"Hurricane",118
+"Georges",1998,9,26,12,25.7,-85.1,974,90,"Hurricane",118
+"Georges",1998,9,26,18,26.2,-85.9,975,90,"Hurricane",118
+"Georges",1998,9,27,0,27,-86.5,969,95,"Hurricane",119
+"Georges",1998,9,27,6,27.6,-87.2,970,95,"Hurricane",119
+"Georges",1998,9,27,12,28.2,-87.8,962,95,"Hurricane",119
+"Georges",1998,9,27,18,28.8,-88.3,962,95,"Hurricane",119
+"Georges",1998,9,28,0,29.3,-88.5,961,95,"Hurricane",120
+"Georges",1998,9,28,6,29.8,-88.7,964,90,"Hurricane",120
+"Georges",1998,9,28,12,30.4,-88.9,965,90,"Hurricane",120
+"Georges",1998,9,28,18,30.6,-88.9,984,65,"Hurricane",120
+"Georges",1998,9,29,0,30.6,-89,986,50,"Tropical Storm",121
+"Georges",1998,9,29,6,30.6,-88.4,992,40,"Tropical Storm",121
+"Georges",1998,9,29,12,31,-88.1,994,30,"Tropical Depression",121
+"Georges",1998,9,29,18,30.9,-87.5,996,30,"Tropical Depression",121
+"Georges",1998,9,30,0,30.8,-86.9,998,30,"Tropical Depression",122
+"Georges",1998,9,30,6,30.7,-86.3,1000,30,"Tropical Depression",122
+"Georges",1998,9,30,12,30.7,-85.4,1002,25,"Tropical Depression",122
+"Georges",1998,9,30,18,30.6,-84.2,1004,25,"Tropical Depression",122
+"Georges",1998,10,10,1,30.5,-83,1006,25,"Tropical Depression",132
+"Georges",1998,11,1,6,30.5,-81.8,1008,20,"Tropical Depression",154
+"Hermine",1998,9,17,12,26.9,-90.3,1001,30,"Tropical Depression",109
+"Hermine",1998,9,17,18,26.8,-91.6,1001,30,"Tropical Depression",109
+"Hermine",1998,9,18,0,26.4,-92.1,1000,30,"Tropical Depression",110
+"Hermine",1998,9,18,6,25.7,-92.5,999,30,"Tropical Depression",110
+"Hermine",1998,9,18,12,26,-92.5,999,30,"Tropical Depression",110
+"Hermine",1998,9,18,18,25.9,-92.3,1000,30,"Tropical Depression",110
+"Hermine",1998,9,19,0,25.8,-92,1001,30,"Tropical Depression",111
+"Hermine",1998,9,19,6,26.4,-91.4,1001,30,"Tropical Depression",111
+"Hermine",1998,9,19,12,27.5,-91.3,1001,35,"Tropical Storm",111
+"Hermine",1998,9,19,18,28.3,-91.1,1000,40,"Tropical Storm",111
+"Hermine",1998,9,20,0,29,-90.9,999,40,"Tropical Storm",112
+"Hermine",1998,9,20,6,29.2,-90.9,1001,35,"Tropical Storm",112
+"Hermine",1998,9,20,12,30.5,-90.5,1002,30,"Tropical Depression",112
+"Hermine",1998,9,20,18,31,-90,1003,20,"Extratropical",112
+"Ivan",1998,9,19,0,13.4,-26.6,1010,25,"Tropical Depression",111
+"Ivan",1998,9,19,6,13.1,-27.5,1010,25,"Tropical Depression",111
+"Ivan",1998,9,19,12,12.9,-28.2,1010,25,"Tropical Depression",111
+"Ivan",1998,9,19,18,13.1,-29,1010,25,"Tropical Depression",111
+"Ivan",1998,9,20,0,13.4,-29.6,1009,30,"Tropical Depression",112
+"Ivan",1998,9,20,6,14.3,-30.6,1009,30,"Tropical Depression",112
+"Ivan",1998,9,20,12,15.2,-31.5,1008,30,"Tropical Depression",112
+"Ivan",1998,9,20,18,16,-32.6,1006,35,"Tropical Storm",112
+"Ivan",1998,9,21,0,16.8,-33.7,1005,35,"Tropical Storm",113
+"Ivan",1998,9,21,6,17.4,-34.9,1003,35,"Tropical Storm",113
+"Ivan",1998,9,21,12,18.2,-35.6,1003,35,"Tropical Storm",113
+"Ivan",1998,9,21,18,19,-36,1002,40,"Tropical Storm",113
+"Ivan",1998,9,22,0,20,-36.1,1001,40,"Tropical Storm",114
+"Ivan",1998,9,22,6,21.3,-36.1,1000,45,"Tropical Storm",114
+"Ivan",1998,9,22,12,22.9,-36.4,997,45,"Tropical Storm",114
+"Ivan",1998,9,22,18,24.2,-37.1,994,55,"Tropical Storm",114
+"Ivan",1998,9,23,0,25.6,-37.7,996,50,"Tropical Storm",115
+"Ivan",1998,9,23,6,26.9,-38.4,997,45,"Tropical Storm",115
+"Ivan",1998,9,23,12,28.3,-39.2,990,55,"Tropical Storm",115
+"Ivan",1998,9,23,18,29.6,-40.2,987,65,"Hurricane",115
+"Ivan",1998,9,24,0,30.5,-40.9,986,65,"Hurricane",116
+"Ivan",1998,9,24,6,31.3,-41.6,985,70,"Hurricane",116
+"Ivan",1998,9,24,12,32.3,-42,985,70,"Hurricane",116
+"Ivan",1998,9,24,18,33.4,-42.3,985,70,"Hurricane",116
+"Ivan",1998,9,25,0,34.4,-42.3,984,70,"Hurricane",117
+"Ivan",1998,9,25,6,35.3,-41.9,984,70,"Hurricane",117
+"Ivan",1998,9,25,12,36.3,-41.3,984,70,"Hurricane",117
+"Ivan",1998,9,25,18,37.2,-40.2,983,75,"Hurricane",117
+"Ivan",1998,9,26,0,38.1,-38.7,980,75,"Hurricane",118
+"Ivan",1998,9,26,6,39.2,-36.3,975,80,"Hurricane",118
+"Ivan",1998,9,26,12,40.1,-33.1,977,75,"Hurricane",118
+"Ivan",1998,9,26,18,40.7,-29.7,982,75,"Hurricane",118
+"Ivan",1998,9,27,0,40.7,-25.7,994,60,"Tropical Storm",119
+"Ivan",1998,9,27,6,40.9,-22.7,997,50,"Extratropical",119
+"Ivan",1998,9,27,12,41.3,-19.2,1000,45,"Extratropical",119
+"Ivan",1998,9,27,18,41.5,-15.5,1002,40,"Extratropical",119
+"Jeanne",1998,9,21,6,9.6,-17.4,1008,30,"Tropical Depression",113
+"Jeanne",1998,9,21,12,10.5,-18.2,1006,30,"Tropical Depression",113
+"Jeanne",1998,9,21,18,11,-19.4,1004,35,"Tropical Storm",113
+"Jeanne",1998,9,22,0,11.5,-20.7,1002,40,"Tropical Storm",114
+"Jeanne",1998,9,22,6,12.1,-22.2,1000,45,"Tropical Storm",114
+"Jeanne",1998,9,22,12,12.7,-23.8,994,55,"Tropical Storm",114
+"Jeanne",1998,9,22,18,13.1,-25.2,987,65,"Hurricane",114
+"Jeanne",1998,9,23,0,13.6,-26.7,983,70,"Hurricane",115
+"Jeanne",1998,9,23,6,14.1,-28.1,980,75,"Hurricane",115
+"Jeanne",1998,9,23,12,14.5,-29.5,975,80,"Hurricane",115
+"Jeanne",1998,9,23,18,15,-30.8,973,85,"Hurricane",115
+"Jeanne",1998,9,24,0,15.4,-32.1,972,85,"Hurricane",116
+"Jeanne",1998,9,24,6,15.9,-33.4,971,90,"Hurricane",116
+"Jeanne",1998,9,24,12,16.4,-34.4,970,90,"Hurricane",116
+"Jeanne",1998,9,24,18,17,-35.4,969,90,"Hurricane",116
+"Jeanne",1998,9,25,0,17.5,-36.3,971,90,"Hurricane",117
+"Jeanne",1998,9,25,6,18,-37.2,973,90,"Hurricane",117
+"Jeanne",1998,9,25,12,18.6,-37.9,975,85,"Hurricane",117
+"Jeanne",1998,9,25,18,19.3,-38.6,977,80,"Hurricane",117
+"Jeanne",1998,9,26,0,20,-39.4,979,75,"Hurricane",118
+"Jeanne",1998,9,26,6,20.8,-40,983,70,"Hurricane",118
+"Jeanne",1998,9,26,12,21.6,-40.6,983,70,"Hurricane",118
+"Jeanne",1998,9,26,18,22.4,-41.2,980,75,"Hurricane",118
+"Jeanne",1998,9,27,0,23.4,-41.6,980,75,"Hurricane",119
+"Jeanne",1998,9,27,6,24.4,-42,983,70,"Hurricane",119
+"Jeanne",1998,9,27,12,25.6,-41.8,983,70,"Hurricane",119
+"Jeanne",1998,9,27,18,27.1,-41.5,983,70,"Hurricane",119
+"Jeanne",1998,9,28,0,28.8,-41.2,983,70,"Hurricane",120
+"Jeanne",1998,9,28,6,30.6,-40.7,983,70,"Hurricane",120
+"Jeanne",1998,9,28,12,32.3,-39.6,980,75,"Hurricane",120
+"Jeanne",1998,9,28,18,33.8,-38.4,977,80,"Hurricane",120
+"Jeanne",1998,9,29,0,35,-37.2,977,80,"Hurricane",121
+"Jeanne",1998,9,29,6,35.8,-36.2,980,75,"Hurricane",121
+"Jeanne",1998,9,29,12,36.2,-35.3,985,65,"Hurricane",121
+"Jeanne",1998,9,29,18,36.6,-34.6,990,60,"Tropical Storm",121
+"Jeanne",1998,9,30,0,36.9,-33.4,997,50,"Tropical Storm",122
+"Jeanne",1998,9,30,6,37.2,-32.1,1000,45,"Tropical Storm",122
+"Jeanne",1998,9,30,12,37.6,-30.7,1002,40,"Tropical Storm",122
+"Jeanne",1998,9,30,18,38,-29.4,1006,35,"Tropical Storm",122
+"Jeanne",1998,10,1,0,38.2,-28,1008,30,"Tropical Depression",123
+"Jeanne",1998,10,1,6,38.3,-26.3,1008,30,"Extratropical",123
+"Jeanne",1998,10,1,12,38.5,-24.5,1006,35,"Extratropical",123
+"Jeanne",1998,10,1,18,38.7,-22.5,1005,35,"Extratropical",123
+"Jeanne",1998,10,2,0,38.8,-21,1003,35,"Extratropical",124
+"Jeanne",1998,10,2,6,38.9,-19.5,1003,35,"Extratropical",124
+"Jeanne",1998,10,2,12,39,-18.2,1003,40,"Extratropical",124
+"Jeanne",1998,10,2,18,39,-16.8,1003,40,"Extratropical",124
+"Jeanne",1998,10,3,0,39,-15.5,1003,40,"Extratropical",125
+"Jeanne",1998,10,3,6,39,-14.3,1003,40,"Extratropical",125
+"Jeanne",1998,10,3,12,39,-13,1003,40,"Extratropical",125
+"Jeanne",1998,10,3,18,39,-11,1003,35,"Extratropical",125
+"Jeanne",1998,10,4,0,39.1,-9,1003,30,"Extratropical",126
+"Jeanne",1998,10,4,6,39.3,-7,1004,30,"Extratropical",126
+"Jeanne",1998,10,4,12,39.5,-5,1004,25,"Extratropical",126
+"Karl",1998,9,23,12,33.3,-65.4,1003,25,"Tropical Depression",115
+"Karl",1998,9,23,18,33.2,-62.8,1003,30,"Tropical Depression",115
+"Karl",1998,9,24,0,33.2,-60.7,1003,35,"Tropical Storm",116
+"Karl",1998,9,24,6,32.9,-59.2,1002,35,"Tropical Storm",116
+"Karl",1998,9,24,12,32.5,-58.1,1001,40,"Tropical Storm",116
+"Karl",1998,9,24,18,32,-57.2,1000,45,"Tropical Storm",116
+"Karl",1998,9,25,0,31.4,-56.2,998,50,"Tropical Storm",117
+"Karl",1998,9,25,6,30.8,-55.1,994,55,"Tropical Storm",117
+"Karl",1998,9,25,12,30.4,-54,987,65,"Hurricane",117
+"Karl",1998,9,25,18,30.3,-52.9,984,70,"Hurricane",117
+"Karl",1998,9,26,0,30.5,-51.8,981,75,"Hurricane",118
+"Karl",1998,9,26,6,31.1,-51,979,75,"Hurricane",118
+"Karl",1998,9,26,12,31.8,-49.9,977,75,"Hurricane",118
+"Karl",1998,9,26,18,32.6,-48.8,973,80,"Hurricane",118
+"Karl",1998,9,27,0,33.9,-47.3,970,90,"Hurricane",119
+"Karl",1998,9,27,6,35.5,-45.2,970,90,"Hurricane",119
+"Karl",1998,9,27,12,37.4,-42.5,973,80,"Hurricane",119
+"Karl",1998,9,27,18,39.1,-39,983,70,"Hurricane",119
+"Karl",1998,9,28,0,40.4,-34.7,994,55,"Tropical Storm",120
+"Karl",1998,9,28,6,41.5,-30,1001,40,"Extratropical",120
+"Karl",1998,9,28,12,42,-25,1002,35,"Extratropical",120
+"Karl",1998,9,28,18,43,-20,1000,35,"Extratropical",120
+"Karl",1998,9,29,0,46,-16,996,35,"Extratropical",121
+"Karl",1998,9,29,6,48,-14,994,35,"Extratropical",121
+"Karl",1998,9,29,12,49,-11,994,35,"Extratropical",121
+"Karl",1998,9,29,18,49,-8,991,35,"Extratropical",121
+"Lisa",1998,10,5,0,13.9,-46.4,1008,30,"Tropical Depression",127
+"Lisa",1998,10,5,6,14.2,-47.1,1007,35,"Tropical Storm",127
+"Lisa",1998,10,5,12,14.8,-47.8,1007,35,"Tropical Storm",127
+"Lisa",1998,10,5,18,15.7,-48.5,1006,40,"Tropical Storm",127
+"Lisa",1998,10,6,0,16.5,-49.2,1006,40,"Tropical Storm",128
+"Lisa",1998,10,6,6,17.1,-49.3,1005,45,"Tropical Storm",128
+"Lisa",1998,10,6,12,17.6,-48.9,1005,45,"Tropical Storm",128
+"Lisa",1998,10,6,18,18.2,-48.5,1005,45,"Tropical Storm",128
+"Lisa",1998,10,7,0,18.9,-48,1004,50,"Tropical Storm",129
+"Lisa",1998,10,7,6,19.6,-47.5,1003,50,"Tropical Storm",129
+"Lisa",1998,10,7,12,20.4,-46.6,1002,50,"Tropical Storm",129
+"Lisa",1998,10,7,18,21.5,-45.3,1001,50,"Tropical Storm",129
+"Lisa",1998,10,8,0,22.9,-43.9,1000,55,"Tropical Storm",130
+"Lisa",1998,10,8,6,24.6,-42.1,999,55,"Tropical Storm",130
+"Lisa",1998,10,8,12,26.9,-40.1,999,55,"Tropical Storm",130
+"Lisa",1998,10,8,18,29.6,-38.6,999,60,"Tropical Storm",130
+"Lisa",1998,10,9,0,32.9,-37.8,999,60,"Tropical Storm",131
+"Lisa",1998,10,9,6,36.8,-37.9,997,60,"Tropical Storm",131
+"Lisa",1998,10,9,12,41.6,-38.7,995,65,"Hurricane",131
+"Lisa",1998,10,9,18,47.1,-39.3,997,65,"Hurricane",131
+"Lisa",1998,10,10,0,52.1,-32,999,60,"Extratropical",132
+"Mitch",1998,10,22,0,11.6,-76.1,1002,30,"Tropical Depression",144
+"Mitch",1998,10,22,6,11.9,-77.1,1002,30,"Tropical Depression",144
+"Mitch",1998,10,22,12,12,-77.9,1002,30,"Tropical Depression",144
+"Mitch",1998,10,22,18,11.6,-77.9,1001,35,"Tropical Storm",144
+"Mitch",1998,10,23,0,11.8,-77.6,1000,40,"Tropical Storm",145
+"Mitch",1998,10,23,6,12.2,-77.6,999,45,"Tropical Storm",145
+"Mitch",1998,10,23,12,12.5,-77.8,999,45,"Tropical Storm",145
+"Mitch",1998,10,23,18,12.9,-78,998,50,"Tropical Storm",145
+"Mitch",1998,10,24,0,13.4,-77.9,997,55,"Tropical Storm",146
+"Mitch",1998,10,24,6,13.9,-77.8,990,65,"Hurricane",146
+"Mitch",1998,10,24,12,14.5,-77.9,985,75,"Hurricane",146
+"Mitch",1998,10,24,18,15,-78.1,980,90,"Hurricane",146
+"Mitch",1998,10,25,0,15.5,-78.4,965,100,"Hurricane",147
+"Mitch",1998,10,25,6,16,-78.9,951,105,"Hurricane",147
+"Mitch",1998,10,25,12,16.2,-79.6,945,115,"Hurricane",147
+"Mitch",1998,10,25,18,16.4,-80.3,926,125,"Hurricane",147
+"Mitch",1998,10,26,0,16.4,-81,923,130,"Hurricane",148
+"Mitch",1998,10,26,6,16.4,-81.8,922,135,"Hurricane",148
+"Mitch",1998,10,26,12,16.6,-82.6,914,145,"Hurricane",148
+"Mitch",1998,10,26,18,16.9,-83.1,905,155,"Hurricane",148
+"Mitch",1998,10,27,0,17.2,-83.8,910,155,"Hurricane",149
+"Mitch",1998,10,27,6,17.3,-84.4,917,150,"Hurricane",149
+"Mitch",1998,10,27,12,17.1,-85,922,150,"Hurricane",149
+"Mitch",1998,10,27,18,16.9,-85.4,928,145,"Hurricane",149
+"Mitch",1998,10,28,0,16.6,-85.6,933,140,"Hurricane",150
+"Mitch",1998,10,28,6,16.3,-85.6,938,130,"Hurricane",150
+"Mitch",1998,10,28,12,16.3,-85.6,948,115,"Hurricane",150
+"Mitch",1998,10,28,18,16.3,-85.7,959,95,"Hurricane",150
+"Mitch",1998,10,29,0,16.2,-85.8,970,85,"Hurricane",151
+"Mitch",1998,10,29,6,16.1,-85.8,979,75,"Hurricane",151
+"Mitch",1998,10,29,12,15.9,-85.7,987,70,"Hurricane",151
+"Mitch",1998,10,29,18,15.8,-85.6,994,60,"Tropical Storm",151
+"Mitch",1998,10,30,0,15.6,-85.7,995,55,"Tropical Storm",152
+"Mitch",1998,10,30,6,15.4,-85.9,996,50,"Tropical Storm",152
+"Mitch",1998,10,30,12,15.2,-86.1,997,45,"Tropical Storm",152
+"Mitch",1998,10,30,18,14.9,-86.5,998,45,"Tropical Storm",152
+"Mitch",1998,10,31,0,14.7,-87,999,45,"Tropical Storm",153
+"Mitch",1998,10,31,6,14.5,-87.7,1000,40,"Tropical Storm",153
+"Mitch",1998,10,31,12,14.5,-88.5,1000,35,"Tropical Storm",153
+"Mitch",1998,10,31,18,14.6,-89.2,1001,30,"Tropical Depression",153
+"Mitch",1998,11,1,0,14.6,-90,1002,30,"Tropical Depression",154
+"Mitch",1998,11,1,6,14.7,-90.8,1003,25,"Tropical Depression",154
+"Mitch",1998,11,1,12,14.9,-91.5,1005,25,"Tropical Depression",154
+"Mitch",1998,11,1,18,15.5,-92.2,1005,25,"Tropical Depression",154
+"Mitch",1998,11,2,0,16.3,-92.7,1005,20,"Extratropical",155
+"Mitch",1998,11,2,6,17.1,-93.1,1005,20,"Extratropical",155
+"Mitch",1998,11,2,12,17.9,-93.4,1005,20,"Extratropical",155
+"Mitch",1998,11,2,18,18.7,-93.7,1005,20,"Extratropical",155
+"Mitch",1998,11,3,0,19.2,-93.4,1003,20,"Extratropical",156
+"Mitch",1998,11,3,6,19.3,-92.7,1003,20,"Extratropical",156
+"Mitch",1998,11,3,12,19.4,-92.1,1002,25,"Extratropical",156
+"Mitch",1998,11,3,18,19.6,-91.4,997,40,"Tropical Storm",156
+"Mitch",1998,11,4,0,20,-90.6,997,35,"Tropical Storm",157
+"Mitch",1998,11,4,6,20.8,-89.6,998,30,"Tropical Depression",157
+"Mitch",1998,11,4,12,21.8,-88.2,998,40,"Tropical Storm",157
+"Mitch",1998,11,4,18,23.3,-86.5,993,40,"Tropical Storm",157
+"Mitch",1998,11,5,0,24.8,-84.8,993,45,"Tropical Storm",158
+"Mitch",1998,11,5,6,25.6,-83.1,990,50,"Tropical Storm",158
+"Mitch",1998,11,5,12,26.6,-81.3,987,55,"Tropical Storm",158
+"Mitch",1998,11,5,18,27.5,-78.3,992,50,"Extratropical",158
+"Mitch",1998,11,6,0,30,-75,993,50,"Extratropical",159
+"Mitch",1998,11,6,6,32.5,-72,992,50,"Extratropical",159
+"Mitch",1998,11,6,12,35,-68,990,50,"Extratropical",159
+"Mitch",1998,11,6,18,37,-63,989,50,"Extratropical",159
+"Mitch",1998,11,7,0,39,-58,990,50,"Extratropical",160
+"Mitch",1998,11,7,6,41,-53,992,50,"Extratropical",160
+"Mitch",1998,11,7,12,42.5,-47.5,986,50,"Extratropical",160
+"Mitch",1998,11,7,18,44.5,-42,972,60,"Extratropical",160
+"Mitch",1998,11,8,0,46.5,-36.5,974,60,"Extratropical",161
+"Mitch",1998,11,8,6,48.5,-31,972,60,"Extratropical",161
+"Mitch",1998,11,8,12,50,-25,962,60,"Extratropical",161
+"Mitch",1998,11,8,18,53.5,-20.5,956,60,"Extratropical",161
+"Mitch",1998,11,9,0,55.5,-14.5,956,60,"Extratropical",162
+"Mitch",1998,11,9,6,58,-10.5,956,60,"Extratropical",162
+"Mitch",1998,11,9,12,61,-10,956,60,"Extratropical",162
+"Mitch",1998,11,9,18,63.5,-5,960,55,"Extratropical",162
+"Nicole",1998,11,24,0,28.3,-28,1010,30,"Tropical Depression",177
+"Nicole",1998,11,24,6,27.9,-29.1,1005,35,"Tropical Storm",177
+"Nicole",1998,11,24,12,27.5,-30.1,1000,45,"Tropical Storm",177
+"Nicole",1998,11,24,18,27.2,-31.1,997,60,"Tropical Storm",177
+"Nicole",1998,11,25,0,26.9,-32,995,60,"Tropical Storm",178
+"Nicole",1998,11,25,6,26.6,-32.9,994,60,"Tropical Storm",178
+"Nicole",1998,11,25,12,26.3,-33.7,994,55,"Tropical Storm",178
+"Nicole",1998,11,25,18,26,-34.6,994,50,"Tropical Storm",178
+"Nicole",1998,11,26,0,25.7,-35.4,998,40,"Tropical Storm",179
+"Nicole",1998,11,26,6,25.5,-36.4,1000,35,"Tropical Storm",179
+"Nicole",1998,11,26,12,25.3,-37.3,1007,30,"Tropical Depression",179
+"Nicole",1998,11,26,18,25.2,-38.3,1009,25,"Tropical Depression",179
+"Nicole",1998,11,27,0,25.2,-39.2,1009,25,"Tropical Depression",180
+"Nicole",1998,11,27,6,25.3,-40.3,1009,25,"Tropical Depression",180
+"Nicole",1998,11,27,12,25.4,-41.7,1009,30,"Tropical Depression",180
+"Nicole",1998,11,27,18,25.6,-43,1005,40,"Tropical Storm",180
+"Nicole",1998,11,28,0,25.8,-44.1,1001,50,"Tropical Storm",181
+"Nicole",1998,11,28,6,26.3,-45.3,1000,50,"Tropical Storm",181
+"Nicole",1998,11,28,12,27.1,-46.2,1000,50,"Tropical Storm",181
+"Nicole",1998,11,28,18,28,-46.6,1000,50,"Tropical Storm",181
+"Nicole",1998,11,29,0,28.8,-46.5,1000,45,"Tropical Storm",182
+"Nicole",1998,11,29,6,30,-45.9,1000,45,"Tropical Storm",182
+"Nicole",1998,11,29,12,31,-44.9,1000,55,"Tropical Storm",182
+"Nicole",1998,11,29,18,31.8,-43.8,995,60,"Tropical Storm",182
+"Nicole",1998,11,30,0,32.6,-42.6,992,65,"Hurricane",183
+"Nicole",1998,11,30,6,33.1,-41.7,992,65,"Hurricane",183
+"Nicole",1998,11,30,12,33.8,-40.5,987,65,"Hurricane",183
+"Nicole",1998,11,30,18,34.3,-39.3,984,70,"Hurricane",183
+"Nicole",1998,12,1,0,35.1,-37.9,979,75,"Hurricane",184
+"Nicole",1998,12,1,6,37,-35.5,980,70,"Hurricane",184
+"Nicole",1998,12,1,12,40.4,-34,982,60,"Tropical Storm",184
+"Nicole",1998,12,1,18,43,-34,985,60,"Extratropical",184
+"Nicole",1998,12,2,0,47,-34.5,988,50,"Extratropical",185
+"Nicole",1998,12,2,6,49.5,-35.5,990,50,"Extratropical",185
+"Nicole",1998,12,2,12,52,-37,990,50,"Extratropical",185
+"Arlene",1999,6,11,18,27.1,-58.1,1010,30,"Tropical Depression",11
+"Arlene",1999,6,12,0,27.7,-57.4,1010,30,"Tropical Depression",12
+"Arlene",1999,6,12,6,28.1,-57.3,1010,30,"Tropical Depression",12
+"Arlene",1999,6,12,12,28.3,-57.3,1009,35,"Tropical Storm",12
+"Arlene",1999,6,12,18,28.5,-57.4,1008,45,"Tropical Storm",12
+"Arlene",1999,6,13,0,28.8,-57.5,1006,50,"Tropical Storm",13
+"Arlene",1999,6,13,6,29,-57.8,1006,50,"Tropical Storm",13
+"Arlene",1999,6,13,12,29.1,-58.2,1007,50,"Tropical Storm",13
+"Arlene",1999,6,13,18,29.1,-58.7,1007,50,"Tropical Storm",13
+"Arlene",1999,6,14,0,29.1,-59.2,1008,45,"Tropical Storm",14
+"Arlene",1999,6,14,6,29.2,-59.8,1009,40,"Tropical Storm",14
+"Arlene",1999,6,14,12,29.3,-60.4,1009,40,"Tropical Storm",14
+"Arlene",1999,6,14,18,29.6,-60.7,1009,40,"Tropical Storm",14
+"Arlene",1999,6,15,0,29.8,-61.1,1009,40,"Tropical Storm",15
+"Arlene",1999,6,15,6,29.7,-61.5,1009,40,"Tropical Storm",15
+"Arlene",1999,6,15,12,29.6,-61.3,1008,45,"Tropical Storm",15
+"Arlene",1999,6,15,18,29.9,-61.4,1009,45,"Tropical Storm",15
+"Arlene",1999,6,16,0,30,-61.7,1009,45,"Tropical Storm",16
+"Arlene",1999,6,16,6,30.3,-62,1010,45,"Tropical Storm",16
+"Arlene",1999,6,16,12,30.8,-62.3,1012,40,"Tropical Storm",16
+"Arlene",1999,6,16,18,31.3,-62.5,1012,35,"Tropical Storm",16
+"Arlene",1999,6,17,0,31.8,-62.8,1014,30,"Tropical Depression",17
+"Arlene",1999,6,17,6,32.5,-63,1015,30,"Tropical Depression",17
+"Arlene",1999,6,17,12,33.4,-63,1015,30,"Tropical Depression",17
+"Arlene",1999,6,17,18,34.4,-62.3,1015,30,"Tropical Depression",17
+"Arlene",1999,6,18,0,35.4,-61.6,1015,25,"Tropical Depression",18
+"Bret",1999,8,18,18,19.5,-94.4,1010,30,"Tropical Depression",79
+"Bret",1999,8,19,0,19.5,-94.5,1008,30,"Tropical Depression",80
+"Bret",1999,8,19,6,19.6,-94.6,1008,30,"Tropical Depression",80
+"Bret",1999,8,19,12,19.7,-94.6,1008,30,"Tropical Depression",80
+"Bret",1999,8,19,18,19.8,-94.7,1005,35,"Tropical Storm",80
+"Bret",1999,8,20,0,19.8,-94.7,1000,40,"Tropical Storm",81
+"Bret",1999,8,20,6,20,-94.6,998,45,"Tropical Storm",81
+"Bret",1999,8,20,12,20.4,-94.5,993,50,"Tropical Storm",81
+"Bret",1999,8,20,18,21.2,-94.4,991,55,"Tropical Storm",81
+"Bret",1999,8,21,0,21.9,-94.5,983,65,"Hurricane",82
+"Bret",1999,8,21,6,22.5,-94.7,980,75,"Hurricane",82
+"Bret",1999,8,21,12,23.1,-94.9,979,80,"Hurricane",82
+"Bret",1999,8,21,18,23.8,-95,975,90,"Hurricane",82
+"Bret",1999,8,22,0,24.7,-95.1,954,120,"Hurricane",83
+"Bret",1999,8,22,6,25.5,-95.5,950,125,"Hurricane",83
+"Bret",1999,8,22,12,26.2,-96.1,944,125,"Hurricane",83
+"Bret",1999,8,22,18,26.6,-96.8,946,120,"Hurricane",83
+"Bret",1999,8,23,0,26.9,-97.4,951,100,"Hurricane",84
+"Bret",1999,8,23,6,27,-97.9,963,80,"Hurricane",84
+"Bret",1999,8,23,12,27.3,-98.3,980,60,"Tropical Storm",84
+"Bret",1999,8,23,18,27.6,-98.8,993,35,"Tropical Storm",84
+"Bret",1999,8,24,0,28,-99.5,1000,30,"Tropical Depression",85
+"Bret",1999,8,24,6,28,-100.4,1003,30,"Tropical Depression",85
+"Bret",1999,8,24,12,27.8,-101.3,1006,25,"Tropical Depression",85
+"Bret",1999,8,24,18,27.7,-102.1,1007,25,"Tropical Depression",85
+"Bret",1999,8,25,0,27.6,-103,1008,20,"Tropical Depression",86
+"Cindy",1999,8,19,0,13.5,-18.9,1003,30,"Tropical Depression",80
+"Cindy",1999,8,19,6,13.8,-20.3,1003,30,"Tropical Depression",80
+"Cindy",1999,8,19,12,13.9,-21.5,1003,30,"Tropical Depression",80
+"Cindy",1999,8,19,18,13.8,-22.5,1003,30,"Tropical Depression",80
+"Cindy",1999,8,20,0,13.7,-23.4,1002,30,"Tropical Depression",81
+"Cindy",1999,8,20,6,13.6,-24.3,1002,30,"Tropical Depression",81
+"Cindy",1999,8,20,12,13.5,-25.4,1002,30,"Tropical Depression",81
+"Cindy",1999,8,20,18,13.6,-26.6,1001,35,"Tropical Storm",81
+"Cindy",1999,8,21,0,13.6,-27.7,1000,40,"Tropical Storm",82
+"Cindy",1999,8,21,6,13.8,-28.8,997,50,"Tropical Storm",82
+"Cindy",1999,8,21,12,13.9,-29.7,994,55,"Tropical Storm",82
+"Cindy",1999,8,21,18,14.1,-30.8,990,60,"Tropical Storm",82
+"Cindy",1999,8,22,0,14.2,-31.7,987,65,"Hurricane",83
+"Cindy",1999,8,22,6,14.4,-32.3,987,65,"Hurricane",83
+"Cindy",1999,8,22,12,14.5,-32.7,987,65,"Hurricane",83
+"Cindy",1999,8,22,18,14.6,-33.1,990,60,"Tropical Storm",83
+"Cindy",1999,8,23,0,14.9,-33.9,997,50,"Tropical Storm",84
+"Cindy",1999,8,23,6,15.3,-34.9,997,50,"Tropical Storm",84
+"Cindy",1999,8,23,12,15.7,-35.9,997,50,"Tropical Storm",84
+"Cindy",1999,8,23,18,16.1,-36.9,997,50,"Tropical Storm",84
+"Cindy",1999,8,24,0,16.6,-38,997,50,"Tropical Storm",85
+"Cindy",1999,8,24,6,16.9,-39.2,997,50,"Tropical Storm",85
+"Cindy",1999,8,24,12,17.2,-40.6,997,50,"Tropical Storm",85
+"Cindy",1999,8,24,18,17.5,-42.2,997,50,"Tropical Storm",85
+"Cindy",1999,8,25,0,17.8,-43.6,994,55,"Tropical Storm",86
+"Cindy",1999,8,25,6,18.4,-44.8,994,55,"Tropical Storm",86
+"Cindy",1999,8,25,12,19.3,-45.9,994,55,"Tropical Storm",86
+"Cindy",1999,8,25,18,20.4,-47.1,990,60,"Tropical Storm",86
+"Cindy",1999,8,26,0,21.7,-48.2,987,65,"Hurricane",87
+"Cindy",1999,8,26,6,22.9,-49.5,987,65,"Hurricane",87
+"Cindy",1999,8,26,12,24.2,-50.8,987,65,"Hurricane",87
+"Cindy",1999,8,26,18,25.4,-52,984,70,"Hurricane",87
+"Cindy",1999,8,27,0,26.4,-53.1,978,80,"Hurricane",88
+"Cindy",1999,8,27,6,27.2,-54.3,978,80,"Hurricane",88
+"Cindy",1999,8,27,12,27.8,-55.4,970,90,"Hurricane",88
+"Cindy",1999,8,27,18,28.3,-56.2,970,90,"Hurricane",88
+"Cindy",1999,8,28,0,28.7,-56.9,961,100,"Hurricane",89
+"Cindy",1999,8,28,6,29.3,-57.5,948,115,"Hurricane",89
+"Cindy",1999,8,28,12,30.1,-58,942,120,"Hurricane",89
+"Cindy",1999,8,28,18,30.8,-58.5,943,120,"Hurricane",89
+"Cindy",1999,8,29,0,31.5,-58.4,944,120,"Hurricane",90
+"Cindy",1999,8,29,6,32.3,-58.4,948,115,"Hurricane",90
+"Cindy",1999,8,29,12,33.1,-58.2,961,100,"Hurricane",90
+"Cindy",1999,8,29,18,33.8,-57.4,965,95,"Hurricane",90
+"Cindy",1999,8,30,0,34.3,-56.3,970,90,"Hurricane",91
+"Cindy",1999,8,30,6,34.7,-55.5,970,90,"Hurricane",91
+"Cindy",1999,8,30,12,35.3,-54.9,978,80,"Hurricane",91
+"Cindy",1999,8,30,18,36.1,-54.2,978,80,"Hurricane",91
+"Cindy",1999,8,31,0,37,-52.6,984,70,"Hurricane",92
+"Cindy",1999,8,31,6,38.2,-50.6,990,60,"Tropical Storm",92
+"Cindy",1999,8,31,12,40.4,-48.2,997,50,"Tropical Storm",92
+"Dennis",1999,8,24,0,21.5,-67.7,1009,30,"Tropical Depression",85
+"Dennis",1999,8,24,6,22,-68.9,1009,30,"Tropical Depression",85
+"Dennis",1999,8,24,12,22.4,-70,1009,35,"Tropical Storm",85
+"Dennis",1999,8,24,18,22.7,-70.9,1009,40,"Tropical Storm",85
+"Dennis",1999,8,25,0,22.8,-71.5,1008,40,"Tropical Storm",86
+"Dennis",1999,8,25,6,23,-71.9,1007,40,"Tropical Storm",86
+"Dennis",1999,8,25,12,23.2,-72.1,1004,45,"Tropical Storm",86
+"Dennis",1999,8,25,18,23.4,-72.3,1000,55,"Tropical Storm",86
+"Dennis",1999,8,26,0,23.6,-72.5,998,60,"Tropical Storm",87
+"Dennis",1999,8,26,6,23.8,-73.1,995,65,"Hurricane",87
+"Dennis",1999,8,26,12,24.1,-73.6,995,65,"Hurricane",87
+"Dennis",1999,8,26,18,24.4,-74,990,70,"Hurricane",87
+"Dennis",1999,8,27,0,24.8,-74.4,993,65,"Hurricane",88
+"Dennis",1999,8,27,6,25.2,-75,988,65,"Hurricane",88
+"Dennis",1999,8,27,12,25.6,-75.5,988,65,"Hurricane",88
+"Dennis",1999,8,27,18,25.9,-75.9,987,65,"Hurricane",88
+"Dennis",1999,8,28,0,26.1,-76.2,982,70,"Hurricane",89
+"Dennis",1999,8,28,6,26.5,-76.7,976,75,"Hurricane",89
+"Dennis",1999,8,28,12,27.1,-77,973,85,"Hurricane",89
+"Dennis",1999,8,28,18,27.7,-77.3,969,90,"Hurricane",89
+"Dennis",1999,8,29,0,28.3,-77.7,969,90,"Hurricane",90
+"Dennis",1999,8,29,6,29,-77.9,970,90,"Hurricane",90
+"Dennis",1999,8,29,12,29.9,-78.4,971,90,"Hurricane",90
+"Dennis",1999,8,29,18,30.8,-78.4,967,90,"Hurricane",90
+"Dennis",1999,8,30,0,31.9,-78.1,964,90,"Hurricane",91
+"Dennis",1999,8,30,6,32.8,-77.6,962,90,"Hurricane",91
+"Dennis",1999,8,30,12,33.6,-76.5,965,85,"Hurricane",91
+"Dennis",1999,8,30,18,34.3,-74.8,966,85,"Hurricane",91
+"Dennis",1999,8,31,0,34.9,-73.6,971,80,"Hurricane",92
+"Dennis",1999,8,31,6,35.1,-72.9,977,80,"Hurricane",92
+"Dennis",1999,8,31,12,35.2,-72.8,983,75,"Hurricane",92
+"Dennis",1999,8,31,18,35.1,-73.3,984,70,"Hurricane",92
+"Dennis",1999,9,1,0,35.2,-73.6,986,60,"Tropical Storm",93
+"Dennis",1999,9,1,6,35,-73.4,987,55,"Tropical Storm",93
+"Dennis",1999,9,1,12,35.4,-73.5,989,50,"Tropical Storm",93
+"Dennis",1999,9,1,18,35.5,-73.8,988,50,"Tropical Storm",93
+"Dennis",1999,9,2,0,35.4,-73.7,988,50,"Tropical Storm",94
+"Dennis",1999,9,2,6,35.2,-73.6,989,45,"Tropical Storm",94
+"Dennis",1999,9,2,12,35.1,-73.7,989,45,"Tropical Storm",94
+"Dennis",1999,9,2,18,34.8,-73.9,990,45,"Tropical Storm",94
+"Dennis",1999,9,3,0,34.2,-74,989,45,"Tropical Storm",95
+"Dennis",1999,9,3,6,33.6,-74.1,989,45,"Tropical Storm",95
+"Dennis",1999,9,3,12,33.2,-73.9,988,45,"Tropical Storm",95
+"Dennis",1999,9,3,18,33,-73.8,987,50,"Tropical Storm",95
+"Dennis",1999,9,4,0,33.1,-74,987,50,"Tropical Storm",96
+"Dennis",1999,9,4,6,33.3,-74.5,986,55,"Tropical Storm",96
+"Dennis",1999,9,4,12,33.9,-75.3,986,55,"Tropical Storm",96
+"Dennis",1999,9,4,18,34.5,-76,986,60,"Tropical Storm",96
+"Dennis",1999,9,5,0,35,-76.8,985,50,"Tropical Storm",97
+"Dennis",1999,9,5,6,35.5,-77.7,989,35,"Tropical Storm",97
+"Dennis",1999,9,5,12,36.1,-78.8,994,30,"Tropical Depression",97
+"Dennis",1999,9,5,18,36.2,-79.4,998,25,"Tropical Depression",97
+"Dennis",1999,9,6,0,36.2,-79.9,1000,25,"Tropical Depression",98
+"Dennis",1999,9,6,6,36.4,-80.1,1004,20,"Tropical Depression",98
+"Dennis",1999,9,6,12,37,-79.9,1005,20,"Tropical Depression",98
+"Dennis",1999,9,6,18,37.7,-79.5,1008,20,"Tropical Depression",98
+"Dennis",1999,9,7,0,38.5,-78.5,1009,20,"Tropical Depression",99
+"Dennis",1999,9,7,6,40.8,-77,1008,20,"Tropical Depression",99
+"Dennis",1999,9,7,12,42.7,-77.7,1007,20,"Tropical Depression",99
+"Dennis",1999,9,7,18,43.5,-77.7,1006,20,"Extratropical",99
+"Dennis",1999,9,8,0,43.5,-76.5,1006,20,"Extratropical",100
+"Dennis",1999,9,8,6,44,-75.8,1006,20,"Extratropical",100
+"Dennis",1999,9,8,12,44.9,-74.8,1006,20,"Extratropical",100
+"Dennis",1999,9,8,18,45.5,-75.6,1005,20,"Extratropical",100
+"Emily",1999,8,24,6,11.5,-53.6,1007,30,"Tropical Depression",85
+"Emily",1999,8,24,12,11.5,-53.8,1006,35,"Tropical Storm",85
+"Emily",1999,8,24,18,11.6,-53.9,1004,45,"Tropical Storm",85
+"Emily",1999,8,25,0,12.1,-53.9,1005,45,"Tropical Storm",86
+"Emily",1999,8,25,6,12.6,-54.2,1006,40,"Tropical Storm",86
+"Emily",1999,8,25,12,12.8,-54.8,1007,40,"Tropical Storm",86
+"Emily",1999,8,25,18,13.2,-55.2,1005,40,"Tropical Storm",86
+"Emily",1999,8,26,0,13.8,-55.7,1005,40,"Tropical Storm",87
+"Emily",1999,8,26,6,14.3,-56.2,1007,40,"Tropical Storm",87
+"Emily",1999,8,26,12,15,-56.6,1010,40,"Tropical Storm",87
+"Emily",1999,8,26,18,15.8,-57,1010,35,"Tropical Storm",87
+"Emily",1999,8,27,0,17,-57.1,1010,35,"Tropical Storm",88
+"Emily",1999,8,27,6,18,-57,1011,35,"Tropical Storm",88
+"Emily",1999,8,27,12,19,-57,1009,35,"Tropical Storm",88
+"Emily",1999,8,27,18,20,-57,1007,40,"Tropical Storm",88
+"Emily",1999,8,28,0,21.1,-56.6,1007,40,"Tropical Storm",89
+"Emily",1999,8,28,6,24.4,-56.7,1009,35,"Tropical Storm",89
+"Emily",1999,8,28,12,23.8,-56.7,1009,30,"Tropical Depression",89
+"Floyd",1999,9,7,18,14.6,-45.6,1008,25,"Tropical Depression",99
+"Floyd",1999,9,8,0,15,-46.9,1007,30,"Tropical Depression",100
+"Floyd",1999,9,8,6,15.3,-48.2,1005,35,"Tropical Storm",100
+"Floyd",1999,9,8,12,15.8,-49.6,1003,40,"Tropical Storm",100
+"Floyd",1999,9,8,18,16.3,-51.1,1000,45,"Tropical Storm",100
+"Floyd",1999,9,9,0,16.7,-52.6,1000,45,"Tropical Storm",101
+"Floyd",1999,9,9,6,17.1,-53.9,1003,45,"Tropical Storm",101
+"Floyd",1999,9,9,12,17.3,-55.1,1003,50,"Tropical Storm",101
+"Floyd",1999,9,9,18,17.9,-56.3,996,60,"Tropical Storm",101
+"Floyd",1999,9,10,0,18.3,-57.2,995,60,"Tropical Storm",102
+"Floyd",1999,9,10,6,18.6,-58.2,990,60,"Tropical Storm",102
+"Floyd",1999,9,10,12,19.3,-58.8,989,70,"Hurricane",102
+"Floyd",1999,9,10,18,20.2,-59.6,975,70,"Hurricane",102
+"Floyd",1999,9,11,0,20.8,-60.4,971,80,"Hurricane",103
+"Floyd",1999,9,11,6,21.4,-61.1,963,95,"Hurricane",103
+"Floyd",1999,9,11,12,21.9,-62,962,95,"Hurricane",103
+"Floyd",1999,9,11,18,22.5,-63,966,90,"Hurricane",103
+"Floyd",1999,9,12,0,22.7,-64.1,967,85,"Hurricane",104
+"Floyd",1999,9,12,6,22.8,-65.2,960,95,"Hurricane",104
+"Floyd",1999,9,12,12,23,-66.2,955,105,"Hurricane",104
+"Floyd",1999,9,12,18,23.2,-67.4,940,115,"Hurricane",104
+"Floyd",1999,9,13,0,23.4,-68.7,931,125,"Hurricane",105
+"Floyd",1999,9,13,6,23.6,-70,922,135,"Hurricane",105
+"Floyd",1999,9,13,12,23.9,-71.4,921,135,"Hurricane",105
+"Floyd",1999,9,13,18,24.1,-72.9,923,125,"Hurricane",105
+"Floyd",1999,9,14,0,24.5,-74,924,115,"Hurricane",106
+"Floyd",1999,9,14,6,24.9,-75.3,927,105,"Hurricane",106
+"Floyd",1999,9,14,12,25.4,-76.3,930,105,"Hurricane",106
+"Floyd",1999,9,14,18,26.1,-77,930,110,"Hurricane",106
+"Floyd",1999,9,15,0,27.1,-77.7,933,115,"Hurricane",107
+"Floyd",1999,9,15,6,28.2,-78.5,935,110,"Hurricane",107
+"Floyd",1999,9,15,12,29.3,-78.9,943,100,"Hurricane",107
+"Floyd",1999,9,15,18,30.6,-79.1,947,95,"Hurricane",107
+"Floyd",1999,9,16,0,32.1,-78.7,950,90,"Hurricane",108
+"Floyd",1999,9,16,6,33.7,-78,956,90,"Hurricane",108
+"Floyd",1999,9,16,12,35.7,-76.8,967,70,"Hurricane",108
+"Floyd",1999,9,16,18,38,-75.3,974,60,"Tropical Storm",108
+"Floyd",1999,9,17,0,40.6,-73.5,980,50,"Tropical Storm",109
+"Floyd",1999,9,17,6,42.1,-72.1,983,50,"Tropical Storm",109
+"Floyd",1999,9,17,12,43.3,-70.6,984,45,"Extratropical",109
+"Floyd",1999,9,17,18,44.2,-68.9,985,45,"Extratropical",109
+"Floyd",1999,9,18,0,44.8,-67.3,987,40,"Extratropical",110
+"Floyd",1999,9,18,6,45.4,-65.5,990,35,"Extratropical",110
+"Floyd",1999,9,18,12,46.6,-63,992,35,"Extratropical",110
+"Floyd",1999,9,18,18,47.7,-59.3,992,35,"Extratropical",110
+"Floyd",1999,9,19,0,48,-56.3,992,35,"Extratropical",111
+"Floyd",1999,9,19,6,48.5,-52.5,994,35,"Extratropical",111
+"Floyd",1999,9,19,12,49.5,-48,992,40,"Extratropical",111
+"Gert",1999,9,11,12,12.6,-24.2,1006,30,"Tropical Depression",103
+"Gert",1999,9,11,18,12.9,-26.1,1005,30,"Tropical Depression",103
+"Gert",1999,9,12,0,13.3,-28,1006,30,"Tropical Depression",104
+"Gert",1999,9,12,6,13.8,-29.8,1005,30,"Tropical Depression",104
+"Gert",1999,9,12,12,14.2,-31.9,1001,35,"Tropical Storm",104
+"Gert",1999,9,12,18,14.8,-33.8,997,45,"Tropical Storm",104
+"Gert",1999,9,13,0,15.1,-35.6,995,55,"Tropical Storm",105
+"Gert",1999,9,13,6,15.4,-37.3,990,60,"Tropical Storm",105
+"Gert",1999,9,13,12,15.9,-39.2,984,65,"Hurricane",105
+"Gert",1999,9,13,18,16.1,-40.8,979,70,"Hurricane",105
+"Gert",1999,9,14,0,16.3,-42.2,976,75,"Hurricane",106
+"Gert",1999,9,14,6,16.6,-43.5,973,85,"Hurricane",106
+"Gert",1999,9,14,12,16.8,-44.6,968,90,"Hurricane",106
+"Gert",1999,9,14,18,17.1,-45.8,962,95,"Hurricane",106
+"Gert",1999,9,15,0,17.2,-46.9,955,100,"Hurricane",107
+"Gert",1999,9,15,6,17.4,-47.9,948,110,"Hurricane",107
+"Gert",1999,9,15,12,17.5,-48.9,940,115,"Hurricane",107
+"Gert",1999,9,15,18,17.7,-50,933,125,"Hurricane",107
+"Gert",1999,9,16,0,17.8,-50.8,930,130,"Hurricane",108
+"Gert",1999,9,16,6,18,-51.7,933,130,"Hurricane",108
+"Gert",1999,9,16,12,18.2,-52.6,941,125,"Hurricane",108
+"Gert",1999,9,16,18,18.6,-53.4,940,120,"Hurricane",108
+"Gert",1999,9,17,0,19,-54.2,944,115,"Hurricane",109
+"Gert",1999,9,17,6,19.4,-55,942,125,"Hurricane",109
+"Gert",1999,9,17,12,19.9,-55.7,945,125,"Hurricane",109
+"Gert",1999,9,17,18,20.4,-56.3,950,115,"Hurricane",109
+"Gert",1999,9,18,0,20.9,-56.8,953,110,"Hurricane",110
+"Gert",1999,9,18,6,21.6,-57.1,954,105,"Hurricane",110
+"Gert",1999,9,18,12,22.2,-57.4,953,105,"Hurricane",110
+"Gert",1999,9,18,18,22.8,-57.8,950,105,"Hurricane",110
+"Gert",1999,9,19,0,23.4,-58.1,947,110,"Hurricane",111
+"Gert",1999,9,19,6,24.1,-58.7,946,115,"Hurricane",111
+"Gert",1999,9,19,12,24.7,-59.2,946,115,"Hurricane",111
+"Gert",1999,9,19,18,25.5,-60,946,115,"Hurricane",111
+"Gert",1999,9,20,0,26.2,-60.7,947,115,"Hurricane",112
+"Gert",1999,9,20,6,26.8,-61.4,947,110,"Hurricane",112
+"Gert",1999,9,20,12,27.6,-62.4,948,105,"Hurricane",112
+"Gert",1999,9,20,18,28.3,-62.7,949,100,"Hurricane",112
+"Gert",1999,9,21,0,29.2,-62.9,950,95,"Hurricane",113
+"Gert",1999,9,21,6,30.1,-62.8,952,90,"Hurricane",113
+"Gert",1999,9,21,12,31.3,-62.6,955,85,"Hurricane",113
+"Gert",1999,9,21,18,32.7,-62.1,958,80,"Hurricane",113
+"Gert",1999,9,22,0,34.3,-61.2,960,75,"Hurricane",114
+"Gert",1999,9,22,6,36.2,-60.4,961,75,"Hurricane",114
+"Gert",1999,9,22,12,38.1,-59.4,962,70,"Hurricane",114
+"Gert",1999,9,22,18,40.3,-57.9,963,65,"Hurricane",114
+"Gert",1999,9,23,0,42.2,-55.6,964,60,"Tropical Storm",115
+"Gert",1999,9,23,6,44.6,-54.5,968,60,"Tropical Storm",115
+"Gert",1999,9,23,12,46.6,-51.9,972,60,"Extratropical",115
+"Harvey",1999,9,19,6,25,-87.8,1005,30,"Tropical Depression",111
+"Harvey",1999,9,19,12,25.5,-87.8,1004,30,"Tropical Depression",111
+"Harvey",1999,9,19,18,26,-87.8,1003,30,"Tropical Depression",111
+"Harvey",1999,9,20,0,26.3,-87.4,1002,40,"Tropical Storm",112
+"Harvey",1999,9,20,6,26.6,-86.9,1001,40,"Tropical Storm",112
+"Harvey",1999,9,20,12,27,-86.3,998,40,"Tropical Storm",112
+"Harvey",1999,9,20,18,27,-85.5,998,50,"Tropical Storm",112
+"Harvey",1999,9,21,0,27.1,-84.6,995,50,"Tropical Storm",113
+"Harvey",1999,9,21,6,26.5,-83.9,995,50,"Tropical Storm",113
+"Harvey",1999,9,21,12,26,-82.8,996,50,"Tropical Storm",113
+"Harvey",1999,9,21,18,25.9,-81.5,999,50,"Tropical Storm",113
+"Harvey",1999,9,22,0,26.9,-78.6,1000,40,"Tropical Storm",114
+"Irene",1999,10,12,12,15.9,-82,1006,20,"Extratropical",134
+"Irene",1999,10,12,18,16.4,-83,1006,20,"Extratropical",134
+"Irene",1999,10,13,0,16.7,-83.2,1005,20,"Extratropical",135
+"Irene",1999,10,13,6,17.3,-83.3,1004,30,"Tropical Depression",135
+"Irene",1999,10,13,12,18.5,-83.4,1003,35,"Tropical Storm",135
+"Irene",1999,10,13,18,19.8,-83.6,1001,45,"Tropical Storm",135
+"Irene",1999,10,14,0,20.7,-83.6,999,55,"Tropical Storm",136
+"Irene",1999,10,14,6,21,-83.6,999,60,"Tropical Storm",136
+"Irene",1999,10,14,12,21.3,-82.9,997,60,"Tropical Storm",136
+"Irene",1999,10,14,18,22.4,-82.4,995,60,"Tropical Storm",136
+"Irene",1999,10,15,0,23.1,-82.6,988,60,"Tropical Storm",137
+"Irene",1999,10,15,6,23.8,-82.2,988,65,"Hurricane",137
+"Irene",1999,10,15,12,24.4,-81.8,987,65,"Hurricane",137
+"Irene",1999,10,15,18,25.1,-81.3,986,65,"Hurricane",137
+"Irene",1999,10,16,0,26.1,-80.6,986,65,"Hurricane",138
+"Irene",1999,10,16,6,27,-80.2,985,65,"Hurricane",138
+"Irene",1999,10,16,12,27.8,-80.1,982,65,"Hurricane",138
+"Irene",1999,10,16,18,28.6,-79.9,984,65,"Hurricane",138
+"Irene",1999,10,17,0,29.4,-79.8,984,65,"Hurricane",139
+"Irene",1999,10,17,6,30.2,-79.8,985,65,"Hurricane",139
+"Irene",1999,10,17,12,31.2,-79.7,984,65,"Hurricane",139
+"Irene",1999,10,17,18,32.2,-79,978,70,"Hurricane",139
+"Irene",1999,10,18,0,33.4,-77.4,976,80,"Hurricane",140
+"Irene",1999,10,18,6,34.8,-75.2,964,95,"Hurricane",140
+"Irene",1999,10,18,12,36.8,-71.6,960,90,"Hurricane",140
+"Irene",1999,10,18,18,39,-67.4,968,80,"Hurricane",140
+"Irene",1999,10,19,0,41.5,-61,968,80,"Hurricane",141
+"Irene",1999,10,19,6,44.9,-51.5,968,80,"Extratropical",141
+"Irene",1999,10,19,12,48,-48,968,80,"Extratropical",141
+"Irene",1999,10,19,18,51,-45,968,80,"Extratropical",141
+"Jose",1999,10,17,18,9.8,-50.8,1006,25,"Tropical Depression",139
+"Jose",1999,10,18,0,10.3,-51.8,1005,30,"Tropical Depression",140
+"Jose",1999,10,18,6,10.9,-52.8,1004,35,"Tropical Storm",140
+"Jose",1999,10,18,12,11.5,-53.9,1003,40,"Tropical Storm",140
+"Jose",1999,10,18,18,12.2,-55.1,1002,40,"Tropical Storm",140
+"Jose",1999,10,19,0,12.9,-56.1,1000,45,"Tropical Storm",141
+"Jose",1999,10,19,6,13.5,-57.1,994,55,"Tropical Storm",141
+"Jose",1999,10,19,12,14.1,-58.1,994,60,"Tropical Storm",141
+"Jose",1999,10,19,18,14.9,-58.9,992,65,"Hurricane",141
+"Jose",1999,10,20,0,15.7,-59.5,987,70,"Hurricane",142
+"Jose",1999,10,20,6,16.3,-60.2,979,80,"Hurricane",142
+"Jose",1999,10,20,12,16.8,-61.1,980,85,"Hurricane",142
+"Jose",1999,10,20,18,17.2,-62,983,80,"Hurricane",142
+"Jose",1999,10,21,0,17.6,-62.7,990,75,"Hurricane",143
+"Jose",1999,10,21,6,18.1,-63.8,992,65,"Hurricane",143
+"Jose",1999,10,21,12,18.5,-64.8,996,60,"Tropical Storm",143
+"Jose",1999,10,21,18,19,-65.3,994,55,"Tropical Storm",143
+"Jose",1999,10,22,0,19.4,-65.8,993,50,"Tropical Storm",144
+"Jose",1999,10,22,6,19.9,-66.1,992,50,"Tropical Storm",144
+"Jose",1999,10,22,12,20.5,-65.9,992,50,"Tropical Storm",144
+"Jose",1999,10,22,18,21.1,-65.6,993,50,"Tropical Storm",144
+"Jose",1999,10,23,0,22,-65.2,994,50,"Tropical Storm",145
+"Jose",1999,10,23,6,23,-64.8,995,50,"Tropical Storm",145
+"Jose",1999,10,23,12,24,-64.3,995,55,"Tropical Storm",145
+"Jose",1999,10,23,18,25.2,-63.8,995,55,"Tropical Storm",145
+"Jose",1999,10,24,0,26.6,-63.1,995,55,"Tropical Storm",146
+"Jose",1999,10,24,6,28,-62.2,990,60,"Tropical Storm",146
+"Jose",1999,10,24,12,29.7,-61.1,987,65,"Hurricane",146
+"Jose",1999,10,24,18,32.2,-59.8,987,65,"Hurricane",146
+"Jose",1999,10,25,0,34.9,-58.1,990,60,"Tropical Storm",147
+"Jose",1999,10,25,6,37.9,-55.8,994,55,"Tropical Storm",147
+"Jose",1999,10,25,12,40,-51.8,996,50,"Extratropical",147
+"Katrina",1999,10,28,18,11.4,-80.9,1001,30,"Tropical Depression",150
+"Katrina",1999,10,29,0,11.6,-81.6,1001,30,"Tropical Depression",151
+"Katrina",1999,10,29,6,12,-82,1001,30,"Tropical Depression",151
+"Katrina",1999,10,29,12,12.6,-82.6,1000,30,"Tropical Depression",151
+"Katrina",1999,10,29,18,13.2,-82.9,1000,35,"Tropical Storm",151
+"Katrina",1999,10,30,0,13.8,-83.4,999,35,"Tropical Storm",152
+"Katrina",1999,10,30,6,14.1,-84,1000,30,"Tropical Depression",152
+"Katrina",1999,10,30,12,14.3,-84.5,1001,25,"Tropical Depression",152
+"Katrina",1999,10,30,18,14.7,-85.2,1003,25,"Tropical Depression",152
+"Katrina",1999,10,31,0,16,-86.6,1005,25,"Tropical Depression",153
+"Katrina",1999,10,31,6,17.2,-87.4,1007,25,"Tropical Depression",153
+"Katrina",1999,10,31,12,18.4,-88,1008,25,"Tropical Depression",153
+"Katrina",1999,10,31,18,19.4,-88.7,1009,25,"Tropical Depression",153
+"Katrina",1999,11,1,0,19.9,-89.6,1010,20,"Tropical Depression",154
+"Katrina",1999,11,1,6,20.4,-89.8,1011,20,"Tropical Depression",154
+"Katrina",1999,11,1,12,21.2,-89.8,1011,20,"Tropical Depression",154
+"Lenny",1999,11,13,18,16.7,-81.6,1003,30,"Tropical Depression",166
+"Lenny",1999,11,14,0,16.5,-81.1,1003,30,"Tropical Depression",167
+"Lenny",1999,11,14,6,16.4,-80.5,1002,30,"Tropical Depression",167
+"Lenny",1999,11,14,12,16.4,-79.9,1000,40,"Tropical Storm",167
+"Lenny",1999,11,14,18,16.3,-79.3,992,55,"Tropical Storm",167
+"Lenny",1999,11,15,0,16,-78.6,988,70,"Hurricane",168
+"Lenny",1999,11,15,6,15.5,-77.7,977,75,"Hurricane",168
+"Lenny",1999,11,15,12,15.1,-76.4,971,85,"Hurricane",168
+"Lenny",1999,11,15,18,14.8,-74.8,983,75,"Hurricane",168
+"Lenny",1999,11,16,0,15,-73.4,982,75,"Hurricane",169
+"Lenny",1999,11,16,6,15.1,-72,974,75,"Hurricane",169
+"Lenny",1999,11,16,12,15.1,-70.5,971,85,"Hurricane",169
+"Lenny",1999,11,16,18,15.4,-69,967,85,"Hurricane",169
+"Lenny",1999,11,17,0,15.9,-67.6,959,100,"Hurricane",170
+"Lenny",1999,11,17,6,16.4,-66.5,952,105,"Hurricane",170
+"Lenny",1999,11,17,12,16.8,-65.5,946,115,"Hurricane",170
+"Lenny",1999,11,17,18,17.4,-64.8,933,135,"Hurricane",170
+"Lenny",1999,11,18,0,17.6,-64.2,940,130,"Hurricane",171
+"Lenny",1999,11,18,6,17.8,-63.9,944,125,"Hurricane",171
+"Lenny",1999,11,18,12,17.9,-63.6,953,120,"Hurricane",171
+"Lenny",1999,11,18,18,18,-63.3,966,110,"Hurricane",171
+"Lenny",1999,11,19,0,18.1,-63.1,972,85,"Hurricane",172
+"Lenny",1999,11,19,6,18,-62.9,979,75,"Hurricane",172
+"Lenny",1999,11,19,12,17.9,-62.8,986,70,"Hurricane",172
+"Lenny",1999,11,19,18,17.6,-62.5,994,60,"Tropical Storm",172
+"Lenny",1999,11,20,0,17.3,-61.8,994,55,"Tropical Storm",173
+"Lenny",1999,11,20,6,17,-61.1,995,55,"Tropical Storm",173
+"Lenny",1999,11,20,12,16.5,-60.4,996,50,"Tropical Storm",173
+"Lenny",1999,11,20,18,15.9,-59.8,998,45,"Tropical Storm",173
+"Lenny",1999,11,21,0,16,-59,998,40,"Tropical Storm",174
+"Lenny",1999,11,21,0,16.5,-58.1,998,30,"Tropical Depression",174
+"Lenny",1999,11,21,12,17.2,-57.1,999,30,"Tropical Depression",174
+"Lenny",1999,11,21,18,18,-56.7,1000,25,"Tropical Depression",174
+"Lenny",1999,11,22,0,18.4,-56.1,1001,25,"Tropical Depression",175
+"Lenny",1999,11,22,6,18.5,-55.7,1002,25,"Tropical Depression",175
+"Lenny",1999,11,22,12,18.5,-55.3,1004,25,"Tropical Depression",175
+"Lenny",1999,11,22,18,18.5,-54.7,1005,20,"Tropical Depression",175
+"Lenny",1999,11,23,0,18.5,-53.8,1006,20,"Tropical Depression",176
+"Lenny",1999,11,23,6,18.5,-52.8,1006,20,"Tropical Depression",176
+"Alberto",2000,8,3,18,10.8,-18,1007,25,"Tropical Depression",64
+"Alberto",2000,8,4,0,11.5,-20.1,1005,30,"Tropical Depression",65
+"Alberto",2000,8,4,6,12,-22.3,1004,35,"Tropical Storm",65
+"Alberto",2000,8,4,12,12.3,-23.8,1003,35,"Tropical Storm",65
+"Alberto",2000,8,4,18,12.7,-25.2,1002,40,"Tropical Storm",65
+"Alberto",2000,8,5,0,13.2,-26.7,1001,40,"Tropical Storm",66
+"Alberto",2000,8,5,6,13.7,-28.2,1000,45,"Tropical Storm",66
+"Alberto",2000,8,5,12,14.1,-29.8,999,45,"Tropical Storm",66
+"Alberto",2000,8,5,18,14.5,-31.4,994,55,"Tropical Storm",66
+"Alberto",2000,8,6,0,14.5,-33.2,987,65,"Hurricane",67
+"Alberto",2000,8,6,6,14.6,-34.4,985,65,"Hurricane",67
+"Alberto",2000,8,6,12,14.7,-35.4,983,70,"Hurricane",67
+"Alberto",2000,8,6,18,15.2,-36.6,981,75,"Hurricane",67
+"Alberto",2000,8,7,0,15.7,-38.1,979,75,"Hurricane",68
+"Alberto",2000,8,7,6,16,-39.6,978,80,"Hurricane",68
+"Alberto",2000,8,7,12,16.2,-41,977,80,"Hurricane",68
+"Alberto",2000,8,7,18,16.5,-42.2,978,80,"Hurricane",68
+"Alberto",2000,8,8,0,16.7,-43.6,979,75,"Hurricane",69
+"Alberto",2000,8,8,6,17,-44.9,982,70,"Hurricane",69
+"Alberto",2000,8,8,12,17.7,-45.7,985,70,"Hurricane",69
+"Alberto",2000,8,8,18,18.6,-46.5,987,65,"Hurricane",69
+"Alberto",2000,8,9,0,19.6,-47.2,989,60,"Tropical Storm",70
+"Alberto",2000,8,9,6,20.6,-48.5,992,60,"Tropical Storm",70
+"Alberto",2000,8,9,12,21.9,-49.9,994,55,"Tropical Storm",70
+"Alberto",2000,8,9,18,23.4,-51.3,991,60,"Tropical Storm",70
+"Alberto",2000,8,10,0,24.8,-52.6,988,65,"Hurricane",71
+"Alberto",2000,8,10,6,26.1,-54,987,65,"Hurricane",71
+"Alberto",2000,8,10,12,27.5,-55.3,986,65,"Hurricane",71
+"Alberto",2000,8,10,18,28.8,-56.7,984,65,"Hurricane",71
+"Alberto",2000,8,11,0,29.9,-57.7,982,70,"Hurricane",72
+"Alberto",2000,8,11,6,31.1,-58.4,979,75,"Hurricane",72
+"Alberto",2000,8,11,12,32.2,-58.6,976,80,"Hurricane",72
+"Alberto",2000,8,11,18,33.3,-58.5,973,85,"Hurricane",72
+"Alberto",2000,8,12,0,34.3,-58,970,90,"Hurricane",73
+"Alberto",2000,8,12,6,35.1,-56.7,960,100,"Hurricane",73
+"Alberto",2000,8,12,12,35.9,-55.3,950,110,"Hurricane",73
+"Alberto",2000,8,12,18,36.8,-53.8,954,110,"Hurricane",73
+"Alberto",2000,8,13,0,37.4,-52,958,105,"Hurricane",74
+"Alberto",2000,8,13,6,38,-50.3,966,95,"Hurricane",74
+"Alberto",2000,8,13,12,38.4,-48.3,973,85,"Hurricane",74
+"Alberto",2000,8,13,18,38.8,-46.3,980,75,"Hurricane",74
+"Alberto",2000,8,14,0,39,-44.2,987,65,"Hurricane",75
+"Alberto",2000,8,14,6,39.1,-42.2,991,60,"Tropical Storm",75
+"Alberto",2000,8,14,12,39.1,-40.6,994,55,"Tropical Storm",75
+"Alberto",2000,8,14,18,39.1,-39.3,997,50,"Tropical Storm",75
+"Alberto",2000,8,15,0,38.9,-38.5,1000,45,"Tropical Storm",76
+"Alberto",2000,8,15,6,38.3,-38.5,1001,45,"Tropical Storm",76
+"Alberto",2000,8,15,12,37.3,-38.5,1002,45,"Tropical Storm",76
+"Alberto",2000,8,15,18,36.6,-38.9,1002,40,"Tropical Storm",76
+"Alberto",2000,8,16,0,36.1,-39.4,1003,40,"Tropical Storm",77
+"Alberto",2000,8,16,6,35.4,-40.2,1003,40,"Tropical Storm",77
+"Alberto",2000,8,16,12,34.6,-41.3,1003,40,"Tropical Storm",77
+"Alberto",2000,8,16,18,33.9,-42.4,1002,40,"Tropical Storm",77
+"Alberto",2000,8,17,0,33.4,-43.5,1001,45,"Tropical Storm",78
+"Alberto",2000,8,17,6,33,-44.2,1000,45,"Tropical Storm",78
+"Alberto",2000,8,17,12,33,-44.9,998,50,"Tropical Storm",78
+"Alberto",2000,8,17,18,33,-45.8,997,50,"Tropical Storm",78
+"Alberto",2000,8,18,0,33.2,-46.5,995,55,"Tropical Storm",79
+"Alberto",2000,8,18,6,33.6,-47.1,993,55,"Tropical Storm",79
+"Alberto",2000,8,18,12,34.2,-47.6,991,60,"Tropical Storm",79
+"Alberto",2000,8,18,18,34.7,-48,987,65,"Hurricane",79
+"Alberto",2000,8,19,0,34.9,-48.1,979,75,"Hurricane",80
+"Alberto",2000,8,19,6,35.3,-48.2,976,80,"Hurricane",80
+"Alberto",2000,8,19,12,35.6,-48.2,973,85,"Hurricane",80
+"Alberto",2000,8,19,18,36,-48.2,970,90,"Hurricane",80
+"Alberto",2000,8,20,0,36.4,-48.1,970,90,"Hurricane",81
+"Alberto",2000,8,20,6,36.7,-48,971,90,"Hurricane",81
+"Alberto",2000,8,20,12,37.1,-47.9,972,85,"Hurricane",81
+"Alberto",2000,8,20,18,37.4,-47.7,973,85,"Hurricane",81
+"Alberto",2000,8,21,0,37.9,-47.5,974,85,"Hurricane",82
+"Alberto",2000,8,21,6,38.3,-47.3,976,80,"Hurricane",82
+"Alberto",2000,8,21,12,38.9,-47.2,977,80,"Hurricane",82
+"Alberto",2000,8,21,18,40,-46.7,978,80,"Hurricane",82
+"Alberto",2000,8,22,0,41.2,-45.9,979,75,"Hurricane",83
+"Alberto",2000,8,22,6,42.6,-45.4,981,75,"Hurricane",83
+"Alberto",2000,8,22,12,44,-44,983,70,"Hurricane",83
+"Alberto",2000,8,22,18,46.1,-42.1,985,65,"Hurricane",83
+"Alberto",2000,8,23,0,48.3,-39.5,987,65,"Hurricane",84
+"Alberto",2000,8,23,6,50.7,-36.8,994,55,"Tropical Storm",84
+"Alberto",2000,8,23,12,53.2,-35.4,997,45,"Extratropical",84
+"Alberto",2000,8,23,18,57,-34,997,45,"Extratropical",84
+"Alberto",2000,8,24,0,59.5,-30.3,995,40,"Extratropical",85
+"Alberto",2000,8,24,6,62,-25.5,992,35,"Extratropical",85
+"Alberto",2000,8,24,12,65.5,-23,990,35,"Extratropical",85
+"Alberto",2000,8,24,18,68,-20,992,30,"Extratropical",85
+"Alberto",2000,8,25,0,69,-12.5,990,30,"Extratropical",86
+"Alberto",2000,8,25,6,70.7,-4.9,994,30,"Extratropical",86
+"Beryl",2000,8,13,18,22.5,-93.5,1008,30,"Tropical Depression",74
+"Beryl",2000,8,14,0,22.7,-93.8,1008,30,"Tropical Depression",75
+"Beryl",2000,8,14,6,23.1,-94.6,1007,35,"Tropical Storm",75
+"Beryl",2000,8,14,12,23.5,-95.4,1009,40,"Tropical Storm",75
+"Beryl",2000,8,14,18,23.9,-96.3,1009,45,"Tropical Storm",75
+"Beryl",2000,8,15,0,24.1,-97,1007,45,"Tropical Storm",76
+"Beryl",2000,8,15,6,24.5,-97.7,1009,45,"Tropical Storm",76
+"Beryl",2000,8,15,12,24.9,-98.6,1010,30,"Tropical Depression",76
+"Beryl",2000,8,15,18,25.2,-99.8,1012,25,"Tropical Depression",76
+"Chris",2000,8,17,12,14.2,-51.9,1009,25,"Tropical Depression",78
+"Chris",2000,8,17,18,14.7,-52.8,1009,25,"Tropical Depression",78
+"Chris",2000,8,18,0,15.2,-53.4,1009,25,"Tropical Depression",79
+"Chris",2000,8,18,6,15.6,-54.1,1009,30,"Tropical Depression",79
+"Chris",2000,8,18,12,16.2,-55.4,1008,35,"Tropical Storm",79
+"Chris",2000,8,18,18,16.8,-56.5,1011,30,"Tropical Depression",79
+"Chris",2000,8,19,0,17.3,-57.7,1012,25,"Tropical Depression",80
+"Chris",2000,8,19,6,17.8,-59,1012,25,"Tropical Depression",80
+"Chris",2000,8,19,12,18.3,-60.4,1013,20,"Extratropical",80
+"Debby",2000,8,19,18,12,-44.5,1010,30,"Tropical Depression",80
+"Debby",2000,8,20,0,12.6,-45.3,1010,30,"Tropical Depression",81
+"Debby",2000,8,20,6,13.3,-46.8,1009,35,"Tropical Storm",81
+"Debby",2000,8,20,12,14,-48.8,1008,40,"Tropical Storm",81
+"Debby",2000,8,20,18,14.7,-50.6,1007,45,"Tropical Storm",81
+"Debby",2000,8,21,0,15.1,-52.1,1006,55,"Tropical Storm",82
+"Debby",2000,8,21,6,15.4,-54,1005,65,"Hurricane",82
+"Debby",2000,8,21,12,15.7,-56.3,1004,75,"Hurricane",82
+"Debby",2000,8,21,18,16.1,-58.5,1004,75,"Hurricane",82
+"Debby",2000,8,22,0,16.8,-60.1,995,70,"Hurricane",83
+"Debby",2000,8,22,6,17.5,-61.7,993,65,"Hurricane",83
+"Debby",2000,8,22,12,18.1,-63.5,994,65,"Hurricane",83
+"Debby",2000,8,22,18,18.8,-65.4,995,65,"Hurricane",83
+"Debby",2000,8,23,0,19.2,-66.7,995,65,"Hurricane",84
+"Debby",2000,8,23,6,19.5,-68.1,995,65,"Hurricane",84
+"Debby",2000,8,23,12,19.8,-69.7,1005,60,"Tropical Storm",84
+"Debby",2000,8,23,18,20,-71.5,1009,50,"Tropical Storm",84
+"Debby",2000,8,24,0,19.9,-73.3,1010,40,"Tropical Storm",85
+"Debby",2000,8,24,6,19.6,-75.1,1011,35,"Tropical Storm",85
+"Debby",2000,8,24,12,19.5,-77,1011,30,"Tropical Depression",85
+"Ernesto",2000,9,1,12,14.8,-45.2,1009,25,"Tropical Depression",93
+"Ernesto",2000,9,1,18,15,-47,1009,30,"Tropical Depression",93
+"Ernesto",2000,9,2,0,15.6,-48.3,1009,30,"Tropical Depression",94
+"Ernesto",2000,9,2,6,16.2,-49.5,1008,35,"Tropical Storm",94
+"Ernesto",2000,9,2,12,16.9,-50.8,1008,35,"Tropical Storm",94
+"Ernesto",2000,9,2,18,17.5,-52.1,1008,35,"Tropical Storm",94
+"Ernesto",2000,9,3,0,18.2,-53.6,1008,35,"Tropical Storm",95
+"Ernesto",2000,9,3,6,18.8,-55,1008,35,"Tropical Storm",95
+"Ernesto",2000,9,3,12,19.4,-56.6,1008,35,"Tropical Storm",95
+"Ernesto",2000,9,3,18,20,-58,1009,30,"Tropical Depression",95
+"Florence",2000,9,10,18,30.9,-70.9,1007,30,"Extratropical",102
+"Florence",2000,9,11,0,30.8,-71.3,1007,30,"Extratropical",103
+"Florence",2000,9,11,6,30.7,-71.8,1006,30,"Tropical Depression",103
+"Florence",2000,9,11,12,30.4,-72.2,1002,45,"Tropical Storm",103
+"Florence",2000,9,11,18,30.1,-72.6,998,65,"Hurricane",103
+"Florence",2000,9,12,0,30.1,-72.7,992,65,"Hurricane",104
+"Florence",2000,9,12,6,30.2,-72.8,993,60,"Tropical Storm",104
+"Florence",2000,9,12,12,30.3,-73.1,991,60,"Tropical Storm",104
+"Florence",2000,9,12,18,30.6,-73.3,987,65,"Hurricane",104
+"Florence",2000,9,13,0,30.8,-73.7,986,65,"Hurricane",105
+"Florence",2000,9,13,6,30.7,-74,986,65,"Hurricane",105
+"Florence",2000,9,13,12,30.7,-73.8,987,60,"Tropical Storm",105
+"Florence",2000,9,13,18,30.5,-73.7,989,55,"Tropical Storm",105
+"Florence",2000,9,14,0,30.2,-73.6,991,50,"Tropical Storm",106
+"Florence",2000,9,14,6,29.6,-73.6,993,45,"Tropical Storm",106
+"Florence",2000,9,14,12,29.5,-73.4,994,45,"Tropical Storm",106
+"Florence",2000,9,14,18,29.3,-73.1,995,45,"Tropical Storm",106
+"Florence",2000,9,15,0,29.2,-72.8,995,45,"Tropical Storm",107
+"Florence",2000,9,15,6,29.1,-72.4,996,45,"Tropical Storm",107
+"Florence",2000,9,15,12,29.8,-71.2,997,50,"Tropical Storm",107
+"Florence",2000,9,15,18,30.1,-69.7,997,60,"Tropical Storm",107
+"Florence",2000,9,16,0,30.8,-67.5,994,65,"Hurricane",108
+"Florence",2000,9,16,6,32.6,-66.1,988,65,"Hurricane",108
+"Florence",2000,9,16,12,34.3,-64.2,987,65,"Hurricane",108
+"Florence",2000,9,16,18,36.1,-61.8,985,70,"Hurricane",108
+"Florence",2000,9,17,0,37.9,-59.5,990,60,"Tropical Storm",109
+"Florence",2000,9,17,6,40.1,-57.4,995,55,"Tropical Storm",109
+"Florence",2000,9,17,12,42.5,-55,1000,50,"Tropical Storm",109
+"Florence",2000,9,17,18,45.5,-53,1002,50,"Tropical Storm",109
+"Gordon",2000,9,14,12,19.8,-87.3,1008,25,"Tropical Depression",106
+"Gordon",2000,9,14,18,20.4,-87.4,1007,25,"Tropical Depression",106
+"Gordon",2000,9,15,0,20.7,-87.7,1007,25,"Tropical Depression",107
+"Gordon",2000,9,15,6,21,-88,1006,25,"Tropical Depression",107
+"Gordon",2000,9,15,12,21.4,-88.7,1004,25,"Tropical Depression",107
+"Gordon",2000,9,15,18,21.6,-87.8,1004,30,"Tropical Depression",107
+"Gordon",2000,9,16,0,22.5,-86.7,1000,40,"Tropical Storm",108
+"Gordon",2000,9,16,6,22.9,-86.6,997,50,"Tropical Storm",108
+"Gordon",2000,9,16,12,23.5,-86.3,992,55,"Tropical Storm",108
+"Gordon",2000,9,16,18,24.3,-85.9,983,60,"Tropical Storm",108
+"Gordon",2000,9,17,0,25.2,-85.4,985,65,"Hurricane",109
+"Gordon",2000,9,17,6,26.1,-84.9,981,70,"Hurricane",109
+"Gordon",2000,9,17,12,27.1,-84.3,987,65,"Hurricane",109
+"Gordon",2000,9,17,18,28,-83.8,985,60,"Tropical Storm",109
+"Gordon",2000,9,18,0,28.9,-83.4,992,55,"Tropical Storm",110
+"Gordon",2000,9,18,6,29.8,-83,1000,40,"Tropical Storm",110
+"Gordon",2000,9,18,12,31,-82.3,1006,30,"Tropical Depression",110
+"Gordon",2000,9,18,18,32.3,-81.5,1011,25,"Extratropical",110
+"Gordon",2000,9,19,0,33.5,-80.2,1011,25,"Extratropical",111
+"Gordon",2000,9,19,6,35,-79,1011,20,"Extratropical",111
+"Gordon",2000,9,19,12,37,-78.2,1010,20,"Extratropical",111
+"Gordon",2000,9,19,18,38.5,-76,1008,25,"Extratropical",111
+"Gordon",2000,9,20,0,40,-74,1007,25,"Extratropical",112
+"Gordon",2000,9,20,6,41.5,-72,1005,25,"Extratropical",112
+"Gordon",2000,9,20,12,42,-69.5,1005,30,"Extratropical",112
+"Gordon",2000,9,20,18,42.5,-67.2,1005,30,"Extratropical",112
+"Gordon",2000,9,21,0,43,-65,1004,30,"Extratropical",113
+"Gordon",2000,9,21,6,43.5,-63,1003,30,"Extratropical",113
+"Helene",2000,9,15,12,14.9,-52.2,1010,25,"Tropical Depression",107
+"Helene",2000,9,15,18,15.3,-53,1010,25,"Tropical Depression",107
+"Helene",2000,9,16,0,15.6,-53.6,1010,25,"Tropical Depression",108
+"Helene",2000,9,16,6,15.8,-54.4,1010,25,"Tropical Depression",108
+"Helene",2000,9,16,12,16.1,-55.9,1010,30,"Tropical Depression",108
+"Helene",2000,9,16,18,16.4,-58,1010,30,"Tropical Depression",108
+"Helene",2000,9,17,0,16.6,-59.9,1010,30,"Tropical Depression",109
+"Helene",2000,9,17,6,16.6,-61.7,1010,30,"Tropical Depression",109
+"Helene",2000,9,17,12,16.4,-63.6,1010,30,"Tropical Depression",109
+"Helene",2000,9,17,18,16.7,-65.6,1010,30,"Tropical Depression",109
+"Helene",2000,9,18,0,17,-67.1,1010,30,"Tropical Depression",110
+"Helene",2000,9,18,6,17.1,-68.7,1010,30,"Tropical Depression",110
+"Helene",2000,9,18,12,17.2,-70.6,1010,30,"Tropical Depression",110
+"Helene",2000,9,18,18,17.4,-72.5,1010,30,"Tropical Depression",110
+"Helene",2000,9,19,0,17.6,-74.4,1010,30,"Tropical Depression",111
+"Helene",2000,9,19,6,18.3,-76.3,1010,30,"Tropical Depression",111
+"Helene",2000,9,19,12,18.9,-78.3,1010,30,"Tropical Depression",111
+"Helene",2000,9,19,18,19.4,-79.6,1010,30,"Tropical Depression",111
+"Helene",2000,9,20,0,19.9,-81,1010,30,"Tropical Depression",112
+"Helene",2000,9,20,6,20.7,-82.6,1010,25,"Tropical Depression",112
+"Helene",2000,9,20,12,21.8,-84.3,1010,25,"Tropical Depression",112
+"Helene",2000,9,20,18,23,-85.4,1010,25,"Tropical Depression",112
+"Helene",2000,9,21,0,23.9,-86.1,1008,25,"Tropical Depression",113
+"Helene",2000,9,21,6,24.9,-86.6,1007,35,"Tropical Storm",113
+"Helene",2000,9,21,12,26.1,-87,1006,45,"Tropical Storm",113
+"Helene",2000,9,21,18,27.1,-87.1,999,60,"Tropical Storm",113
+"Helene",2000,9,22,0,28.4,-87.2,996,60,"Tropical Storm",114
+"Helene",2000,9,22,6,29.5,-87.2,1001,50,"Tropical Storm",114
+"Helene",2000,9,22,12,30.5,-86.6,1006,35,"Tropical Storm",114
+"Helene",2000,9,22,18,31.6,-85.4,1010,25,"Tropical Depression",114
+"Helene",2000,9,23,0,32.9,-83.5,1011,25,"Tropical Depression",115
+"Helene",2000,9,23,6,33.6,-81.7,1012,25,"Tropical Depression",115
+"Helene",2000,9,23,12,34.4,-80,1011,25,"Tropical Depression",115
+"Helene",2000,9,23,18,35.4,-78,1010,35,"Tropical Storm",115
+"Helene",2000,9,24,0,36.4,-76.1,1008,40,"Tropical Storm",116
+"Helene",2000,9,24,6,37.2,-74.7,1005,45,"Tropical Storm",116
+"Helene",2000,9,24,12,38,-72.5,1001,45,"Tropical Storm",116
+"Helene",2000,9,24,18,39.2,-70.1,997,45,"Tropical Storm",116
+"Helene",2000,9,25,0,40.1,-66.8,993,55,"Tropical Storm",117
+"Helene",2000,9,25,6,41.6,-62.2,986,60,"Tropical Storm",117
+"Helene",2000,9,25,12,44,-55.5,988,55,"Tropical Storm",117
+"Helene",2000,9,25,18,46.1,-48.8,990,45,"Tropical Storm",117
+"Isaac",2000,9,21,12,11.5,-23,1008,30,"Tropical Depression",113
+"Isaac",2000,9,21,18,11.9,-24.5,1008,30,"Tropical Depression",113
+"Isaac",2000,9,22,0,12.3,-25.9,1005,35,"Tropical Storm",114
+"Isaac",2000,9,22,6,12.7,-27.2,1001,40,"Tropical Storm",114
+"Isaac",2000,9,22,12,13.1,-28.7,1000,45,"Tropical Storm",114
+"Isaac",2000,9,22,18,13.5,-30.1,1000,45,"Tropical Storm",114
+"Isaac",2000,9,23,0,13.7,-31.2,997,50,"Tropical Storm",115
+"Isaac",2000,9,23,6,13.9,-32.3,994,55,"Tropical Storm",115
+"Isaac",2000,9,23,12,14.3,-33.2,984,70,"Hurricane",115
+"Isaac",2000,9,23,18,14.6,-34.2,973,85,"Hurricane",115
+"Isaac",2000,9,24,0,14.9,-35,960,105,"Hurricane",116
+"Isaac",2000,9,24,6,15.1,-35.8,960,100,"Hurricane",116
+"Isaac",2000,9,24,12,15.5,-36.8,960,100,"Hurricane",116
+"Isaac",2000,9,24,18,15.8,-37.8,960,100,"Hurricane",116
+"Isaac",2000,9,25,0,16.3,-38.6,965,95,"Hurricane",117
+"Isaac",2000,9,25,6,16.7,-39.5,965,95,"Hurricane",117
+"Isaac",2000,9,25,12,17.2,-40.4,970,90,"Hurricane",117
+"Isaac",2000,9,25,18,17.6,-41.2,970,90,"Hurricane",117
+"Isaac",2000,9,26,0,17.9,-42,970,90,"Hurricane",118
+"Isaac",2000,9,26,6,18.3,-42.9,973,85,"Hurricane",118
+"Isaac",2000,9,26,12,18.6,-43.9,980,75,"Hurricane",118
+"Isaac",2000,9,26,18,19.1,-45,980,75,"Hurricane",118
+"Isaac",2000,9,27,0,19.6,-46,977,80,"Hurricane",119
+"Isaac",2000,9,27,6,20.4,-47,973,85,"Hurricane",119
+"Isaac",2000,9,27,12,21,-48.1,970,90,"Hurricane",119
+"Isaac",2000,9,27,18,21.9,-49.5,965,95,"Hurricane",119
+"Isaac",2000,9,28,0,22.8,-50.6,960,100,"Hurricane",120
+"Isaac",2000,9,28,6,23.8,-52,955,105,"Hurricane",120
+"Isaac",2000,9,28,12,25,-52.9,950,110,"Hurricane",120
+"Isaac",2000,9,28,18,26.6,-54.2,943,120,"Hurricane",120
+"Isaac",2000,9,29,0,28,-55.1,948,115,"Hurricane",121
+"Isaac",2000,9,29,6,29.7,-55.9,950,110,"Hurricane",121
+"Isaac",2000,9,29,12,31.2,-56.2,955,105,"Hurricane",121
+"Isaac",2000,9,29,18,32.9,-55.9,965,90,"Hurricane",121
+"Isaac",2000,9,30,0,34.4,-55.2,970,85,"Hurricane",122
+"Isaac",2000,9,30,6,35.7,-54,975,80,"Hurricane",122
+"Isaac",2000,9,30,12,37,-51.8,979,75,"Hurricane",122
+"Isaac",2000,9,30,18,38.3,-49.8,985,70,"Hurricane",122
+"Isaac",2000,10,1,0,39.7,-47.9,987,65,"Hurricane",123
+"Isaac",2000,10,1,6,40.9,-45.7,990,60,"Tropical Storm",123
+"Isaac",2000,10,1,12,42.1,-43.6,990,55,"Tropical Storm",123
+"Isaac",2000,10,1,18,43.5,-39.5,990,55,"Extratropical",123
+"Isaac",2000,10,2,0,44.5,-36.5,982,55,"Extratropical",124
+"Isaac",2000,10,2,6,45.7,-33,972,60,"Extratropical",124
+"Isaac",2000,10,2,12,47,-29,975,60,"Extratropical",124
+"Isaac",2000,10,2,18,48.5,-25,976,60,"Extratropical",124
+"Isaac",2000,10,3,0,49.5,-20.5,976,60,"Extratropical",125
+"Isaac",2000,10,3,6,50.5,-16.5,978,60,"Extratropical",125
+"Isaac",2000,10,3,12,52,-12,982,55,"Extratropical",125
+"Isaac",2000,10,3,18,55,-9,988,45,"Extratropical",125
+"Isaac",2000,10,4,0,58,-6,989,45,"Extratropical",126
+"Isaac",2000,10,4,6,62,-4,994,45,"Extratropical",126
+"Joyce",2000,9,25,12,11.2,-29.6,1009,25,"Tropical Depression",117
+"Joyce",2000,9,25,18,11.4,-30.7,1009,30,"Tropical Depression",117
+"Joyce",2000,9,26,0,11.5,-31.9,1008,35,"Tropical Storm",118
+"Joyce",2000,9,26,6,11.6,-33,1007,35,"Tropical Storm",118
+"Joyce",2000,9,26,12,11.6,-34.1,1005,35,"Tropical Storm",118
+"Joyce",2000,9,26,18,11.7,-35.3,1002,40,"Tropical Storm",118
+"Joyce",2000,9,27,0,12.1,-36.4,998,50,"Tropical Storm",119
+"Joyce",2000,9,27,6,12.2,-37.6,993,55,"Tropical Storm",119
+"Joyce",2000,9,27,12,12.4,-38.8,985,65,"Hurricane",119
+"Joyce",2000,9,27,18,12.5,-40.1,978,70,"Hurricane",119
+"Joyce",2000,9,28,0,12.4,-41.3,976,75,"Hurricane",120
+"Joyce",2000,9,28,6,12.2,-42.5,975,80,"Hurricane",120
+"Joyce",2000,9,28,12,11.7,-43.8,975,80,"Hurricane",120
+"Joyce",2000,9,28,18,11.3,-45,976,75,"Hurricane",120
+"Joyce",2000,9,29,0,10.9,-46.1,977,75,"Hurricane",121
+"Joyce",2000,9,29,6,10.7,-47.2,980,70,"Hurricane",121
+"Joyce",2000,9,29,12,10.5,-48.6,984,65,"Hurricane",121
+"Joyce",2000,9,29,18,10.5,-50.1,988,60,"Tropical Storm",121
+"Joyce",2000,9,30,0,10.4,-51.7,992,55,"Tropical Storm",122
+"Joyce",2000,9,30,6,10.3,-53.3,996,50,"Tropical Storm",122
+"Joyce",2000,9,30,12,10.3,-54.9,1000,45,"Tropical Storm",122
+"Joyce",2000,9,30,18,10.5,-56.6,1003,40,"Tropical Storm",122
+"Joyce",2000,10,1,0,10.7,-58,1005,40,"Tropical Storm",123
+"Joyce",2000,10,1,6,11,-59.5,1006,35,"Tropical Storm",123
+"Joyce",2000,10,1,12,11.3,-60.9,1007,35,"Tropical Storm",123
+"Joyce",2000,10,1,18,11.7,-62.3,1008,30,"Tropical Depression",123
+"Joyce",2000,10,2,0,11.9,-63.5,1009,30,"Tropical Depression",124
+"Joyce",2000,10,2,6,11.9,-64.9,1009,25,"Tropical Depression",124
+"Keith",2000,9,28,18,16.1,-82.9,1005,25,"Tropical Depression",120
+"Keith",2000,9,29,0,16.2,-83.3,1004,25,"Tropical Depression",121
+"Keith",2000,9,29,6,16.6,-83.6,1003,30,"Tropical Depression",121
+"Keith",2000,9,29,12,16.9,-84,1002,30,"Tropical Depression",121
+"Keith",2000,9,29,18,17.4,-84.8,1000,40,"Tropical Storm",121
+"Keith",2000,9,30,0,17.7,-85.4,993,45,"Tropical Storm",122
+"Keith",2000,9,30,6,17.9,-86,987,55,"Tropical Storm",122
+"Keith",2000,9,30,12,17.9,-86.4,982,65,"Hurricane",122
+"Keith",2000,9,30,18,17.9,-86.7,977,75,"Hurricane",122
+"Keith",2000,10,1,0,17.9,-86.9,955,100,"Hurricane",123
+"Keith",2000,10,1,6,17.9,-87.2,941,120,"Hurricane",123
+"Keith",2000,10,1,12,17.9,-87.4,944,115,"Hurricane",123
+"Keith",2000,10,1,18,17.9,-87.7,950,110,"Hurricane",123
+"Keith",2000,10,2,0,17.8,-87.9,959,100,"Hurricane",124
+"Keith",2000,10,2,6,17.6,-87.8,974,80,"Hurricane",124
+"Keith",2000,10,2,12,17.7,-87.8,980,70,"Hurricane",124
+"Keith",2000,10,2,18,17.7,-87.9,987,65,"Hurricane",124
+"Keith",2000,10,3,0,17.9,-88,989,60,"Tropical Storm",125
+"Keith",2000,10,3,6,18,-88.4,990,45,"Tropical Storm",125
+"Keith",2000,10,3,12,18.3,-88.8,995,30,"Tropical Depression",125
+"Keith",2000,10,3,18,18.6,-89.5,998,30,"Tropical Depression",125
+"Keith",2000,10,4,0,19,-90.4,1000,25,"Tropical Depression",126
+"Keith",2000,10,4,6,19.5,-91.4,1000,30,"Tropical Depression",126
+"Keith",2000,10,4,12,19.9,-92.5,999,35,"Tropical Storm",126
+"Keith",2000,10,4,18,20.3,-93.5,996,40,"Tropical Storm",126
+"Keith",2000,10,5,0,20.7,-94.8,988,60,"Tropical Storm",127
+"Keith",2000,10,5,6,21.2,-96.1,987,65,"Hurricane",127
+"Keith",2000,10,5,12,21.8,-97,983,75,"Hurricane",127
+"Keith",2000,10,5,18,22.6,-97.9,980,80,"Hurricane",127
+"Keith",2000,10,6,0,23.2,-99,988,45,"Tropical Storm",128
+"Keith",2000,10,6,6,23.5,-100,1002,30,"Tropical Depression",128
+"Keith",2000,10,6,12,23.8,-101,1007,20,"Tropical Depression",128
+"Leslie",2000,10,4,12,29,-81.4,1012,30,"Extratropical",126
+"Leslie",2000,10,4,18,29.5,-80.8,1012,30,"Extratropical",126
+"Leslie",2000,10,5,0,29.7,-79.9,1010,30,"Extratropical",127
+"Leslie",2000,10,5,6,29.8,-78.6,1010,30,"Extratropical",127
+"Leslie",2000,10,5,12,29.9,-77.3,1009,35,"Tropical Storm",127
+"Leslie",2000,10,5,18,30.2,-75.9,1009,35,"Tropical Storm",127
+"Leslie",2000,10,6,0,30.3,-74.3,1010,35,"Tropical Storm",128
+"Leslie",2000,10,6,6,30.6,-73.1,1006,40,"Tropical Storm",128
+"Leslie",2000,10,6,12,30.9,-72.4,1007,40,"Tropical Storm",128
+"Leslie",2000,10,6,18,31.3,-71.8,1007,40,"Tropical Storm",128
+"Leslie",2000,10,7,0,32.1,-70.7,1006,40,"Tropical Storm",129
+"Leslie",2000,10,7,6,33.1,-69.6,1006,40,"Tropical Storm",129
+"Leslie",2000,10,7,12,35.4,-68.3,1006,40,"Tropical Storm",129
+"Leslie",2000,10,7,18,37.4,-66.7,1005,40,"Extratropical",129
+"Leslie",2000,10,8,0,40,-64,1004,40,"Extratropical",130
+"Leslie",2000,10,8,6,43,-60,1003,40,"Extratropical",130
+"Leslie",2000,10,8,12,46,-57,1003,40,"Extratropical",130
+"Leslie",2000,10,8,18,49,-54,1005,35,"Extratropical",130
+"Leslie",2000,10,9,0,51,-50,1007,35,"Extratropical",131
+"Leslie",2000,10,9,6,53,-46,1006,35,"Extratropical",131
+"Leslie",2000,10,9,12,55,-41,1005,35,"Extratropical",131
+"Leslie",2000,10,9,18,56,-36,1003,35,"Extratropical",131
+"Leslie",2000,10,10,0,56,-30,999,40,"Extratropical",132
+"Leslie",2000,10,10,6,55,-24,987,50,"Extratropical",132
+"Leslie",2000,10,10,12,54,-17,980,55,"Extratropical",132
+"Leslie",2000,10,10,18,53,-10,973,60,"Extratropical",132
+"Michael",2000,10,15,12,30,-71.2,1007,30,"Extratropical",137
+"Michael",2000,10,15,18,30,-71.5,1006,30,"Extratropical",137
+"Michael",2000,10,16,0,29.9,-71.8,1005,35,"Extratropical",138
+"Michael",2000,10,16,6,29.9,-71.9,1005,35,"Extratropical",138
+"Michael",2000,10,16,12,29.7,-71.7,1005,35,"Extratropical",138
+"Michael",2000,10,16,18,29.8,-71.4,1004,35,"Extratropical",138
+"Michael",2000,10,17,0,29.9,-71.1,1003,35,"Tropical Storm",139
+"Michael",2000,10,17,6,29.8,-71,1000,45,"Tropical Storm",139
+"Michael",2000,10,17,12,29.8,-70.9,995,55,"Tropical Storm",139
+"Michael",2000,10,17,18,30.1,-70.9,988,65,"Hurricane",139
+"Michael",2000,10,18,0,30.4,-70.9,988,65,"Hurricane",140
+"Michael",2000,10,18,6,30.8,-70.8,986,65,"Hurricane",140
+"Michael",2000,10,18,12,31.5,-70.4,984,65,"Hurricane",140
+"Michael",2000,10,18,18,32.6,-69.5,979,70,"Hurricane",140
+"Michael",2000,10,19,0,34.2,-67.8,983,75,"Hurricane",141
+"Michael",2000,10,19,6,36.3,-65.5,986,65,"Hurricane",141
+"Michael",2000,10,19,12,39.8,-61.6,979,75,"Hurricane",141
+"Michael",2000,10,19,18,44,-58.5,965,85,"Hurricane",141
+"Michael",2000,10,20,0,48,-56.5,966,75,"Extratropical",142
+"Michael",2000,10,20,6,50,-56,966,70,"Extratropical",142
+"Michael",2000,10,20,12,51,-53.5,968,65,"Extratropical",142
+"Michael",2000,10,20,18,52,-50.5,970,60,"Extratropical",142
+"Nadine",2000,10,19,12,26.2,-59.9,1009,25,"Tropical Depression",141
+"Nadine",2000,10,19,18,27.5,-59.4,1008,30,"Tropical Depression",141
+"Nadine",2000,10,20,0,28.7,-58.8,1008,30,"Tropical Depression",142
+"Nadine",2000,10,20,6,29.7,-58,1005,30,"Tropical Depression",142
+"Nadine",2000,10,20,12,30.4,-57.2,1003,35,"Tropical Storm",142
+"Nadine",2000,10,20,18,31.4,-56.3,1000,40,"Tropical Storm",142
+"Nadine",2000,10,21,0,32.4,-55.2,999,50,"Tropical Storm",143
+"Nadine",2000,10,21,6,33.3,-53.5,1000,50,"Tropical Storm",143
+"Nadine",2000,10,21,12,34.1,-52.3,1000,50,"Tropical Storm",143
+"Nadine",2000,10,21,18,34.8,-51.3,1000,45,"Tropical Storm",143
+"Nadine",2000,10,22,0,35.7,-50.5,1004,40,"Extratropical",144
+"Nadine",2000,10,22,6,37,-49,1005,40,"Extratropical",144
+"Nadine",2000,10,22,12,39,-47,1005,35,"Extratropical",144
