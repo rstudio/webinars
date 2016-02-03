@@ -25,20 +25,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #b55 !important;
 }
 
-/*
-.lang-cpp:before {
-  margin-right: 8px;
-  font-style: oblique;
-  float: right;
-  content: "C++";
-  color: dodgerblue;
+slides > slide:not(.nobackground):after {
+  content: '';
 }
 
-.lang-r:before {
-  margin-right: 8px;
-  font-style: oblique;
-  float: right;
-  content: "R";
-  color: brown;
+slides > slide {
+  background-color: white !important;
 }
-*/
