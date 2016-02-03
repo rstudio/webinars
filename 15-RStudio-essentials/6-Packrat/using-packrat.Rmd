@@ -1,0 +1,241 @@
+---
+title: "Packrat"
+subtitle: "A Dependency Management System for R"
+author: "Kevin Ushey (kevin@rstudio.com)"
+date: "February 3rd, 2016"
+output:
+  ioslides_presentation: default
+css: styles.css
+---
+
+## Packrat
+
+Packrat is an R package that helps you manage your project's R package dependencies in a way that is:
+
+> * **Reproducible** <p style="margin-top: 10px;">Packrat records the exact package versions you depend on, and ensures those exact versions are the ones that get installed wherever you go.</p>
+
+> * **Isolated** <p style="margin-top: 10px;">Installing a new or updated package for one project won't break your other projects, and vice versa. That's because packrat gives each project its own private package library.</p>
+
+> * **Portable** <p style="margin-top: 10px;">Easily transport your projects from one computer to another, even across different platforms. Packrat makes it easy to install the packages your project depends on.</p>
+
+## Reproducibility
+
+Packrat helps you to save and preserve the environment in which an R project or analysis is run in.
+
+Ever finished an analysis, come back a year later, and asked:
+
+> * _Who wrote this garbage code?_ <span style="display: inline-block; font-size: 9pt; margin-bottom: 12px;">(oops, it was me)</span>
+
+> * _Why is `lattice` throwing an error when I make figures now? Apparently its API changed?_
+
+> * _Okay, I re-ran the analysis, but now `nlme` is complaining about model convergence: I swear this didn't happen before..._
+
+> * _What happened to that R package we got from our collaborators? I swear it's in my e-mail somewhere..._
+
+## Reproducibility {.build}
+
+Packrat helps you solve this problem by:
+
+> - **Ensuring package sources are stored alongside your project,**
+
+> - **Tracking package versions so that, if you need to roll back a package for some reason, you can do so**
+
+Packrat lets you build a sandbox in which an analysis can run, and helps you ensure that sandbox can persist over time.
+
+## Isolation {.build}
+
+With the current state of the world, when you install an R package, it gets installed into a **global** library -- all projects on your system have access to that same library ...
+
+... but only one version of a particular package can be installed at a time.
+
+This is problematic if you have older projects that, for example, depend on older versions of `Rcpp`, but want to leverage features of newer `Rcpp` for other projects.
+
+We need some mechanism of **isolating** projects, and their dependencies, from each other -- and Packrat helps us do this.
+
+## Isolation {.build}
+
+Packrat makes your projects more isolated by giving each project its own **private library**.
+
+A `library` is just a folder of R packages -- when you make a call to the `library` function, e.g.
+
+    library(dplyr)
+    
+R attempts to load `dplyr` from your user, or system, library.
+
+If you use Packrat to manage an R project, it will tell R to use and load packages from the project's **private library** instead.
+
+This also means that calls to `install.packages`, `devtools::install_github`, `biocLite` and others will install into the **private library** by default -- no need to worry about clobbering packages in your user library!
+
+## Portability {.build}
+
+Because Packrat collects and tracks all project dependencies, it ensures that the environment used for a particular analysis is **portable** across different systems.
+
+If you are working with collaborators, you can ensure that everyone working on a Packrat project is using the **same version** of any R packages your project depends on.
+
+# Using Packrat {.segue}
+
+## Main Packrat Verbs {.build}
+
+Packrat maintains two sets of state:
+
+> - The **snapshot** of your project's R dependencies, and
+
+> - The **private library** powering your project.
+
+Packrat has two main verbs for interacting with these two components:
+
+> `packrat::snapshot()` records the package versions used by a project and downloads their source code for storage with the project,
+
+> `packrat::restore()` applies the previous snapshot to a directory (building packages from source as necessary).
+
+Use `packrat::snapshot()` to **save** state, and use `packrat::restore()` to **load** state.
+
+## Demo
+
+These are concepts much more easily explored with an interactive demo, so let's start!
+
+## Packrat Fundamentals
+
+```{r, eval=FALSE}
+packrat::init()
+```
+
+Create a packrat project within a directory, giving the project its own private package library.
+
+```{r, eval=FALSE}
+packrat::snapshot()
+```
+
+Finds the packages in use in the project and stores a list of those packages, their current versions, and their *source code*.
+
+```{r, eval=FALSE}
+packrat::restore()
+```
+
+Restore the directory to the last snapshotted state (building packages from source as necessary).
+
+
+## Initializing a Project
+
+```{r, eval=FALSE}
+packrat::init()
+```
+
+```
+Adding these packages to packrat:
+            _          
+    packrat   0.4.0.12
+
+Fetching sources for packrat (0.4.0.12) ... OK (GitHub)
+Snapshot written to '~/projects/reshape/packrat/packrat.lock'
+Installing packrat (0.4.0.12) ... OK (built source)
+Initialization complete!
+```
+
+## Snapshotting Installed Packages
+
+```{r, eval=FALSE}
+packrat::snapshot()
+```
+
+```
+Adding these packages to packrat:
+             _       
+    plyr       1.8.1 
+    Rcpp       0.11.2
+    reshape2   1.4   
+    stringr    0.6.2 
+
+Fetching sources for plyr (1.8.1) ... OK (CRAN current)
+Fetching sources for Rcpp (0.11.2) ... OK (CRAN current)
+Fetching sources for reshape2 (1.4) ... OK (CRAN current)
+Fetching sources for stringr (0.6.2) ... OK (CRAN current)
+Snapshot written to '~/projects/reshape/packrat/packrat.lock'
+```
+
+## Restoring the State of the Library
+
+```{r, eval=FALSE}
+packrat::restore()
+```
+
+```
+Installing Rcpp (0.11.2) ... OK (downloaded binary)
+Installing stringr (0.6.2) ... OK (downloaded binary)
+Installing plyr (1.8.1) ... OK (downloaded binary)
+Installing reshape2 (1.4) ... OK (downloaded binary)
+```
+
+## Updating a Package from Github
+
+```{r, eval=FALSE}
+packrat::install_github("RcppCore/Rcpp")
+```
+
+```{r, eval=FALSE}
+packrat::snapshot()
+```
+
+```
+Upgrading these packages already present in packrat:
+             from         to
+    Rcpp   0.11.2   0.11.2.1
+
+Snapshot written to '~/projects/reshape/packrat/packrat.lock'
+```
+
+```{r, eval=FALSE}
+packrat::restore()
+```
+
+```
+Installing Rcpp (0.11.2.1) ... OK (built source)
+```
+
+## Bundling and Unbundling
+
+```{r, eval=FALSE}
+packrat::bundle()
+```
+
+```
+The packrat project has been bundled at:
+- "~/projects/reshape/packrat/bundles/reshape-2014-06-24.tar.gz"
+```
+
+```{r, eval=FALSE}
+packrat::unbundle("reshape-2014-06-24.tar.gz", where = "~/Desktop")
+```
+
+```
+- Untarring 'reshape-2014-06-24.tar.gz' in directory '~/Desktop'...
+- Restoring project library...
+Installing packrat (0.4.0.12) ... OK (built source)
+Installing Rcpp (0.11.2.1) ... OK (built source)
+Installing stringr (0.6.2) ... OK (downloaded binary)
+Installing plyr (1.8.1) ... OK (downloaded binary)
+Installing reshape2 (1.4) ... OK (downloaded binary)
+Done! The project has been unbundled and restored at:
+- "~/Desktop/reshape"
+```
+
+## Packrat Objectives
+
+* Isolated, portable, and reproducible environment for R projects
+
+* Capture all source code required to reproduce configurations
+
+* Flexible and easy to use solution to the problem of reproducibility:
+    - "One button" snapshot/restore
+    - Simple and convenient archiving (bundle/unbundle)
+    - Optional integration with version control
+
+* Foundation for even higher fidelity reproducibility
+    - e.g. Creating VMs or Docker containers for projects
+
+
+## Questions?
+
+Packrat website: <http://rstudio.github.io/packrat>
+
+Packrat source: <https://github.com/rstudio/packrat>
