@@ -11,7 +11,7 @@ server <- function(input, output) {
   })
 
   output$info <- renderPrint({
-    rows <- brushedPoints(mtcars, input$plot_brush)
+    rows <- brushedPoints(mtcars, input$brush)
     cat("Brushed points:\n")
     print(rows)
   })
