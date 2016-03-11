@@ -1,0 +1,11 @@
+
+Name: Increment Integer
+Description: Increment the selected number
+Binding: incrementr
+Interactive: false
+
+Name: Decrement Integer
+Description: Decrement the selected number
+Binding: decrementr
+Interactive: false
+

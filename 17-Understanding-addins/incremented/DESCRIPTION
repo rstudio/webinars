@@ -1,0 +1,9 @@
+Package: incremented
+Type: Package
+Title: Incremented RStudio Add-In
+Version: 0.1.0
+Author: Jonathan McPherson <jonathan@rstudio.com>
+Maintainer: Jonathan McPherson <jonathan@rstudio.com>
+Description: RStudio add-in to increment and decrement numbers.
+License: MIT
+LazyData: TRUE
