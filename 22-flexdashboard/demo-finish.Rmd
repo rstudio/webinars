@@ -1,0 +1,96 @@
+---
+title: "flexdashboard: Easy interactive dashboards for R"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    social: menu
+    source: embed
+---
+
+# Intro text {.sidebar}
+
+You can use flexdashboard to publish groups of related data visualizations as a dashboard. A flexdashboard can either be static (a standard web page) or dynamic (a Shiny interactive document). A wide variety of components can be included in flexdashboard layouts, including:
+
+```{r include = FALSE}
+
+knitr::opts_chunk$set(cache = TRUE)
+
+library(dplyr)
+library(highcharter)
+library(viridisLite)
+library(ggplot2)
+data(unemployment)
+data(uscountygeojson)
+
+
+thm <- 
+  hc_theme(
+    colors = c("#1a6ecc", "#434348", "#90ed7d"),
+    chart = list(
+      backgroundColor = "transparent",
+      style = list(fontFamily = "Source Sans Pro")
+    ),
+    xAxis = list(
+      gridLineWidth = 1
+    )
+  )
+
+data("USArrests", package = "datasets")
+data("usgeojson")
+
+USArrests <- USArrests %>%
+  mutate(state = rownames(.))
+
+n <- 4
+colstops <- data.frame(
+  q = 0:n/n,
+  c = substring(viridis(n + 1), 0, 7)) %>%
+  list.parse2()
+```
+
+# Page 1 {data-icon="fa-list"}
+
+## Column {data-height=350}
+
+### ggplot2 Plots
+
+```{r}
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() +
+  geom_smooth()
+```
+
+## Column {data-height=650 .tabset .tabset-fade}
+
+### htmlwidgets {data-width=300}
+
+```{r}
+highchart() %>%
+  hc_add_series_map(usgeojson, USArrests, name = "Sales",
+                    value = "Murder", joinBy = c("woename", "state"),
+                    dataLabels = list(enabled = TRUE,
+                                      format = '{point.properties.postalcode}')) %>%
+  hc_colorAxis(stops = colstops) %>%
+  hc_legend(valueDecimals = 0, valueSuffix = "%") %>%
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_add_theme(thm)
+```
+
+### tables {data-width=700}
+
+```{r}
+library(DT)
+datatable(iris, options = list(pageLength = 10))
+```
+
+# Page 2 {data-icon="fa-map"}
+
+## Column
+
+### base plots
+
+```{r}
+plot(mpg$displ, mpg$hwy)
+```
+
+> A more exhaustive list includes: Interactive JavaScript data visualizations based on htmlwidgets; R graphical output including base, lattice, and grid graphics; tabular data (with optional sorting, filtering, and paging); value boxes for highlighting important summary data; gauges for displaying values on a meter within a specified range; and text annotations of various kinds.
