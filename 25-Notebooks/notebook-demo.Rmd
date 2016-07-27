@@ -1,0 +1,150 @@
+---
+title: "R Notebook Demo"
+output:
+  html_notebook: default
+  html_document:
+    highlight: textmate
+    theme: spacelab
+    toc: yes
+---
+
+# Introduction
+
+This notebook demonstrates many R Notebook features. Ignore this first chunk for now; we'll come back to it.
+
+```{r setup}
+library(ggplot2)
+library(dygraphs)
+library(leaflet)
+```
+
+# Output Types
+
+## Console Output
+
+First, let's create a simple code chunk that prints the numbers from 1 to 10. Run this chunk with *Ctrl+Shift+Enter* (*Cmd+Shift+Enter* on OS X). 
+
+```{r numbers}
+numbers <- seq_len(15)
+numbers
+```
+
+Notice how the output appears right beneath the chunk, as though you'd run the code at the R console. Try changing the sequence length to 20 and re-running the chunk to see the result update.
+
+## Graphical Output
+
+Of course, sometimes your R code doesn't just produce text; it produces graphical output such as plots. These are supported, too. Try running this chunk:
+
+```{r graphics}
+qplot(Sepal.Length, Petal.Length, data = iris, color = Species, 
+      size = Petal.Width)
+```
+
+Notice that it isn't necessary to prefix `qplot` with `ggplot2::` since there is a `library(ggplot2)` call in the setup chunk. RStudio runs the setup chunk automatically whenever it's needed. 
+
+## HTML Widgets
+
+If your R analysis involves interactive components, you're probably already familiar with the `htmlwidgets` library. These, too, are supported in the notebook. Run this chunk to see an interactive graph:
+
+```{r widgets}
+dygraph(nhtemp, main = "New Haven Temperatures") %>% 
+  dyRangeSelector(dateWindow = c("1920-01-01", "1960-01-01"))
+```
+
+# Running Code
+
+One of the goals of the notebook is to provide a seamless environment for interacting with R -- that is, you shouldn't need to reach for the console, even though chunks send code there. To help you see the progress of your chunk -- that is, which lines have been executed and which haven't -- RStudio draws an indicator in the editor gutter. Try running this chunk:
+
+```{r progress}
+Sys.sleep(1); runif(3)
+Sys.sleep(1); runif(3)
+Sys.sleep(1); runif(3)
+Sys.sleep(1); runif(3)
+Sys.sleep(1); runif(3)
+```
+
+Sometimes you may want to run portions of your chunk rather than the whole thing. That's just fine too. Try using *Ctrl+Enter* (OS X: *Cmd+Enter*) to run this chunk line by line.
+
+```{r linewise}
+cities <- read.csv("cities.csv")
+cities
+leaflet(cities) %>% 
+  addTiles() %>%
+  addCircles(lng = ~Long, lat = ~Lat, weight = 1,
+    radius = ~sqrt(Pop) * 30, popup = ~City)
+```
+
+Notice:
+
+1. When we run a chunk line by line, each line is executed as though it were the only line in the chunk, and its output replaces any other output the chunk had.
+2. If your cursor is in a multi-line statement, the whole statement will be run. This helps avoid the awkward situation in which R is waiting for input at the console, since you can't see the console!
+
+### Alternate Engines
+
+By default, your R notebook chunks will be run using R. However, it's entirely possible to write chunks that use other engines to execute. For instance, you can add some Python to your notebook:
+
+```{r python, engine='python'}
+def fib(n):
+    a, b = 0, 1
+    for _ in xrange(n):
+        yield a
+        a, b = b, a + b
+print list(fib(11))
+```
+
+Try using the [Feather](https://github.com/wesm/feather) package for R and Python to transfer data between them.
+
+Rcpp works, too:
+
+```{r rcpp, engine='Rcpp'}
+#include <Rcpp.h>
+
+// [[Rcpp::export]]
+int fibonacci(const int x) {
+    if (x == 0 || x == 1) return(x);
+    return (fibonacci(x - 1)) + fibonacci(x - 2);
+}
+```
+
+```{r rcpp-output}
+fibonacci(10L)
+```
+
+You can use a notebook to form an executable, documented workflow that composes several tools into a complete data analysis workflow.
+
+## Errors
+
+Sometimes your code will generate errors. Here's an example:
+
+```{r errors, error=TRUE}
+# Source a file that doesn't exist
+source("missing.R")
+```
+
+Notice that the line that caused the error is highlighted, and you can see the error's traceback, just as you can in the RStudio console. If an error occurs while you're running chunks, the error will cause the notebook to stop running, and the cursor will scroll to the point where the error occurred.
+
+# Saving and Sharing
+
+A notebook's source code is always in an `.Rmd` file. Whenever you save it, a sidecar `.nb.html` file is generated. This file contains a rendered copy of the notebook itself. No special viewer is required.
+
+It also contains a copy of the notebook's source `.Rmd` file.
+
+To look at the `.nb.html` file, click *Preview* in the RStudio editor toolbar. This is a fundamental difference between notebooks and other R Markdown documents; pressing this button doesn't actually cause any of your code to run, it just shows you the HTML file already prepared. It will automatically update whenever you save the `.Rmd` file.
+
+If you open the `.nb.html` file in a web browser, you'll see an option to download the source. You can also open an `.nb.html` file in RStudio; when you do this, RStudio will automatically extract the `.Rmd` file and outputs inside it and open the file in the notebook editor.
+
+## Alternate formats
+
+### Notebooks as R Markdown Documents
+
+A notebook is also an R Markdown document. Try changing the YAML header in this document so that `html_document` is the first option, then clicking `Knit` (or just pulling down the *Preview*) menu. You could also create a PDF from the notebook, a Word document, or even a dashboard. 
+  
+### R Markdown Documents as Notebooks
+
+By now you've probably realized that any R Markdown document is also a notebook. If you don't like this behavior and prefer to work with the console directly, pull down the gear icon in the editor toolbar and choose Show Chunk Output Inline; there's also a global pref.
+
+# Further reading
+
+[R Notebook Reference](http://rmarkdown.rstudio.com/r_notebooks.html)
+
+
