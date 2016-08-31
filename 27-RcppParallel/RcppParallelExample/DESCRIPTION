@@ -1,0 +1,19 @@
+Package: RcppParallelExample
+Title: An Example Package Leveraging RcppParallel
+Version: 1.0.0
+Author: Kevin Ushey
+Maintainer: Kevin Ushey <kevin@rstudio.com>
+Description: An R package that showcases how RcppParallel can be
+    used to implement algorithms that perform their computations
+    in parallel.
+Depends:
+    R (>= 3.2.0)
+Imports:
+    Rcpp,
+    RcppParallel
+LinkingTo: Rcpp, RcppParallel
+SystemRequirements: GNU make
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
