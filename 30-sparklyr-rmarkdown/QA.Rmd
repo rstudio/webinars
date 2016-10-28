@@ -2,6 +2,8 @@
 title: "Sparklyr Webinar - Question & Answers"
 output: html_document
 ---
+
+# Questions and answers
   
 ***
   
