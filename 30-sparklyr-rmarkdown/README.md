@@ -16,4 +16,4 @@ Three scripts are referenced in the webinar. If you install the sparklyr package
 
 We had a lot of great questions during the video and we were not able to answer all of them. I have gone through and tried to answer each question below. If you have more questions, please submit questions to this [google group](https://groups.google.com/forum/#!forum/sparklyr). If you have issues with the software, please submit them to the [github repos](https://github.com/rstudio/sparklyr). 
 
-* [Questions and answers](QA.md) from the webinar
+* [Questions and answers](QA.Rmd) from the webinar
