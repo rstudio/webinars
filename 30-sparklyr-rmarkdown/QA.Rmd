@@ -1,0 +1,500 @@
+---
+title: "Sparklyr Webinar - Question & Answers"
+output: html_document
+---
+  
+***
+  
+**I find this webminar very interesting. My question is about simulations. Using this package assures me that I can get simulation results faster? One suggestion: it may be useful to provide some scripts so that the audience is able to execute the code and follow the webinar**
+
+Thank you. We'll keep that in mind for the future. 
+  
+***
+  
+**I was asking about deep learning functions available in sparklyr**
+
+Check the H2O sparkling water documentation for details.
+  
+***
+  
+**Thank you for answering about simulations questions... but what if I use my own functions in sparklyr?**
+
+You can invoke them from sparklyr.  Checkout spark.rstudio.com for information 
+  
+***
+  
+**Thank you so much for ths webnimar!**
+
+Welcome! 
+  
+***
+  
+**When assigning a variable as a result of a SparklyR dplyr chain, is that resulting Spark dataframe cached by default?**
+
+No, you have to explicitly tell Spark to cache your data. And keep in mind that dplyr uses lazy evaluation, so that Spark DataFrame doesn't exist until you tell it to.
+  
+***
+  
+**I see how you can cache into R, but does SparklyR give you a way to cache intermediate dataframes to Spark to that they remain distributed?**
+
+You would have to execute and cache each intermediate DataFrame.
+  
+***
+  
+**Thank you,any plans to make these slides available.  The materials covered are excellent andI would like to go through them later.  Thanks.**
+
+Materials can be found [here](https://www.rstudio.com/resources/webinars/using-spark-with-shiny-and-r-markdown/). Sparklyr examples can be found [here](http://spark.rstudio.com/examples.html).
+  
+***
+  
+**does the package include some deeplearning functions?**
+
+If there are deep learning applications on Spark that you have installed, you could invoke them. You can see an example of deep learning in the [H2O extension](http://spark.rstudio.com/h2o.html).
+  
+***
+  
+**Any comments on TileDB and GenomicsDB**
+
+No. This presentation is about sparklyr.
+  
+***
+  
+**By default are results in spark or R memory?**
+
+Results are in Spark until called explicitly using the `collect` command.
+  
+***
+  
+**Would love to see his Environment tab...**
+
+This is a good question. The environment tab shows the R objects that point to corresponding Spark DataFrames. You can inspect them using the `str` command. I encourage you to try it out.
+  
+***
+  
+**I'm noticing that the # of rows is not populated on these examples - just the columns.  Is that a bug? It isn't, if you show the number of rows, then you have to wait for a full table scan in the Spark cluster.  I am sure there are commands you can run to see the number of records if folks are willing to wait for the operation to complete.**
+
+That is common for these types of technologies. They do not keep track of row counts, since that would be expensive computationally. To get row counts, you have to execute a separate job.
+  
+***
+  
+**It would be important to see the # of rows in spark before collecting into R**
+
+Agreed. Spark inflates the data that is collected on the driver node. We recommend collecting relatively small amounts of data at this time.
+  
+***
+  
+**So the ML functions are all spark functions?**
+
+In the example you just saw the ML functions are all spark functions.  You can also call whatever Spark functions you want through the sparklyr package. 
+  
+***
+  
+**Are these spark extensions or rstudio extensions?**
+
+The extensions you see on the site are contributed by other R users. 
+  
+***
+  
+**Is the spark pane/context only available in RStudio pro?**
+
+No, it is available in the open source version, but it is only in the preview release right now, it should become available in the base product in the next few weeks. 
+  
+***
+  
+**This is really fantastic - so much better than the back-forth with R and spark I've done on many projects.**
+
+Thanks! 
+  
+***
+  
+**What limitations apply to the R functions you can use on spark data?**
+
+As of this moment in time the only functions you are running on the data in spark are Spark functions.  There could be work that we undertake in the future to enable the running of R algorithms on subsets of the data within the Spark cluster.  For today if you wanted to run an algorithm that is only available in R, you would need to be able to pull that data into R, or create your own Spark application/function that calls R for those algorithms that are "trivially" parallelizable 
+  
+***
+  
+**Are there special considerations for shiny applications?**
+
+Yes, and you can see some of them on our [example page](http://spark.rstudio.com/examples.html). At this time we recommend putting Shiny Server on the driver node also and we recommend one connection per Spark context.
+  
+***
+  
+**One of the big drawbacks to Spark is the dearth of algorithms natively supported - is there a way to share/create new spark functions?**
+
+Yes, the Spark ecosystem is growing, and as mentioned, companies like H2O have added a lot of additional algorithms. 
+  
+***
+  
+**Thank you so much!  Looking forward to the rstudio::conf in Jan.  See you there!**
+
+See you there! 
+  
+***
+  
+**Are there demos available to show in college classes? Also tutorials? (Or is it too new?)**
+
+Check out the examples in our sparklyr website: http://spark.rstudio.com/examples.html 
+  
+***
+  
+**Great webinar and functionality!**
+
+Thanks 
+  
+***
+  
+**It looks like the beta of sparklyr has trouble with YMD/ YMD HMS. When do you think that funtionality will be avaliable?**
+
+Spark is HiveQL complient. You should use those data functions when working with Spark.
+  
+***
+  
+**How do you compare sparklyr and MRS**
+
+We don't; those are not necessarily mutually exclusive.
+  
+***
+  
+**Good stuff team**
+
+Thank you 
+  
+***
+  
+**If i try to retreive a large data set back into the notebook - how do you prevent that?**
+
+We don't prevent it, it is still up to you to figure out whether what you are trying to collect() is going to fit into R's memory or not.  Could be a good enhancement request perhaps, I would encourage you to file bugs or enhancement requests on the repo here: https://github.com/rstudio/sparklyr 
+  
+***
+  
+**Is there any benefit to running Spark locally (without a server/cluster) vs just loading data directly into R?**
+
+The local mode is designed for education and testing. Some people just want to see what it is like to work with Spark without having to setup a big cluster. 
+  
+***
+
+**This was fantastic!  Do you recommend that both R Studio Server and Shiny Server to be installed on the Hadoop Cluster in the Spark Master?**
+
+It can either be on one of the nodes in the cluster, or it could be a server that is close to the cluster. 
+  
+***
+  
+**Can the broom package be used to tidy spark summary output?**
+
+Not at this time, but I encourage you to make that suggestion on the code repository
+  
+***
+
+**Question regarding the "MAP-REDUCE" under the hood: Lets say we want to compute an analytic that is computed from a certain column of current row and the previous row. Provided that spark distributes the data across the nodes, would spark take care of this? My guess is it wont, but just want to confirm.**
+
+Yes it will. Spark stores data in resiliant distributed datasets (RDD's) that are optimized for calculation of distributed data.
+  
+***
+  
+**If data manipulation and model building could be done in Spark, then for what reasons would one need to 'collect' it in R locally? Visualization?**
+
+For visualization, communication, and potentially other algorithms that you don't need to apply to the TBs/PBs of data. 
+  
+***
+  
+**Sorry for the very basic question, where is Spark being run, is that local or using cloud resources?**
+
+It can be run either way.
+  
+***
+  
+**Can dplyr work with nested schema dataframes within spark?**
+
+No. Dplyr is designed to work with tabular data. In the case of Spark, it translates commands into Spark SQL which is also tabular.
+  
+***
+  
+**dplyr is used to manage the Sparks dataframes more efficiently?**
+
+Dplyr does manage R dataframes efficiently, and I encourage you to compare its performance to other R methods. But it won't manage Spark dataframes more efficiently, it can't make Spark any faster.
+  
+***
+  
+**What's the minimum cores needed to run spark**
+
+I don't know that we know what the true minimum is.  It is probably dependent on the type of analysis you are doing. 
+  
+***
+  
+**Is the back end Spark or is the back end dplyr?**
+
+Spark is the backend.  sparklyr includes the code needed to surface Spark as a backend in dplyr 
+  
+***
+  
+**Is "sql_render" a function in dplyr or sparklyr?**
+
+It is a dplyr function that shows you what commands are being run in the backend for the query statement. 
+  
+***
+  
+**What is the count and type of EC2 machines used in this cluster?**
+
+c3.xlarge and there were 5 of them. 
+  
+***
+  
+**Is there a possibility using sparklyr on the HPC cluster? if so is there is reference guide for it?**
+
+We have developed sparklyr to run in these modes: local, standalone, and Mesos, and Yarn. It's possible that it might work with other deployments but we have not tested it with HPC clustes.
+  
+***
+  
+**Can we do out of core ML within a laptop using sparklyR**
+
+I'm not sure what "out of core" means, but if you are asking about managing a spark cluster from your laptop the answer currently is no. We recommend you install RStudio Server on the cluster and access R through the server.
+  
+***
+  
+**Is there support for spark streaming?**
+
+Not at this time. There are actually several capabilities in Spark that are not supported with this first version of sparklyr. We started with SQL/ML/Extensions, but we hope to evolve the package over time.
+  
+***
+  
+**Thanks a lot for the insights!**
+
+Glad you enjoyed it 
+  
+***
+  
+**Can I use spark to extract data from a db?**
+
+Yes, you can look at some of the Spark documentation for what they recommend. 
+  
+***
+  
+**HI, when exporting data frame into spark, does the attributs kept?**
+
+Yes, dplyr extracts the variable classes upon collect. A numeric feature in Spark will translate to a numeric column in dplyr. 
+  
+***
+  
+**so if I want to setup a sandbox/test drive environment to test the R Spark feature, what are the software I need to install besides Spark/Hardoop backend?**
+
+You can run everything on a 'local' cluster on your laptop.  If you have a cluster already, all you would need is RStudio Server, and you should be able to follow the steps on spark.rstudio.com to get everything up and running. 
+  
+***
+  
+**Can you do a Monte Carlo simulation using sparklyr?**
+
+Sparklyr only interfaces with the Spark API. It's possible that some of the deep learning methods in ML or H2O use MCMC.
+  
+***
+  
+**Can I connect my desktop R to a remote spark cluster through sparklyr runing on my desktop?**
+
+Unfortunately that is not possible at this time.  Due to how Spark works at this time, your best bet is to setup RStudio Server (or RStudio Server Pro) on one of the nodes that are close to the cluster (or even a node on the cluster) 
+  
+***
+  
+**Will Rstudio consider providing some type cloud service connection to spin up Spark clusters therefore to minimize the effort of operations?**
+
+No not at this time. If you are looking for ease of use, I encourage you to look at AWS EMR. You can be up and running within minutes (note Amazon charges for this service).
+  
+***
+  
+**In your example is R studio server installed on the same machine where Spark is installed?**
+
+Yes it is installed on the driver node.
+  
+***
+  
+**Difference between spark and H2O?**
+
+Spark is the patform. H2O is the analytic app. I encourage you to look at the spark and H2O websites. 
+  
+***
+  
+**Would be cool to have a deep dive on the machine learning models**
+
+Thanks for the +1!
+  
+***
+  
+**Any update on when RStudio v1 will be released please? :)**
+
+We expect it to get out in the next couple of weeks. 
+  
+***
+  
+**How do you read data into Spark in the first place? does the read_parquet function do this?**
+
+There are multiple ways of getting data into the Spark cluster.  Checkout spark.rstudio.com for a more detailed list of all the ways of getting data in there, and of course you may already have another process which is loading the data into Spark in the first place. 
+  
+***
+  
+**Is an advantage of using Spark on a single PC that it will run dplyr queries in parallel as opposed to the usual single threaded approach?When using spark/ sparklyr on a single machine, could this potentially speed things up compared to use dplyr in the regular way, by allowing parallel execution of dplyr queries?**
+
+We designed sparklyr to run with production Spark clusters, and the local mode was primarily designed for education and testing.
+  
+***
+  
+**Thanks very much - great talk!**
+
+Thanks!
+  
+***
+  
+**I am using MongoDB to perform analysis in R. I am working with climatic dataset and doing statistical analyses that involve geographical queries and spatial aggregation. Do you plan something similar like dplyr applied to MongoSb queries ?**
+
+Sorry, we're not currently planning on supporting MongoDB through dplyr or building an R package especially dedicated to MongoDB 
+  
+***
+  
+**Are there special considerations for using sparklyr within a shiny app?**
+
+Yes, it is important to understand how Spark Contexts work.  We will probably need to document what things to consider as you build shiny applications with Spark. 
+  
+***
+  
+**Is there an easy way to see how different the ML algorithms are when using the Spark ML framework versus the R package equivalents, for example random forest?**
+
+Some of this work has already started. Here are two documents that analyze the Titanic data. One uses [Spark MLlib](https://beta.rstudioconnect.com/content/1518/notebook-classification.html) and the other uses [R packages](https://beta.rstudioconnect.com/content/2043/notebook-classification-rdata.nb.html).
+  
+***
+  
+**If RStudio server pro was not installed on the "gateway" server to the Spark cluster, what would be the biggest drawbacks?**
+
+Your computer would have to have enough memory and bandwidth to perform the operations that Spark performs.  The problem is that it could be a ton of memory depending on the types of analyses you are doing. 
+
+***
+
+**If we installed RStudio server pro on a separate server in our infrastructure separate from the Spark "gateway" server, what would be the biggest drawbacks compared to having RStudio server on the gateway node itself?**
+
+RStudio Server should be installed on the cluster. Spark requires communication between the the driver node and the executors. 
+  
+***
+  
+**Great presentation!**
+
+Glad you enjoyed it 
+  
+***
+  
+**You talked about extensions, can any Apache Spark Package (https://spark-packages.org/) turned into an extension or are there any requirements to be used with sparklyr**
+
+In theory these could be used with sparklyr extensions. But to be clear, a sparklyr extension is an R package. So to make it work, you would have to write a new R package that worked with sparklyr and these third party packages.
+  
+***
+  
+**Main difference between sparklyr and SparkR?**
+
+sparklyr is compatible with dplyr, and exposes the ability to call Spark applications 
+  
+***
+  
+**Are you going to make more tickets available for the workshops? Both the Packages one and Shiny one are already sold out.**
+
+Hi Ryan, If we are able to, due to logistics, we certainly will.  Please watch our blog for updates 
+  
+***
+  
+**Are there plans to support tidyr using Spark?**
+
+No, tidyr does not translate code to SQL like dplyr does 
+  
+***
+  
+**Issue I have is the volume of data. I have used sparklyr and it chokes with large volumes. how to handle it?**
+
+If you could file an issue here: https://github.com/rstudio/sparklyr with a reproducible example we would love to look at it.  I will caveat it by saying that you don't want to be collecting more data into R than what you have in memory. 
+  
+***
+  
+**Can you do a quick demo how r notebook connect to a spark cluster by the end?**
+
+You will see that towards the end of the webinar. 
+  
+***
+  
+**So, dplyr can apply to spark DataFrame as well R data.frame?**
+
+Yes, the core concept here is that you are using the dplyr semantics, and they are being translated into Spark SQL in this case.  Once you have the data the way you want it, you can pull it into R. Using the same syntax for SQL and for R objects is a big benefit of using dplyr. 
+  
+***
+  
+**What is the fastest language for Spark : R, Java or Scala?**
+
+Spark is implemented in Scala, but it also supports R, Java, and Python. You might find [this](https://www.linkedin.com/pulse/why-i-choose-scala-apache-spark-project-lan-jiang) article interesting as it gives background into why Spark was written in Scala.
+  
+***
+  
+**Is this open source or require licensing to sue Sparklyr?**
+
+It is open source. 
+  
+***
+  
+**Can you control Spark Configuration settings from R?**
+
+Yes.  You can read more about all the settings at: spark.rstudio.com 
+  
+***
+  
+**How Sparklyr will interact with Spark Streaming?**
+
+Sparkly does not currently support spark streaming.
+  
+***
+  
+**Do you need H2O running on the Spark cluster?**
+
+Yes definitely, it is pretty easy to do so though if you are running it locally. 
+  
+***
+  
+**Are you planning to support [TensorFrames](https://github.com/databricks/tensorframes) (tensorflow on spark)?**
+
+We hadn't looked at it to be honest.  It could be something to look at. 
+  
+***
+  
+**Is it possible to run Spark locally on mutiple cores?**
+
+Yes, definitely. 
+  
+***
+  
+**Why is today "not the day" that analysts have the tools to analyze big data? WHat does Sparklyr not do that needs to be done?**
+
+Spark is new software (compared to something mature like SQL databases) and you see that it is still growing. My hope is that some day we will have as many flexibile and easy to use tools on distributed data that we currently enjoy with small data sets.
+  
+***
+  
+**Is Spark an alternative to SQL databases?**
+
+It is not another database. Spark is a general purpose distributed computation engine that allows you to create your own applications that run on this platform. It doesn't give you all the features of a SQL database. It is easier to think of Spark as a place to work on your data that is probably stored in HDFS. 
+  
+***
+  
+**The data in Spark tab is not read into memory, right?**
+
+Right, the Spark pane shows the Hive metadata store. You would have to "collect()" the data to pull it into the R process.
+  
+***
+  
+**Can Spark read HDF5 files?**
+
+Yes for spark, no for sparklyr. Sparklyr support csv, parquet, and json. 
+  
+***
+  
+**Is the beta version of R studio needed to use sparklyr or will the current version work - without the spark tab and the new features?**
+
+No, you can use the sparklyr open source package without the IDE.
+  
+***
+  
+**Very interesting.  Thanks a lot for this development, and for the presentation**
+
+Glad you enjoyed it!
+
+***
+  
+  
