@@ -12,5 +12,5 @@ PDF of slides:
 Related material:
 
   * A recording is available from [RStudio's webinar home](https://www.rstudio.com/resources/webinars/)
-  * R code from live demo: <2017-05-10_readxl-rstudio-webinar.R>
+  * R code from live demo: [2017-05-10_readxl-rstudio-webinar.R](2017-05-10_readxl-rstudio-webinar.R)
   
