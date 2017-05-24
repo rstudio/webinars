@@ -10,7 +10,7 @@ url <- "http://www.tripadvisor.com/Hotel_Review-g37209-d1762915-Reviews-JW_Marri
 httr::BROWSE(url)
 
 reviews <- url %>%
-  read_html() %>%
+  html() %>%
   html_nodes("#REVIEWS .innerBubble")
 
 length(reviews)
