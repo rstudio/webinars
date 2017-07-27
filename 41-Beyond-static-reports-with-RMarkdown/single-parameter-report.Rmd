@@ -1,0 +1,63 @@
+---
+output: 
+  html_document
+params:
+  symbol: AMZN
+---
+  
+# Report for `r params$symbol` on `r Sys.Date()`
+
+## Summary
+
+```{r setup, echo = FALSE, message = FALSE}
+
+library(quantmod)
+library(DT)
+library(dygraphs)
+library(forecast)
+library(highcharter)
+
+prices <- round(getSymbols(params$symbol, src = 'google', auto.assign = FALSE), 2)
+close <- Cl(last(prices))
+open <- Op(last(prices))
+
+recent <- last(prices, n=90)
+recent_nv <- recent[,-5]
+
+```
+
+The stock closed `r ifelse(close>open,'up','down')` at `r close` dollars per share yesterday.
+
+### Price History
+
+The chart below is made with the `quantmod` and `highcharter` R packages. An API returns all of the price history based on the stock tick symbol provided as a parameter. The candlestick chart is a default function from highcharter, as is the the Economist theme.
+
+
+```{r echo=FALSE}
+
+highchart() %>% 
+   hc_yAxis_multiples(
+    list(title = list(text = NULL), height = "75%", top = "0%"),
+    list(title = list(text = NULL), height = "15%", top = "80.5%", opposite = TRUE)
+  ) %>%
+  hc_add_series(prices, yAxis = 0, name = params$symbol) %>% 
+  hc_add_series(prices[,paste0(params$symbol,".Volume")], name = "Volume", type = "column", yAxis = 1) %>% 
+  hc_add_theme(hc_theme_economist())
+```
+
+## Model
+
+```{r, warning = FALSE, message = FALSE}
+m <- arima(recent[,1], c(3,1,2))
+f <- forecast(m,7)
+```
+
+The forecast for tomorrow is `r round(as.numeric(f$mean)[1],2)` dollars.
+
+This model is fit with the arima function in the forecast package. A 3,1,2 ARIMA model is used though in practice any range of models could be used.
+
+```{r, warning = FALSE, message = FALSE}
+plot(forecast(m,7), main = "")
+```
+
+
