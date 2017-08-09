@@ -1,0 +1,366 @@
+---
+title: "Introducing sparklyr"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Setup
+
+- Install updated versions of `dplyr` and `sparklyr`
+```{r, eval = FALSE}
+  install.packages("sparklyr")
+  install.packages("dplyr")
+```
+
+- Load the libraries 
+```{r}
+  library(sparklyr)
+  library(dplyr)
+```
+
+- Install Spark version 2.1.0 locally in your computer
+```{r}
+  spark_install(version = "2.1.0")
+```
+
+## Create a Spark session
+
+We will use a custom configuration for the `sparklyr` connection, we are requesting:
+
+- 16 gigabytes of memory for the `driver`
+- Make 80% of the memory accessible to use during the analysis
+
+```{r}
+  conf <- spark_config()
+  conf$`sparklyr.shell.driver-memory` <- "16G"  
+  conf$spark.memory.fraction <- 0.8 
+```
+
+- Make sure to pass the `conf` variable as the value for the `config` argument
+- Navigate to http://127.0.0.1:4040/executors/
+- In the **Executors** section there is 12 GB of Storage Memory assigned (16 * 80%)
+- There are also 8 cores assigned
+```{r}
+  sc <- spark_connect(master = "local", config = conf, version = "2.1.0")
+```
+
+## Copy data into Spark
+
+## File Setup
+
+To ensure reproducibility, this chunk downloads and save the needed files into the `data` folder.  The folder is created if it does not exist in your Workspace.
+
+```{r}
+
+if(!file.exists("data"))dir.create("data")
+
+if(!file.exists("data/2003.csv.bz2")){
+  download.file("http://stat-computing.org/dataexpo/2009/2003.csv.bz2", "2003.csv.bz2")
+}
+
+if(!file.exists("data/2004.csv.bz2")){
+  download.file("http://stat-computing.org/dataexpo/2009/2004.csv.bz2", "2004.csv.bz2")
+}
+
+```
+
+This routine retrieves the column names (more to come about this in a later webinar)
+```{r}
+top_rows <- read.csv("data/2003.csv.bz2", nrows = 5)
+file_columns <- top_rows %>% 
+  purrr::map(function(x)"character")
+rm(top_rows)
+```
+
+## Load data 
+
+This next line does the following:
+
+- Creates a new table in the Spark environment called `flights`
+- Points Spark to the `data` folder as its source
+- Asks that the data is not brought into Spark memory
+- Supplies the column names and tells Spark not to try to figure out the schema
+```{r}
+
+  sp_flights <- spark_read_csv(sc, 
+                               name = "flights", 
+                               path = "data", 
+                               memory = FALSE, 
+                               columns = file_columns, 
+                               infer_schema = FALSE)
+
+```
+
+```{r}
+object.size(sp_flights)
+```
+
+- See http://127.0.0.1:4040/storage/, to confirm that there's nothing in Storage, yet
+
+## Spark SQL
+
+- Use the `DBI` package for SQL operations in `sparklyr`
+- `dbGetQuery()` pulls the data into R automatically
+```{r}
+  library(DBI)
+  
+  top10 <- dbGetQuery(sc, "Select * from flights limit 10")
+  
+  top10
+```
+
+### Use SQL in a code chunk
+
+- RMarkdown allows non-R chunks like SQL: http://rmarkdown.rstudio.com/authoring_knitr_engines.html#sql 
+```{sql, connection = sc}
+  SELECT  * FROM flights WHERE Origin = "ATL" LIMIT 10
+```
+
+
+## dplyr
+
+- Use `dplyr` verbs to interact with the data
+```{r}
+  flights_table <- sp_flights %>%
+    mutate(DepDelay = as.numeric(DepDelay),
+           ArrDelay = as.numeric(ArrDelay),
+           SchedDeparture = as.numeric(CRSDepTime)) %>%
+    select(Origin, Dest, SchedDeparture, ArrDelay, DepDelay, Month, DayofMonth)
+  
+  flights_table %>% head
+```
+
+
+### show_query()
+
+- Use `show_query()` to display what is the SQL query that `dplyr` will send to Spark
+```{r}
+  sp_flights  %>% 
+    head %>% 
+    show_query()
+```
+
+
+## Cache Data in Spark
+
+
+- Aggregation operation will take much longer if the data is not cached in Spark memory
+- After the code below is complete, go to http://127.0.0.1:4040/jobs/ to find out how long it took to count the 13M records
+```{r}
+  sp_flights %>%
+    tally
+```
+
+### Compute
+
+-`compute()`  caches a Spark DataFrame into memory
+- It performs these two operations: `sdf_register()` + `tbl_cache()`
+- After the code below completes, see http://127.0.0.1:4040/storage/, the is a new table called `flights_subset`
+```{r}
+  subset_table <- flights_table %>% 
+    compute("flights_subset")
+```
+
+- Run `tally` again
+- It runs in less than a second (http://127.0.0.1:4040/jobs/)
+```{r}
+  subset_table %>%
+    tally
+```
+
+- Now we can perform more complex aggregations
+```{r}
+  subset_table %>% 
+    group_by(Origin) %>%
+    tally
+```
+
+
+## Improved sampling
+
+
+
+```{r}
+# Improved in sparklyr 0.6
+  sp_flights %>% 
+    sample_frac(0.0001) %>% 
+    show_query()
+```
+
+
+```{r}
+  sp_flights %>% 
+    sample_frac(0.0001) %>% 
+    group_by(Year) %>%
+    tally
+```
+
+
+
+## New in dplyr
+
+### pull()
+
+- Use pull to retrieve a the values of 1 column as a vector, `collect()` is not needed. See: http://dplyr.tidyverse.org/reference/pull.html
+```{r}
+  subset_table %>%
+    group_by(Origin) %>%
+    tally %>%
+    arrange(desc(n)) %>%
+    head(5) %>%
+    pull(Origin)
+```
+
+### case_when()
+
+- The new `case_when()` command works with `sparklyr`, see: http://dplyr.tidyverse.org/reference/case_when.html
+```{r}
+  subset_table %>%  
+    group_by(Origin) %>%
+    tally %>%
+    arrange(desc(n)) %>%  
+    head(100) %>%
+    mutate(volume = case_when(
+      Origin == "ATL" ~ "biggest",
+      n > 200000 ~ "big",
+      n > 100000 ~ "med",
+      TRUE ~ "small"
+    )) 
+```
+
+
+## Spark DataFrame (sdf) Functions
+
+### sdf_pivot() 
+
+New in `sparklyr` 0.6! - Construct a pivot table over a Spark Dataframe, using a syntax similar to that from `reshape2::dcast()` and `tidyr::spread`
+
+```{r}
+  subset_table %>%
+    filter(Origin == "ATL" | 
+             Origin == "ORD" | 
+             Origin == "DFW" |
+             Origin == "LAX" |
+             Origin == "IAH") %>%
+    group_by(Origin, Dest) %>%
+    tally() %>%
+    head()
+
+```
+
+```{r}
+  subset_table %>%
+    filter(Origin == "ATL" | 
+             Origin == "ORD" | 
+             Origin == "DFW" |
+             Origin == "LAX" |
+             Origin == "IAH") %>%
+    sdf_pivot(Origin~Dest) 
+
+```
+
+## Feature Transformers (ft) 
+
+https://spark.apache.org/docs/latest/ml-features.html
+
+### ft_binarizer()
+
+- Apply threshold to a column, such that values less than or equal to the threshold are assigned the value 0.0, and values greater than the threshold are assigned the value 1.0.
+- [*The Federal Aviation Administration (FAA) considers a flight to be delayed when it is 15 minutes later than its scheduled time.*](https://en.wikipedia.org/wiki/Flight_cancellation_and_delay)
+```{r}
+  subset_table %>%
+    ft_binarizer(input.col =  "DepDelay", 
+                 output.col = "delayed",
+                 threshold = 15) %>%
+    head(200)
+```
+
+### ft_bucketizer()
+
+- Similar to R's `cut()` function, this transforms a numeric column into a discretized column, with breaks specified through the splits parameter.
+```{r}
+  subset_table %>%
+    ft_bucketizer(input.col =  "SchedDeparture",
+                  output.col = "DepHour",
+                  splits = c(0, 400, 800, 1200, 1600, 2000, 2400)) %>%
+    head(100)
+```
+
+
+## MLib
+
+- `sparklyr` enables us to use `dplyr` verbs, `sdf` functions and `ft` functions to prepare data within a single piped code segment
+```{r}
+  sample_data <- subset_table %>%
+    filter(!is.na(ArrDelay)) %>%
+    ft_binarizer(input.col = "ArrDelay",
+                 output.col = "delayed",
+                 threshold = 15) %>% 
+    ft_bucketizer(input.col =  "SchedDeparture",
+                  output.col = "DepHour",
+                  splits = c(0, 400, 800, 1200, 1600, 2000, 2400)) %>%
+    mutate(DepHour = paste0("h", as.integer(DepHour))) %>%
+    sdf_partition(training = 0.01, testing = 0.09, other = 0.9)
+
+
+
+```
+
+```{r}
+  training <- compute(sample_data$training, "training")
+```
+
+- A formula can be used for modeling, as in: `x ~ y + z` 
+```{r}
+  delayed_model <-  ml_logistic_regression(training , delayed ~  DepDelay + DepHour ) 
+```
+
+
+- We will use the `testing` sample to run predictions
+- It returns the same Spark DataFrame but with new columns
+```{r}
+  delayed_testing <- sdf_predict(delayed_model, sample_data$testing) 
+  delayed_testing %>% head
+```
+
+- Let's see how the model performed
+```{r}
+  delayed_testing %>%
+    group_by(delayed, prediction) %>%
+    tally 
+```
+
+## Distributed R
+
+ 
+`spark_apply()` applies an R function to a Spark object.  The R function runs over each RDD in Spark. Please read this article: https://spark.rstudio.com/articles/guides-distributed-r.html
+
+
+- The `training` Spark DataFrame has 8 partitions, `nrow()` will run in each partition 
+```{r}
+  training %>%
+    spark_apply(nrow)
+```
+
+### Group by
+
+- The `group_by` argument can be used to run the R function over a specific column or columns instead of the RDD partitions.
+```{r}
+  training %>%
+    spark_apply(nrow, group_by =  "DepHour", columns = "count")
+```
+
+## Distributing Packages
+
+- With spark_apply() you can use any R package inside Spark. For instance, you can use the broom package to create a tidy data from a `glm()` model output.
+```{r}
+  spark_apply(
+    training,
+    function(e) broom::tidy(glm(delayed ~ ArrDelay, data = e, family = "binomial")),
+    names = c("term", "estimate", "std.error", "statistic", "p.value"),
+    group_by = "Origin")
+```
+
+
+
