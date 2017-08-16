@@ -1,0 +1,170 @@
+---
+title: "Extending Spark using sparklyr and R"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+```
+
+# Setup
+
+Initialize all extensions for this webinar, at once and connect to Spark:
+
+```{r eval=F}
+install.packages(spark.sas7bdat)
+install.packages(rsparkling)
+devtools::install_github("kevinykuo/sparklygraphs")
+```
+
+```{r}
+options(rsparkling.sparklingwater.version = "2.1.0")
+
+library(spark.sas7bdat)
+library(rsparkling)
+library(sparklygraphs)
+
+library(sparklyr)
+
+sc <- spark_connect(master = "local", version = "2.1.0")
+```
+
+# Reading SAS files with `spark.sas7bdat`
+
+```{r}
+spark_read_sas(sc, "inst/data/datetime.sas7bdat", "sas_data")
+```
+
+# Using H2O with `rsparkling`
+
+```{r}
+library(dplyr)
+library(h2o)
+
+mtcars_tbl <- copy_to(sc, mtcars, "mtcars", overwrite = TRUE)
+```
+
+```{r eval=F}
+h2o_flow(sc, strict_version_check = FALSE)
+```
+
+```{r results='hide'}
+mtcars_h2o <- as_h2o_frame(sc, mtcars_tbl, strict_version_check = FALSE)
+
+mtcars_glm <- h2o.glm(x = c("wt", "cyl"), 
+                      y = "mpg",
+                      training_frame = mtcars_h2o,
+                      lambda_search = TRUE)
+```
+
+```{r}
+mtcars_glm
+```
+
+# Using GraphX with `sparklygraph`
+
+```{r}
+highschool_tbl <- copy_to(sc, ggraph::highschool, "highschool", overwrite = TRUE)
+```
+
+```{r}
+# create a table with unique vertices using dplyr
+vertices_tbl <- sdf_bind_rows(
+  highschool_tbl %>% distinct(from) %>% transmute(id = from),
+  highschool_tbl %>% distinct(to) %>% transmute(id = to)
+)
+```
+
+```{r}
+# create a table with <source, destination> edges
+edges_tbl <- highschool_tbl %>% transmute(src = from, dst = to)
+```
+
+```{r}
+# run pagerank over graph
+gf_graphframe(vertices_tbl, edges_tbl) %>%
+  gf_pagerank(reset_prob = 0.15, max_iter = 10L, source_id = "1")
+```
+
+# Extending Data Sources with `spark_read_source()`
+
+```{r eval=F}
+library(sparklyr)
+
+config <- spark_config()
+config$sparklyr.defaultPackages <- c(
+  "datastax:spark-cassandra-connector:2.0.0-RC1-s_2.11"
+)
+
+sc <- spark_connect(master = "local", config = config)
+```
+
+```{r eval=F}
+spark_read_source(
+  sc,
+  "emp",
+  "org.apache.spark.sql.cassandra",
+  list(keyspace = "dev", table = "emp")
+)
+```
+
+# Basic Spark Streaming with `invoke()`
+
+Basic use of Spark Streaming as described in [Spark Streaming Programming Guide](https://spark.apache.org/docs/latest/streaming-programming-guide.html).
+
+![](images/streaming-arch.png)
+
+```{r}
+# val ssc = new StreamingContext(conf, Seconds(1))
+
+ssc <- invoke_new(
+  sc,
+  "org.apache.spark.streaming.StreamingContext",
+  spark_context(sc),
+  invoke_new(
+    sc,
+    "org.apache.spark.streaming.Duration",
+    10000L
+  )
+)
+```
+
+```{r}
+# val lines = ssc.socketTextStream("localhost", 9999)
+
+lines <- invoke(
+  ssc,
+  "socketTextStream",
+  "localhost",
+  9999L,
+  invoke_static(sc, "org.apache.spark.storage.StorageLevel", "MEMORY_AND_DISK")
+)
+```
+
+
+```{r results='hide'}
+# lines.count.print
+
+invoke(lines, "count") %>% invoke("print")
+```
+
+```{r results='hide'}
+# ssc.start()
+
+invoke(ssc, "start")
+```
+
+```{bash eval=FALSE}
+nc -lk 9999
+1
+2
+3
+```
+
+```{r}
+spark_disconnect(sc)
+```
+
