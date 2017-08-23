@@ -1,0 +1,262 @@
+---
+title: "Advanced sparklyr Features"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+# Scaling R
+
+While considering to scale R in your cluster, we can consider two uses cases. The first one is to **leverage R** skills, say, by making use of familiar features like `jitter()` as follows:
+
+```{r}
+spark_apply(iris_tbl, function(e) sapply(e[,1:4], jitter))
+```
+
+The second use case to consider is to **complement R** functionality in Spark; for instance, while calculating several linear regression models, one could preffer the model output from R than Spark's MLlib as follwos:
+
+```{r}
+spark_apply(
+  iris_tbl,
+  function(e) broom::tidy(lm(Petal_Width ~ Petal_Length, e)),
+  colums = c("term", "estimate", "std.error", "statistic", "p.value"),
+  group_by = "Species"
+)
+```
+
+## Reading CommonCrawl Data
+
+In order to process data from [commoncrawl.org](http://commoncrawl.org), we will use the latest version of `sparklyr`, the `sparkwarc` extension and `wordcloud` for later use with Shiny.
+
+```{r}
+devtools::install_github("javierluraschi/sparkwarc")
+devtools::install_github("rstudio/sparklyr")
+install.packages("wordcloud")
+```
+
+Since this notebook was run in [EMR](https://aws.amazon.com/emr/) which used `yarn-client`, we connect as follows, notice also the use of `sparklyr` under the user library since the AWS script isntall `sparklyr 0.6.2` as well.
+
+```{r}
+library(sparkwarc)
+library("sparklyr", lib.loc="/usr/lib64/R/library")
+library(dplyr)
+
+sc <- spark_connect(master = "yarn-client")
+```
+
+To make sure all the executors are up and running and the cluster properly configured, we run a sample job that counds all records:
+
+```{r eval=FALSE}
+# available nodes * cores per node
+cores <- 50 * 8
+
+sdf_len(sc, cores, repartition = cores) %>% spark_apply(function(e) {
+  nrow(e)
+}, columns = list(count = "integer")) %>% collect()
+```
+
+Then we load the [CommonCrawl](https://commoncrawl.org) across 400 cores,
+
+```{r eval=FALSE}
+lines_tbl <- spark_read_warc(
+  sc,
+  "lines",
+  cc_warc(1, cores),
+  match_line = "meta name=\"keywords\""
+)
+```
+
+and count how many tags we were able to parse,
+
+```{r}
+lines_tbl %>%
+  summarize(tags_count = sum(tags)) %>%
+  pull(tags_count) %>%
+  format(big.mark = ",")
+```
+
+```
+# [1] "36,813,726,110"
+```
+
+count total lines,
+
+```{r}
+lines_tbl %>%
+  summarize(count = n()) %>%
+  pull(count) %>%
+  format(big.mark = ",")
+```
+
+```
+[1] "10,112,260"
+```
+
+and extract each keyword from the keyword tag,
+
+```{r}
+keywords_tbl <- lines_tbl %>%
+  transmute(keywords = regexp_extract(content, "<meta name=\"keywords\" content=\"([^\"]*)\"", 1)) %>%
+  filter(keywords != "") %>%
+  sdf_with_sequential_id() %>%
+  transmute(
+    page = id,
+    keyword = explode(split(
+      keywords, ","
+    ))) %>% 
+  compute("keywords")
+```
+
+which gives us this many keywords,
+
+```{r}
+keywords_tbl %>%
+  summarize(keywords_count = count()) %>%
+  pull(keywords_count) %>%
+  format(big.mark = ",")
+```
+
+```
+[1] "85,596,925"
+```
+
+we save the data as parquet to easily reload this dataset from a Shiny application using a smaller cluster since this particular example does not require the data to be recomputed each time the Shiny application starts.
+
+```{r}
+spark_write_parquet(keywords_tbl, "keywords", mode = "overwrite")
+```
+
+We can get a a sense of the keywords related with the `math` keyword using `dplyr`,
+
+```{r}
+my_keywords <- c("math")
+
+keywords_tbl %>%
+  filter(keyword %in% my_keywords) %>%
+  select(page) %>%
+  left_join(keywords_tbl, by = "page") %>%
+  group_by(keyword) %>%
+  summarize(count = n()) %>%
+  filter(!keyword %in% my_keywords) %>%
+  arrange(desc(count)) %>%
+```
+
+```
+# A tibble: 1,000 x 2
+       keyword count
+         <chr> <dbl>
+ 1        help  1727
+ 2     algebra  1726
+ 3    calculus  1721
+ 4    geometry  1705
+ 5  statistics  1703
+ 6       forum  1703
+ 7 probability  1703
+ 8     answers  1701
+ 9       latex  1701
+10  activities   235
+# ... with 990 more rows
+```
+
+# Livy
+
+In order to install [Livy](https://livy.incubator.apache.org) for test purpuses, we can do this from the cluster as follows for local clusters; however, we strongly recommend properly installing this through your system administrator and set authentication over the cluster first.
+
+```{r}
+livy_install(version = "0.3.0", spark_home = Sys.getenv("SPARK_HOME"))
+livy_service_start()
+```
+
+Then we can connect to Spark from RStudio desktop or from an R session not running within the cluster,
+
+```{r}
+config <- livy_config("<username>", "<password>")
+sc <- spark_connect(master = "<address>", method = "livy", config = config)
+```
+
+since we persisted data as parquet, we can reload this table,
+
+```{r}
+keywords_tbl <- spark_read_parquet(sc, "keywords", "keywords")
+```
+
+then we can query the most popular keywords or run any other `dplyr`, `ml_`, etc. functions over this set and disconnect.
+
+```{r}
+keywords_tbl %>%
+  group_by(keyword) %>%
+  summarise(count = count()) %>%
+  arrange(desc(count))
+```
+
+```{r}
+spark_disconnect(sc)
+```
+
+We stop the test Livy service as follows,
+
+```{r}
+livy_service_stop()
+```
+
+## Using Shiny with Spark
+
+Finally, we will load the `keywords_tbl` from parquet and create a keywords suggestion Shiny app, notice that the data loads from parquet when the Shiny app starts. If you are running this Shiny app from an existing session that is already connected, you can skip the first block and run the Shiny app directly.
+
+```{r}
+library(shiny)
+library(sparklyr)
+library(dplyr)
+library(wordcloud)
+
+sc <- spark_connect(master = "yarn-client")
+keywords_tbl <- spark_read_parquet(sc, "keywords", "keywords")
+```
+
+```{r}
+ui <- fluidPage(
+   titlePanel("Keyword Suggestions"),
+   
+   sidebarLayout(
+      sidebarPanel(
+         textInput("keywords", "Keywords:", placeholder = "Coma separated list of keywords")
+      ),
+      mainPanel(
+         plotOutput("suggestionsPlot", width = "100%", height = "100%")
+      )
+   )
+)
+
+server <- function(input, output) {
+   output$suggestionsPlot <- renderPlot({
+     my_keywords <- as.list(strsplit(input$keywords, ",")[[1]])
+     if (length(my_keywords) <= 0) return()
+     
+     cloud_data <- withProgress({
+       setProgress(message = "Executing in Spark...")
+       keywords_tbl %>%
+         filter(keyword %in% my_keywords) %>%
+         select(page) %>%
+         left_join(keywords_tbl, by = "page") %>%
+         group_by(keyword) %>%
+         summarize(count = n()) %>%
+         filter(!keyword %in% my_keywords) %>%
+         arrange(desc(count)) %>%
+         head(1000) %>%
+         collect()
+     })
+     
+     wordcloud(
+       strtrim(cloud_data$keyword, 10),
+       cloud_data$count,
+       scale=c(4,0.5),
+       min.freq = 1,
+       max.words = 400,
+       colors=brewer.pal(8, "Dark2"))
+   }, width = 800, height = 600)
+}
+
+shinyApp(ui = ui, server = server)
+```
