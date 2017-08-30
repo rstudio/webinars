@@ -56,11 +56,11 @@ To ensure reproducibility, this chunk downloads and save the needed files into t
 if(!file.exists("data"))dir.create("data")
 
 if(!file.exists("data/2003.csv.bz2")){
-  download.file("http://stat-computing.org/dataexpo/2009/2003.csv.bz2", "2003.csv.bz2")
+  download.file("http://stat-computing.org/dataexpo/2009/2003.csv.bz2", "data/2003.csv.bz2")
 }
 
 if(!file.exists("data/2004.csv.bz2")){
-  download.file("http://stat-computing.org/dataexpo/2009/2004.csv.bz2", "2004.csv.bz2")
+  download.file("http://stat-computing.org/dataexpo/2009/2004.csv.bz2", "data/2004.csv.bz2")
 }
 
 ```
