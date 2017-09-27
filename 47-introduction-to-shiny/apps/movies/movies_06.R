@@ -61,6 +61,19 @@ ui <- fluidPage(
                     label = "Show data table",
                     value = TRUE),
       
+      # Enter text for plot title, only when other inputs are updated
+      textInput(inputId = "plot_title", 
+                label = "Plot title", 
+                placeholder = "Enter text to be used as plot title"),
+      
+      # Enter text for description, only when action button is clicked
+      textInput(inputId = "plot_description", 
+                label = "Plot description", 
+                placeholder = "Describe what you see in the plot"),
+      
+      # Action button to update text for description
+      actionButton(inputId = "update_plot_description", label = "Update plot description"),
+      
       # Horizontal line for visual separation
       hr(),
       
@@ -76,11 +89,15 @@ ui <- fluidPage(
       
       # Show scatterplot
       plotOutput(outputId = "scatterplot"),
-      br(),        # a little bit of visual separation
+      br(),    # a little bit of visual separation
       
       # Print number of obs plotted
       uiOutput(outputId = "n"),
-      br(), br(),    # a little bit of visual separation
+      br(),    # a little bit of visual separation
+      
+      # Print plot description
+      uiOutput(outputId = "plot_description_text"),
+      br(),    # a little bit of visual separation
 
       # Show data table
       DT::dataTableOutput(outputId = "moviestable")
@@ -104,7 +121,11 @@ server <- function(input, output) {
       geom_point(alpha = input$alpha) +
       labs(x = toTitleCase(str_replace_all(input$x, "_", " ")),
            y = toTitleCase(str_replace_all(input$y, "_", " ")),
-           color = toTitleCase(str_replace_all(input$z, "_", " ")))
+           color = toTitleCase(str_replace_all(input$z, "_", " ")),
+           # With isolate() only update plot title when other inputs that
+           # go into the plot change, not when the title is updated
+           title = isolate({ toTitleCase(input$plot_title) })
+           )
   })
   
   # Print number of movies plotted
@@ -115,6 +136,14 @@ server <- function(input, output) {
     
     HTML(paste("There are", counts, input$selected_type, "movies in this dataset. <br>"))
   })
+  
+  # Print plot description
+  # With eventReactive() only update plot description when 
+  # action button is clicked
+  output$plot_description_text <- eventReactive(
+    eventExpr = input$update_plot_description,
+    valueExpr = { HTML(input$plot_description) }
+    )
   
   # Print data table if checked
   output$moviestable <- DT::renderDataTable(
