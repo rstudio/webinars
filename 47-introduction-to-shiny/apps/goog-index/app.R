@@ -20,11 +20,14 @@ ui <- fluidPage(theme = shinytheme("lumen"),
                   selected = "Travel"),
 
       # Select date range to be plotted
-      dateRangeInput("date", strong("Date range"), start = "2007-01-01", end = "2017-07-31",
+      dateRangeInput("date", strong("Date range"), 
+                     start = "2007-01-01", end = "2017-07-31",
                      min = "2007-01-01", max = "2017-07-31"),
 
       # Select whether to overlay smooth trend line
-      checkboxInput(inputId = "smoother", label = strong("Overlay smooth trend line"), value = FALSE),
+      checkboxInput(inputId = "smoother", 
+                    label = strong("Overlay smooth trend line"), 
+                    value = FALSE),
 
       # Display only if the smoother is checked
       conditionalPanel(condition = "input.smoother == true",
