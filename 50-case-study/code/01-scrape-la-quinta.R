@@ -25,7 +25,7 @@ pages <- head(pages, 30) # use a subset for testing code
 # Step 2 : Save hotels pages locally ---------------------------------
 
 # Create a directory to store downloaded hotel pages
-data_dir <- "data-html-full/"
+data_dir <- "data-html/"
 dir.create(data_dir, showWarnings = FALSE)
 
 # Create a progress bar
