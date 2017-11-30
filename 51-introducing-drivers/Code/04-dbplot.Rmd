@@ -1,0 +1,55 @@
+---
+title: "Database plots with dbplot"
+output: html_notebook
+---
+
+## Setup
+
+```{r}
+library(DBI)
+library(tidyverse)
+library(dbplot)
+con <- dbConnect(odbc::odbc(), "SQL Server (DSN)")
+airports <- tbl(con, "airports")
+flights <- tbl(con, "flights2")
+```
+
+## Histogram
+
+```{r}
+dbplot_histogram(airports, alt, binwidth = 700) + 
+  labs(title = "Airports Altitude") +
+  theme_minimal()
+```
+
+## Compute bins
+
+```{r}
+db_compute_bins(airports, alt)
+db_bin(x)
+```
+
+## Raster
+
+```{r}
+dbplot_raster(flights, lon, lat) +
+  labs(title = "Arrivals") +
+  theme_minimal()
+```
+
+## Line plot
+
+```{r}
+dbplot_line(flights, month, mean(arr_delay)) +
+  labs(title = "Arrival delays by month") +
+  theme_minimal()
+```
+
+## Barplot
+
+```{r}
+dbplot_bar(flights, origin, mean(dep_delay)) +
+  labs(title = "Departure delays by airport") +
+  theme_minimal() +
+  coord_flip()
+```
