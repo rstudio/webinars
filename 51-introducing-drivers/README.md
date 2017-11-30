@@ -27,7 +27,6 @@ RStudio makes it easy to access and analyze your data with R. RStudio Profession
 3. Basics with Oracle - Functions for interacting with your database.
 4. Plots with dbplot - Push computation to your database. High density plotting with dbplot. 
 5. Shiny dashboard - Push computation to your database. Shiny application using a database backend. 
-6. Quick Start - Download, install, and configure RStudio Professional Drivers.
 
 ### HTML notebooks
 
@@ -36,7 +35,6 @@ RStudio makes it easy to access and analyze your data with R. RStudio Profession
 2. Queries with Teradata - Three ways to query data with R example 2.
 3. Basics with Oracle - Functions for interacting with your database.
 4. Plots with dbplot - Push computation to your database. High density plotting with dbplot. 
-6. Quick Start - Download, install, and configure RStudio Professional Drivers.
 
 ### References
 
