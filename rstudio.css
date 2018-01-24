@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
+
+
+body { 
+  font-family: 'Source Sans Pro';
+}
+
+p {
+  font-size: 36px;
+}
+h1 {
+  color: #4287c7;
+  font-family: 'Source Sans Pro';
+  font-weight: bold;
+  font-size: 60px;
+}
+h2 {
+  color: #4287c7;
+  font-family: 'Source Sans Pro';
+  font-weight: bold;
+  font-size: 48px;
+}
+h3 {
+  color: #585858;
+  font-family: 'Source Sans Pro';
+  font-weight: bold;
+  font-size: 36px;
+}
+
+a, a > code {
+  font-family: 'PT Mono';
+  color: rgb(249, 38, 114);
+  text-decoration: none;
+}
+.footnote {
+  position: absolute;
+  bottom: 3em;
+  padding-right: 4em;
+  color: #4287c7;
+}
+.remark-code, .remark-inline-code { 
+  font-family: 'PT Mono';
+  background-color: #c8c8c8;
+}
+.remark-code-line-highlighted     {
+  background-color: #fff;
+}
+.rstudio-slide {
+  background-image: url('images/background.png');
+  background-size: contain;
+}
+.title-slide {
+  background-image: url('images/title.png');
+  background-size: contain;
+}
+.title-slide h1, .title-slide h2, .title-slide h3 {
+  text-align: left;
+  margin-top: 50px;
+  margin-right: 300px;
+}
+.pic-slide {
+  background-image: url();
+  background-size: cover;
+}
+.dark-green {
+  background-color: #789d57;
+}
+
+.dark-green h2, .dark-green h1 {
+  color: #fff;
+}
+
+.dark-gray {
+  background-color: #585858;
+}
+
+.dark-gray h2, .dark-gray h1 {
+  color: #fff;
+}
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+.pic-right {
+  float: right;
+  padding: 20px;
+  width: 40%;
+}
+.head-shot {
+  float: left;
+  padding: 30px;
+  width: 20%;
+}
+.pull-left {
+  float: left;
+  width: 40%;
+}
+.pull-right {
+  float: right;
+  width: 30%;
+}
+.pull-right ~ * {
+  clear: both;
+}
+img, video, iframe {
+  max-width: 100%;
+}
+blockquote {
+  border-left: solid 5px lightgray;
+  padding-left: 1em;
+}
+table {
+  margin: auto;
+  border-bottom: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { 
+  padding: 5px; 
+  font-size: 36px;
+}
+thead, tfoot, tr:nth-child(even) { background: #eee }
+
+@page { margin: 0; }
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
+.remark-slide-content {
+  padding-left: 180px;
+  padding-right: 40px;
+}
+
+.remark-slide-number {
+  display: none;
+}
