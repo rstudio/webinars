@@ -334,7 +334,7 @@ https://spark.apache.org/docs/latest/ml-features.html
 ## Distributed R
 
  
-`spark_apply()` applies an R function to a Spark object.  The R function runs over each RDD in Spark. Please read this article: https://spark.rstudio.com/articles/guides-distributed-r.html
+`spark_apply()` applies an R function to a Spark object.  The R function runs over each RDD in Spark. Please read this article: https://spark.rstudio.com/guides/distributed-r/
 
 
 - The `training` Spark DataFrame has 8 partitions, `nrow()` will run in each partition 
