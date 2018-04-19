@@ -98,7 +98,7 @@ run_col_benchmark <- function(ncol, times = 5) {
 
 ## force figs to present methods in order of time
 flevels <- function(df) {
-  mutate(df, method = fct_reorder(method, x = desc(time)))
+  mutate(df, method = fct_reorder(method, .x = desc(time)))
 }
 
 plot_it <- function(df, what = "nrow") {
