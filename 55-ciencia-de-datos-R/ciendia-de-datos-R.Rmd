@@ -1,0 +1,119 @@
+---
+title: "Ciencia de Datos usando R"
+output: html_notebook
+---
+
+## Instalación 
+
+```{r, eval = FALSE}
+install.packages("tidyverse")
+```
+
+```{r}
+library(tidyverse)
+```
+
+## Leer
+
+```{r}
+archivo <- read_csv("cuarto_grado.csv")
+
+archivo
+```
+
+## Ordenar
+
+```{r}
+datos <- archivo %>%
+  separate(nombre, into = c("apellido", "primer")) %>% 
+  separate(fecha, into = c("dia", "mes", "año"), convert = TRUE) %>% 
+  gather("materia", "puntos", "matematica", "ingles")
+
+datos
+```
+
+## Conocimiento
+
+¿Cual es el promedio actual por cada clase?
+
+```{r}
+datos %>%
+  group_by(materia) %>%
+  summarise(promedio = mean(puntos))
+```
+
+¿Cuales son los promedios de cada estudiante en matematica?
+
+```{r}
+datos %>%
+  filter(materia == "matematica") %>%
+  group_by(matricula, primer, apellido) %>%
+  summarise(promedio = mean(puntos))
+```
+
+¿Cuales son los promedios de cada estudiante en ingles?
+
+```{r}
+datos %>%
+  filter(materia == "ingles") %>%
+  group_by(matricula, primer, apellido) %>%
+  summarise(promedio = mean(puntos))
+```
+
+¿Quienes tienen los mejores promedios en ingles?
+
+```{r}
+datos %>%
+  filter(materia == "ingles") %>%
+  group_by(matricula, primer, apellido) %>%
+  summarise(promedio = mean(puntos)) %>% 
+  arrange(desc(promedio)) %>%
+  ungroup() %>% 
+  mutate(puesto = row_number())
+```
+
+¿Cual es la historia del ultimo lugar?
+
+```{r}
+datos %>%
+  filter(matricula == 105, materia == "ingles") 
+```
+
+```{r}
+datos %>%
+  filter(matricula == 105, materia == "ingles") %>%
+  ggplot() +
+  geom_line(aes(mes, puntos))
+```
+
+¿Cual es la historia de todos los alumnos?
+
+```{r}
+datos %>%
+  filter(materia == "ingles") %>%
+  ggplot() +
+  geom_line(aes(mes, puntos, group = matricula))
+  #geom_line(aes(mes, puntos, group = matricula, color = apellido))
+```
+
+Formalizar la grafica
+
+```{r}
+datos %>%
+  group_by(materia, mes) %>%
+  summarise(promedio = mean(puntos)) %>%
+  ggplot() +
+  geom_line(aes(mes, promedio, group = materia, color = materia)) +
+  labs(title = "Promedios mensuales por cada materia")
+```
+
+Otras visualizaciones
+
+```{r}
+datos %>%
+  ggplot() +
+  geom_histogram(aes(puntos), binwidth =  10) +
+  facet_wrap(~materia)
+```
+
+
