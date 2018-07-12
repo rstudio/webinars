@@ -7,7 +7,7 @@ You can either clone this repository with git, or download the entire content as
 
 RStudio Process
 ================
-1. We start the webinars approximatelky 20 minutes prior to the launch for the public in case there are questions or concerns. 
+1. We start the webinars approximately 20 minutes prior to the launch for the public in case there are questions or concerns. 
 2. All webinars are recorded and shortened to show only the content and questions.
 3. All recordings are posted on RStudio.com within 48 hours.
 4. A host will introduce the speaker and the topic and then hand control to the main presenter.
