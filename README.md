@@ -1,9 +1,20 @@
-RStudio webinars
+RStudio Webinars
 ================
 
 This repository contains materials that have been used in RStudio webinars.
 
 You can either clone this repository with git, or download the entire content as a zip file by clicking on the "Download ZIP" button on the right.
+
+RStudio Process
+================
+1. We start the webinars approximatelky 20 minutes prior to the launch for the public in case there are questions or concerns. 
+2. All webinars are recorded and shortened to show only the content and questions.
+3. All recordings are posted on RStudio.com within 48 hours.
+4. A host will introduce the speaker and the topic and then hand control to the main presenter.
+5. The presenter will then share their screen and the host will confirm that they can see it.
+6. Once the presentation is complete the presenter will open the questions panel and review the red flagged questions. Questions are flagged by others from the company when they think it would benefit the entire audience to hear.
+7. Once questions are complete the host will take back control and close out the webinar.
+
 
 Webinar Guide
 ================
