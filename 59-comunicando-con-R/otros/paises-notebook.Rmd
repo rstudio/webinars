@@ -1,0 +1,81 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r, setup}
+library(tidyverse)
+load("datos/paises.rda")
+```
+
+```{r}
+glimpse(paises)
+```
+
+```{r}
+paises %>%
+  group_by(pais) %>%
+  summarise()
+```
+
+```{r}
+paises %>%
+  filter(pais == "Estados Unidos de América") %>%
+  select(anio, esperanza_de_vida)
+```
+
+```{r}
+paises %>%
+  filter(pais == "Estados Unidos de América") %>%
+  select(anio, esperanza_de_vida) %>%
+  ggplot() +
+    geom_line(aes(anio, esperanza_de_vida))
+
+```
+
+```{r}
+modelos <- paises %>%
+  group_by(continente, pais) %>%
+  nest() %>%
+  mutate(modelo = map(data, ~ lm(esperanza_de_vida ~ anio, data = .x))) 
+
+save(modelos, file =  "modelos.rds")
+
+head(modelos)
+
+modelos$modelo[1]
+```
+
+```{r}
+modelos
+```
+
+
+```{r}
+con_coef <- modelos %>%
+  mutate(
+    coef = map_dbl(modelo, ~ .x[1]$coefficients["anio"]))
+```
+
+
+```{r}
+con_coef %>%
+  filter(continente == "Europa") %>%
+  ggplot() +
+  geom_point(aes(coef, pais))
+```
+
+
+```{r}
+con_coef %>%
+  filter(continente == "Asia") %>%
+  ggplot() +
+  geom_point(aes(coef, pais))
+```
+
+```{r}
+con_coef %>%
+  filter(continente == "Américas") %>%
+  ggplot() +
+  geom_point(aes(coef, pais))
+```

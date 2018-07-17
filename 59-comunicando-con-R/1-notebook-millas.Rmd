@@ -1,0 +1,50 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r, setup}
+library(tidyverse)
+load("datos/millas.rda")
+```
+
+
+```{r}
+glimpse(millas)
+```
+
+```{r}
+library(skimr)
+skim(millas)
+```
+
+```{r}
+muestra <- millas %>%
+  sample_frac(0.5)
+```
+
+```{r}
+ggplot(millas) +
+  geom_histogram(aes(autopista), binwidth = 5)
+```
+
+```{r}
+ggplot(muestra) +
+  geom_histogram(aes(autopista), binwidth = 5)
+```
+
+```{r}
+muestra %>%
+  select(autopista, clase, cilindros) %>%
+  lm(autopista ~., data = .) %>%
+  summary()
+```
+
+```{r}
+modelo <- muestra %>%
+  select(autopista, clase, cilindros) %>%
+  lm(autopista ~., data = .)
+
+save(modelo, file = "modelo.rds")
+```
+
