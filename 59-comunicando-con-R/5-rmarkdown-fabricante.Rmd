@@ -1,8 +1,10 @@
 ---
 title: "Fabricante"
-output: html_document
 params:
-    fabricante: audi
+  fabricante: audi
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}

@@ -1,0 +1,84 @@
+---
+title: "Millas"
+subtitle: "Presentacion"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+library(xaringan)
+library(tidyverse)
+options(htmltools.dir.version = FALSE)
+
+load("datos/millas.rda")
+load("modelo.rds")
+
+pred <- predict(modelo, millas)
+
+df <- millas %>%
+  mutate(
+    pred = round(pred),
+    anio = as.character(anio)
+  )
+
+fabricantes <- unique(millas$fabricante)
+```
+
+# Datos
+
+```{r, tidy = TRUE}
+glimpse(millas, width = 65)
+```
+
+---
+# Autopista
+
+```{r, fig.height = 6, fig.width=9}
+ggplot(millas) +
+  geom_histogram(aes(autopista), binwidth = 5)
+```
+
+---
+class: inverse, center, middle
+
+# Modelo
+
+---
+# Muestra
+
+```{r}
+muestra <- sample_frac(millas, 0.5)
+```
+
+.pull-left[
+```{r, fig.height = 5, fig.width = 5, echo = FALSE}
+ggplot(muestra) +
+  geom_histogram(aes(autopista), binwidth = 5) +
+  labs(title = "Muestra")
+```
+]
+
+.pull-right[
+```{r, fig.height = 5, fig.width = 5, echo = FALSE}
+ggplot(millas) +
+  geom_histogram(aes(autopista), binwidth = 5) +
+  labs(title = "Millas")
+```
+]
+
+---
+# Modelo
+
+Este es el modelo usando clase y cilindros.
+
+```{r}
+muestra %>%
+  select(autopista, clase, cilindros) %>%
+  lm(autopista ~., data = .)
+```
+

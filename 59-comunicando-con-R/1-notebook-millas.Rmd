@@ -1,37 +1,47 @@
 ---
-title: "R Notebook"
+title: "Análisis de Millas"
 output: html_notebook
 ---
 
-```{r, setup}
+```{r, setup, include = FALSE}
+# output: slidy_presentation
 library(tidyverse)
 load("datos/millas.rda")
 ```
 
+## Contenido de millas
 
 ```{r}
 glimpse(millas)
 ```
 
-```{r}
+## Entendiendo millas
+
+```{r, out.height= 5, out.width=5}
 library(skimr)
 skim(millas)
 ```
+
+## Modelando con una muestra
 
 ```{r}
 muestra <- millas %>%
   sample_frac(0.5)
 ```
 
-```{r}
+```{r, fig.width = 5, fig.height = 3}
 ggplot(millas) +
   geom_histogram(aes(autopista), binwidth = 5)
 ```
 
-```{r}
+## Comparando la muestra
+
+```{r, fig.width = 5, fig.height = 3}
 ggplot(muestra) +
   geom_histogram(aes(autopista), binwidth = 5)
 ```
+
+## Creando el modelo
 
 ```{r}
 muestra %>%
@@ -44,7 +54,6 @@ muestra %>%
 modelo <- muestra %>%
   select(autopista, clase, cilindros) %>%
   lm(autopista ~., data = .)
-
 save(modelo, file = "modelo.rds")
 ```
 
