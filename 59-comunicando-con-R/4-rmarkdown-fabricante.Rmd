@@ -1,9 +1,8 @@
 ---
 title: "Fabricante"
 params:
-  fabricante: audi
+  fabricante: toyota
 output:
-  pdf_document: default
   html_document: default
 ---
 
