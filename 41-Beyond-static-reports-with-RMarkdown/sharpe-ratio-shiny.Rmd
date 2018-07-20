@@ -1,0 +1,178 @@
+---
+title: "Sharpe Ratio Shiny"
+runtime: shiny
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    source_code: embed
+---
+
+
+```{r setup, message = FALSE}
+library(flexdashboard)
+library(PerformanceAnalytics)
+library(quantmod)
+library(dygraphs)
+
+
+# Function to calculate monthly returns on a stock 
+monthly_stock_returns <- function(ticker, start_year) {
+  # Download the data from Yahoo finance
+  symbol <- getSymbols(ticker, src = 'google', from = start_year, auto.assign = FALSE,
+                       warnings = FALSE) 
+  # Tranform it to monthly returns using the periodReturn function from quantmod
+  data <- periodReturn(symbol, period = 'monthly', type = 'log')
+  
+  # Let's rename the column of returns to something intuitive because the column name is what
+  # will eventually be displayed on the time series graph
+  colnames(data) <- as.character(ticker)
+  
+  # We want to be able to work with the xts objects that result from this function 
+  # so let's explicitly put them to the global environment with an easy to use 
+  # name, the stock ticker
+  assign(ticker, data, .GlobalEnv)
+}
+```
+
+Sidebar {.sidebar}
+=====================================
+  
+```{r}
+helpText("Choose 3 stocks and their % allocation")
+
+fluidRow(
+  column(7,
+  textInput("stock1", "Stock 1", "GOOG")),
+  column(5,
+  numericInput("w1", "Portf. %", 25, min = 1, max = 100))
+)  
+
+fluidRow(
+  column(7,
+  textInput("stock2", "Stock 2", "FB")),
+  column(5,
+  numericInput("w2", "Portf. %", 25, min = 1, max = 100))
+)
+
+fluidRow(
+  column(7,
+  textInput("stock3", "Stock 3", "AMZN")),
+  column(5,
+  numericInput("w3", "Portf. %", 50, min = 1, max = 100))
+)
+
+helpText("Choose a start date and risk-free rate")
+
+fluidRow(
+  column(7,
+  dateInput("year", "Starting Date", "2010-01-01", format = "yyyy-mm-dd")),
+  column(5,
+  numericInput("rfr", "Risk-Free %", .5, min = 0, max = 5, step = .01))
+)
+```
+
+```{r}
+individual_stocks <- reactive({
+  
+  req(input$stock1)
+  year <- input$year
+  
+  stock1 <- monthly_stock_returns(input$stock1, year)
+  req(input$stock2)
+  
+  stock2 <- monthly_stock_returns(input$stock2, year)
+  req(input$stock3)
+  
+  stock3 <- monthly_stock_returns(input$stock3, year)
+  
+  merged_returns <- merge.xts(stock1, stock2, stock3)
+})
+
+portfolio_growth <- reactive({
+  w <- c(input$w1/100, input$w2/100, 1-(input$w1+input$w2)/100)
+  dollar_growth <- Return.portfolio(individual_stocks(), weights = w, wealth.index = TRUE)
+})
+
+sharpe_ratio <- reactive({
+  w1 <- c(input$w1/100, input$w2/100, 1-(input$w1+input$w2)/100)
+  portfolio_monthly_returns <- Return.portfolio(individual_stocks(), weights = w1)
+  
+  #Use the built in SharpeRatio function in Performance Analytics
+  sharpe <- round(SharpeRatio(portfolio_monthly_returns, Rf = input$rfr/100), 4)
+  sharpe[1,]
+})
+
+sp500_sharpe_ratio <- reactive ({
+  year <- input$year
+  sp500 <- monthly_stock_returns('spy', year)
+  sp500_monthly <- Return.portfolio(sp500)
+  sp500_sharpe<- round(SharpeRatio(sp500_monthly, Rf = input$rfr/100), 4)
+  sp500_sharpe[1,]
+})
+```
+
+Portfolio Performance
+=====================================  
+
+Row {data-height=600}
+-----------------------------------------------------------------------
+
+### Growth of $1
+
+```{r}
+##dygraph chunk
+dygraphOutput("dygraphDollarGrowth")
+
+output$dygraphDollarGrowth <- renderDygraph({
+  dygraph(portfolio_growth(), main = "Growth of $1 Invested in Your Portfolio") %>%
+    dyAxis("y", label = "$") %>%
+    dyOptions(axisLineWidth = 1.5, fillGraph = TRUE, drawGrid = TRUE)
+})
+```
+
+Row {data-height=200}
+-----------------------------------------------------------------------
+
+### The Sharpe Ratio of Your Portfolio
+
+```{r}
+valueBoxOutput("approvalBox1")
+output$approvalBox1<-renderValueBox({
+  valueBox(value = sharpe_ratio(), icon = "fa-line-chart", color = "primary")
+})
+```
+
+### Sharpe Ratio of S&P500 in same time period
+
+```{r}
+
+valueBoxOutput("approvalBox2")
+output$approvalBox2<-renderValueBox({
+  valueBox(value = sp500_sharpe_ratio(), icon = "fa-line-chart", color = "primary")
+})
+```
+
+Row {data-height=350}
+-----------------------------------------------------------------------
+
+### Background on the Sharpe Ratio
+
+Briefly, the Sharpe Ratio is the mean of the excess monthly returns above the risk-free rate, divided by the standard deviation of the excess monthly returns above the risk-free rate.  This is the formulation of the Sharpe Ratio as of 1994; if we wished to use the original formulation from 1966, the denominator would be the standard deviation of portfolio monthly returns. Learn more [here](http://web.stanford.edu/~wfsharpe/art/sr/sr.htm).<br><br>
+In other words, the Sharpe Ratio measures excess returns per unit of volatility, where we take the standard deviation to represent portfolio volatility. The Sharpe Ratio was brought to us by Bill Sharpe - arguably the most important economist for modern investment management as the creator of the Sharpe Ratio, CAPM and Financial Engines, a forerunner of the robo movement.
+
+
+Individual Monthlhy Returns
+========================================
+
+### Monthly Returns Line Chart
+
+```{r, message = FALSE}
+dygraphOutput("dygraphStocksline")
+
+output$dygraphStocksline <- renderDygraph({
+  dygraph(individual_stocks(), main = "Monthly Percentage Returns") %>% 
+    dyAxis("y", label = "%") %>% 
+    dyOptions(colors = RColorBrewer::brewer.pal(3, "Set2")) 
+})
+```
+

@@ -1,0 +1,339 @@
+---
+title: "Tidyverse Webinar"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gapminder)
+library(tidyverse)
+
+top_10 <- c("United States", "United Kingdom", "Germany", "France", 
+            "Japan", "Italy", "China", "India", "Canada", "Brazil")
+```
+
+## Gapminder data
+
+### gapminder 
+
+The `gapminder` data set contains demographic statistics popularized by Hans Rosling's TED talks.
+
+```{r ex1, exercise = TRUE}
+library(gapminder)
+gapminder
+```
+
+### Goal
+
+Which countries had the fastest growing GDP's between 1952 and 2007?
+
+```{r out.width = "95%", echo = FALSE}
+knitr::include_graphics("images/goal.png")
+```
+
+## The Tidyverse
+
+### Functions
+
+In R, you manipulate data by passing the data to functions.
+
+```{r ex2, exercise = TRUE}
+round(1234.567, digits = 2)
+nrow(gapminder)
+```
+
+The tidyverse is a collection of R packages that contain functions. You must load the packages to use the functions.
+
+### Load the Tidyverse
+
+```{r ex3, exercise = TRUE}
+## install.packages("tidyverse")
+library("tidyverse")
+```
+
+### Tidy Tools
+
+Tidyverse functions are designed to be:
+
+1. **Simple** - They do one thing, and they do it  well
+2. **Composable** - They can be combined with other functions for multi-step operations
+
+### Which countries have the largest populations?
+
+```{r out.width = "95%", echo = FALSE}
+knitr::include_graphics("images/arrange.png")
+```
+
+```{r out.width = "95%", echo = FALSE}
+knitr::include_graphics("images/desc.png")
+```
+
+```{r ex4, exercise = TRUE, exercise.eval = TRUE}
+gapminder
+```
+
+```{r ex4-solution}
+arrange(gapminder, desc(pop))
+```
+
+### Which countries had the largest population _in 2007_?
+
+```{r out.width = "95%", echo = FALSE}
+knitr::include_graphics("images/filter.png")
+```
+
+```{r ex5, exercise = TRUE, exercise.eval = TRUE}
+gapminder2007 <- gapminder
+gapminder2007
+```
+
+```{r ex5-solution}
+gapminder2007 <- filter(gapminder, year == 2007)
+arrange(gapminder2007, desc(pop))
+```
+
+
+### A better way
+
+Use the pipe operator (%>%) to compose tidyverse functions.
+
+```{r ex6, exercise = TRUE, exercise.eval = TRUE}
+gapminder2007 <- filter(gapminder, year == 2007)
+arrange(gapminder2007, desc(pop))
+```
+
+```{r ex6-solution}
+gapminder %>% 
+  filter(year == 2007) %>% 
+  arrange(desc(pop))
+```
+
+
+### Which countries had the largest life expectancy in 2007?
+
+```{r out.width = "95%", echo = FALSE}
+knitr::include_graphics("images/select.png")
+```
+
+```{r ex7, exercise = TRUE, exercise.eval = TRUE}
+gapminder
+```
+
+```{r ex7-solution}
+gapminder %>% 
+  filter(year == 2007) %>% 
+  arrange(desc(lifeExp)) %>% 
+  select(country, lifeExp)
+```
+
+### What is the gdp of each country?
+
+```{r out.width = "95%", echo = FALSE}
+knitr::include_graphics("images/mutate.png")
+```
+
+```{r ex8, exercise = TRUE, exercise.eval = TRUE}
+gapminder
+```
+
+```{r ex8-solution}
+gapminder %>% 
+  mutate(gdp = pop * gdpPercap)
+```
+
+
+### What was the maximum gdp?
+
+```{r out.width = "95%", echo = FALSE}
+knitr::include_graphics("images/summarise.png")
+```
+
+```{r ex9, exercise = TRUE, exercise.eval = TRUE}
+gapminder %>% 
+  mutate(gdp = pop * gdpPercap)
+```
+
+```{r ex9-solution}
+gapminder %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  summarise(max_gdp = max(gdp))
+```
+
+### What was the first gdp? The last gdp?
+
+```{r ex10, exercise = TRUE, exercise.eval = TRUE}
+gapminder %>% 
+  mutate(gdp = pop * gdpPercap)
+```
+
+```{r ex10-solution}
+gapminder %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  summarise(first_gdp = first(gdp), last_gdp = last(gdp))
+```
+
+### What was the first and last gdp for each country?
+
+```{r out.width = "95%", echo = FALSE}
+knitr::include_graphics("images/group_by.png")
+```
+
+```{r ex11, exercise = TRUE, exercise.eval = TRUE}
+gapminder %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  summarise(first_gdp = first(gdp), last_gdp = last(gdp))
+```
+
+```{r ex11-solution}
+gapminder %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  group_by(country) %>% 
+  summarise(first_gdp = first(gdp), last_gdp = last(gdp))
+```
+
+### What was the cumulative annual growth for each country between 1952 and 1957?
+
+```{r ex12, exercise = TRUE, exercise.eval = TRUE}
+gapminder %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  group_by(country) %>% 
+  summarise(gdp1952 = first(gdp), gdp2007 = last(gdp))
+```
+
+```{r ex12-solution}
+gapminder %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  group_by(country) %>% 
+  summarise(gdp1952 = first(gdp), gdp2007 = last(gdp)) %>% 
+  mutate(cagr = ((gdp2007 / gdp1952) ^ (1/55) - 1) * 100) %>% 
+  arrange(desc(cagr)) %>% 
+  select(country, cagr)
+```
+
+### Tidy data
+
+Each tidyverse function expects and returns the same type of data: _tidy data_. 
+A tabular data set is tidy iff:
+
+1. Each variable is in its own column
+2. Each observation is in its own row
+
+## Visualization
+
+### What did GDP growth look like?
+
+Let's focus on the 10 biggest economies (in 1952). What are they?
+
+```{r ex13, exercise = TRUE}
+gapminder
+```
+
+```{r ex13-solution}
+gapminder %>% 
+  filter(year == 1952) %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  arrange(desc(gdp)) %>% 
+  select(country, gdp)
+```
+
+### Visualize the Top 10
+
+```{r}
+top_10 <- c("United States", "United Kingdom", "Germany", "France", 
+            "Japan", "Italy", "China", "India", "Canada", "Brazil")
+```
+
+```{r eval = FALSE}
+ggplot(data = <DATA>) +
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+
+```{r ex14, exercise = TRUE, exercise.eval = TRUE}
+gapminder
+```
+
+```{r ex14-solution}
+gapminder %>% 
+  filter(country %in% top_10) %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  ggplot() +
+    geom_line(mapping = aes(x = year, y = gdp, color = country))
+```
+
+
+### Scaled data
+
+Let's scale the data within each country to make growth easier to compare
+
+```{r ex15, exercise = TRUE, exercise.eval = TRUE}
+gapminder %>% 
+  filter(country %in% top_10) %>% 
+  mutate(gdp = pop * gdpPercap)
+```
+
+```{r ex15-solution}
+gapminder %>% 
+  filter(country %in% top_10) %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  group_by(country) %>% 
+  mutate(scaled_gdp = gdp / first(gdp)) %>% 
+  ggplot() +
+    geom_line(mapping = aes(x = year, y = scaled_gdp, color = country))
+```
+
+### Cumulative Annual Growth Rates
+
+```{r ex16, exercise = TRUE, exercise.eval = TRUE}
+gapminder %>% 
+  filter(country %in% top_10) %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  group_by(country) %>% 
+  summarise(start = first(gdp), end = last(gdp)) %>% 
+  mutate(cagr = ((end/start) ^ (1 / 55) - 1) * 100) %>% 
+  arrange(desc(cagr)) %>% 
+  select(country, cagr)
+```
+
+```{r ex16-solution}
+gapminder %>% 
+  filter(country %in% top_10) %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  group_by(country) %>% 
+  summarise(start = first(gdp), end = last(gdp)) %>% 
+  mutate(cagr = ((end/start) ^ (1 / 55) - 1) * 100) %>% 
+  arrange(desc(cagr)) %>% 
+  select(country, cagr) %>% 
+  ggplot() +
+    geom_col(mapping = aes(x = country, y = cagr))
+```
+
+### Aspirational
+
+```{r ex17, exercise = TRUE}
+library(forcats)
+
+gapminder %>% 
+  filter(country %in% top_10) %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  group_by(country) %>% 
+  summarise(start = first(gdp), end = last(gdp)) %>% 
+  mutate(cagr = ((end/start) ^ (1 / 55) - 1) * 100) %>% 
+  arrange(desc(cagr)) %>% 
+  ggplot() +
+    geom_col(mapping = aes(x = fct_reorder(country, cagr), y = cagr)) +
+    labs(x = "Country", y = "Cumulative Annual Growth Rate in GDP (1952-2007)") +
+    coord_flip()
+```
+
+
+
+
+
+
+
+
+

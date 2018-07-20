@@ -1,0 +1,20 @@
+# A dummy pattern that ensures all functions not beginning with a '.'
+# are exported -- ie, made available to users when they call
+# library(RcppParallelExample). We use this to ensure that our
+# 'parallelInnerProduct()' and 'parallelLog()' functions are both
+# exported.
+exportPattern("^[^\\.]")
+
+# We must ensure that at least one function is imported from the
+# RcppParallel package; otherwise you may see strange linker errors
+# on package build; for example:
+#
+#     Symbol not found: __ZN3tbb4task13note_affinityEt
+#
+importFrom(RcppParallel, RcppParallelLibs)
+importFrom(Rcpp, evalCpp)
+
+# This directive lets R know that this package produces a shared
+# object called 'RcppParallelExample.so', and that the symbols
+# within should be made available to R functions within the package.
+useDynLib(RcppParallelExample)

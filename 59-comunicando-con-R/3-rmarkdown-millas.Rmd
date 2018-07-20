@@ -1,0 +1,41 @@
+---
+title: "Millas"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(DT)
+load("datos/millas.rda")
+load("modelo.rds")
+
+pred <- predict(modelo, millas)
+
+df <- millas %>%
+  mutate(
+    pred = round(pred),
+    anio = as.character(anio)
+    )
+```
+
+
+### Autopista vs Predicciones
+
+```{r, fig.width=9}
+ggplot(df) +
+  geom_point(aes(autopista, pred, color = clase, shape = anio))
+```
+
+### Detalles
+
+```{r, fig.width=9}
+df %>%
+  select(
+    modelo,
+    clase,
+    cilindros,
+    autopista,
+    pred
+    ) %>%
+  datatable()
+```

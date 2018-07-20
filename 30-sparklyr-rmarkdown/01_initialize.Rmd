@@ -1,0 +1,14 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r setup}
+library(sparklyr)
+library(dplyr)
+sc <- spark_connect(master = "local", version = "2.0.0")
+```
+
+```{r}
+spark_read_parquet(sc, "titanic", "titanic")
+```

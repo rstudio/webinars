@@ -1,0 +1,73 @@
+---
+title: "Basic database operations with Oracle"
+output: html_notebook
+---
+
+## Connect
+
+```{r connect, message=FALSE}
+library(DBI)
+library(dplyr)
+con <- dbConnect(odbc::odbc(), "Oracle (DSN)")
+```
+
+## List tables
+
+```{r}
+as.data.frame(dbListTables(con))
+```
+
+## Create and remove tables
+
+```{r}
+mydata <- as.data.frame(CO2)
+dbWriteTable(con, "CO2", mydata, overwrite = TRUE)
+dbExistsTable(con, "CO2")
+dbGetQuery(con, "SELECT * from CO2")
+dbRemoveTable(con, "CO2")
+dbExistsTable(con, "CO2")
+```
+
+## Reference tables in other databases
+
+```{r}
+inventory_tbl <- tbl(con, dbplyr::in_schema("SYS", "USER_TABLES"))
+inventory_tbl
+```
+
+## Temporary tables
+
+```{r}
+dbWriteTable(con, "mtcars_temp", mtcars, temporary = TRUE)
+dbReadTable(con, "mtcars_temp")
+dbGetQuery(con, "select table_name, temporary from all_tables where table_name = 'mtcars_temp'")
+dbDisconnect(con); con <- dbConnect(odbc::odbc(), "Oracle (DSN)")
+dbRemoveTable(con, "mtcars_temp")
+```
+
+## Create tables
+
+```{r}
+dbWriteTable(con, "IRIS", iris)
+dbSendStatement(con, "create table IRIS2 as select * from IRIS")
+dbReadTable(con, "IRIS2")
+dbSendStatement(con, "drop table IRIS2")
+dbRemoveTable(con, "IRIS")
+```
+
+## SQL Specific translations
+
+```{r}
+titanic <- tbl(con, "Titanic")
+# log --> LN
+show_query(mutate(titanic, log = log(Freq)))
+# var --> VARIANCE
+show_query(summarize(titanic, var = var(Freq))) 
+# sd --> STDDEV_SAMP
+show_query(summarize(titanic, sd = sd(Freq))) 
+# window function
+titanic %>% 
+  group_by(Class) %>% 
+  mutate(x = (Freq - mean(Freq)) / sd(Freq)) %>% 
+  show_query()
+```

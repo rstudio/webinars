@@ -1,0 +1,407 @@
+---
+title: "Creating and Preprocessing a Design Matrix with Recipes"
+author: Max Kuhn (RStudio)
+output: ioslides_presentation
+mode: selfcontained
+widescreen: true
+---
+
+```{r opts, include = FALSE}
+options(width = 90)
+library(knitr)
+opts_chunk$set(comment="", 
+               digits = 3, 
+               tidy = FALSE, 
+               prompt = TRUE,
+               fig.align = 'center')
+library(ggplot2)
+library(caret)
+data("Sacramento")
+library(recipes)
+library(lattice)
+theme_set(theme_bw() + theme(legend.position = "top"))
+```
+
+<!--- ************************************************************ -->
+
+## R Model Formulas
+
+A simple example of a formula used in a linear model to predict sale prices of houses:
+
+```{r sac, message = FALSE}
+library(caret)
+data("Sacramento")
+
+mod1 <- lm(log(price) ~ type + sqft, data = Sacramento, subset = beds > 2)
+```
+
+The purpose of this code chunk:
+
+1. subset some of the data points (`subset`)
+2. create a design matrix for 2 predictor variable (but 3 model terms)
+3. log transform the outcome variable
+4. fit a linear regression model
+
+The first two steps create the _design matrix_ (usually represented by _X_).
+
+<!--- ************************************************************ -->
+
+## Summarizing the Model Formula Method
+
+ * Model formulas are very expressive in that they can represent model terms easily
+ * The formula/terms framework does some elegant functional programming 
+ * Functions can be embedded inline to do fairly complex things (on single variables) and these can be applied to new data sets.  
+
+_However_, there are significant limitations to what this framework can do and, in some cases, it can be very inefficient. 
+
+This is mostly due of being written well before large scale modeling and machine learning were commonplace. 
+
+<!--- ************************************************************ -->
+
+## Limitations of the Current System
+
+* Formulas are not very extensible especially with nested or sequential operations (e.g. `y ~ scale(center(knn_impute(x)))`).
+* When used in modeling functions, you cannot recycle the previous computations.
+* For wide data sets, the formula method can be very inefficient and consume a significant proportion of the total execution time. 
+* Multivariate outcomes are kludgy by requiring `cbind`
+* Formulas have a limited set of roles (next slide)
+
+A more in-depth discussion of these issues can be found in [this blog post](https://rviews.rstudio.com/2017/03/01/the-r-formula-method-the-bad-parts/). 
+
+
+<!--- ************************************************************ -->
+
+## Variable Roles
+
+Formulas have been re-implemented in different packages for a variety of different reasons:
+
+```{r roles_1, eval = FALSE}
+# ?lme4::lmer
+# Subjects need to be in the data but are not part of the model
+lmer(Reaction ~ Days + (Days | Subject), data = sleepstudy)
+
+# BradleyTerry2
+# We want to make the outcomes to be a function of a 
+# competitor-specific function of reach 
+BTm(outcome = 1, player1 = winner, player2 = loser, 
+    formula = ~reach[..] + (1 | ..), 
+    data = boxers)
+
+# mboost::mob (using the modeltools package for formulas)
+mob(diabetes ~ glucose | pregnant + mass +  age,
+    data = PimaIndiansDiabetes)
+```
+
+
+<!--- ************************************************************ -->
+
+## Variable Roles
+
+A general list of possible variables roles could be 
+
+ * outcomes
+ * predictors
+ * stratification 
+ * model performance data (e.g. loan amount to compute expected loss)
+ * conditioning or faceting variables (e.g. [`lattice`](https://cran.r-project.org/package=lattice) or  [`ggplot2`](https://cran.r-project.org/package=ggplot2))
+ * random effects or hierarchical model ID variables
+ * case weights (*)
+ * offsets (*)
+ * error terms (limited to `Error` in the `aov` function)(*)
+
+(*) These can be handled in formulas but are hard-coded into the functions. 
+
+
+<!--- ************************************************************ -->
+
+## Recipes
+
+We can approach the design matrix and preprocessing steps by first specifying a **sequence of steps**. 
+
+1. `price` is an outcome
+2. `type` and `sqft` are predictors
+3. log transform `price`
+4. convert `type` to dummy variables
+
+A recipe is a specification of _intent_. 
+
+One issue with the formula method is that it couples the specification for your predictors along with the implementation. 
+
+Recipes, as you'll see, separates the _planning_ from the _doing_. 
+
+Website: [`https://topepo.github.io/recipes`](https://topepo.github.io/recipes)
+
+
+<!--- ************************************************************ -->
+
+## Recipes
+
+A _recipe_ can be trained then applied to any data. 
+
+```{r rec_basic}
+library(recipes) 
+library(dplyr)
+
+## Create an initial recipe with only predictors and outcome
+rec <- recipe(price ~ type + sqft, data = Sacramento)
+rec <- rec %>% 
+  step_log(price) %>%
+  step_dummy(type)
+
+rec_trained <- prepare(rec, training = Sacramento, retain = TRUE)
+design_mat <- bake(rec_trained, newdata = Sacramento)
+```
+
+<!--- ************************************************************ -->
+
+## Selecting Variables
+
+In the last slide, we used `dplyr`-like syntax for selecting variables such as `step_dummy(type)`. 
+
+In some cases, the names of the predictors may not be known at the time when you construct a recipe (or model formula). For example:
+
+ * dummy variable columns
+ * PCA feature extraction when you keep components that capture _X_% of the variability. 
+ * discretized predictors with dynamic bins
+
+`dplyr` selectors can also be used on variables names, such as 
+
+```{r step_match, eval = FALSE}
+step_spatialsign(matches("^PC[1-9]"), all_numeric(), -all_outcomes())
+```
+
+Variables can be selected by name, role, data type, or any [combination of these](https://topepo.github.io/recipes/articles/Selecting_Variables.html). 
+
+<!--- ************************************************************ -->
+
+## Extending
+
+Need to add more preprocessing or other operations? 
+
+```{r rec_add}
+standardized <- rec_trained %>%
+  step_center(all_numeric()) %>%
+  step_scale(all_numeric()) %>%
+  step_pca(all_numeric())
+          
+## Only estimate the new parts:
+standardized <- prepare(standardized)
+```
+
+If an initial step is computationally expensive, you don't have to redo those operations to add more. 
+
+<!--- ************************************************************ -->
+
+## Available Steps
+
+ * **Basic**: [logs](https://topepo.github.io/recipes/reference/step_log.html), [roots](https://topepo.github.io/recipes/reference/step_sqrt.html), [polynomials](https://topepo.github.io/recipes/reference/step_poly.html), [logits](https://topepo.github.io/recipes/reference/step_logit.html), [hyperbolics](https://topepo.github.io/recipes/reference/step_hyperbolic.html)
+ * **Encodings**: [dummy variables](https://topepo.github.io/recipes/reference/step_dummy.html), ["other"](https://topepo.github.io/recipes/reference/step_other.html) factor level collapsing, [discretization](https://topepo.github.io/recipes/reference/discretize.html)
+ * **Date Features**: Encodings for [day/doy/month](https://topepo.github.io/recipes/reference/step_date.html) etc, [holiday indicators](https://topepo.github.io/recipes/reference/step_holiday.html)
+ * **Filters**: [correlation](https://topepo.github.io/recipes/reference/step_corr.html), [near-zero variables](https://topepo.github.io/recipes/reference/step_nzv.html), [linear dependencies](https://topepo.github.io/recipes/reference/step_lincomb.html)
+ * **Imputation**: [_K_-nearest neighbors](https://topepo.github.io/recipes/reference/step_knnimpute.html), [bagged trees](https://topepo.github.io/recipes/reference/step_bagimpute.html), [mean](https://topepo.github.io/recipes/reference/step_meanimpute.html)/[mode](https://topepo.github.io/recipes/reference/step_modeimpute.html) imputation, 
+ * **Normalization/Transformations**: [center](https://topepo.github.io/recipes/reference/step_center.html), [scale](https://topepo.github.io/recipes/reference/step_scale.html), [range](https://topepo.github.io/recipes/reference/step_range.html), [Box-Cox](https://topepo.github.io/recipes/reference/step_BoxCox.html), [Yeo-Johnson](https://topepo.github.io/recipes/reference/step_YeoJohnson.html)
+ * **Dimension Reduction**: [PCA](https://topepo.github.io/recipes/reference/step_pca.html), [kernel PCA](https://topepo.github.io/recipes/reference/step_kpca.html), [ICA](https://topepo.github.io/recipes/reference/step_ica.html), [Isomap](https://topepo.github.io/recipes/reference/step_isomap.html), [data depth](https://topepo.github.io/recipes/reference/step_depth.html) features, [class distances](https://topepo.github.io/recipes/reference/step_classdist.html)
+ * **Others**: [spline basis functions](https://topepo.github.io/recipes/reference/step_ns.html), [interactions](https://topepo.github.io/recipes/reference/step_interact.html), [spatial sign](https://topepo.github.io/recipes/reference/step_spatialsign.html) 
+ 
+ More on the way (i.e. autoencoders, more imputation methods, etc.)
+
+One of the [package vignettes](https://topepo.github.io/recipes/articles/Custom_Steps.html) shows how to write your own step functions. 
+ 
+ 
+
+<!--- ************************************************************ -->
+
+## Extending
+
+Recipes can also be created with different roles manually
+
+```{r rec_man, eval = FALSE}
+rec <- recipe(x  = Sacramento) %>%
+  add_role(price, new_role = "outcome") %>%
+  add_role(type, sqft, new_role = "predictor") %>%
+  add_role(zip, new_role = "strata")
+```
+
+Also, the sequential nature of steps means that they don't have to be R operations and could call other compute engines (e.g. Weka, scikit-learn, Tensorflow, etc. )
+
+
+We can create wrappers to work with recipes too:
+```{r lm}
+lin_reg.recipe <- function(rec, data, ...) {
+  trained <- prepare(rec, training = data)
+  lm.fit(x = bake(trained, newdata = data, all_predictors()),
+         y = bake(trained, newdata = data, all_outcomes()), ...)
+}
+```
+
+
+<!--- ************************************************************ -->
+
+## An Example
+
+[Kuhn and Johnson](http://appliedpredictivemodeling.com) (2013) analyze a data set where thousands of cells are determined to be well-segmented (WS) or poorly segmented (PS) based on 58 image features. We would like to make predictions of the segmentation quality based on these features. 
+
+```{r image_load}
+library(dplyr)
+library(caret)
+data("segmentationData")
+
+seg_train <- segmentationData %>% 
+  filter(Case == "Train") %>% 
+  select(-Case, -Cell)
+seg_test  <- segmentationData %>% 
+  filter(Case == "Test")  %>% 
+  select(-Case, -Cell)
+```
+
+
+<!--- ************************************************************ -->
+
+## A Simple Recipe
+
+```{r image_rec}
+rec <- recipe(Class  ~ ., data = seg_train)
+
+basic <- rec %>%
+  # Correct some predictors for skewness
+  step_YeoJohnson(all_predictors()) %>%
+  # Standardize the values
+  step_center(all_predictors()) %>%
+  step_scale(all_predictors())
+
+# Estimate the transformation and standardization parameters 
+basic <- prepare(basic, training = seg_train, verbose = FALSE, retain = TRUE)  
+```
+
+<!--- ************************************************************ -->
+
+## Principal Component Analysis
+
+```{r image_pca}
+pca <- basic %>% step_pca(all_predictors(), threshold = .9)
+summary(pca)
+```
+
+<!--- ************************************************************ -->
+
+## Principal Component Analysis
+
+```{r image_pca_train}
+pca <- prepare(pca)
+summary(pca)
+pca <- bake(pca, newdata = seg_test, everything())
+```
+
+<!--- ************************************************************ -->
+
+## Principal Component Analysis
+
+```{r image_pca_plot, fig.keep="none"}
+pca[1:4, 1:8]
+ggplot(pca, aes(x = PC01, y = PC02, color = Class)) + geom_point(alpha = .4)
+```
+
+<!--- ************************************************************ -->
+
+## Principal Component Analysis
+
+```{r image_pca_fig, echo = FALSE, fig.width = 5.5, fig.height = 5.6}
+rngs <- extendrange(c(pca$PC01, pca$PC02))
+ggplot(pca, aes(x = PC01, y = PC02, color = Class)) + 
+  geom_point(alpha = .4) + 
+  xlim(rngs) + ylim(rngs) + 
+  theme(legend.position = "top")
+```
+
+<!--- ************************************************************ -->
+
+## Kernel Principal Component Analysis
+
+```{r kpca}
+kern_pca <- basic %>% 
+  step_kpca(all_predictors(), num = 2, 
+            options = list(kernel = "rbfdot", 
+                           kpar = list(sigma = 0.05)))
+
+kern_pca <- prepare(kern_pca)
+
+kern_pca <- bake(kern_pca, newdata = seg_test, everything())
+```
+
+<!--- ************************************************************ -->
+
+## Kernel Principal Component Analysis
+
+```{r image_kpca_fig, echo = FALSE, fig.width = 5.5, fig.height = 5.6}
+rngs <- extendrange(c(kern_pca$kPC1, kern_pca$kPC2))
+ggplot(kern_pca, aes(x = kPC1, y = kPC2, color = Class)) + 
+  geom_point(alpha = .4) + 
+  xlim(rngs) + ylim(rngs) + 
+  theme(legend.position = "top")
+```
+<!--- ************************************************************ -->
+
+## Distance to Each Class Centroid
+
+```{r dists, message = FALSE}
+dist_to_classes <- basic %>% 
+  step_classdist(all_predictors(), class = "Class") %>%
+  # Take log of the new distance features
+  step_log(starts_with("classdist"))
+
+dist_to_classes <- prepare(dist_to_classes, verbose = FALSE)
+
+# All variables are retained plus an additional one for each class
+dist_to_classes <- bake(dist_to_classes, newdata = seg_test, matches("[Cc]lass"))
+dist_to_classes
+```
+
+
+<!--- ************************************************************ -->
+
+## Distance to Each Class
+
+```{r image_dists_fig, echo = FALSE, fig.width = 5.5, fig.height = 5.6}
+rngs <- extendrange(c(dist_to_classes$classdist_PS, dist_to_classes$classdist_WS))
+ggplot(dist_to_classes, aes(x = classdist_PS, y = classdist_WS, color = Class)) + 
+  geom_point(alpha = .4) + 
+  xlim(rngs) + ylim(rngs) + 
+  theme(legend.position = "top") + 
+  xlab("Distance to PS Centroid (log scale)") + 
+  ylab("Distance to WS Centroid (log scale)")
+```
+
+<!--- ************************************************************ -->
+
+## Next Steps
+
+* Get it on CRAN once `tidyselect` is on CRAN
+* Add more steps
+* `caret` methods for recipes (instead of using `preProcess`): 
+
+```r
+model1 <- train(recipe, data = data, method, ...)
+```
+
+as an alternative to
+
+```r
+model2 <- train(x, y, method, preProcess, ...) # or
+model3 <- train(y ~ x1 + x2, data = data, method, preProcess, ...)
+```
+
+<!--- ************************************************************ -->
+
+----
+
+```{r, echo = FALSE}
+sessionInfo()
+```
+
+
+<!--- ************************************************************ -->
+
+## Thanks!
+
+
+ 

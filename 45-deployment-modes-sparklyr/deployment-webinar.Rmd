@@ -1,0 +1,321 @@
+---
+title: "Deployment Webinar"
+output: html_notebook
+---
+
+## User configuration: Start small, build slightly bigger
+
+Visit our new [Spark user configuration page](https://spark.rstudio.com/articles/deployment-connections.html)
+
+
+```{r}
+library(sparklyr)
+library(dplyr)
+
+# Somewhat unique to my environment
+Sys.setenv(JAVA_HOME="/usr/lib/jvm/java-7-oracle-cloudera/")
+Sys.setenv(SPARK_HOME = '/opt/cloudera/parcels/CDH/lib/spark')
+```
+
+"Physical" details:
+
+- 4 worker nodes / data nodes
+
+- 15GB in RAM
+
+- 4 cores
+
+- Total 16 cores and 60GB in RAM
+
+Cluster configuration:
+
+- Container Memory - yarn.nodemanager.resource.memory-mb - 32GB - Per node
+
+- Container Memory Maximum - yarn.scheduler.maximum-allocation-mb - 64GB - Per Session
+
+- Container Virtual CPU Cores - yarn.nodemanager.resource.cpu-vcores - 8 - Per node
+
+
+
+```{r}
+conf <- spark_config()
+
+conf$spark.executor.memory <- "1G"
+conf$spark.executor.cores <- 1
+conf$spark.executor.instances <- 10
+conf$spark.dynamicAllocation.enabled <- "false"
+```
+
+```{r}
+sc <- spark_connect(master = "yarn-client", 
+                    version = "1.6.0",
+                    config = conf)
+```
+
+```{r}
+flights_spark <- tbl(sc, "flights")
+```
+
+```{r}
+flights_spark %>%
+  tally
+```
+
+```{r}
+flights_spark %>% 
+  group_by(UniqueCarrier) %>%
+  tally
+```
+
+```{r}
+top_carriers <- flights_spark %>% 
+  group_by(UniqueCarrier) %>%
+  tally %>%
+  arrange(desc(n)) %>%
+  head(25) %>%
+  collect
+
+top_carriers
+```
+
+```{r}
+spark_disconnect(sc)
+```
+
+
+## Give dynamicAllocation a chance
+
+Dynamic allocation may be a good option when the cluster is being shared.  It also reduces complexity at connection time.
+
+```{r}
+sc <- spark_connect(master = "yarn-client", 
+                    version = "1.6.0")
+```
+
+```{r}
+
+tbl_cache(sc, "flights")
+
+flights_spark <- tbl(sc, "flights")
+```
+
+### Loading data into Spark from R
+
+
+This will not work because in a YARN environment, the `sparklyr` session is pointed to the HDFS
+
+```{r}
+planes <- spark_read_csv(sc, "planes", "planes.csv")
+```
+
+
+```{r}
+library(readr)
+planes <- read_csv("planes.csv") %>%
+  select(-X1)
+```
+```{r}
+planes_spark <- copy_to(sc, planes)
+```
+
+```{r}
+flights_all <- flights_spark %>%
+  left_join(planes_spark, by = c("TailNum" = "tailnum"))
+```
+
+```{r}
+flights_all %>%
+  group_by(manufacturer) %>%
+  tally
+```
+
+
+## Point cluster to an external Data Source
+
+A variance of the [Standalone with S3](https://spark.rstudio.com/articles/deployment-amazon-s3.html) article
+
+### Setting my AWS token
+
+```{r}
+aws_key <- config::get("aws")
+Sys.setenv(AWS_ACCESS_KEY_ID = aws_key$keyid)
+Sys.setenv(AWS_SECRET_ACCESS_KEY = aws_key$secretkey)
+```
+
+
+```{r}
+conf <- spark_config()
+  conf$spark.executor.memory <- "8G"
+  conf$spark.executor.cores <- 4
+  conf$spark.executor.instances <- 4
+  conf$spark.dynamicAllocation.enabled <- "false"
+```
+
+Using a Spark package that allows S3 to be read
+
+```{r}
+  conf$sparklyr.defaultPackages <- "org.apache.hadoop:hadoop-aws:2.7.3"  
+```
+
+```{r}
+sc <- spark_connect(master = "yarn-client", 
+                    version = "1.6.0",
+                    config = conf)
+
+```
+
+```{r}
+
+flights <- spark_read_csv(sc, "flights_spark", 
+                          path =  "s3a://flights-data/full", 
+                          memory = FALSE, 
+                          infer_schema = FALSE,
+                          columns = list(
+                            Year = "character",
+                            Month = "character",
+                            DayofMonth = "character",
+                            DayOfWeek = "character",
+                            DepTime = "character",
+                            CRSDepTime = "character",
+                            ArrTime = "character",
+                            CRSArrTime = "character",
+                            UniqueCarrier = "character",
+                            FlightNum = "character",
+                            TailNum = "character",
+                            ActualElapsedTime = "character",
+                            CRSElapsedTime = "character",
+                            AirTime = "character",
+                            ArrDelay = "character",
+                            DepDelay = "character",
+                            Origin = "character",
+                            Dest = "character",
+                            Distance = "character",
+                            TaxiIn = "character",
+                            TaxiOut = "character",
+                            Cancelled = "character",
+                            CancellationCode = "character",
+                            Diverted = "character",
+                            CarrierDelay = "character",
+                            WeatherDelay = "character",
+                            NASDelay = "character",
+                            SecurityDelay = "character",
+                            LateAircraftDelay = "character")
+                          )
+```
+
+### Subset and cache using `compute()`
+
+```{r, eval = FALSE}
+
+  cached_flights <- flights %>%
+  mutate(ArrDelay = as.numeric(ArrDelay),
+         Year = as.numeric(Year),
+         Month = as.numeric(Month),
+         DepTime = as.numeric(DepTime),
+         ArrTime = as.numeric(ArrTime),
+         Distance = as.numeric(Distance),
+         AirTime = as.numeric(AirTime),
+         DepDelay = as.numeric(DepDelay)
+         ) %>%
+  select(Year, Month, DepTime, Distance,
+         AirTime,DepDelay, ArrDelay, Dest, Origin) %>%
+  compute("cached_flights")
+  
+```
+
+### Read from HDFS
+
+```{r}
+airports <- spark_read_csv(sc, "airports", "/user/rstudio/airports.csv")
+```
+
+### Analysis
+
+```{r}
+all_flights <- cached_flights %>%
+  inner_join(airports, by = c("Origin" = "faa"))
+```
+
+```{r}
+top_list <- all_flights %>%
+  group_by(name) %>%
+  tally %>%
+  arrange(desc(n)) %>%
+  head(20) 
+
+top_list
+```
+
+```{r}
+locations <- all_flights %>%
+  group_by(name, lon, lat) %>%
+  tally %>%
+  arrange(desc(n)) %>%
+  head(1000) %>%
+  collect
+
+locations
+```
+
+```{r}
+library(ggplot2)
+
+locations %>%
+  ggplot() +
+    geom_point(aes(lon, lat, color = n, size = n), alpha = 0.2) +
+    theme_classic()
+```
+## dbplot
+
+```{r}
+devtools::install_github("edgararuiz/dbplot")
+library(dbplot)
+```
+
+```{r}
+top <- top_list %>%
+  pull(name)
+
+all_flights %>%
+  filter(name %in% top) %>%
+  dbplot_boxplot(Origin, Distance)
+```
+
+
+## Appendix 
+
+### Create a new Hive table
+
+```{r, eval = FALSE}
+
+  cached_flights <- flights %>%
+  mutate(ArrDelay = as.numeric(ArrDelay),
+         CRSDepTime = as.numeric(CRSDepTime),
+         Year = as.numeric(Year),
+         Month = as.numeric(Month),
+         DepTime = as.numeric(DepTime),
+         ArrTime = as.numeric(ArrTime),
+         CRSArrTime = as.numeric(CRSArrTime),
+         Distance = as.numeric(Distance),
+         FlightNum = as.numeric(FlightNum),
+         AirTime = as.numeric(AirTime),
+         DepDelay = as.numeric(DepDelay)
+         ) %>%
+  select(Year, Month, DepTime, CRSDepTime,
+         CRSArrTime, ArrTime, UniqueCarrier,
+         FlightNum, TailNum, Distance,
+         AirTime,DepDelay) %>%
+  compute("cached_flights")
+  
+
+
+```
+
+
+### Created a new table in Hive
+
+```{r, eval = FALSE}
+spark_write_table(cached_flights, "flights")
+```
+
+

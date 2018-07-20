@@ -1,0 +1,43 @@
+h1, h2, h3, h4, h5, h6 {
+  color: #B33;
+}
+
+.title-slide hgroup h1 {
+  color: #B33;
+}
+
+pre {
+  padding: 10px 20px 10px 20px;
+  left: 0;
+  width: 100%;
+}
+
+blockquote {
+  display: block;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+
+  font-size: 80%;
+  font-style: italic;
+  line-height: 150%;
+
+  background-color: #F9F9F9;
+  border-left: 15px solid #CCC;
+}
+
+blockquote::before {
+  content: "\201C";
+
+  font-size: 60px;
+  font-weight: bold;
+  color: #BBB;
+
+  position: absolute;
+  left: 10px;
+  top: 20px;
+}
+
+blockquote::after {
+  content: "";
+}

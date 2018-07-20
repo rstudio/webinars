@@ -1,0 +1,35 @@
+---
+title: "Continentes"
+output: html_document
+params: 
+  continente: Asia
+---
+
+https://rmarkdown.rstudio.com/developer_parameterized_reports
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+load("datos/paises.rda")
+load("modelos.rds")
+```
+
+```{r}
+cont <- modelos %>%
+  filter(continente == params$continente) %>%
+  select(-continente)
+```
+
+```{r}
+cont %>%
+   mutate(coef = map_dbl(modelo, ~ .x[1]$coefficients["anio"])) %>%
+  ggplot() +
+  geom_point(aes(coef, pais))
+```
+
+```{r}
+modelos %>%
+  mutate()
+```
+

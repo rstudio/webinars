@@ -1,0 +1,64 @@
+---
+title: "Dashboard Singular"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+runtime: shiny
+---
+
+```{r global, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(DT)
+library(shiny)
+load("datos/millas.rda")
+load("modelo.rds")
+
+pred <- predict(modelo, millas)
+
+df <- millas %>%
+  mutate(
+    pred = round(pred),
+    anio = as.character(anio)
+    )
+
+fabricantes <- unique(millas$fabricante)
+
+```
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+```{r}
+selectInput("fabricante", label = "Fabricante",
+            choices = fabricantes)
+```
+
+
+Column
+-----------------------------------------------------------------------
+
+### Autopista vs Predicciones
+
+```{r}
+
+renderPlot({
+  df %>%
+    filter(fabricante == input$fabricante) %>%
+    mutate(
+      id = row_number(),
+      anio = as.character(anio)
+      ) %>%
+    ggplot() +
+    geom_col(aes(id, autopista, fill = anio), alpha = 0.5) +
+    geom_col(aes(id, pred, fill = anio), color = "darkgray", alpha = 0) +
+    geom_text(aes(id, 0.1, label = modelo), size = 2.5, hjust = 0) +
+    geom_text(aes(id, autopista, label = autopista), size = 2, hjust = 1) +
+    geom_text(aes(id, pred, label = pred), size = 2.5, hjust = 0) +
+    coord_flip() +
+    theme_void() +
+    labs(fill = "Autopista")  
+})
+
+
+```

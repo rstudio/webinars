@@ -1,0 +1,154 @@
+---
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    source_code: embed
+params:
+  portfolioName:
+    label: "title"
+    value: "Tech Stocks"
+    input: text
+  stock1: 
+    label: "Stock 1"
+    value: "GOOG"
+    input: text
+  stock2: 
+    label: "Stock 2"
+    value: "AMZN"
+    input: text
+  stock3: 
+    label: "Stock 3"
+    value: "FB"
+    input: text
+  w1: 
+    label: "Weight 1"
+    value: 25
+    input: numeric
+  w2: 
+    label: "Weight 2"
+    value: 25
+    input: numeric
+  w3: 
+    label: "Weight 3"
+    value: 50
+    input: numeric
+  rfr:
+    label: "Risk Free Rate"
+    value: .05
+    input: slider
+    min: 0
+    max: 5
+  date:
+    label: "Start Date"
+    value: "2010-01-01"
+    input: date
+---
+
+
+
+```{r setup, message = FALSE}
+library(flexdashboard)
+library(PerformanceAnalytics)
+library(quantmod)
+library(dygraphs)
+library(forecast)
+
+
+# Function to calculate monthly returns on a stock 
+monthly_stock_returns <- function(ticker, start_date) {
+  # Download the data from Yahoo finance
+  symbol <- getSymbols(ticker, src = 'google', from = start_date, auto.assign = FALSE,
+                       warnings = FALSE) 
+  # Tranform it to monthly returns using the periodReturn function from quantmod
+  data <- periodReturn(symbol, period = 'monthly', type = 'log')
+  
+  # Let's rename the column of returns to something intuitive because the column name is what
+  # will eventually be displayed on the time series graph
+  colnames(data) <- as.character(ticker)
+  
+  # We want to be able to work with the xts objects that result from this function 
+  # so let's explicitly put them to the global environment with an easy to use 
+  # name, the stock ticker
+  assign(ticker, data, .GlobalEnv)
+}
+```
+
+Sharpe Ratio Report for `r params$portfolioName`
+=================================
+
+### Portfolio Performance
+  
+```{r, message = FALSE}
+# Pass in our parameters
+  date <- params$date
+
+  stock1 <- monthly_stock_returns(params$stock1, date)
+  
+  stock2 <- monthly_stock_returns(params$stock2, date)
+  
+  stock3 <- monthly_stock_returns(params$stock3, date)
+  
+  individual_stocks <- merge.xts(stock1, stock2, stock3)
+  
+  rfr <- as.numeric(params$rfr)/100
+  
+  w <- c(params$w1/100, params$w2/100, params$w3/100)
+  
+  portfolio_growth <- Return.portfolio(individual_stocks, weights = w, wealth.index = TRUE)
+  
+  #Use the built in SharpeRatio function in Performance Analytics
+  portfolio_monthly_returns <- Return.portfolio(individual_stocks, weights = w)
+  sharpe <- round(SharpeRatio(portfolio_monthly_returns, Rf = rfr), 4)
+  portfolio_sharpe_ratio <- sharpe[1,]
+  
+  sp500 <- monthly_stock_returns('spy', date)
+  sp500_monthly <- Return.portfolio(sp500)
+  sp500_sharpe<- round(SharpeRatio(sp500_monthly, Rf = rfr), 4)
+  sp500_sharpe_ratio <- sp500_sharpe[1,]
+
+```
+
+Row 
+-----------------------------------------------------------------------
+
+### Growth of $1
+
+```{r}
+
+  dygraph(portfolio_growth, 
+          main = paste("Growth of $1 Invested in ", 
+                       params$stock1, " + ", params$stock2, " + ", params$stock3)) %>%
+    dyAxis("y", label = "$") %>%
+    dyOptions(axisLineWidth = 1.5, fillGraph = TRUE, drawGrid = TRUE)
+
+```
+
+Row {data-height = 200}
+-----------------------------------------------------------------------
+
+### The Sharpe Ratio of Your Portfolio
+
+```{r}
+valueBox(value = portfolio_sharpe_ratio, icon = "fa-line-chart", color = "primary")
+```
+
+### Sharpe Ratio of S&P500 in same time period
+
+```{r}
+  valueBox(value = sp500_sharpe_ratio, icon = "fa-line-chart", color = "primary")
+```
+
+
+Individual Returns
+==========================
+
+### Monthly Returns Line Chart
+
+```{r, message = FALSE}
+
+  dygraph(individual_stocks, main = "Monthly Percentage Returns") %>% 
+    dyAxis("y", label = "%") %>% 
+    dyOptions(colors = RColorBrewer::brewer.pal(3, "Set2")) 
+
+```
+

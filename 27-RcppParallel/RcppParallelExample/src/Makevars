@@ -1,0 +1,6 @@
+# With newer versions of RcppParallel, it is no longer
+# necessary to explicitly ask what linker flags are
+# needed during compilation; however, we include them
+# here regardless for backwards compatibility with
+# older versions of RcppParallel.
+PKG_LIBS += $(shell ${R_HOME}/bin/Rscript -e "RcppParallel::RcppParallelLibs()")
