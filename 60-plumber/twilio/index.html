@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./emoji.js"></script>
+    <style>
+      #emoji {
+        font-size: 1.5em;
+        width: 5em;
+        padding: 5px;
+      }
+      #phone {
+        font-size: 1.4em;
+      }
+      html, body {
+        height: 100%;
+      }
+      #map, .container-fluid, .row, .col{
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+		<nav class="navbar navbar-expand-sm navbar-light bg-light">
+			<a class="navbar-brand" id="titlelink" href="#">Emoji Browser</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<form class="form-inline my-2 my-lg-0">
+          <select id="emoji">
+            <option selected>All</option>
+          </select>
+				</form>
+			</div>
+
+      <ul class="navbar-nav">
+        <li class="nav-item mr-auto">
+          <a class="nav-link" id="call" href="#">📞</a>
+        </li>
+        <li class="nav-item mr-auto">
+          <a class="nav-link" id="phone" href="#">972-218-0013</a>
+        </li>
+      </ul>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col">
+					<img id="plot"></img>
+          <iframe width="100%" id="map"></iframe>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
