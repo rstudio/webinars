@@ -1,0 +1,86 @@
+---
+title: Teradata queries with R
+output: html_notebook
+---
+
+There are many ways to query data with R. This document shows you three of the most common ways to query data:
+
+1. Using DBI
+2. Using dplyr syntax
+3. Using R Notebooks
+
+### Database connection
+
+Connect to your database. In this example, we connect to Teradata by using the `odbc` package. This connection requires a database driver and a data source name (DSN) that have both been configured by the system administrator. Load the `DBI` package and the `tidyverse`.
+
+```{r, message=FALSE}
+library(DBI)
+library(dplyr)
+library(dbplyr)
+con <- dbConnect(odbc::odbc(), "Teradata (DSN)")
+```
+
+### 1. Query using DBI
+
+You can query your data with `DBI` by using the `dbGetQuery` function. Simply paste your SQL code into the R function as a quoted string. This method is sometimes referred to as *pass through SQL code*, and is probably the simplest way to query your data. Care should be used to escape your quotes as needed. For example, `'yes'` is written as `\'yes\'`.
+
+```{r}
+dbGetQuery(con,'
+  select "month_idx", "year", "month",
+  sum(case when "term_deposit" = \'yes\' then 1.0 else 0.0 end) as subscribe,
+  count(*) as total
+  from "bank"
+  group by "month_idx", "year", "month"
+')
+```
+
+### 2. Query using dplyr syntax
+
+You can write your code in `dplyr` syntax, and dplyr will translate your code into SQL. There are several benefits to writing queries in `dplyr` syntax: You can keep the same consistent language both for R objects and database tables; no knowledge of SQL or the specific SQL variant is required; and you can take advantage of the fact that dplyr is lazy in its evaluation. `dplyr` syntax is easy to read, but you can always inspect the SQL translation with the `show_query` function.
+
+```{r}
+q1 <- tbl(con, "bank") %>%
+  group_by(month_idx, year, month) %>%
+  summarise(
+    subscribe = sum(ifelse(term_deposit == "yes", 1, 0), na.rm = TRUE),
+    total = n())
+show_query(q1)
+```
+
+### 3. Query using an R Notebooks
+
+It is not well known that you can run SQL code in an [R Notebook](http://rmarkdown.rstudio.com/r_notebooks.html) code chunk. To use SQL, open an [R Notebook](http://rmarkdown.rstudio.com/r_notebooks.html) in the RStudio IDE under the `File > New File` menu. Start a new code chunk with `{sql}`, and specify your connection with the `connection=con` code chunk option. If you want to send the query output to an R dataframe use `output.var = "mydataframe"` in the code chunk options. When you specify `output.var` you will be able to use the output in subsequent R code chunks. In this example, we use the output in ggplot.
+
+```{sql, connection=con, output.var = "mydataframe"}
+SELECT "month_idx", "year", "month", SUM(CASE WHEN ("term_deposit" = 'yes') THEN (1.0) ELSE (0.0) END) AS "subscribe", COUNT(*) AS "total"
+FROM "bank"
+GROUP BY "month_idx", "year", "month"
+```
+
+```{r}
+library(ggplot2)
+ggplot(mydataframe, aes(total, subscribe, color = year)) +
+  geom_point() +
+  xlab("Total contacts") +
+  ylab("Term Deposit Subscriptions") +
+  ggtitle("Contact volume")
+```
+
+The benefits to using SQL in a code chunk are that you can paste your SQL code without any modification. For example, you do not have to escape quotes. If you are using the proverbial *spaghetti code* that is hundreds of lines long, then a SQL code chunk might be a good option. Another benefit is that the SQL code in a code chunk is highlighted, making it very easy to read. For more information on SQL engines, see [knitr language engines](http://rmarkdown.rstudio.com/authoring_knitr_engines.html).
+
+### Summary
+
+There is no single best way to query data with R. You have many methods to chose from and each method has its advantages. Here are some of the advantages using the methods described in this article.
+
+1. DBI::dbGetQuery       
+    - Fewer dependencies required                  
+2. dplyr syntax
+    - Use the same syntax for R and database objects
+    - No knowledge of SQL required                 
+    - Code is standard across SQL variants         
+    - Lazy evaluation                              
+3. R Notebook 
+    - SQL engine Copy and paste SQL -- no formatting required 
+    - SQL syntax is highlighted                    
+
+*You can download the R Notebook for these examples [here](http://rpubs.com/nwstephens/318586).*

@@ -1,0 +1,7 @@
+drink,volume,alc_prop,color
+beer,33,0.05,darkgoldenrod
+wine,20,0.15,red
+long drink,25,0.05,blue
+cocktail,15,0.16,purple
+shot,4,0.4,darkgreen
+eggnog,30,0.08,orange2

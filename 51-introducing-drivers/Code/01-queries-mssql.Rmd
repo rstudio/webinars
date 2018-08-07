@@ -1,0 +1,54 @@
+---
+title: "SQL Server queries with R"
+output: html_notebook
+---
+
+```{r setup, message=FALSE}
+library(DBI)
+library(dplyr)
+library(dbplyr)
+con <- dbConnect(odbc::odbc(), "SQL Server (DSN)")
+```
+
+# DBI
+
+```{r}
+dbGetQuery(con,'
+  select "month_idx", "year", "month",
+  sum(case when "term_deposit" = \'yes\' then 1.0 else 0.0 end) as subscribe,
+  count(*) as total
+  from "bank"
+  group by "month_idx", "year", "month"
+')
+```
+
+# dplyr
+
+```{r}
+tbl(con, "bank") %>%
+  group_by(month_idx, year, month) %>%
+  summarise(
+    subscribe = sum(ifelse(term_deposit == "yes", 1, 0)),
+    total = n()
+    )
+```
+
+# SQL Language Engine
+
+```{sql, connection=con}
+SELECT "month_idx", "year", "month", 
+       SUM(CASE WHEN ("term_deposit" = 'yes') THEN (1.0) ELSE (0.0) END) AS "subscribe",
+       COUNT(*) AS "total"
+FROM "bank" 
+GROUP BY "month_idx", "year", "month"
+```
+
+
+
+
+
+
+
+
+
+
