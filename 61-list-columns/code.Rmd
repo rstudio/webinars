@@ -1,0 +1,253 @@
+---
+title: "61-list-columns"
+output: html_document
+---
+
+```{r setup, echo = FALSE}
+library(tidyverse)
+```
+
+```{r}
+library(babynames)
+babynames
+# For concision, the slide actually displays
+# babynames %>% group_by(year, sex) %>% top_n(3)
+```
+
+```{r}
+filter(babynames, name == "Mary")
+```
+
+## Data Structures in R
+
+```{r}
+1
+c(1, 2, 3.14)
+is.vector(1)
+is.vector(c(1, 2, 3.14))
+```
+
+```{r}
+typeof(c(1, 2, 3.14))
+```
+
+```{r}
+typeof(c(1L, 2L, 3L))
+```
+
+```{r}
+typeof(c("a", "b", "c"))
+```
+
+```{r}
+typeof(c(TRUE, FALSE))
+```
+
+```{r}
+x <- c(1L, 2L, 3L)
+x
+
+class(x) <- "Date"
+x
+
+class(x) <- "factor"
+levels(x) <- c("Blue", "Brown", "Green")
+x
+
+dim(x) <- c(3, 1)
+x
+```
+
+```{r}
+(y <- list(a = c(1, 2, 3.14), 
+           b = c("a", "b", "c"), 
+           c = c(TRUE, FALSE, FALSE)))
+typeof(y)
+is.vector(y)
+```
+
+```{r}
+class(y) <- "data.frame"
+rownames(y) <- c("1", "2", "3")
+y
+```
+
+```{r}
+y$d <- list(p = 1:3, q = TRUE, r = 0L) 
+y
+y$d
+```
+
+
+
+## Data frames, Tibbles, and List Columns
+
+```{r}
+data.frame(a = c(1, 2, 3.14), 
+           b = c("a", "b", "c"), 
+           c = c(TRUE, FALSE, FALSE))
+```
+
+```{r}
+data.frame(list(a = c(1, 2, 3.14), 
+                b = c("a", "b", "c"), 
+                c = c(TRUE, FALSE, FALSE)))
+```
+
+```{r}
+data.frame(a = c(1, 2, 3.14), 
+           b = c("a", "b", "c"), 
+           c = c(TRUE, FALSE, FALSE),
+           d = list(p = 1:3, q = TRUE, r = 0L))
+```
+
+```{r}
+z <- data.frame(a = c(1, 2, 3.14), 
+                b = c("a", "b", "c"), 
+                c = c(TRUE, FALSE, FALSE))
+z$d <- list(p = 1:30, q = TRUE, r = 0L)
+z
+```
+
+```{r}
+library(tibble)
+class(z) <- c("tbl_df", "tbl", "data.frame")
+z
+```
+
+```{r}
+as_tibble(z)
+```
+
+```{r}
+tibble(a = c(1, 2, 3.14), 
+       b = c("a", "b", "c"), 
+       c = c(TRUE, FALSE, FALSE),
+       d = list(p = 1:3, q = TRUE, r = 0L))
+```
+
+```{r}
+tribble(~a,  ~b,    ~c,       ~d,
+         1, "a",  TRUE,  p = 1:3,
+         2, "b", FALSE, q = TRUE,
+      3.14, "c", FALSE,   r = 0L)
+```
+
+## Single table verbs +
+
+## Composing functions
+
+```{r}
+filter(babynames, name == "Mary")
+babynames %>% filter(name == "Mary")
+```
+
+```{r}
+babynames %>% 
+  select(-prop) %>% 
+  filter(!is.na(n)) %>% 
+  group_by(year, sex) %>% 
+  summarise(records = sum(n)) %>% 
+  ggplot(mapping = aes(x = year, y = records)) +
+    geom_line(mapping = aes(color = sex))
+```
+
+```{r}
+y 
+```
+
+```{r}
+y %>% 
+  mutate(a_square = sqrt(a))
+```
+
+```{r}
+y %>% 
+  mutate(d_square = map(d, sqrt))
+```
+
+## map() functions
+
+## List Columns Case Study
+
+The data set
+
+```{r}
+library(babynames)
+babynames
+```
+
+I'm reducing the data to just the names that appeared every single year.
+
+```{r}
+everpresent <- 
+  babynames %>% 
+  group_by(name, sex) %>% 
+  summarise(years = n()) %>% 
+  ungroup() %>% 
+  filter(years == max(years))
+
+babynames <- 
+  babynames %>% 
+  semi_join(everpresent)
+```
+
+First, let's prototype what we want to do with a single name.
+
+```{r}
+joe <- 
+  babynames %>% 
+  filter(name == "Joe" & sex == "M")
+```
+
+```{r}
+joe  %>% 
+  ggplot(mapping = aes(x = year, y = prop)) +
+  geom_line() +
+  geom_smooth(method = lm)
+```
+
+```{r}
+library(broom)
+
+joe_mod <- lm(prop ~ year, data = joe)
+coef(joe_mod)
+pluck(coef(joe_mod), "year")
+glance(joe_mod)
+pluck(glance(joe_mod), "r.squared")
+```
+
+```{r}
+babymods <- 
+  babynames %>% 
+  group_by(name, sex) %>% 
+  nest() %>% 
+  mutate(model = map(data, ~lm(prop ~ year, data = .x)),
+         slope = map_dbl(model, ~pluck(coef(.x), "year")),
+         r_squared = map_dbl(model, ~pluck(glance(.x), "r.squared")))
+```
+
+```{r}
+babymods %>% 
+  arrange(desc(slope)) %>% 
+  head(5) %>% 
+  unnest(data) %>% 
+  ggplot(mapping = aes(x = year, y = prop)) +
+    geom_line(mapping = aes(color = name))
+```
+
+```{r}
+babymods %>% 
+  arrange(r_squared) %>% 
+  head(5) %>% 
+  unnest(data) %>% 
+  ggplot(mapping = aes(x = year, y = prop)) +
+    geom_line(mapping = aes(color = name))
+```
+
+## The Tao of Tidy
+
+```{r}
+sum(babynames$n)
+```
+
