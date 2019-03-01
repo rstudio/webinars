@@ -1,0 +1,16 @@
+.principles {
+  font-size: 150%;
+}
+
+.highlight {
+  font-size: 125%;
+  color: red;
+  line-height: 1.5em;
+  /* color: #119dff; */
+  display: inline;
+}
+
+
+a {
+  color: #119dff !important;
+}
