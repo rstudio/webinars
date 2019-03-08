@@ -8,7 +8,7 @@ library(tidyverse)
 ```
 
 
-## Leer multiples archivos
+## Funciones vectorizadas
 
 Filtrar el listado de archivos que contienen los datos
 
@@ -17,6 +17,41 @@ archivos <- list.files(pattern = "datos_")
 
 archivos
 ```
+
+`?file_info`
+
+path = A  character **vector of one or more** paths
+path = Un character **vector de uno o  mas ** archivos
+
+```{r}
+library(fs)
+
+file_info(archivos)
+```
+```{r}
+file_info(archivos) %>%
+  View()
+```
+
+
+`paste0()` y `paste()` tambien son funciones vectorizadas
+```{r}
+paste0("hola--", archivos)
+```
+
+Funciones the `stringr` son vectorizadas
+```{r}
+str_remove(archivos, "datos_")
+```
+
+Y se puenden combinar con `%>%` facilmente
+```{r}
+str_remove(archivos, "datos_") %>%
+  str_remove("_grado.csv")
+```
+
+
+## Leer multiples archivos
 
 Utilize `map()` para leer todos los archivos y despues recibir un solo objecto tipo lista.
 
@@ -95,6 +130,47 @@ datos_limpios <- datos %>%
 datos_limpios
 ```
 
+## Grupos de datos
+
+Utilize `nest()`, proveido por el paquete `tidyr`, para crear una variable de listas.  Dentro de cada lista, va a crear un `tibble`
+
+```{r}
+grupos <-  datos_limpios %>%
+  group_by(matricula, materia) %>%
+  nest()
+
+grupos
+```
+
+El contenido del `tibble` no es legible directamente.  Hay que sacar los datos usando algo como `pull()` para verlos. 
+
+```{r}
+grupos %>%
+  head(1) %>%
+  pull(data) 
+```
+
+A este punto, se puede utilizar `map()` para corren una operacion sobre cada groupo.  En este caso, un modelo linear por cada alumno, y por cada materia.
+```{r}
+grupos <- grupos %>%
+  mutate(model  = map(data, ~lm(puntos ~ mes, data = .x)))
+grupos
+```
+
+Mas funciones se pueden agregar, como en este caso predicciones usando cada modelo.  `map()` devuelve los resultados dentro una lista. 
+
+```{r}
+grupos %>%
+  mutate(preds = map(model, ~predict(.x, data.frame(mes = 7))))
+```
+
+La funcion `map_dbl()` devuelve los resultados en como un numero. 
+```{r}
+grupos %>%
+  mutate(preds = map_dbl(model, ~predict(.x, data.frame(mes = 7))))
+```
+
+
 ## `map()` y tablas
 
 `map()` considera tablas, como `tibble`s y `data.frame`s, como operaciones de columnas y no lineas.  
@@ -110,13 +186,17 @@ Usualmente, es necesario correr los ciclos por cada linea y no columna.  Para es
 
 ```{r}
 estudiantes <- datos_limpios %>%
-  group_by(matricula, primer, apellido) %>%
+  group_by(matricula, grado, primer, apellido) %>%
   summarise() %>%
   transpose() 
 
 estudiantes[1]
 ```
 
+## Crear reportes automaticamente
+
+
+`render()` y `map()` se pueden utilizar para multiples reportes
 https://resources.rstudio.com/espanol/comunicando-resultados-con-r-edgar-ruiz
 
 ```{r}
@@ -126,10 +206,26 @@ map(estudiantes, ~
     render(
       "reporte_tarjetas.Rmd", 
       params = list(matricula = .x$matricula),
-      output_file = paste0(.x$matricula, "-", .x$primer, "-", .x$apellido, ".html"),
+      output_file = paste0(
+        .x$grado, "_", .x$matricula, "-", .x$primer, "-", .x$apellido, ".html"
+        ),
       output_dir = "tarjetas",
       quiet = TRUE
-      )
-)
-
+      ))
 ```
+
+Con la nueva integracion de RMarkdown y PowerPoint, se pueden crear presentaciones automaticamente
+```{r}
+map(estudiantes, ~ 
+    render(
+      "presentacion_tarjetas.Rmd", 
+      params = list(matricula = .x$matricula),
+      output_file = paste0(
+        .x$grado, "_", .x$matricula, "-", .x$primer, "-", .x$apellido, ".pptx"
+        ),
+      output_dir = "presentaciones",
+      quiet = TRUE
+      ))
+```
+
+
