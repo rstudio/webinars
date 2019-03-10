@@ -198,7 +198,7 @@ estudiantes[1]
 `render()` y `map()` se pueden utilizar para multiples reportes
 https://resources.rstudio.com/espanol/comunicando-resultados-con-r-edgar-ruiz
 
-```{r}
+```{r, eval = FALSE}
 library(rmarkdown)
 
 map(estudiantes, ~ 
@@ -214,7 +214,7 @@ map(estudiantes, ~
 ```
 
 Con la nueva integracion de RMarkdown y PowerPoint, se pueden crear presentaciones automaticamente
-```{r}
+```{r, eval = FALSE}
 map(estudiantes, ~ 
     render(
       "presentacion_tarjetas.Rmd", 
