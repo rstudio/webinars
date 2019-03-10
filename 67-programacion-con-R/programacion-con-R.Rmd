@@ -132,12 +132,11 @@ datos_limpios
 
 ## Grupos de datos
 
-Utilize `nest()`, proveido por el paquete `tidyr`, para crear una variable de listas.  Dentro de cada lista, va a crear un `tibble`
+Utilize `group_nest()` para agrupar los datos en listas individuales.  Dentro de cada lista, va a crear un `tibble`
 
 ```{r}
 grupos <-  datos_limpios %>%
-  group_by(matricula, materia) %>%
-  nest()
+  group_nest(matricula, materia) 
 
 grupos
 ```
