@@ -3,7 +3,7 @@ title: "Programacion con R"
 output: html_notebook
 ---
 
-```{r}
+```{r setup, include=FALSE}
 library(tidyverse)
 ```
 
@@ -13,7 +13,9 @@ library(tidyverse)
 Filtrar el listado de archivos que contienen los datos
 
 ```{r}
-archivos <- list.files(pattern = "datos_")
+library(fs)
+
+archivos <- dir_ls(glob = "datos_*") 
 
 archivos
 ```
@@ -24,19 +26,14 @@ path = A  character **vector of one or more** paths
 path = Un character **vector de uno o  mas ** archivos
 
 ```{r}
-library(fs)
+library(tidyverse)
 
 file_info(archivos)
 ```
-```{r}
+```{r, eval = FALSE}
 file_info(archivos) %>%
   View()
-```
 
-
-`paste0()` y `paste()` tambien son funciones vectorizadas
-```{r}
-paste0("hola--", archivos)
 ```
 
 Funciones the `stringr` son vectorizadas
@@ -66,53 +63,39 @@ map(archivos, read_csv) %>%
   bind_rows()
 ```
 
-`map_df()` permite hacer esos dos pasos en un solo comando. Es muy conveniente en muchos casos, pero en este caso hace falta la identificacion de los grados.
+`map_dfr()` permite hacer esos dos pasos en un solo comando. Es muy conveniente en muchos casos, pero en este caso hace falta la identificacion de los grados.
 
 ```{r}
-map_df(archivos, read_csv)
+map_dfr(archivos, read_csv)
 ```
 
 ## Preparar multiples archivos
 
-Utilizar `~` y `.x` de la funcion `map()` resulta en el mismo resultado.  Tambien podemos utilizar el `%>%` 
-
 ```{r}
 archivos %>%
-  map(~read_csv(.x))
+  map_dfr(~read_csv(.x))
 ```
 
-La differencia es que ahora podemos pasar mas de un comando. En este caso, re-utilizamos el nombre del archivo para crear una nueva variable.
+Gracias a que usamos `fs` para obtener los archivos. La funcion `dir_ls()` retiene el nombre de el archivo como el nombre de miembro de la lista.  
 
 ```{r}
-archivos %>%
-  map(~read_csv(.x) %>% mutate(origen = .x))
+names(archivos)
 ```
 
-Igual que en las seccion anterior, usamos `bind_rows()` para crear una sola tabla.
+Eso permite que `map_dfr()` agrege una columna del nombre que querramos por medio de usar el argumento `.id`.
 
 ```{r}
 archivos %>%
-  map(~read_csv(.x) %>% mutate(origen = .x)) %>%
-  bind_rows()
-```
-```{r}
-archivos %>%
-  map(~read_csv(.x) %>% mutate(origen = .x)) %>%
-  bind_rows() %>%
-    mutate(
-    grado = str_remove(origen, "datos_"),
-    grado = str_remove(grado, "_grado.csv")
-  )
+  map_dfr(read_csv, .id = "archivo")
 ```
 
 Los resultados los podemos grabar en una variable.
 
 ```{r}
-datos <- list.files(pattern = "datos_") %>%
-  map(~read_csv(.x) %>% mutate(origen = .x)) %>%
-  bind_rows() %>%
-    mutate(
-    grado = str_remove(origen, "datos_"),
+datos <- dir_ls(glob = "datos_*")  %>%
+  map_df(read_csv, .id = "archivo") %>%
+  mutate(
+    grado = str_remove(archivo, "datos_"),
     grado = str_remove(grado, "_grado.csv")
   )
 
@@ -226,5 +209,3 @@ map(estudiantes, ~
       quiet = TRUE
       ))
 ```
-
-
