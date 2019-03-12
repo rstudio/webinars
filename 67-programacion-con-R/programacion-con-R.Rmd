@@ -89,15 +89,28 @@ archivos %>%
   map_dfr(read_csv, .id = "archivo")
 ```
 
+La funcion `separate()` separa los valores dentro del archivo basado en characteres especificos, como: "_" y las comas. Se necesita pasar el nombre de la variable para separar, y un vector con lost nombres de las nuevas columnas 
+
+```{r}
+dir_ls(glob = "datos_*")  %>%
+  map_df(read_csv, .id = "archivo") %>%
+  separate(archivo, c("uno", "dos", "tres", "cuatro"))
+```
+
+Utilize `NA` para no crear variables especificas.  En este caso, solo necesitamos el segundo valor.
+
+```{r}
+dir_ls(glob = "datos_*")  %>%
+  map_df(read_csv, .id = "archivo") %>%
+  separate(archivo, c(NA, "grado"))
+```
+
 Los resultados los podemos grabar en una variable.
 
 ```{r}
 datos <- dir_ls(glob = "datos_*")  %>%
   map_df(read_csv, .id = "archivo") %>%
-  mutate(
-    grado = str_remove(archivo, "datos_"),
-    grado = str_remove(grado, "_grado.csv")
-  )
+  separate(archivo, c(NA, "grado", NA))
 
 datos
 ```
