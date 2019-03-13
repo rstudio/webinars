@@ -1,0 +1,45 @@
+---
+title: "Tarjeta de estudiante"
+output: powerpoint_presentation
+params:
+  matricula: 100
+---
+
+## Resultados
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+
+estudiante <- list.files(pattern = "datos_") %>%
+  map(~read_csv(.x) %>% mutate(origen = .x)) %>%
+  bind_rows() %>%
+    mutate(
+    grado = str_remove(origen, "datos_"),
+    grado = str_remove(grado, "_grado.csv")
+  ) %>%
+  filter(matricula == params$matricula) %>%
+  separate(nombre, into = c("apellido", "primer")) %>% 
+  separate(fecha, into = c("dia", "mes", "año"), convert = TRUE) %>% 
+  gather("materia", "puntos", "matematica", "ingles")
+
+
+```
+
+```{r, echo = FALSE}
+nombre <- estudiante %>%
+  group_by(primer, apellido) %>%
+  summarise() %>%
+  as.character() %>%
+  paste0(collapse = " ")
+
+estudiante %>%
+  ggplot() +
+  geom_line(aes(mes, puntos, group = materia, color = materia)) +
+  labs(title = nombre)
+```
+
+## Comentarios del maestro
+
+Ponga su comentario aqui
+

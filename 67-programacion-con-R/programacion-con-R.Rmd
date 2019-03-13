@@ -1,0 +1,224 @@
+---
+title: "Programacion con R"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+```
+
+
+## Funciones vectorizadas
+
+Filtrar el listado de archivos que contienen los datos
+
+```{r}
+library(fs)
+
+archivos <- dir_ls(glob = "datos_*") 
+
+archivos
+```
+
+`?file_info`
+
+path = A  character **vector of one or more** paths
+path = Un character **vector de uno o  mas ** archivos
+
+```{r}
+library(tidyverse)
+
+file_info(archivos)
+```
+```{r, eval = FALSE}
+file_info(archivos) %>%
+  View()
+
+```
+
+Funciones the `stringr` son vectorizadas
+```{r}
+str_remove(archivos, "datos_")
+```
+
+Y se puenden combinar con `%>%` facilmente
+```{r}
+str_remove(archivos, "datos_") %>%
+  str_remove("_grado.csv")
+```
+
+
+## Leer multiples archivos
+
+Utilize `map()` para leer todos los archivos y despues recibir un solo objecto tipo lista.
+
+```{r}
+map(archivos, read_csv)
+```
+
+Con `bind_rows()`, cortesia de `dplyr`, se pueden combinar los datos dentro de la lista en una sola tabla.
+
+```{r}
+map(archivos, read_csv) %>% 
+  bind_rows()
+```
+
+`map_dfr()` permite hacer esos dos pasos en un solo comando. Es muy conveniente en muchos casos, pero en este caso hace falta la identificacion de los grados.
+
+```{r}
+map_dfr(archivos, read_csv)
+```
+
+## Preparar multiples archivos
+
+```{r}
+archivos %>%
+  map_dfr(~read_csv(.x))
+```
+
+Gracias a que usamos `fs` para obtener los archivos. La funcion `dir_ls()` retiene el nombre de el archivo como el nombre de miembro de la lista.  
+
+```{r}
+names(archivos)
+```
+
+Eso permite que `map_dfr()` agrege una columna del nombre que querramos por medio de usar el argumento `.id`.
+
+```{r}
+archivos %>%
+  map_dfr(read_csv, .id = "archivo")
+```
+
+La funcion `separate()` separa los valores dentro del archivo basado en characteres especificos, como: "_" y las comas. Se necesita pasar el nombre de la variable para separar, y un vector con lost nombres de las nuevas columnas 
+
+```{r}
+dir_ls(glob = "datos_*")  %>%
+  map_df(read_csv, .id = "archivo") %>%
+  separate(archivo, c("uno", "dos", "tres", "cuatro"))
+```
+
+Utilize `NA` para no crear variables especificas.  En este caso, solo necesitamos el segundo valor.
+
+```{r}
+dir_ls(glob = "datos_*")  %>%
+  map_df(read_csv, .id = "archivo") %>%
+  separate(archivo, c(NA, "grado"))
+```
+
+Los resultados los podemos grabar en una variable.
+
+```{r}
+datos <- dir_ls(glob = "datos_*")  %>%
+  map_df(read_csv, .id = "archivo") %>%
+  separate(archivo, c(NA, "grado", NA))
+
+datos
+```
+
+https://resources.rstudio.com/espanol/2018-05-23-13-01-usando-r-para-la-ciencia-de-datos-edgar-ruiz-edited
+
+```{r}
+datos_limpios <- datos %>%
+  separate(nombre, into = c("apellido", "primer")) %>% 
+  separate(fecha, into = c("dia", "mes", "año"), convert = TRUE) %>% 
+  gather("materia", "puntos", "matematica", "ingles")
+
+datos_limpios
+```
+
+## Grupos de datos
+
+Utilize `group_nest()` para agrupar los datos en listas individuales.  Dentro de cada lista, va a crear un `tibble`
+
+```{r}
+grupos <-  datos_limpios %>%
+  group_nest(matricula, materia) 
+
+grupos
+```
+
+El contenido del `tibble` no es legible directamente.  Hay que sacar los datos usando algo como `pull()` para verlos. 
+
+```{r}
+grupos %>%
+  head(1) %>%
+  pull(data) 
+```
+
+A este punto, se puede utilizar `map()` para corren una operacion sobre cada groupo.  En este caso, un modelo linear por cada alumno, y por cada materia.
+```{r}
+grupos <- grupos %>%
+  mutate(model  = map(data, ~lm(puntos ~ mes, data = .x)))
+grupos
+```
+
+Mas funciones se pueden agregar, como en este caso predicciones usando cada modelo.  `map()` devuelve los resultados dentro una lista. 
+
+```{r}
+grupos %>%
+  mutate(preds = map(model, ~predict(.x, data.frame(mes = 7))))
+```
+
+La funcion `map_dbl()` devuelve los resultados en como un numero. 
+```{r}
+grupos %>%
+  mutate(preds = map_dbl(model, ~predict(.x, data.frame(mes = 7))))
+```
+
+
+## `map()` y tablas
+
+`map()` considera tablas, como `tibble`s y `data.frame`s, como operaciones de columnas y no lineas.  
+
+```{r}
+datos_limpios %>%
+  group_by(matricula, primer, apellido) %>%
+  summarise() %>%
+  map(~.x)
+```
+
+Usualmente, es necesario correr los ciclos por cada linea y no columna.  Para eso, podemos utilizar `transpose()`.
+
+```{r}
+estudiantes <- datos_limpios %>%
+  group_by(matricula, grado, primer, apellido) %>%
+  summarise() %>%
+  transpose() 
+
+estudiantes[1]
+```
+
+## Crear reportes automaticamente
+
+
+`render()` y `map()` se pueden utilizar para multiples reportes
+https://resources.rstudio.com/espanol/comunicando-resultados-con-r-edgar-ruiz
+
+```{r, eval = FALSE}
+library(rmarkdown)
+
+map(estudiantes, ~ 
+    render(
+      "reporte_tarjetas.Rmd", 
+      params = list(matricula = .x$matricula),
+      output_file = paste0(
+        .x$grado, "_", .x$matricula, "-", .x$primer, "-", .x$apellido, ".html"
+        ),
+      output_dir = "tarjetas",
+      quiet = TRUE
+      ))
+```
+
+Con la nueva integracion de RMarkdown y PowerPoint, se pueden crear presentaciones automaticamente
+```{r, eval = FALSE}
+map(estudiantes, ~ 
+    render(
+      "presentacion_tarjetas.Rmd", 
+      params = list(matricula = .x$matricula),
+      output_file = paste0(
+        .x$grado, "_", .x$matricula, "-", .x$primer, "-", .x$apellido, ".pptx"
+        ),
+      output_dir = "presentaciones",
+      quiet = TRUE
+      ))
+```
