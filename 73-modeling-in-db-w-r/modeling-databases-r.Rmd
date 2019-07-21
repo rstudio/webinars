@@ -4,15 +4,18 @@ output: html_notebook
 ---
 
 ```{r setup, include = FALSE}
-library(modeldb)
-library(DBI)
 library(tidyverse)
+library(tidymodels)
+
+library(DBI)
+library(dbplyr)
+
 library(dbplot)
 library(tidypredict)
 library(modeldb)
 library(corrr)
-library(tidymodels)
-library(corrr)
+
+library(rstudioapi)
 library(rlang) 
 library(yaml)
 ```
@@ -133,6 +136,13 @@ library(dbplot)
 taxi_sample %>%
   dbplot_histogram(tip_amount, binwidth = 1)
 ```
+
+```{r, eval = FALSE}
+library(rstudioapi)
+
+jobRunScript("R/taxi-histogram.R", exportEnv = "R_GlobalEnv")
+```
+
 
 ```{r}
 # Several minutes - Run R/taxi-histogram.R
@@ -319,7 +329,7 @@ diabetes <- tbl(con, "diabetes")
 diabetes <- read_rds("data/diabetes.rds")
 ```
 
-In the original model, the predictors were pre-processed.  They standardize the values of the predictors in a very specific way.  To recreate the changes, we will use `rlang` to recreate the formula using *tidyeval*.  The latest version of `rlang` allows us to use the `{{}}` operator to capture the value of the name of the field passed.
+In the original model, the predictors were pre-processed.  They standardize the values of the predictors in a very specific way.  To recreate the changes, we will use `rlang` to recreate the formula using *tidyeval*.  The latest version of `rlang` allows us to use the `{{}}` operator to capture the value of the name of the field passed.  The formula is courtesy of Nathan Stephens of RStudio.
 
 ```{r, eval = FALSE}
 library(rlang)
@@ -361,11 +371,27 @@ diabetes_l2norm %>%
   select(r2)
 ```
 
-## `modeldb`
+### `broom` integration
+
+`broom`'s `tidy()` function returns the list of coefficients in an easy to read table. `tidypredict` parsed models can be converted into a `tidy()` table.  At this time linear regression models are the only ones supported.
 
 ```{r}
-set.seed(100)
-sample_size <- 5000
+broom::tidy(python_model)
+```
+
+
+## `modeldb`
+
+Fit models inside the database. modeldb works with most databases back-ends because it leverages dplyr and dbplyr for the final SQL translation of the algorithm. It currently supports: K-means clustering and Linear regression - https://tidymodels.github.io/modeldb/
+
+
+### Sampling 
+
+We will take a new sample of 500 records, using the same approach as before
+
+```{r}
+set.seed(200)
+sample_size <- 500
 
 id_range <- taxi %>%
   summarise(from = min(id, na.rm = TRUE), to = max(id, na.rm = TRUE)) %>%
@@ -374,19 +400,31 @@ id_range <- taxi %>%
 sample_ids <- sample(id_range$from:id_range$to, size = sample_size)
 ```
 
+The data can be prepared using `dplyr`.  `modeldb` includes a `add_dummy_variables()` function that creates a single column per value of the passed field.  The values can be derived from the database, or set manually
 
 ```{r}
-mdb <- taxi %>%
+mdb_prep <- taxi %>%
   select(id, tip_amount, trip_distance, payment_type) %>%
   filter(id %in% !! sample_ids) %>%
   select(-id) %>%
   add_dummy_variables(payment_type, values = 1:6) %>%
-  select(tip_amount, trip_distance, payment_type_2) %>%
+  select(tip_amount, trip_distance, payment_type_2)
+
+mdb_prep
+```
+
+The lazy `dplyr` code can be passed to `linear_regression_db()` in order to create the model.  The `sample_size` argument is used so that `linear_regression_db()`  can avoid performing a row count. 
+
+```{r}
+mdb <- mdb_prep %>%
   linear_regression_db(tip_amount, sample_size)
 
 mdb
 ```
 
+### Integration with `tidypredict`
+
+The fitted results from `modeldb` can be used to score data inside the database via `tidypredict`.  The `as_parsed_model()` function will create the proper R and with the correct spec.
 
 ```{r}
 pm <- as_parsed_model(mdb)
@@ -394,6 +432,7 @@ pm <- as_parsed_model(mdb)
 str(pm, 2)
 ```
 
+The parsed `modeldb` variable can now be used with the rest of the `tidypredict` API
 
 ```{r}
 tidypredict_fit(pm)
@@ -407,45 +446,57 @@ taxi %>%
 ```
 
 ```{r}
+write_yaml(pm, "modeldb.yml")
+```
+
+
+### `broom`
+
+Since the `pm` variable is a parsed model, it can also be displayed in the `tidy()` format.
+
+```{r}
 broom::tidy(pm)
 ```
 
+### Metrics
+
+To calculate the R2 from the training data, use the same filter to select the sample records
+
 ```{r}
-cor_mdb <- taxi %>%
-  select(id, tip_amount, trip_distance, payment_type) %>%
+taxi %>%
   filter(id %in% !! sample_ids) %>%
-  select(-id) %>%
   add_dummy_variables(payment_type, values = 1:6) %>%
   select(tip_amount, trip_distance, payment_type_2) %>%
   tidypredict_to_column(pm) %>%
   select(tip_amount, fit) %>%
-  correlate(quiet = TRUE)
-
-cor_mdb
-```
-
-```{r}
-cor_mdb %>%
+  correlate(quiet = TRUE) %>% 
   select(fit) %>%
   filter(!is.na(fit)) %>%
   mutate(r2 = fit ^ 2)
+
 ```
 
+The same basic transformation can be used to prepare and run the R2 calculation over the entire taxi table
 
-```{r}
-## 1 minute
-
-taxi %>%
+```{r, eval = FALSE}
+modeldb_r2 <- taxi %>%  
   add_dummy_variables(payment_type, values = 1:6) %>%
-  select(tip_amount, trip_distance, payment_type_2) %>%
   tidypredict_to_column(pm) %>%
   select(tip_amount, fit) %>%
   correlate(quiet = TRUE) %>%
   select(fit) %>%
   filter(!is.na(fit)) %>%
   mutate(r2 = fit ^ 2)
-
 ```
+
+```{r, eval = FALSE}
+jobRunScript("R/modeldb-r2.R", exportEnv = "R_GlobalEnv")
+```
+
+```{r}
+modeldb_r2
+```
+
 
 
 ```{r, eval = FALSE}

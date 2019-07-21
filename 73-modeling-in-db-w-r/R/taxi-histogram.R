@@ -17,3 +17,4 @@ tip_amount_histogram <- taxi %>%
   dbplot_histogram(tip_amount, binwidth = 1)
 
 dbDisconnect(con1)
+rm(taxi, con1)

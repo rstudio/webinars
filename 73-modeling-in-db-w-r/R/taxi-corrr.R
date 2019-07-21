@@ -18,3 +18,4 @@ c_taxi <- taxi %>%
   correlate(quiet = TRUE)
 
 dbDisconnect(con1)
+rm(taxi, con1)
