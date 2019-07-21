@@ -163,6 +163,8 @@ A quick prep of the data to convert the `payment_type` to an identifier that say
 ```{r}
 taxi_prep <- taxi_sample %>%
   mutate(payment_type = ifelse(payment_type == 2, 0, 1))
+
+taxi_prep
 ```
 
 Use `parsnip` to run the XGBoost model. More info: https://tidymodels.github.io/tidypredict/articles/xgboost.html#parsnip
