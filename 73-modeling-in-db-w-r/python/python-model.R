@@ -1,0 +1,76 @@
+writeLines("general:
+  is_glm: 0
+  model: lm
+  residual: 0
+  sigma2: 0
+  type: regression
+  version: 2.0
+terms:
+- coef: 152.76430691633442
+  fields:
+  - col: (Intercept)
+    type: ordinary
+  is_intercept: 1
+  label: (Intercept)
+- coef: 0.3034995490660432
+  fields:
+  - col: age
+    type: ordinary
+  is_intercept: 0
+  label: age
+- coef: -237.63931533353403
+  fields:
+  - col: sex
+    type: ordinary
+  is_intercept: 0
+  label: sex
+- coef: 510.5306054362253
+  fields:
+  - col: bmi
+    type: ordinary
+  is_intercept: 0
+  label: bmi
+- coef: 327.7369804093466
+  fields:
+  - col: bp
+    type: ordinary
+  is_intercept: 0
+  label: bp
+- coef: -814.1317093725387
+  fields:
+  - col: s1
+    type: ordinary
+  is_intercept: 0
+  label: s1
+- coef: 492.81458798373217
+  fields:
+  - col: s2
+    type: ordinary
+  is_intercept: 0
+  label: s2
+- coef: 102.8484521916802
+  fields:
+  - col: s3
+    type: ordinary
+  is_intercept: 0
+  label: s3
+- coef: 184.60648905984
+  fields:
+  - col: s4
+    type: ordinary
+  is_intercept: 0
+  label: s4
+- coef: 743.519616750542
+  fields:
+  - col: s5
+    type: ordinary
+  is_intercept: 0
+  label: s5
+- coef: 76.09517221662392
+  fields:
+  - col: s6
+    type: ordinary
+  is_intercept: 0
+  label: s6", 
+           "python-model.yml"
+           )
