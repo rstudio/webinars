@@ -22,26 +22,13 @@ library(yaml)
 
 ## Data source
 
-The data is NYC taxi data from the Yellow Taxi.  Each record is a taxi trip. The database has been loaded with 2 Million trips. More info: https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+The data is NYC taxi data from the Yellow Taxi.  Each record is a taxi trip. The database has been loaded with 48 Million trips. More info: https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 
 The default data source for this exercise will be the files under the `data/` folder. It contains a small sample of the Taxi data. During the demo, the `taxi` variable, and other variables, will be loaded from the database.  This allows this R Notebook to work when you try it out.  By default, the code chunks that load the data from the database as disables, so the Notebook can be re-rendered in its entirety without changes, and it will run with the local data.
 
 ```{r}
-library(DBI)
-library(RPostgres)
-library(dplyr)
-
-con <- dbConnect(
-  Postgres(),
-  host="localhost", dbname = "datawarehouse", 
-  user="dbadmin", password="dbadmin",
-  bigint = "integer", port="5432"
-)
-```
-
-
-```{r}
-taxi <- tbl(con, "taxi")
+library(tidyverse)
+taxi <- read_rds("data/taxi.rds")
 ```
 
 ## Data
@@ -60,9 +47,9 @@ We remove any non-numeric column and the `id` column before running the correlat
 
 ```{r}
 c_taxi <- taxi %>%
- select_if(is.numeric) %>%
- select(-contains("id")) %>%
- correlate(quiet = TRUE)
+  select_if(is.numeric) %>%
+  select(-contains("id")) %>%
+  correlate(quiet = TRUE)
 ```
 
 
@@ -109,9 +96,7 @@ id_range <- taxi %>%
 
 2. Use the `sample()` function to pick 1,000 numbers that range between the lowest and highest id's
 ```{r}
-sample_ids <- sample(id_range$from:id_range$to, size = 10000)
-
-sample_ids[1:10]
+sample_ids <- sample(id_range$from:id_range$to, size = 1000)
 ```
 
 3. Use `filter()` with `%in%` to pull only those 1,000 records from the table
@@ -121,26 +106,26 @@ taxi_sample <- taxi %>%
   filter(id %in% !! sample_ids) %>%
   select(-id) %>%
   collect()
-
-taxi_sample
 ```
 
-
 ```{r}
-library(rstudioapi)
-
-jobRunScript("R/taxi-histogram.R", exportEnv = "R_GlobalEnv")
+taxi_sample
 ```
 
 ```{r}
 library(dbplot)
 
 taxi_sample %>%
+  dbplot_histogram(tip_amount, binwidth = 1)
+```
+
+```{r}
+tip_amount_histogram <- taxi %>%
   filter(tip_amount >= 0, tip_amount <= 16) %>%
   dbplot_histogram(tip_amount, binwidth = 1)
 ```
 
-```{r, eval = FALSE}
+```{r}
 tip_amount_histogram 
 ```
 
@@ -150,7 +135,7 @@ A quick prep of the data to convert the `payment_type` to an identifier that say
 
 ```{r}
 taxi_prep <- taxi_sample %>%
-  mutate(payment_type = ifelse(payment_type == 2, 1, 0))
+  mutate(payment_type = ifelse(payment_type == 2, 0, 1))
 
 taxi_prep
 ```
@@ -161,9 +146,16 @@ Use `parsnip` to run the XGBoost model. More info: https://tidymodels.github.io/
 parsnip_model <- boost_tree() %>%
   set_engine("xgboost") %>%
   fit(tip_amount ~ ., data = taxi_prep)
-
-parsnip_model
 ```
+
+The `metrics()` function, from the `yardstick` package, is used to get some idea of the model's performance.
+
+```{r}
+taxi_prep %>%
+  bind_cols(predict(parsnip_model, taxi_prep)) %>%
+  metrics(truth = tip_amount, estimate = .pred)
+```
+
 
 ## `tidypredict`
 
@@ -176,8 +168,10 @@ The main goal of tidypredict is to enable running predictions inside databases. 
 
 ```{r}
 parsed_parsnip <- parse_model(parsnip_model)
+```
 
-str(parsed_parsnip, 2)
+```{r, eval = FALSE}
+View(parsed_parsnip)
 ```
 
 `tidypredict_fit()`, first parses the model, and then creates the R formula that will run inside `dplyr`.
@@ -239,7 +233,7 @@ If you wish to see the raw results, simple load the output of the `tidypredict_t
 
 ```{r}
 t <- tidypredict_test(parsnip_model, taxi_prep)
-t$raw_results
+glimpse(t$raw_results)
 ```
 
 ### Save and Reload the model
@@ -303,7 +297,7 @@ tidypredict_sql(python_model, con = dbplyr::simulate_postgres())
 The original data was loaded into the database into a table called `diabetes`. The table is loaded into a variable of the same name.
 
 ```{r}
-diabetes <- tbl(con, "diabetes")
+diabetes <- read_rds("data/diabetes.rds")
 ```
 
 In the original model, the predictors were pre-processed.  They standardize the values of the predictors in a very specific way.  To recreate the changes, we will use `rlang` to recreate the formula using *tidyeval*.  The latest version of `rlang` allows us to use the `{{}}` operator to capture the value of the name of the field passed.  The formula is courtesy of Nathan Stephens of RStudio.
@@ -311,7 +305,7 @@ In the original model, the predictors were pre-processed.  They standardize the 
 ```{r}
 library(rlang)
 
-L2norm <- function(x) expr(({{x}} - mean({{x}})) / sd({{x}}) / sqrt(n() - 1))
+L2norm <- function(x) ({{x}} - mean({{x}})) / sd({{x}}) / sqrt(n() - 1)
 ```
 
 To execute the pre-processing, we will use `mutate_at()`, and tell it to only run on all the columns but the last, which is the outcome variable.
@@ -352,9 +346,11 @@ diabetes_l2norm %>%
 broom::tidy(python_model)
 ```
 
+
 ## `modeldb`
 
 Fit models inside the database. modeldb works with most databases back-ends because it leverages dplyr and dbplyr for the final SQL translation of the algorithm. It currently supports: K-means clustering and Linear regression - https://tidymodels.github.io/modeldb/
+
 
 ### Sampling 
 
@@ -460,15 +456,8 @@ modeldb_r2 <- taxi %>%
   mutate(r2 = fit ^ 2)
 ```
 
-```{r, eval = FALSE}
-jobRunScript("R/modeldb-r2.R", exportEnv = "R_GlobalEnv")
-```
-
 ```{r}
 modeldb_r2
 ```
 
-```{r, eval = FALSE}
-dbDisconnect(con)
-```
 

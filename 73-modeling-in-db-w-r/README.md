@@ -4,7 +4,9 @@
 
 ## Repository contents
 
-- **R Notebook** with the code demonstrated during the webinar. The published version can be found here: https://beta.rstudioconnect.com/content/5415/modeling-databases-r.nb.html
+- `modeling-databases-r.Rmd` - R Notebook with the code demonstrated during the webinar. The published version can be found here: https://beta.rstudioconnect.com/content/5415/modeling-databases-r.nb.html
+
+- `local-modeling-databases-r.Rmd` - Version of the R Notebook that works locally, without a database
 
 - `data/` - All of the `.rds` files used to get the R Notebook working without a database
 
