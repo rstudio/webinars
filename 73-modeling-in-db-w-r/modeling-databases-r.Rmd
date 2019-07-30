@@ -39,17 +39,17 @@ con <- dbConnect(
 )
 ```
 
-
 ```{r}
 taxi <- tbl(con, "taxi")
 ```
-
-## Data
 
 Each recorded trip has 18 fields.  The `id` field is a unique identifier added, and it is indexed in the database.  
 
 ```{r}
 head(taxi, 10)
+```
+```{r}
+count(taxi)
 ```
 
 ## Correlations with `corrr`
@@ -70,6 +70,12 @@ c_taxi <- taxi %>%
 c_taxi
 ```
 
+```{r}
+c_taxi %>%
+  shave()
+```
+
+
 The `rplot` function outputs a `ggplot` that provides a quick glance of the correlations.
 
 ```{r}
@@ -82,6 +88,12 @@ The `network_plot()` displays which variables are correlated, and how strong is 
 ```{r}
 c_taxi %>%
   network_plot()
+```
+
+```{r}
+c_taxi %>%
+  focus(tip_amount) %>%
+  arrange(desc(abs(tip_amount)))
 ```
 
 The correlations from the entire data set, showed that there is a significant relationship between the Tip Amount and the Payment Type.  A quick look for the breakdown of average tip by payment type helps clarify a bit.
@@ -124,20 +136,18 @@ taxi_sample <- taxi %>%
 
 taxi_sample
 ```
-
-
-```{r}
-library(rstudioapi)
-
-jobRunScript("R/taxi-histogram.R", exportEnv = "R_GlobalEnv")
-```
-
 ```{r}
 library(dbplot)
 
 taxi_sample %>%
   filter(tip_amount >= 0, tip_amount <= 16) %>%
   dbplot_histogram(tip_amount, binwidth = 1)
+```
+
+```{r}
+library(rstudioapi)
+
+jobRunScript("R/taxi-histogram.R", exportEnv = "R_GlobalEnv")
 ```
 
 ```{r, eval = FALSE}
@@ -186,13 +196,6 @@ str(parsed_parsnip, 2)
 tidypredict_fit(parsnip_model)
 ```
 
-`tidypredict_sql()`, under the hood it passes the results of `tidypredict_fit()` to a database connection. It then retrieves the resulting SQL query.
-
-```{r}
-tidypredict_sql(parsnip_model, con = dbplyr::simulate_postgres()) %>%
-  substr(1, 1000)
-```
-
 The results of `tidypredict_fit()` can be evaluated inside a `dplyr` verb by using the bang-bang operator (`!!`).  
 
 ```{r}
@@ -208,6 +211,13 @@ taxi %>%
   head(10) %>%
   mutate(my_pred = !! tidypredict_fit(parsnip_model)) %>%
   show_query()
+```
+
+`tidypredict_sql()`, under the hood it passes the results of `tidypredict_fit()` to a database connection. It then retrieves the resulting SQL query.
+
+```{r}
+tidypredict_sql(parsnip_model, con = dbplyr::simulate_postgres()) %>%
+  substr(1, 1000)
 ```
 
 A convenience function called `tidypredict_to_column()` is provided that automatically creates a `fit` column with the results from `tidypredict_fit()`.
