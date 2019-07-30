@@ -1,0 +1,484 @@
+---
+title: "Modeling in Databases with R"
+output: html_notebook
+---
+
+```{r setup, include = FALSE}
+library(tidyverse)
+library(tidymodels)
+
+library(DBI)
+library(dbplyr)
+
+library(dbplot)
+library(tidypredict)
+library(modeldb)
+library(corrr)
+
+library(rstudioapi)
+library(rlang) 
+library(yaml)
+```
+
+## Data source
+
+The data is NYC taxi data from the Yellow Taxi.  Each record is a taxi trip. The database has been loaded with 2 Million trips. More info: https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+
+The default data source for this exercise will be the files under the `data/` folder. It contains a small sample of the Taxi data. During the demo, the `taxi` variable, and other variables, will be loaded from the database.  This allows this R Notebook to work when you try it out.  By default, the code chunks that load the data from the database as disables, so the Notebook can be re-rendered in its entirety without changes, and it will run with the local data.
+
+```{r}
+library(DBI)
+library(RPostgres)
+library(dplyr)
+
+con <- dbConnect(
+  Postgres(),
+  host="localhost", dbname = "datawarehouse", 
+  user="dbadmin", password="dbadmin",
+  bigint = "integer", port="5432"
+)
+```
+
+```{r}
+taxi <- tbl(con, "taxi")
+```
+
+Each recorded trip has 18 fields.  The `id` field is a unique identifier added, and it is indexed in the database.  
+
+```{r}
+head(taxi, 10)
+```
+```{r}
+count(taxi)
+```
+
+## Correlations with `corrr`
+
+corrr is a package for exploring correlations in R. It focuses on creating and working with data frames of correlations (instead of matrices) that can be easily explored via corrr functions or by leveraging tools like those in the tidyverse - https://tidymodels.github.io/corrr/
+
+We remove any non-numeric column and the `id` column before running the correlations.  This is easy because the prepared data can be directly piped into the `correlate()` function.
+
+```{r}
+c_taxi <- taxi %>%
+ select_if(is.numeric) %>%
+ select(-contains("id")) %>%
+ correlate(quiet = TRUE)
+```
+
+
+```{r}
+c_taxi
+```
+
+```{r}
+c_taxi %>%
+  shave()
+```
+
+
+The `rplot` function outputs a `ggplot` that provides a quick glance of the correlations.
+
+```{r}
+c_taxi %>%
+  rplot(shape = 15, colors = c("orange", "skyblue"))
+```
+
+The `network_plot()` displays which variables are correlated, and how strong is their correlation.
+
+```{r}
+c_taxi %>%
+  network_plot()
+```
+
+```{r}
+c_taxi %>%
+  focus(tip_amount) %>%
+  arrange(desc(abs(tip_amount)))
+```
+
+The correlations from the entire data set, showed that there is a significant relationship between the Tip Amount and the Payment Type.  A quick look for the breakdown of average tip by payment type helps clarify a bit.
+
+```{r}
+options(scipen = 1)
+
+taxi %>%
+  group_by(payment_type) %>%
+  summarise(avg_tip = mean(tip_amount, na.rm = TRUE), trips = n())
+```
+
+## Sampling
+
+We will use the fact that the `id` field is a consecutive number. The plan is to select 1,000 `id`'s of records that will be downloaded into R.
+
+1. Figure the lowest and highest `id` number
+```{r}
+set.seed(100)
+
+id_range <- taxi %>%
+  summarise(from = min(id, na.rm = TRUE), to = max(id, na.rm = TRUE)) %>%
+  collect()
+```
+
+2. Use the `sample()` function to pick 1,000 numbers that range between the lowest and highest id's
+```{r}
+sample_ids <- sample(id_range$from:id_range$to, size = 10000)
+
+sample_ids[1:10]
+```
+
+3. Use `filter()` with `%in%` to pull only those 1,000 records from the table
+```{r}
+taxi_sample <- taxi %>%
+  select(id, tip_amount, trip_distance, payment_type) %>%
+  filter(id %in% !! sample_ids) %>%
+  select(-id) %>%
+  collect()
+
+taxi_sample
+```
+```{r}
+library(dbplot)
+
+taxi_sample %>%
+  filter(tip_amount >= 0, tip_amount <= 16) %>%
+  dbplot_histogram(tip_amount, binwidth = 1)
+```
+
+```{r}
+library(rstudioapi)
+
+jobRunScript("R/taxi-histogram.R", exportEnv = "R_GlobalEnv")
+```
+
+```{r, eval = FALSE}
+tip_amount_histogram 
+```
+
+### Modeling with XGboost & `parsnip`
+
+A quick prep of the data to convert the `payment_type` to an identifier that says if the payment was 2 (Credit Card) or not.
+
+```{r}
+taxi_prep <- taxi_sample %>%
+  mutate(payment_type = ifelse(payment_type == 2, 1, 0))
+
+taxi_prep
+```
+
+Use `parsnip` to run the XGBoost model. More info: https://tidymodels.github.io/tidypredict/articles/xgboost.html#parsnip
+
+```{r}
+parsnip_model <- boost_tree() %>%
+  set_engine("xgboost") %>%
+  fit(tip_amount ~ ., data = taxi_prep)
+
+parsnip_model
+```
+
+## `tidypredict`
+
+The main goal of tidypredict is to enable running predictions inside databases. It reads the model, extracts the components needed to calculate the prediction, and then creates an R formula that can be translated into SQL. In other words, it is able to parse a model - https://tidymodels.github.io/tidypredict/
+
+
+### Main functions
+
+`parse_model()` will read the model object and convert transform it into a spec. 
+
+```{r}
+parsed_parsnip <- parse_model(parsnip_model)
+
+str(parsed_parsnip, 2)
+```
+
+`tidypredict_fit()`, first parses the model, and then creates the R formula that will run inside `dplyr`.
+
+```{r, eval = FALSE}
+tidypredict_fit(parsnip_model)
+```
+
+The results of `tidypredict_fit()` can be evaluated inside a `dplyr` verb by using the bang-bang operator (`!!`).  
+
+```{r}
+taxi %>%
+  head(10) %>%
+  mutate(my_pred = !! tidypredict_fit(parsnip_model))
+```
+
+The result of the `tidypredict_fit()` is not the values, but rather just the fields and formula.  This allows it to become part of a larger `dplyr` code segment that is expected to run outside of R, such as in a database.
+
+```{r, eval = FALSE}
+taxi %>%
+  head(10) %>%
+  mutate(my_pred = !! tidypredict_fit(parsnip_model)) %>%
+  show_query()
+```
+
+`tidypredict_sql()`, under the hood it passes the results of `tidypredict_fit()` to a database connection. It then retrieves the resulting SQL query.
+
+```{r}
+tidypredict_sql(parsnip_model, con = dbplyr::simulate_postgres()) %>%
+  substr(1, 1000)
+```
+
+A convenience function called `tidypredict_to_column()` is provided that automatically creates a `fit` column with the results from `tidypredict_fit()`.
+
+```{r}
+taxi %>%
+  head(10) %>%
+  tidypredict_to_column(parsnip_model)
+```
+
+### Test `tidypredict`'s prediction
+
+To make sure that the prediction from `tidypredict` are the same, or close enough, to the predictions that run inside R, we would use `tidypredict_to_column()` and then compare those results to `predict()`. 
+
+```{r}
+taxi %>%
+  head(10) %>%
+  collect() %>%
+  predict(parsnip_model, new_data = .)
+```
+
+`tidypredict_test()` runs the predictions, via `predict()` and `tidypredict`. It then compares the results and determines if any pass a predetermined threshold.  That threshold is customizable.
+
+```{r}
+tidypredict_test(parsnip_model, taxi_prep)
+```
+
+If you wish to see the raw results, simple load the output of the `tidypredict_test()` function to a variable, and then extract `raw_results`.
+
+```{r}
+t <- tidypredict_test(parsnip_model, taxi_prep)
+t$raw_results
+```
+
+### Save and Reload the model
+
+To save a model, it is necessary to parse it first.  After that, we can use the `yaml` file to save the output.  Since there is no blob data, all of the values are retained as open text. 
+
+```{r}
+library(yaml)
+
+parsnip_parsed <- parse_model(parsnip_model)
+
+write_yaml(parsnip_parsed, "model.yaml")
+```
+
+The model can then be re-loaded to the same, or different R environment.  If using `yaml`, the resulting R object will be a `list`. 
+```{r}
+loaded_model <- read_yaml("model.yaml")
+
+class(loaded_model)
+```
+
+The `as_parsed_model()` function prepares the `list` object, to tell R that this is not only a parsed model, but also what kind of spec it uses.  It this case, the spec is `pm_xgb`.
+
+```{r}
+loaded_model2 <- as_parsed_model(loaded_model)
+
+class(loaded_model2)
+```
+
+The updated object, `loaded_model2`, can now be used with the rest of the `tidypredict` API 
+
+```{r}
+tidypredict_sql(loaded_model2, con = dbplyr::simulate_postgres()) %>%
+  substr(1, 1000)
+```
+
+### Non-R models
+
+We will use python model courtesy of Daniel Rodriguez of RStudio.  He used diabetes data, fitted a linear model, and then exported the results into a format that matches `tidypredict`'s regression spec. The spec was then exported as a YAML file.This is the link to the published Jupyter Notebook: https://colorado.rstudio.com/rsc/connect/#/apps/2620/access
+
+In R, we use `yaml` to read in the exported python model, and then coerce it into a regression parsed model. 
+
+```{r}
+python_model <- read_yaml("python/python-model.yml") %>%
+  as_parsed_model()
+
+str(python_model, 2)
+```
+
+The new object can now be used as if it was a model that could have been fitted in R. 
+
+```{r}
+tidypredict_fit(python_model)
+```
+
+
+```{r}
+tidypredict_sql(python_model, con = dbplyr::simulate_postgres())
+```
+
+The original data was loaded into the database into a table called `diabetes`. The table is loaded into a variable of the same name.
+
+```{r}
+diabetes <- tbl(con, "diabetes")
+```
+
+In the original model, the predictors were pre-processed.  They standardize the values of the predictors in a very specific way.  To recreate the changes, we will use `rlang` to recreate the formula using *tidyeval*.  The latest version of `rlang` allows us to use the `{{}}` operator to capture the value of the name of the field passed.  The formula is courtesy of Nathan Stephens of RStudio.
+
+```{r}
+library(rlang)
+
+L2norm <- function(x) expr(({{x}} - mean({{x}})) / sd({{x}}) / sqrt(n() - 1))
+```
+
+To execute the pre-processing, we will use `mutate_at()`, and tell it to only run on all the columns but the last, which is the outcome variable.
+
+```{r}
+diabetes_l2norm <- diabetes %>%
+  mutate_at(vars(age:s6), L2norm)
+
+diabetes_l2norm
+```
+
+`tidypredict_to_column()` can now use the standardized values to create the correct prediction. By correct prediction we mean a prediction that matches what the original model would have returned.
+
+```{r}
+diabetes_l2norm %>%
+  tidypredict_to_column(python_model)
+```
+
+### Calculate goodness of an external model
+
+The R2 calculation used in this next section will be `cor(y, fit)^2`.  Since we want the correlation to run inside the database, then `correlate()` is used to produce the first part of the calculation. 
+
+```{r}
+diabetes_l2norm %>%
+  tidypredict_to_column(python_model) %>%
+  select(y, fit) %>%
+  correlate(quiet = TRUE) %>%
+  filter(!is.na(fit)) %>%
+  mutate(r2 = fit ^ 2) %>%
+  select(r2)
+```
+
+### `broom` integration
+
+`broom`'s `tidy()` function returns the list of coefficients in an easy to read table. `tidypredict` parsed models can be converted into a `tidy()` table.  At this time linear regression models are the only ones supported.
+
+```{r}
+broom::tidy(python_model)
+```
+
+## `modeldb`
+
+Fit models inside the database. modeldb works with most databases back-ends because it leverages dplyr and dbplyr for the final SQL translation of the algorithm. It currently supports: K-means clustering and Linear regression - https://tidymodels.github.io/modeldb/
+
+### Sampling 
+
+We will take a new sample of 500 records, using the same approach as before
+
+```{r}
+set.seed(200)
+sample_size <- 500
+
+id_range <- taxi %>%
+  summarise(from = min(id, na.rm = TRUE), to = max(id, na.rm = TRUE)) %>%
+  collect()
+
+sample_ids <- sample(id_range$from:id_range$to, size = sample_size)
+```
+
+The data can be prepared using `dplyr`.  `modeldb` includes a `add_dummy_variables()` function that creates a single column per value of the passed field.  The values can be derived from the database, or set manually
+
+```{r}
+mdb_prep <- taxi %>%
+  select(id, tip_amount, trip_distance, payment_type) %>%
+  filter(id %in% !! sample_ids) %>%
+  select(-id) %>%
+  add_dummy_variables(payment_type, values = 1:6) %>%
+  select(tip_amount, trip_distance, payment_type_2)
+
+mdb_prep
+```
+
+The lazy `dplyr` code can be passed to `linear_regression_db()` in order to create the model.  The `sample_size` argument is used so that `linear_regression_db()`  can avoid performing a row count. 
+
+```{r}
+mdb <- mdb_prep %>%
+  linear_regression_db(tip_amount, sample_size)
+
+mdb
+```
+
+### Integration with `tidypredict`
+
+The fitted results from `modeldb` can be used to score data inside the database via `tidypredict`.  The `as_parsed_model()` function will create the proper R and with the correct spec.
+
+```{r}
+pm <- as_parsed_model(mdb)
+
+str(pm, 2)
+```
+
+The parsed `modeldb` variable can now be used with the rest of the `tidypredict` API
+
+```{r}
+tidypredict_fit(pm)
+```
+
+```{r}
+taxi %>%
+  add_dummy_variables(payment_type, values = 1:6) %>%
+  tidypredict_to_column(pm) %>%
+  select(tip_amount, fit, everything())
+```
+
+```{r}
+write_yaml(pm, "modeldb.yml")
+```
+
+
+### `broom`
+
+Since the `pm` variable is a parsed model, it can also be displayed in the `tidy()` format.
+
+```{r}
+broom::tidy(pm)
+```
+
+### Metrics
+
+To calculate the R2 from the training data, use the same filter to select the sample records
+
+```{r}
+taxi %>%
+  filter(id %in% !! sample_ids) %>%
+  add_dummy_variables(payment_type, values = 1:6) %>%
+  select(tip_amount, trip_distance, payment_type_2) %>%
+  tidypredict_to_column(pm) %>%
+  select(tip_amount, fit) %>%
+  correlate(quiet = TRUE) %>% 
+  select(fit) %>%
+  filter(!is.na(fit)) %>%
+  mutate(r2 = fit ^ 2)
+
+```
+
+The same basic transformation can be used to prepare and run the R2 calculation over the entire taxi table
+
+```{r}
+modeldb_r2 <- taxi %>%  
+  add_dummy_variables(payment_type, values = 1:6) %>%
+  tidypredict_to_column(pm) %>%
+  select(tip_amount, fit) %>%
+  correlate(quiet = TRUE) %>%
+  select(fit) %>%
+  filter(!is.na(fit)) %>%
+  mutate(r2 = fit ^ 2)
+```
+
+```{r, eval = FALSE}
+jobRunScript("R/modeldb-r2.R", exportEnv = "R_GlobalEnv")
+```
+
+```{r}
+modeldb_r2
+```
+
+```{r, eval = FALSE}
+dbDisconnect(con)
+```
+
