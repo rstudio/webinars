@@ -14,6 +14,6 @@ interactive R sessions on remote resource managers like
 [Kubernetes](https://kubernetes.io).
 
 ## Resources
-### [Slides from Webinar (2019-08-07)](slides.pdf)
-### [Code Examples](rstd.io/background-jobs)
+### :eyes: [Slides from Webinar (2019-08-07)](slides.pdf)
+### :computer: [Code Examples](rstd.io/background-jobs)
 
