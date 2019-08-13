@@ -15,5 +15,5 @@ interactive R sessions on remote resource managers like
 
 ## Resources
 ### :eyes: [Slides from Webinar (2019-08-07)](slides.pdf)
-### :computer: [Code Examples](rstd.io/background-jobs)
+### :computer: [Code Examples](https://github.com/sol-eng/background-jobs)
 
