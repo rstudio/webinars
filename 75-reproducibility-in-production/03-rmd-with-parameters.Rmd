@@ -1,0 +1,67 @@
+---
+title:  "`r params$drug`"
+output: html_document
+params:
+  drug: "Prednisone"
+---
+
+```{r setup, include=FALSE}
+source("00-helpers.R")
+```
+
+```{r include = FALSE}
+# Get and clean adverse event data from the openfda API
+drug <- params$drug
+age <- create_age(20,65)
+
+jnk <- capture.output(male <- get_adverse("1", drug, age))
+jnk <- capture.output(female <- get_adverse("2", drug, age))
+
+if (!is.null(male)) male$gender <- 'male'
+if (!is.null(female)) female$gender <- 'female'
+
+adverse <- rbind(male, female)
+events <- adverse %>% 
+  group_by(term) %>% 
+  summarise(count = sum(count))
+```
+
+### All Events
+
+The graph below displays the *adverse events* reported for `r params$drug`, the most common of which is `r events$term[which.max(events$count)]`.
+
+```{r echo = FALSE}
+events %>% 
+  ggplot() +
+    geom_bar(aes(reorder(term,count), count), stat = 'identity') +
+    coord_flip() +
+    labs(
+      title = params$drug,
+      x = NULL,
+      y = NULL
+    ) +
+    theme_minimal()
+```
+
+### Events by Gender
+
+The frequency of adverse events varies slightly by gender.
+
+```{r echo = FALSE}
+ggplot(adverse) +
+    geom_bar(aes(reorder(term,count), count, fill = gender), stat = 'identity') +
+    facet_wrap(~gender)+
+    coord_flip() +
+    labs(
+      title = params$drug,
+      x = NULL,
+      y = NULL
+    ) +
+    theme_minimal() + 
+    guides(fill = FALSE) + 
+    scale_fill_manual(values = c("#d54a30","#4c83b6"))
+```
+
+
+
+

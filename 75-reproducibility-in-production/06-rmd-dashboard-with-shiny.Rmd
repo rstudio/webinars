@@ -1,0 +1,133 @@
+---
+title: "Adverse Events"
+runtime: shiny
+output:
+  flexdashboard::flex_dashboard:
+    css: styles.css
+    orientation: columns
+    theme: readable
+    vertical_layout: fill
+---
+
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(stringr)
+library(openfda)
+library(dplyr)
+
+library(ggplot2)
+library(ggthemes)
+
+get_adverse <- function(gender, brand_name, age) {
+  fda_query("/drug/event.json") %>%
+    fda_filter("patient.drug.openfda.brand_name", brand_name) %>% 
+    fda_filter("patient.patientsex", gender) %>% 
+    fda_filter("patient.patientonsetage", age) %>% 
+    fda_count("patient.reaction.reactionmeddrapt.exact") %>% 
+    fda_limit(10) %>% 
+    fda_exec()
+}
+
+# %d is a placeholder for a integer variable inside a string
+create_age <- function(min, max){#
+  sprintf('[%d+TO+%d]', min, max)
+}
+```
+
+Column {.sidebar}
+------------
+
+```{r inputs}
+
+
+textInput('data', 'Brand Name Drug', value = "Prednisone")
+
+sliderInput('ages', 'Age Range', min = 10, max = 80, value = c(20,60))
+
+
+age <- reactive({create_age(input$ages[1],input$ages[2])})
+
+male <- reactive({
+  ad <- get_adverse("1", input$data, age())
+  if (!is.null(ad)) {
+    ad$gender = 'male'
+  }
+  ad
+})
+
+female <- reactive({
+  ad <- get_adverse("2", input$data, age())
+  if (!is.null(ad)) {
+    ad$gender = 'female'
+  }
+  ad
+})
+
+adverse <- reactive({
+  req(male(), female())
+  rbind(male(), female())
+})
+
+```
+
+Column {data-width=550}
+-----------------------------------------------------------------------
+
+### All Events
+
+```{r}
+renderPlot({
+  req(adverse())
+  adverse() %>% 
+  group_by(term) %>% 
+  summarise(count = sum(count)) %>% 
+  ggplot() +
+    geom_bar(aes(reorder(term,count), count), stat = 'identity') +
+    coord_flip() +
+    labs(
+      title = input$data,
+      x = NULL,
+      y = NULL
+    ) +
+    theme_minimal()
+})
+
+```
+
+
+Column {data-width=450}
+-----------------------------------------------------------------------
+
+### Age Range
+
+```{r}
+age_label <- reactive({
+  str_replace_all(age(), fixed("+"), " ") %>% 
+    str_replace(fixed("["), "") %>% 
+    str_replace(fixed("]"), "") %>% 
+    str_replace(fixed("TO"), "-")     
+})
+renderValueBox({valueBox(age_label(), icon = 'glyphicon-user')})
+```
+
+### Events by Gender
+
+```{r}
+renderPlot({
+  req(adverse())
+  ggplot(adverse()) +
+    geom_bar(aes(reorder(term,count), count, fill = gender), stat = 'identity') +
+    facet_wrap(~gender)+
+    coord_flip() +
+    labs(
+      title = input$data,
+      x = NULL,
+      y = NULL
+    ) +
+    theme_minimal() + 
+    guides(fill = FALSE) + 
+    scale_fill_manual(values = c("#d54a30","#4c83b6"))
+})
+```
