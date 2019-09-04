@@ -5,9 +5,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 source("00-helpers.R")
-```
 
-```{r include = FALSE}
 # Get and clean adverse event data from the openfda API
 drug <- "Prednisone"
 age <- create_age(20,65)
