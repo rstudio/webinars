@@ -22,6 +22,8 @@ events <- adverse %>%
   group_by(term) %>% 
   summarise(count = sum(count))
 
+events$term[which.max(events$count)]
+
 # plot all events  
 events %>% 
   ggplot() +

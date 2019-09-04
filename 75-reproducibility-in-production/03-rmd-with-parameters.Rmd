@@ -7,9 +7,7 @@ params:
 
 ```{r setup, include=FALSE}
 source("00-helpers.R")
-```
 
-```{r include = FALSE}
 # Get and clean adverse event data from the openfda API
 drug <- params$drug
 age <- create_age(20,65)
