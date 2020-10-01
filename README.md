@@ -18,7 +18,7 @@ RStudio Process
 
 Webinar Guide
 ================
-So you want to make a great webinar? Use this helpful checklist.
+So you want to make a great webinar? Use this helpful checklist and don't forget to share it.
 
 Title Card
 =======
