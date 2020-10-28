@@ -1,0 +1,46 @@
+servers:
+  - url: ''
+openapi: 3.0.3
+info:
+  description: API Description
+  title: Penguin Predictions
+  version: 1.0.0
+paths:
+  /health-check:
+    get:
+      summary: ' Determine if the API is running and listening as expected'
+      responses:
+        default:
+          description: Default response.
+      parameters: []
+  /predict:
+    post:
+      summary: ' Predict penguin species based on input data'
+      responses:
+        default:
+          description: Default response.
+      parameters: []
+      requestBody:
+        description: Penguin Data
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bill_length_mm:
+                  type: number
+                  title: "Penguin bill length"
+                  example: 46.8
+                bill_depth_mm:
+                  type: number
+                  title: "Penguin bill depth"
+                  example: 16.1
+                flipper_length_mm:
+                  type: number
+                  title: "Penguin flipper length"
+                  example: 0
+                body_mass_g:
+                  type: number
+                  title: "Penguin body mass"
+                  example: 5500
