@@ -1,0 +1,58 @@
+---
+title: "Model Training"
+output: html_notebook
+---
+
+```{r setup}
+# Packages ----
+library(palmerpenguins)
+library(tidymodels)
+```
+## Data
+```{r}
+penguins
+```
+
+```{r}
+(filtered_penguins <- penguins %>% 
+  drop_na(ends_with("mm")))
+```
+## Exploration
+```{r}
+filtered_penguins %>% 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, col = species)) +
+  geom_point()
+```
+
+```{r}
+filtered_penguins %>% 
+  select(species, ends_with("mm"), body_mass_g)
+```
+## Model Fit
+```{r}
+model <- rand_forest() %>% 
+  set_engine("ranger") %>% 
+  set_mode("classification") %>% 
+  fit(species ~ bill_length_mm + bill_depth_mm + flipper_length_mm + body_mass_g, data = filtered_penguins)
+```
+
+```{r}
+model
+```
+
+```{r}
+predict(model, new_data = head(filtered_penguins), type = "prob")
+```
+
+## Model Performance
+```{r}
+filtered_penguins %>% 
+  bind_cols(predict(model, new_data = filtered_penguins)) %>% 
+  count(species, .pred_class)
+```
+
+## Model Export
+```{r}
+readr::write_rds(model, here::here("R", "model.rds"))
+```
+
